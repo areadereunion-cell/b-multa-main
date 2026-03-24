@@ -1,11 +1,15 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+  "/api/collection/aplicaciones/[listKey]/route": "app/api/collection/aplicaciones/[listKey]/route.js",
   "/api/collection/assignable-users/route": "app/api/collection/assignable-users/route.js",
   "/api/collection/casos/[numero_prestamo]/generar-liga/route": "app/api/collection/casos/[numero_prestamo]/generar-liga/route.js",
+  "/api/collection/casos/[numero_prestamo]/route": "app/api/collection/casos/[numero_prestamo]/route.js",
   "/api/collection/casos/route": "app/api/collection/casos/route.js",
   "/api/plantillas-temporales-3/[token]/route": "app/api/plantillas-temporales-3/[token]/route.js",
+  "/api/plantillas-temporales-3/route": "app/api/plantillas-temporales-3/route.js",
   "/api/sync-pago/[token]/route": "app/api/sync-pago/[token]/route.js",
   "/gestion/collection/casos/page": "app/gestion/collection/casos/page.js",
+  "/gestion/multas/plantillas/complejas/[id]/page": "app/gestion/multas/plantillas/complejas/[id]/page.js",
   "/gestion/page": "app/gestion/page.js",
   "/page": "app/page.js",
   "/pay/[token]/page": "app/pay/[token]/page.js"

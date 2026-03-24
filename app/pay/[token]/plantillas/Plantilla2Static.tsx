@@ -41,16 +41,6 @@ function normalizePayload(raw: any): StaticPayload {
   };
 }
 
-function formatMoney(value?: string | null) {
-  if (!value) return "$0.00";
-  const n = Number(String(value).replace(/[^\d.-]/g, ""));
-  if (Number.isNaN(n)) return `$${value}`;
-  return `$${n.toLocaleString("en-US", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  })}`;
-}
-
 function formatMoneyWhole(value?: string | null) {
   if (!value) return "$ 0";
   const n = Number(String(value).replace(/[^\d.-]/g, ""));
@@ -68,7 +58,7 @@ function formatBigMoney(value?: string | null) {
 
   const [intPart, decPart] = n.toFixed(2).split(".");
   return {
-    intPart: `$${Number(intPart.replace("$", "")).toLocaleString("en-US")}`,
+    intPart: `$${Number(intPart).toLocaleString("en-US")}`,
     decPart,
   };
 }
@@ -84,6 +74,38 @@ function formatDate(value?: string | null) {
   return `${d}-${m}-${y}`;
 }
 
+/* SOLO BAJAMOS EL TAMAÑO DEL MONTO, SIN ROMPER LA PLANTILLA */
+function getMoneyScale(value?: string | null) {
+  const raw = String(value ?? "").replace(/[^\d]/g, "");
+  const len = raw.length;
+
+  if (len >= 10) {
+    return {
+      int: "text-[20px] sm:text-[28px] md:text-[34px]",
+      dec: "text-[12px] sm:text-[16px] md:text-[20px]",
+    };
+  }
+
+  if (len >= 8) {
+    return {
+      int: "text-[24px] sm:text-[34px] md:text-[42px]",
+      dec: "text-[14px] sm:text-[20px] md:text-[24px]",
+    };
+  }
+
+  if (len >= 6) {
+    return {
+      int: "text-[28px] sm:text-[40px] md:text-[50px]",
+      dec: "text-[16px] sm:text-[22px] md:text-[28px]",
+    };
+  }
+
+  return {
+    int: "text-[32px] sm:text-[48px] md:text-[58px]",
+    dec: "text-[18px] sm:text-[28px] md:text-[34px]",
+  };
+}
+
 export default function Plantilla2Static({
   token: tokenProp,
 }: {
@@ -94,6 +116,7 @@ export default function Plantilla2Static({
 
   const [data, setData] = useState<StaticPayload | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const preventContext = (e: MouseEvent) => e.preventDefault();
@@ -171,6 +194,17 @@ export default function Plantilla2Static({
     };
   }, [token]);
 
+  async function handleCopy(text?: string | null) {
+    const value = String(text ?? "").trim();
+    if (!value || value === ".") return;
+
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {}
+  }
+
   if (error) {
     return (
       <div className="min-h-screen bg-black text-white p-6 flex items-center justify-center">
@@ -201,6 +235,7 @@ export default function Plantilla2Static({
   const nombre = data.nombre_cliente || "—";
   const telefono = data.telefono_cliente || "—";
   const moneyBig = formatBigMoney(importePagar);
+  const moneyScale = getMoneyScale(importePagar);
 
   return (
     <div className="min-h-screen w-full bg-black flex items-center justify-center px-2 sm:px-4 py-4 sm:py-8">
@@ -221,47 +256,53 @@ export default function Plantilla2Static({
 
           <div className="mx-2 sm:mx-4 md:mx-6 mb-4 bg-[#f3f3f3] rounded-[10px] sm:rounded-[14px] px-4 sm:px-8 md:px-14 pt-4 sm:pt-6 md:pt-7 pb-6 sm:pb-8 md:pb-10 shadow-sm border border-[#ebebeb]">
             <div className="text-center mb-4 sm:mb-6">
-             <h1
+              <h1
                 className="font-serif leading-none tracking-tight text-black break-words"
                 style={{
-                    fontSize: "clamp(2.8rem, 8vw, 5.8rem)",
-                    textShadow: "4px 2px 0 rgba(76,92,255,0.9)",
+                  fontSize: "clamp(2.8rem, 8vw, 5.8rem)",
+                  textShadow: "4px 2px 0 rgba(76,92,255,0.9)",
                 }}
-                >
+              >
                 {productoTitulo}
               </h1>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_420px] gap-4 md:gap-8 items-end mb-8 sm:mb-10">
-                <div>
-                    <div className="inline-block text-[15px] sm:text-[20px] md:text-[24px] font-medium text-[#4f4f4f] bg-[#efefef] px-1 mb-2 font-serif">
-                    Monto a pagar actual
-                    </div>
-
-                    <div className="font-serif font-bold text-[#4A55D9] leading-[0.9] break-words">
-                    {typeof moneyBig === "string" ? (
-                        <span className="text-[38px] sm:text-[62px] md:text-[86px]">
-                        {moneyBig}
-                        </span>
-                    ) : (
-                        <>
-                        <span className="text-[38px] sm:text-[62px] md:text-[86px]">
-                            {moneyBig.intPart}
-                        </span>
-                        <span className="text-[28px] sm:text-[44px] md:text-[58px] align-top">
-                            .{moneyBig.decPart}
-                        </span>
-                        </>
-                    )}
-                    </div>
+            <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_420px] gap-4 md:gap-8 items-center mb-8 sm:mb-10">
+              <div className="min-w-0">
+                <div className="inline-block text-[15px] sm:text-[20px] md:text-[24px] font-medium text-[#4f4f4f] bg-[#efefef] px-1 mb-2 font-serif">
+                  Monto a pagar actual
                 </div>
 
-                <div className="flex items-end md:justify-end">
-                    <div className="w-full md:max-w-[420px] border border-red-400 rounded-[20px] sm:rounded-[26px] px-6 sm:px-8 py-4 sm:py-5 text-red-500 text-[22px] sm:text-[32px] md:text-[34px] leading-none font-serif bg-[#fff7f7] text-center">
-                    {diasVencidos} días de retraso
+                <div className="min-w-0 overflow-hidden">
+                  {typeof moneyBig === "string" ? (
+                    <div
+                      className={`${moneyScale.int} font-serif font-bold text-[#4A55D9] leading-[0.9] whitespace-nowrap`}
+                    >
+                      {moneyBig}
                     </div>
+                  ) : (
+                    <div className="flex items-start whitespace-nowrap min-w-0">
+                      <span
+                        className={`${moneyScale.int} font-serif font-bold text-[#4A55D9] leading-[0.9] shrink-0`}
+                      >
+                        {moneyBig.intPart}
+                      </span>
+                      <span
+                        className={`${moneyScale.dec} font-serif font-bold text-[#4A55D9] leading-[0.9] shrink-0 mt-[2px] sm:mt-1`}
+                      >
+                        .{moneyBig.decPart}
+                      </span>
+                    </div>
+                  )}
                 </div>
+              </div>
+
+              <div className="flex items-center md:justify-end">
+                <div className="w-full md:max-w-[420px] border border-red-400 rounded-[20px] sm:rounded-[26px] px-6 sm:px-8 py-4 sm:py-5 text-red-500 text-[22px] sm:text-[32px] md:text-[34px] leading-none font-serif bg-[#fff7f7] text-center">
+                  {diasVencidos} días de retraso
                 </div>
+              </div>
+            </div>
 
             <div className="mb-10 sm:mb-12">
               <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] items-center gap-2 md:gap-6">
@@ -280,19 +321,29 @@ export default function Plantilla2Static({
                 Método de pago
               </div>
 
-                 <div className="bg-[#f3f3f3] rounded-xl px-3 sm:px-4 py-4 sm:py-5 flex flex-col items-center justify-center text-center">
-  
-                    {/* SPEI centrado */}
-                    <div className="text-[32px] sm:text-[56px] md:text-[82px] font-black leading-none text-[#2E3FA8] font-sans break-words text-center">
-                        {metodoPagoLabel}
-                    </div>
+              <div className="bg-[#f3f3f3] rounded-xl px-3 sm:px-4 py-4 sm:py-5 flex flex-col items-center justify-center text-center">
+                <div className="text-[32px] sm:text-[56px] md:text-[82px] font-black leading-none text-[#2E3FA8] font-sans break-words text-center">
+                  {metodoPagoLabel}
+                </div>
 
-                    {/* Cuenta centrada */}
-                    <div className="mt-5 sm:mt-7 text-[22px] sm:text-[38px] md:text-[56px] font-serif text-[#183A72] tracking-wide break-all leading-tight text-center">
-                        {cuentaBancaria}
-                    </div>
+                <div className="mt-5 sm:mt-7 w-full flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                  <div className="text-[22px] sm:text-[38px] md:text-[56px] font-serif text-[#183A72] tracking-wide break-all leading-tight text-center">
+                    {cuentaBancaria}
+                  </div>
 
-                    </div>   
+                  {cuentaBancaria && cuentaBancaria !== "." && (
+                    <button
+                      type="button"
+                      onClick={() => handleCopy(cuentaBancaria)}
+                      title={copied ? "Copiado" : "Copiar cuenta"}
+                      aria-label={copied ? "Copiado" : "Copiar cuenta"}
+                      className="inline-flex items-center justify-center rounded-full border border-[#183A72]/20 bg-white/70 hover:bg-white transition px-3 sm:px-4 py-2 text-[#183A72] text-xs sm:text-sm font-semibold shadow-sm"
+                    >
+                      {copied ? "Copiado" : "Copiar"}
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
 
             <div>
@@ -352,9 +403,7 @@ export default function Plantilla2Static({
             la financiera.
           </div>
 
-          <div className="p-3 sm:p-4 bg-[#efefef]">
-
-          </div>
+          <div className="p-3 sm:p-4 bg-[#efefef]"></div>
         </div>
       </div>
     </div>

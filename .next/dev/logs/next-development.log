@@ -35,3 +35,29 @@ See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode de
 [00:02:47.089] Server  LOG     ✅ GET ROW: {}
 [00:02:47.848] Server  LOG     ✅ GET ROW: {}
 [00:04:46.529] Server  LOG      ✓ Compiled in 180ms
+[00:11:40.345] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:49.185] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:55.977] Server  LOG     📦 BODY RECIBIDO: {}
+[00:11:56.186] Server  LOG     ✅ ROW GUARDADA: {}
+[00:11:59.106] Server  LOG     ✅ GET ROW: {}
+[00:11:59.310] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:59.525] Server  LOG     ✅ GET ROW: {}
+[00:11:59.635] Browser LOG     tipoPlantilla prop: 2
+[00:11:59.635] Browser LOG     data.tipo_plantilla: 2
+[00:11:59.635] Browser LOG     plantillaFinal: 2
+[00:11:59.635] Browser LOG     tipoPlantilla prop: 2
+[00:11:59.635] Browser LOG     data.tipo_plantilla: 2
+[00:11:59.635] Browser LOG     plantillaFinal: 2
+[00:11:59.669] Server  LOG     ✅ GET ROW: {}
+[00:12:00.474] Server  LOG     ✅ GET ROW: {}
+[00:15:26.282] Server  LOG      ✓ Compiled in 265ms
+[00:15:27.268] Server  LOG     ✅ GET ROW: {}
+[00:16:20.144] Server  LOG      ✓ Compiled in 281ms
+[00:19:51.730] Server  LOG      ✓ Compiled in 226ms
+[00:19:52.769] Server  LOG     ✅ GET ROW: {}
+[00:23:35.399] Server  LOG      ✓ Compiled in 224ms
+[00:23:36.517] Server  LOG     ✅ GET ROW: {}
+[00:26:45.791] Server  LOG      ✓ Compiled in 294ms
+[00:26:46.743] Server  LOG     ✅ GET ROW: {}
+[00:31:32.584] Server  LOG      ✓ Compiled in 432ms
+[00:31:34.022] Server  LOG     ✅ GET ROW: {}
