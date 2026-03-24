@@ -1,21 +1,27 @@
+export const runtime = "nodejs";
+
 import { NextRequest, NextResponse } from "next/server";
 import { Pool } from "pg";
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
+  ssl:
+    process.env.NODE_ENV === "production"
+      ? { rejectUnauthorized: false }
+      : undefined,
 });
 
 type RouteContext = {
   params: Promise<{ id: string }>;
 };
 
-/* ======================
+/* ====================== 
    GET → UNA LISTA
 ====================== */
 export async function GET(
   _req: NextRequest,
   context: RouteContext
-): Promise<Response> {
+) {
   try {
     const { id } = await context.params;
     const listaId = Number(id);
@@ -41,7 +47,7 @@ export async function GET(
 
     return NextResponse.json(result.rows[0]);
   } catch (error) {
-    console.error("Error en GET /api/listas/[id]:", error);
+    console.error("❌ Error en GET /api/listas/[id]:", error);
     return NextResponse.json(
       { error: "Error al obtener la lista" },
       { status: 500 }
@@ -55,7 +61,7 @@ export async function GET(
 export async function DELETE(
   _req: NextRequest,
   context: RouteContext
-): Promise<Response> {
+) {
   const client = await pool.connect();
 
   try {
@@ -71,7 +77,7 @@ export async function DELETE(
 
     await client.query("BEGIN");
 
-    // Verificar que exista
+    // Verificar existencia
     const existe = await client.query(
       `SELECT id FROM listas WHERE id = $1`,
       [listaId]
@@ -85,23 +91,25 @@ export async function DELETE(
       );
     }
 
-    // 1) Borrar items relacionados a la lista
+    // 1) Eliminar items
     await client.query(
       `DELETE FROM lista_items WHERE lista_id = $1`,
       [listaId]
     );
 
-    // 2) Borrar configs que dependan de esa lista
+    // 2) Eliminar configs relacionadas
     await client.query(
       `
       DELETE FROM plantillas_personalizadas_config
       WHERE producto_lista_id = $1
          OR metodo_pago_lista_id = $1
+         OR subproducto_lista_id = $1
+         OR liga_pago_lista_id = $1
       `,
       [listaId]
     );
 
-    // 3) Borrar la lista
+    // 3) Eliminar lista
     const deleted = await client.query(
       `DELETE FROM listas WHERE id = $1`,
       [listaId]
@@ -115,7 +123,7 @@ export async function DELETE(
     });
   } catch (error: any) {
     await client.query("ROLLBACK");
-    console.error("Error en DELETE /api/listas/[id]:", error);
+    console.error("❌ Error en DELETE /api/listas/[id]:", error);
 
     return NextResponse.json(
       {

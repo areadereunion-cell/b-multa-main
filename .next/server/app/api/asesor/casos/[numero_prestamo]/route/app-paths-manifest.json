@@ -1,0 +1,3 @@
+{
+  "/api/asesor/casos/[numero_prestamo]/route": "app/api/asesor/casos/[numero_prestamo]/route.js"
+}

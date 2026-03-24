@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/adlan/Downloads/b-multa-main/multa-main/app/gracias/page.tsx"],"sourcesContent":["export default function GraciasPage() {\r\n  return (\r\n    <div className=\"min-h-screen flex items-center justify-center bg-[#152032] text-white\">\r\n      <div className=\"text-center\">\r\n        <h1 className=\"text-3xl font-bold mb-4\">\r\n          ✅ Muchas gracias por su pago\r\n        </h1>\r\n        <p className=\"text-white/80\">\r\n          Su transacción ha sido procesada correctamente.\r\n        </p>\r\n      </div>\r\n    </div>\r\n  );\r\n}       "],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,kSAAC;QAAI,WAAU;kBACb,cAAA,kSAAC;YAAI,WAAU;;8BACb,kSAAC;oBAAG,WAAU;8BAA0B;;;;;;8BAGxC,kSAAC;oBAAE,WAAU;8BAAgB;;;;;;;;;;;;;;;;;AAMrC"}}]
-}

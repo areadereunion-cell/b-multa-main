@@ -1,0 +1,3 @@
+{
+  "/api/asesor/casos/[numero_prestamo]/generar-liga/route": "app/api/asesor/casos/[numero_prestamo]/generar-liga/route.js"
+}

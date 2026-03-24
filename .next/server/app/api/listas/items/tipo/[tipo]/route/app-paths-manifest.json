@@ -1,0 +1,3 @@
+{
+  "/api/listas/items/tipo/[tipo]/route": "app/api/listas/items/tipo/[tipo]/route.js"
+}
