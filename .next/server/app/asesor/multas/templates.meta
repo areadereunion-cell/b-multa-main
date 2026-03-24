@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/asesor/layout,_N_T_/asesor/multas/layout,_N_T_/asesor/multas/templates/layout,_N_T_/asesor/multas/templates/page,_N_T_/asesor/multas/templates"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/asesor/multas/templates/__PAGE__",
+    "/asesor/multas/templates",
+    "/asesor/multas",
+    "/asesor",
+    "/_index",
+    "/_head"
+  ]
+}

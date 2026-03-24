@@ -1,0 +1,717 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/api/asesor/casos/[numero_prestamo]",
+      "regex": "^/api/asesor/casos/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPnumero_prestamo": "nxtPnumero_prestamo"
+      },
+      "namedRegex": "^/api/asesor/casos/(?<nxtPnumero_prestamo>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/asesor/casos/[numero_prestamo]/generar-liga",
+      "regex": "^/api/asesor/casos/([^/]+?)/generar\\-liga(?:/)?$",
+      "routeKeys": {
+        "nxtPnumero_prestamo": "nxtPnumero_prestamo"
+      },
+      "namedRegex": "^/api/asesor/casos/(?<nxtPnumero_prestamo>[^/]+?)/generar\\-liga(?:/)?$"
+    },
+    {
+      "page": "/api/bases-pago/borrar/[id]",
+      "regex": "^/api/bases\\-pago/borrar/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/bases\\-pago/borrar/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/bases-pago/ver/[id]",
+      "regex": "^/api/bases\\-pago/ver/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/bases\\-pago/ver/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/collection/aplicaciones/[listKey]",
+      "regex": "^/api/collection/aplicaciones/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPlistKey": "nxtPlistKey"
+      },
+      "namedRegex": "^/api/collection/aplicaciones/(?<nxtPlistKey>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/collection/casos/[numero_prestamo]",
+      "regex": "^/api/collection/casos/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPnumero_prestamo": "nxtPnumero_prestamo"
+      },
+      "namedRegex": "^/api/collection/casos/(?<nxtPnumero_prestamo>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/collection/casos/[numero_prestamo]/generar-liga",
+      "regex": "^/api/collection/casos/([^/]+?)/generar\\-liga(?:/)?$",
+      "routeKeys": {
+        "nxtPnumero_prestamo": "nxtPnumero_prestamo"
+      },
+      "namedRegex": "^/api/collection/casos/(?<nxtPnumero_prestamo>[^/]+?)/generar\\-liga(?:/)?$"
+    },
+    {
+      "page": "/api/ligas/[id]",
+      "regex": "^/api/ligas/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/ligas/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/listas/by-tipo/[tipo]/items",
+      "regex": "^/api/listas/by\\-tipo/([^/]+?)/items(?:/)?$",
+      "routeKeys": {
+        "nxtPtipo": "nxtPtipo"
+      },
+      "namedRegex": "^/api/listas/by\\-tipo/(?<nxtPtipo>[^/]+?)/items(?:/)?$"
+    },
+    {
+      "page": "/api/listas/items/por-lista/[listaId]",
+      "regex": "^/api/listas/items/por\\-lista/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPlistaId": "nxtPlistaId"
+      },
+      "namedRegex": "^/api/listas/items/por\\-lista/(?<nxtPlistaId>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/listas/items/tipo/[tipo]",
+      "regex": "^/api/listas/items/tipo/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPtipo": "nxtPtipo"
+      },
+      "namedRegex": "^/api/listas/items/tipo/(?<nxtPtipo>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/listas/tipo/[tipo]",
+      "regex": "^/api/listas/tipo/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPtipo": "nxtPtipo"
+      },
+      "namedRegex": "^/api/listas/tipo/(?<nxtPtipo>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/listas/[id]",
+      "regex": "^/api/listas/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/listas/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/listas/[id]/items",
+      "regex": "^/api/listas/([^/]+?)/items(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/listas/(?<nxtPid>[^/]+?)/items(?:/)?$"
+    },
+    {
+      "page": "/api/listas/[id]/items/tipo/[tipo]/lista/[listaNombre]",
+      "regex": "^/api/listas/([^/]+?)/items/tipo/([^/]+?)/lista/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid",
+        "nxtPtipo": "nxtPtipo",
+        "nxtPlistaNombre": "nxtPlistaNombre"
+      },
+      "namedRegex": "^/api/listas/(?<nxtPid>[^/]+?)/items/tipo/(?<nxtPtipo>[^/]+?)/lista/(?<nxtPlistaNombre>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/listas/[id]/items/[itemId]",
+      "regex": "^/api/listas/([^/]+?)/items/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid",
+        "nxtPitemId": "nxtPitemId"
+      },
+      "namedRegex": "^/api/listas/(?<nxtPid>[^/]+?)/items/(?<nxtPitemId>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas/[id]",
+      "regex": "^/api/plantillas/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/plantillas/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas/[id]/listas/[tipo]",
+      "regex": "^/api/plantillas/([^/]+?)/listas/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid",
+        "nxtPtipo": "nxtPtipo"
+      },
+      "namedRegex": "^/api/plantillas/(?<nxtPid>[^/]+?)/listas/(?<nxtPtipo>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-complejas/[id]",
+      "regex": "^/api/plantillas\\-complejas/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/plantillas\\-complejas/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-personalizadas/[id]",
+      "regex": "^/api/plantillas\\-personalizadas/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/plantillas\\-personalizadas/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-temporales/[token]",
+      "regex": "^/api/plantillas\\-temporales/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPtoken": "nxtPtoken"
+      },
+      "namedRegex": "^/api/plantillas\\-temporales/(?<nxtPtoken>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-temporales-2/[token]",
+      "regex": "^/api/plantillas\\-temporales\\-2/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPtoken": "nxtPtoken"
+      },
+      "namedRegex": "^/api/plantillas\\-temporales\\-2/(?<nxtPtoken>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-temporales-3/[token]",
+      "regex": "^/api/plantillas\\-temporales\\-3/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPtoken": "nxtPtoken"
+      },
+      "namedRegex": "^/api/plantillas\\-temporales\\-3/(?<nxtPtoken>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/sync-pago/[token]",
+      "regex": "^/api/sync\\-pago/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPtoken": "nxtPtoken"
+      },
+      "namedRegex": "^/api/sync\\-pago/(?<nxtPtoken>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/usuarios/[id]",
+      "regex": "^/api/usuarios/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/usuarios/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/asesor/multas/plantillas/complejas/[id]",
+      "regex": "^/asesor/multas/plantillas/complejas/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/asesor/multas/plantillas/complejas/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/asesor/plantilla/personalizada/[id]",
+      "regex": "^/asesor/plantilla/personalizada/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/asesor/plantilla/personalizada/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/asesor/plantilla/[id]",
+      "regex": "^/asesor/plantilla/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/asesor/plantilla/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/enlace-temporal/[token]",
+      "regex": "^/enlace\\-temporal/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPtoken": "nxtPtoken"
+      },
+      "namedRegex": "^/enlace\\-temporal/(?<nxtPtoken>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/gestion/multas/plantillas/complejas/[id]",
+      "regex": "^/gestion/multas/plantillas/complejas/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/gestion/multas/plantillas/complejas/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/gestion/multas/plantillas/personalizada/[id]",
+      "regex": "^/gestion/multas/plantillas/personalizada/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/gestion/multas/plantillas/personalizada/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/gestion/multas/plantillas/[id]",
+      "regex": "^/gestion/multas/plantillas/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/gestion/multas/plantillas/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/pago/[token]",
+      "regex": "^/pago/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPtoken": "nxtPtoken"
+      },
+      "namedRegex": "^/pago/(?<nxtPtoken>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/pay/[token]",
+      "regex": "^/pay/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPtoken": "nxtPtoken"
+      },
+      "namedRegex": "^/pay/(?<nxtPtoken>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/admin",
+      "regex": "^/admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin(?:/)?$"
+    },
+    {
+      "page": "/api/asesor/casos",
+      "regex": "^/api/asesor/casos(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/asesor/casos(?:/)?$"
+    },
+    {
+      "page": "/api/asesor/casos/debug",
+      "regex": "^/api/asesor/casos/debug(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/asesor/casos/debug(?:/)?$"
+    },
+    {
+      "page": "/api/auth/login-asesor",
+      "regex": "^/api/auth/login\\-asesor(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/login\\-asesor(?:/)?$"
+    },
+    {
+      "page": "/api/bases-pago/borrar-todo",
+      "regex": "^/api/bases\\-pago/borrar\\-todo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/bases\\-pago/borrar\\-todo(?:/)?$"
+    },
+    {
+      "page": "/api/bases-pago/listar",
+      "regex": "^/api/bases\\-pago/listar(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/bases\\-pago/listar(?:/)?$"
+    },
+    {
+      "page": "/api/cliente/probe",
+      "regex": "^/api/cliente/probe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/cliente/probe(?:/)?$"
+    },
+    {
+      "page": "/api/collection/assignable-users",
+      "regex": "^/api/collection/assignable\\-users(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/collection/assignable\\-users(?:/)?$"
+    },
+    {
+      "page": "/api/collection/casos",
+      "regex": "^/api/collection/casos(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/collection/casos(?:/)?$"
+    },
+    {
+      "page": "/api/collection/casos/auto-assign",
+      "regex": "^/api/collection/casos/auto\\-assign(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/collection/casos/auto\\-assign(?:/)?$"
+    },
+    {
+      "page": "/api/collection/casos/import",
+      "regex": "^/api/collection/casos/import(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/collection/casos/import(?:/)?$"
+    },
+    {
+      "page": "/api/collection/casos/resegment",
+      "regex": "^/api/collection/casos/resegment(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/collection/casos/resegment(?:/)?$"
+    },
+    {
+      "page": "/api/collection/casos/reset-assign",
+      "regex": "^/api/collection/casos/reset\\-assign(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/collection/casos/reset\\-assign(?:/)?$"
+    },
+    {
+      "page": "/api/collection/casos/wipe",
+      "regex": "^/api/collection/casos/wipe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/collection/casos/wipe(?:/)?$"
+    },
+    {
+      "page": "/api/db-info",
+      "regex": "^/api/db\\-info(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/db\\-info(?:/)?$"
+    },
+    {
+      "page": "/api/dev/set-asesor",
+      "regex": "^/api/dev/set\\-asesor(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/dev/set\\-asesor(?:/)?$"
+    },
+    {
+      "page": "/api/ligas/from-excel",
+      "regex": "^/api/ligas/from\\-excel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ligas/from\\-excel(?:/)?$"
+    },
+    {
+      "page": "/api/listas",
+      "regex": "^/api/listas(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/listas(?:/)?$"
+    },
+    {
+      "page": "/api/login",
+      "regex": "^/api/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/login(?:/)?$"
+    },
+    {
+      "page": "/api/logout",
+      "regex": "^/api/logout(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/logout(?:/)?$"
+    },
+    {
+      "page": "/api/otp/send",
+      "regex": "^/api/otp/send(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/otp/send(?:/)?$"
+    },
+    {
+      "page": "/api/otp/verify",
+      "regex": "^/api/otp/verify(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/otp/verify(?:/)?$"
+    },
+    {
+      "page": "/api/plantilla-pago",
+      "regex": "^/api/plantilla\\-pago(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plantilla\\-pago(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas",
+      "regex": "^/api/plantillas(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plantillas(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas/marcar-pagado",
+      "regex": "^/api/plantillas/marcar\\-pagado(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plantillas/marcar\\-pagado(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas/visual",
+      "regex": "^/api/plantillas/visual(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plantillas/visual(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-complejas",
+      "regex": "^/api/plantillas\\-complejas(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plantillas\\-complejas(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-complejas/config",
+      "regex": "^/api/plantillas\\-complejas/config(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plantillas\\-complejas/config(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-personalizadas",
+      "regex": "^/api/plantillas\\-personalizadas(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plantillas\\-personalizadas(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-personalizadas/config",
+      "regex": "^/api/plantillas\\-personalizadas/config(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plantillas\\-personalizadas/config(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-temporales",
+      "regex": "^/api/plantillas\\-temporales(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plantillas\\-temporales(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-temporales/config",
+      "regex": "^/api/plantillas\\-temporales/config(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plantillas\\-temporales/config(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-temporales-2",
+      "regex": "^/api/plantillas\\-temporales\\-2(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plantillas\\-temporales\\-2(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-temporales-2/config",
+      "regex": "^/api/plantillas\\-temporales\\-2/config(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plantillas\\-temporales\\-2/config(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-temporales-3",
+      "regex": "^/api/plantillas\\-temporales\\-3(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plantillas\\-temporales\\-3(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas-temporales-3/config",
+      "regex": "^/api/plantillas\\-temporales\\-3/config(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plantillas\\-temporales\\-3/config(?:/)?$"
+    },
+    {
+      "page": "/api/reportes/cron",
+      "regex": "^/api/reportes/cron(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/reportes/cron(?:/)?$"
+    },
+    {
+      "page": "/api/reportes/download",
+      "regex": "^/api/reportes/download(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/reportes/download(?:/)?$"
+    },
+    {
+      "page": "/api/reportes/generar",
+      "regex": "^/api/reportes/generar(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/reportes/generar(?:/)?$"
+    },
+    {
+      "page": "/api/reportes/list",
+      "regex": "^/api/reportes/list(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/reportes/list(?:/)?$"
+    },
+    {
+      "page": "/api/reportes/manual",
+      "regex": "^/api/reportes/manual(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/reportes/manual(?:/)?$"
+    },
+    {
+      "page": "/api/reportes/schedule",
+      "regex": "^/api/reportes/schedule(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/reportes/schedule(?:/)?$"
+    },
+    {
+      "page": "/api/usuarios",
+      "regex": "^/api/usuarios(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/usuarios(?:/)?$"
+    },
+    {
+      "page": "/asesor",
+      "regex": "^/asesor(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/asesor(?:/)?$"
+    },
+    {
+      "page": "/asesor/collection/casos",
+      "regex": "^/asesor/collection/casos(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/asesor/collection/casos(?:/)?$"
+    },
+    {
+      "page": "/asesor/dashboard",
+      "regex": "^/asesor/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/asesor/dashboard(?:/)?$"
+    },
+    {
+      "page": "/asesor/multas",
+      "regex": "^/asesor/multas(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/asesor/multas(?:/)?$"
+    },
+    {
+      "page": "/asesor/multas/new",
+      "regex": "^/asesor/multas/new(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/asesor/multas/new(?:/)?$"
+    },
+    {
+      "page": "/asesor/multas/templates",
+      "regex": "^/asesor/multas/templates(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/asesor/multas/templates(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/gestion",
+      "regex": "^/gestion(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gestion(?:/)?$"
+    },
+    {
+      "page": "/gestion/base",
+      "regex": "^/gestion/base(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gestion/base(?:/)?$"
+    },
+    {
+      "page": "/gestion/base-datos",
+      "regex": "^/gestion/base\\-datos(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gestion/base\\-datos(?:/)?$"
+    },
+    {
+      "page": "/gestion/collection/aplicaciones",
+      "regex": "^/gestion/collection/aplicaciones(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gestion/collection/aplicaciones(?:/)?$"
+    },
+    {
+      "page": "/gestion/collection/casos",
+      "regex": "^/gestion/collection/casos(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gestion/collection/casos(?:/)?$"
+    },
+    {
+      "page": "/gestion/multas",
+      "regex": "^/gestion/multas(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gestion/multas(?:/)?$"
+    },
+    {
+      "page": "/gestion/multas/new",
+      "regex": "^/gestion/multas/new(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gestion/multas/new(?:/)?$"
+    },
+    {
+      "page": "/gestion/multas/templates",
+      "regex": "^/gestion/multas/templates(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gestion/multas/templates(?:/)?$"
+    },
+    {
+      "page": "/gestion/reportes",
+      "regex": "^/gestion/reportes(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gestion/reportes(?:/)?$"
+    },
+    {
+      "page": "/gestion/usuarios",
+      "regex": "^/gestion/usuarios(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gestion/usuarios(?:/)?$"
+    },
+    {
+      "page": "/gracias",
+      "regex": "^/gracias(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gracias(?:/)?$"
+    },
+    {
+      "page": "/landing",
+      "regex": "^/landing(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/landing(?:/)?$"
+    },
+    {
+      "page": "/plantilla-pago",
+      "regex": "^/plantilla\\-pago(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/plantilla\\-pago(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

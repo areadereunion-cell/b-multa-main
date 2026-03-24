@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 58, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/adlan/Downloads/multa-main/multa-main/app/api/bases-pago/borrar-todo/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\nimport { Pool } from \"pg\";\r\n\r\nexport const runtime = \"nodejs\";\r\n\r\nconst pool = new Pool({\r\n  connectionString: process.env.DATABASE_URL,\r\n});\r\n\r\nexport async function DELETE() {\r\n  try {\r\n    await pool.query(\"DELETE FROM plantillas_temporales\");\r\n    return NextResponse.json({ success: true });\r\n  } catch (e: any) {\r\n    return NextResponse.json(\r\n      { error: e.message },\r\n      { status: 500 }\r\n    );\r\n  }\r\n}\r\n"],"names":[],"mappings":";;;;;;AAAA;AACA;;;;;;;AAEO,MAAM,UAAU;AAEvB,MAAM,OAAO,IAAI,4GAAI,CAAC;IACpB,kBAAkB,QAAQ,GAAG,CAAC,YAAY;AAC5C;AAEO,eAAe;IACpB,IAAI;QACF,MAAM,KAAK,KAAK,CAAC;QACjB,OAAO,+LAAY,CAAC,IAAI,CAAC;YAAE,SAAS;QAAK;IAC3C,EAAE,OAAO,GAAQ;QACf,OAAO,+LAAY,CAAC,IAAI,CACtB;YAAE,OAAO,EAAE,OAAO;QAAC,GACnB;YAAE,QAAQ;QAAI;IAElB;AACF"}}]
+}

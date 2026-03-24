@@ -1,0 +1,3 @@
+{
+  "/api/sync-pago/[token]/route": "app/api/sync-pago/[token]/route.js"
+}

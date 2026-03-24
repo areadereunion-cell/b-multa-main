@@ -1,0 +1,3 @@
+module.exports=[31244,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(57891);a.n(d("[project]/Downloads/multa-main/multa-main/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},39776,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(57891);a.n(d("[project]/Downloads/multa-main/multa-main/node_modules/next/dist/client/components/builtin/global-error.js"))},9485,a=>{"use strict";a.i(31244);var b=a.i(39776);a.n(b)}];
+
+//# sourceMappingURL=b8250_next_dist_client_components_builtin_global-error_b5184c97.js.map

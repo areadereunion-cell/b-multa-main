@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/asesor/layout,_N_T_/asesor/collection/layout,_N_T_/asesor/collection/casos/layout,_N_T_/asesor/collection/casos/page,_N_T_/asesor/collection/casos"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/asesor/collection/casos/__PAGE__",
+    "/asesor/collection/casos",
+    "/asesor/collection",
+    "/asesor",
+    "/_index",
+    "/_head"
+  ]
+}

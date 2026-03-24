@@ -1,0 +1,3 @@
+{
+  "/api/collection/casos/[numero_prestamo]/generar-liga/route": "app/api/collection/casos/[numero_prestamo]/generar-liga/route.js"
+}
