@@ -5,24 +5,31 @@ export const runtime = "nodejs";
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
+  ssl:
+    process.env.NODE_ENV === "production"
+      ? { rejectUnauthorized: false }
+      : undefined,
 });
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    // tú quieres crear con un nombre (lo guardo en subproducto)
-    const subproducto = String(body?.nombre ?? body?.subproducto ?? "").trim();
+    const subproducto = String(
+      body?.nombre ?? body?.subproducto ?? ""
+    ).trim();
 
     if (!subproducto) {
-      return NextResponse.json({ error: "Nombre requerido" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Nombre requerido" },
+        { status: 400 }
+      );
     }
 
-    // mismo esquema que rápida
     const cuenta_bancaria = "0000000000";
-    const url = "/plantillas/custom/default.png"; // o la ruta que exista
+    const url = "/plantillas/custom/default.png";
     const tipo = "personalizada";
-    const visual = "no"; // o "si" si quieres que aparezca habilitada
+    const visual = "no";
 
     const result = await pool.query(
       `
@@ -37,6 +44,9 @@ export async function POST(req: Request) {
     return NextResponse.json(result.rows[0], { status: 201 });
   } catch (e: any) {
     console.error("ERROR plantilla personalizada:", e);
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return NextResponse.json(
+      { error: e?.message || "Error interno" },
+      { status: 500 }
+    );
   }
 }

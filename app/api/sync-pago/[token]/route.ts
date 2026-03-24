@@ -1,60 +1,68 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { Pool } from "pg";
+
+export const runtime = "nodejs";
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
+  ssl:
+    process.env.NODE_ENV === "production"
+      ? { rejectUnauthorized: false }
+      : undefined,
 });
 
-type RouteContext = {
-  params: Promise<{ token: string }>;
-};
-
-export async function POST(
-  _req: NextRequest,
-  context: RouteContext
-): Promise<Response> {
-  const client = await pool.connect();
-
+export async function POST(req: Request) {
   try {
-    const { token } = await context.params;
+    let token: string | null = null;
 
-    await client.query("BEGIN");
+    try {
+      const body = await req.json();
+      if (body?.token != null) {
+        token = String(body.token).trim();
+      }
+    } catch {}
 
-    // Solo verificar que exista la plantilla, pero NO marcar pagado
-    const plantilla = await client.query(
+    if (!token) {
+      const { searchParams } = new URL(req.url);
+      const queryToken = searchParams.get("token");
+      if (queryToken) {
+        token = queryToken.trim();
+      }
+    }
+
+    if (!token) {
+      return NextResponse.json(
+        { error: "Token requerido" },
+        { status: 400 }
+      );
+    }
+
+    const result = await pool.query(
       `
-      SELECT id, token, pagado
-      FROM plantillas_temporales
+      UPDATE plantillas_temporales
+      SET pagado = false
       WHERE token = $1
-      LIMIT 1
       `,
       [token]
     );
 
-    if ((plantilla.rowCount ?? 0) === 0) {
-      await client.query("ROLLBACK");
+    if ((result.rowCount ?? 0) === 0) {
       return NextResponse.json(
-        { error: "Plantilla no encontrada" },
+        { error: "Token no encontrado" },
         { status: 404 }
       );
     }
 
-    await client.query("COMMIT");
-
     return NextResponse.json({
       ok: true,
       token,
-      pagado: plantilla.rows[0].pagado ?? false,
+      updated: result.rowCount ?? 0,
     });
-  } catch (error) {
-    await client.query("ROLLBACK");
-    console.error("Error en /api/sync-pago/[token]:", error);
-
+  } catch (error: any) {
+    console.error("❌ Error actualizando pago:", error);
     return NextResponse.json(
-      { error: "Error sync" },
+      { error: error?.message || "Error actualizando pago" },
       { status: 500 }
     );
-  } finally {
-    client.release();
   }
 }

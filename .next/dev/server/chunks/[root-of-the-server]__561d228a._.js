@@ -140,32 +140,32 @@ async function POST(req) {
             existe = (check.rowCount ?? 0) > 0;
         }
         const result = await client.query(`
-      INSERT INTO plantillas_temporales (
-        token,
-        producto,
-        tipo_plantilla,
-        metodo_pago,
-        cuenta_bancaria,
-        logo_url,
-        monto,
-        importe_pagar,
-        fecha_vencimiento,
-        dias_vencidos,
-        nombre_cliente,
-        telefono_cliente,
-        mostrar_extras,
-        card_bg_color,
-        primary_color,
-        locked,
-        foto_habilitada,
-        metodo_pago_lista_id,
-        liga_pago_lista_id,
-        created_at
-      ) VALUES (
-        $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,NOW()
-      )
-      RETURNING *
-      `, [
+        INSERT INTO plantillas_temporales (
+          token,
+          producto,
+          tipo_plantilla,
+          metodo_pago,
+          cuenta_bancaria,
+          logo_url,
+          monto,
+          importe_pagar,
+          fecha_vencimiento,
+          dias_vencidos,
+          nombre_cliente,
+          telefono_cliente,
+          mostrar_extras,
+          card_bg_color,
+          primary_color,
+          locked,
+          foto_habilitada,
+          metodo_pago_lista_id,
+          liga_pago_lista_id,
+          created_at
+        ) VALUES (
+          $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,NOW()
+        )
+        RETURNING *
+        `, [
             token,
             subproducto,
             tipo_plantilla,

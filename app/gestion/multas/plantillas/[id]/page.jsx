@@ -1,11 +1,9 @@
 "use client";
+
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 
 export default function PagoFastCashForm({ data = {} }) {
-  // =========================
-  // Helpers
-  // =========================
   const isHex = (s) => /^#([0-9A-Fa-f]{6})$/.test(String(s || ""));
   const origin = typeof window !== "undefined" ? window.location.origin : "";
 
@@ -14,10 +12,8 @@ export default function PagoFastCashForm({ data = {} }) {
     let s = String(u).trim().replaceAll("\\", "/");
 
     if (/^https?:\/\//i.test(s)) return s;
-
     if (s.startsWith("public/uploads/")) s = s.replace("public/", "");
     if (s.startsWith("uploads/")) s = `/${s}`;
-
     if (s.startsWith("/")) return origin ? `${origin}${s}` : s;
 
     return origin ? `${origin}/${s}` : s;
@@ -31,10 +27,7 @@ export default function PagoFastCashForm({ data = {} }) {
     return out;
   };
 
-  // =========================
-  // 1) ID: primero del URL, luego del prop data
-  // =========================
-  const params = useParams(); // { id: "123" }
+  const params = useParams();
   const idFromUrl = params?.id ? String(params.id) : null;
 
   const idFromData =
@@ -49,9 +42,6 @@ export default function PagoFastCashForm({ data = {} }) {
 
   const plantillaId = idFromUrl ?? (idFromData ? String(idFromData) : null);
 
-  // =========================
-  // 2) Traer plantilla desde BD por ID
-  // =========================
   const [plantillaBD, setPlantillaBD] = useState(null);
   const [loadingPlantilla, setLoadingPlantilla] = useState(true);
   const [errorPlantilla, setErrorPlantilla] = useState("");
@@ -64,15 +54,16 @@ export default function PagoFastCashForm({ data = {} }) {
       setErrorPlantilla("");
 
       try {
-        // ✅ SIEMPRE por ID cuando existe
-        // /api/plantillas/[id] => /api/plantillas/${id}
         const url = plantillaId
           ? `/api/plantillas/${encodeURIComponent(plantillaId)}`
-          : `/api/plantilla-pago`; // (opcional) fallback SOLO si no hay ID
+          : `/api/plantilla-pago`;
 
         const res = await fetch(url, { cache: "no-store" });
         const json = await res.json().catch(() => ({}));
-        if (!res.ok) throw new Error(json?.error || "No se pudo cargar la plantilla");
+
+        if (!res.ok) {
+          throw new Error(json?.error || "No se pudo cargar la plantilla");
+        }
 
         const plantilla = json?.data ?? json;
         if (!cancel) setPlantillaBD(plantilla);
@@ -88,24 +79,20 @@ export default function PagoFastCashForm({ data = {} }) {
     }
 
     fetchPlantilla();
+
     return () => {
       cancel = true;
     };
   }, [plantillaId]);
 
-  // =========================
-  // 3) Merge BD + temporal (data)
-  // =========================
   const merged = useMemo(
     () => mergeDefined(plantillaBD ?? {}, data ?? {}),
     [plantillaBD, data]
   );
 
-  // =========================
-  // 4) Derivados (SIN defaults)
-  // =========================
-  const producto = merged?.subproducto ?? merged?.ubproducto ?? "";
+  const producto = merged?.subproducto ?? merged?.ubproducto ?? merged?.producto ?? "";
   const cuentaBancaria = merged?.cuenta_bancaria ?? "";
+
   const logoUrlRaw =
     merged?.url ??
     merged?.logo_url ??
@@ -114,23 +101,14 @@ export default function PagoFastCashForm({ data = {} }) {
     merged?.logo ??
     null;
 
-  const resolvedLogoUrl = useMemo(
-    () => normalizeUrl(logoUrlRaw),
-    [logoUrlRaw]
-  );
+  const resolvedLogoUrl = useMemo(() => normalizeUrl(logoUrlRaw), [logoUrlRaw]);
 
   const baseListo = !!producto && !!cuentaBancaria && !!logoUrlRaw;
 
-  // =========================
-  // 5) EXTRAS EDITABLES
-  // =========================
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
   const [mostrarExtras, setMostrarExtras] = useState(true);
 
-  // =========================
-  // 6) EDITABLES
-  // =========================
   const [monto, setMonto] = useState("");
   const [importePagar, setImportePagar] = useState("");
   const [fechaVencimiento, setFechaVencimiento] = useState("");
@@ -138,34 +116,37 @@ export default function PagoFastCashForm({ data = {} }) {
 
   useEffect(() => {
     if (merged?.monto != null && monto === "") setMonto(String(merged.monto));
-    if (merged?.importe_pagar != null && importePagar === "")
+    if (merged?.importe_pagar != null && importePagar === "") {
       setImportePagar(String(merged.importe_pagar));
-    if (merged?.fecha_vencimiento && !fechaVencimiento)
+    }
+    if (merged?.fecha_vencimiento && !fechaVencimiento) {
       setFechaVencimiento(String(merged.fecha_vencimiento));
-    if (typeof merged?.dias_vencidos === "number")
+    }
+    if (typeof merged?.dias_vencidos === "number") {
       setDiasVencidos(merged.dias_vencidos);
+    }
 
     if (merged?.nombre_cliente && !nombre) setNombre(String(merged.nombre_cliente));
     if (merged?.telefono_cliente && !telefono) setTelefono(String(merged.telefono_cliente));
     if (typeof merged?.mostrar_extras === "boolean") setMostrarExtras(merged.mostrar_extras);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [merged]);
+  }, [merged, monto, importePagar, fechaVencimiento, nombre, telefono]);
 
   useEffect(() => {
     setImportePagar(monto);
   }, [monto]);
 
   useEffect(() => {
-    if (!fechaVencimiento) return setDiasVencidos(0);
+    if (!fechaVencimiento) {
+      setDiasVencidos(0);
+      return;
+    }
+
     const hoy = new Date();
     const venc = new Date(fechaVencimiento + "T00:00:00");
     const diff = Math.ceil((venc.getTime() - hoy.getTime()) / 86400000);
     setDiasVencidos(diff);
   }, [fechaVencimiento]);
 
-  // =========================
-  // 7) COLORES
-  // =========================
   const [cardBg, setCardBg] = useState("#ffffff");
   const [cardBgHexInput, setCardBgHexInput] = useState("#ffffff");
   const [primaryColor, setPrimaryColor] = useState("#0F56F7");
@@ -182,7 +163,6 @@ export default function PagoFastCashForm({ data = {} }) {
       setPrimaryColor(String(merged.primary_color));
       setPrimaryHexInput(String(merged.primary_color));
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [merged?.card_bg_color, merged?.primary_color]);
 
   const [saving, setSaving] = useState(false);
@@ -208,70 +188,54 @@ export default function PagoFastCashForm({ data = {} }) {
     }
   };
 
-  const cardBgOptions = [
-    { label: "Blanco", value: "#FFFFFF" },
-    { label: "Gris claro", value: "#F8FAFC" },
-    { label: "Gris suave", value: "#EEF2F6" },
-    { label: "Marfil", value: "#FFF4E6" },
-    { label: "Crema", value: "#FFF7ED" },
-    { label: "Very Light Blue", value: "#F0F9FF" },
-    { label: "Lavanda", value: "#F5F3FF" },
-    { label: "Rosa claro", value: "#FFF1F2" },
-    { label: "Verde suave", value: "#ECFDF5" },
-    { label: "Amarillo suave", value: "#FFFBEB" },
-    { label: "Gris perla", value: "#F1F5F9" },
-    { label: "Humo", value: "#F3F4F6" },
-  ];
-
-  const primaryOptions = [
-    { label: "Azul (default)", value: "#0F56F7" },
-    { label: "Naranja", value: "#FF6B00" },
-    { label: "Verde", value: "#10B981" },
-    { label: "Rojo", value: "#EF4444" },
-    { label: "Morado", value: "#7C3AED" },
-    { label: "Teal", value: "#06B6D4" },
-    { label: "Indigo", value: "#4F46E5" },
-    { label: "Cian", value: "#0891B2" },
-    { label: "Rosa fuerte", value: "#EC4899" },
-    { label: "Amarillo", value: "#F59E0B" },
-    { label: "Gris oscuro", value: "#374151" },
-    { label: "Negro", value: "#111827" },
-  ];
-
-  const disabled = saving;
-
   async function crearLinkEstatico() {
     const payload = {
-      // ✅ referencia real de la plantilla: ID DEL URL
-      plantilla_pago_id: plantillaId,
-
-      subproducto: merged.subproducto ?? merged.ubproducto,
-      cuenta_bancaria: merged.cuenta_bancaria,
-      url: resolvedLogoUrl,
-
-      monto,
-      importe_pagar: importePagar,
+      plantilla_pago_id: plantillaId ? Number(plantillaId) : null,
+      tipo_plantilla: merged?.tipo_plantilla ?? "1",
+      subproducto: merged?.subproducto ?? merged?.ubproducto ?? merged?.producto ?? "",
+      cuenta_bancaria: merged?.cuenta_bancaria ?? "",
+      metodo_pago: merged?.metodo_pago ?? merged?.metodo_pago_label ?? "",
+      metodo_pago_lista_id: merged?.metodo_pago_lista_id ?? null,
+      liga_pago_lista_id: merged?.liga_pago_lista_id ?? null,
+      url: resolvedLogoUrl ?? "",
+      monto: monto || "",
+      importe_pagar: importePagar || "",
       fecha_vencimiento: fechaVencimiento || null,
-      dias_vencidos: diasVencidos,
-
-      nombre_cliente: nombre,
-      telefono_cliente: telefono,
-
-      mostrar_extras: mostrarExtras,
-      card_bg_color: cardBg,
-      primary_color: primaryColor,
+      dias_vencidos: Number.isFinite(diasVencidos) ? diasVencidos : 0,
+      nombre_cliente: nombre || "",
+      telefono_cliente: telefono || "",
+      mostrar_extras: Boolean(mostrarExtras),
+      card_bg_color: cardBg || "#FFFFFF",
+      primary_color: primaryColor || "#0F56F7",
       locked: true,
     };
 
     const res = await fetch("/api/plantillas-temporales-2", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(payload),
     });
 
     const json = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error(json?.error || "No se pudo generar el link");
-    return String(json.link);
+
+    if (!res.ok) {
+      throw new Error(json?.error || json?.message || `Error ${res.status} generando link`);
+    }
+
+    const token = String(json?.token ?? "").trim();
+    const link = String(json?.link ?? "").trim();
+
+    if (!token) {
+      throw new Error("El backend no devolvió token");
+    }
+
+    if (!link) {
+      throw new Error("El backend no devolvió link");
+    }
+
+    return { token, link };
   }
 
   const handleConfirmAndLock = async () => {
@@ -279,19 +243,36 @@ export default function PagoFastCashForm({ data = {} }) {
     setSaving(true);
 
     try {
-      const link = await crearLinkEstatico();
+      if (!plantillaId) {
+        throw new Error("Falta plantilla_pago_id");
+      }
+
+      const { token, link } = await crearLinkEstatico();
+
+      const syncRes = await fetch(`/api/sync-pago/${encodeURIComponent(token)}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token }),
+      });
+
+      const syncJson = await syncRes.json().catch(() => ({}));
+
+      if (!syncRes.ok) {
+        throw new Error(syncJson?.error || "Error actualizando pago");
+      }
+
       setShareLink(link);
       window.location.href = link;
     } catch (e) {
+      console.error("❌ Error en handleConfirmAndLock:", e);
       alert(e?.message || "Error generando link");
     } finally {
       setSaving(false);
     }
   };
 
-  // =========================
-  // UI Estados
-  // =========================
   if (loadingPlantilla || (!baseListo && !errorPlantilla)) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#152032] text-white p-6">
@@ -311,9 +292,6 @@ export default function PagoFastCashForm({ data = {} }) {
     );
   }
 
-  // =========================
-  // Render
-  // =========================
   return (
     <div className="w-full min-h-screen flex items-center justify-center p-6 relative bg-[#152032]">
       <div className="absolute right-6 top-16 z-50 flex flex-col gap-4 w-60">
@@ -325,35 +303,14 @@ export default function PagoFastCashForm({ data = {} }) {
               checked={mostrarExtras}
               onChange={() => setMostrarExtras(!mostrarExtras)}
               className="sr-only peer"
-              disabled={disabled}
+              disabled={saving}
             />
-            <div
-              className="w-11 h-6 bg-gray-300 peer-checked:bg-blue-600 rounded-full relative
-              after:content-[''] after:w-5 after:h-5 after:bg-white after:rounded-full
-              after:absolute after:left-1 after:top-0.5 peer-checked:after:translate-x-5 transition-all"
-            />
+            <div className="w-11 h-6 bg-gray-300 peer-checked:bg-blue-600 rounded-full relative after:content-[''] after:w-5 after:h-5 after:bg-white after:rounded-full after:absolute after:left-1 after:top-0.5 peer-checked:after:translate-x-5 transition-all" />
           </label>
         </div>
 
         <div className="bg-white/5 p-3 rounded-lg">
           <div className="text-xs text-white mb-2 font-medium">Fondo de la tarjeta</div>
-          <select
-            className="w-full p-2 rounded-md mb-2 text-sm"
-            value={cardBg}
-            onChange={(e) => {
-              setCardBg(e.target.value);
-              setCardBgHexInput(e.target.value);
-              setCardBgError("");
-            }}
-            disabled={disabled}
-          >
-            {cardBgOptions.map((o) => (
-              <option key={o.value} value={o.value}>
-                {o.label} — {o.value}
-              </option>
-            ))}
-          </select>
-
           <div className="flex gap-2">
             <input
               type="text"
@@ -361,7 +318,7 @@ export default function PagoFastCashForm({ data = {} }) {
               onChange={(e) => handleCardBgHexChange(e.target.value)}
               className="flex-1 p-2 rounded-md text-sm"
               placeholder="#RRGGBB"
-              disabled={disabled}
+              disabled={saving}
             />
             <div
               className="w-10 h-10 rounded-md border"
@@ -372,24 +329,7 @@ export default function PagoFastCashForm({ data = {} }) {
         </div>
 
         <div className="bg-white/5 p-3 rounded-lg">
-          <div className="text-xs text-white mb-2 font-medium">Color del botón / burbuja</div>
-          <select
-            className="w-full p-2 rounded-md mb-2 text-sm"
-            value={primaryColor}
-            onChange={(e) => {
-              setPrimaryColor(e.target.value);
-              setPrimaryHexInput(e.target.value);
-              setPrimaryError("");
-            }}
-            disabled={disabled}
-          >
-            {primaryOptions.map((o) => (
-              <option key={o.value} value={o.value}>
-                {o.label} — {o.value}
-              </option>
-            ))}
-          </select>
-
+          <div className="text-xs text-white mb-2 font-medium">Color principal</div>
           <div className="flex gap-2">
             <input
               type="text"
@@ -397,7 +337,7 @@ export default function PagoFastCashForm({ data = {} }) {
               onChange={(e) => handlePrimaryHexChange(e.target.value)}
               className="flex-1 p-2 rounded-md text-sm"
               placeholder="#RRGGBB"
-              disabled={disabled}
+              disabled={saving}
             />
             <div
               className="w-10 h-10 rounded-md border"
@@ -411,13 +351,6 @@ export default function PagoFastCashForm({ data = {} }) {
           <div className="bg-white/5 p-3 rounded-lg">
             <div className="text-xs text-white mb-2 font-medium">Link generado</div>
             <input className="w-full p-2 rounded-md text-sm" value={shareLink} readOnly />
-            <button
-              className="mt-2 w-full p-2 rounded-md text-sm bg-white/10 hover:bg-white/20 text-white"
-              onClick={() => navigator.clipboard.writeText(shareLink)}
-              type="button"
-            >
-              Copiar link
-            </button>
           </div>
         )}
       </div>
@@ -437,7 +370,6 @@ export default function PagoFastCashForm({ data = {} }) {
                 className="w-full h-full object-cover"
                 alt="logo"
                 crossOrigin="anonymous"
-                onError={() => console.log("❌ NO carga IMG:", resolvedLogoUrl)}
               />
             ) : (
               <span className="text-lg font-bold text-[#142546]">IMG</span>
@@ -447,7 +379,10 @@ export default function PagoFastCashForm({ data = {} }) {
           <h2 className="text-lg font-bold text-[#142546] mt-4">{producto}</h2>
         </div>
 
-        <div className="mx-4 -mt-4 rounded-xl p-4 text-white shadow-md" style={{ backgroundColor: primaryColor }}>
+        <div
+          className="mx-4 -mt-4 rounded-xl p-4 text-white shadow-md"
+          style={{ backgroundColor: primaryColor }}
+        >
           <div className="text-xs opacity-90">Monto de Préstamo</div>
           <input
             type="text"
@@ -455,7 +390,7 @@ export default function PagoFastCashForm({ data = {} }) {
             onChange={(e) => setMonto(e.target.value)}
             placeholder="$0.00"
             className="w-full bg-transparent text-3xl font-bold outline-none"
-            disabled={disabled}
+            disabled={saving}
           />
         </div>
 
@@ -473,7 +408,7 @@ export default function PagoFastCashForm({ data = {} }) {
                 value={importePagar}
                 onChange={(e) => setImportePagar(e.target.value)}
                 className="text-gray-400 text-right w-28 bg-transparent font-semibold outline-none"
-                disabled={disabled}
+                disabled={saving}
               />
             </div>
 
@@ -484,7 +419,7 @@ export default function PagoFastCashForm({ data = {} }) {
                 value={fechaVencimiento}
                 onChange={(e) => setFechaVencimiento(e.target.value)}
                 className="text-gray-400 text-right bg-transparent outline-none"
-                disabled={disabled}
+                disabled={saving}
               />
             </div>
 
@@ -498,7 +433,9 @@ export default function PagoFastCashForm({ data = {} }) {
             <div className="text-sm font-medium text-gray-700 mb-2">Elige el método de pago</div>
             <div className="flex items-center justify-center bg-[#F8FAFB] p-4 rounded-md">
               <div className="text-center">
-                <div className="text-xs text-gray-500">SPEI</div>
+                <div className="text-xs text-gray-500">
+                  {merged?.metodo_pago ?? merged?.metodo_pago_label ?? "Método de pago"}
+                </div>
                 <div className="text-lg md:text-xl lg:text-2xl font-extrabold text-gray-700 mt-1">
                   {cuentaBancaria}
                 </div>
@@ -515,7 +452,7 @@ export default function PagoFastCashForm({ data = {} }) {
                   placeholder="Nombre"
                   value={nombre}
                   onChange={(e) => setNombre(e.target.value)}
-                  disabled={disabled}
+                  disabled={saving}
                 />
               </div>
 
@@ -526,7 +463,7 @@ export default function PagoFastCashForm({ data = {} }) {
                   placeholder="Teléfono"
                   value={telefono}
                   onChange={(e) => setTelefono(e.target.value)}
-                  disabled={disabled}
+                  disabled={saving}
                 />
               </div>
             </div>
@@ -536,7 +473,7 @@ export default function PagoFastCashForm({ data = {} }) {
             onClick={handleConfirmAndLock}
             className="w-full text-white p-3 rounded-xl text-lg font-semibold mt-2 disabled:opacity-60"
             style={{ backgroundColor: primaryColor }}
-            disabled={disabled}
+            disabled={saving}
             type="button"
           >
             {saving ? "Generando link..." : "Confirmar y Generar Link"}

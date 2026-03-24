@@ -297,13 +297,7 @@ export default function PagoFastCashStatic({
             </div>
           )}
 
-          <button
-            type="button"
-            className="w-full rounded-xl py-4 text-white font-semibold text-lg shadow-md"
-            style={{ backgroundColor: primaryColor }}
-          >
-            Confirmar y Generar Link
-          </button>
+
         </div>
       </div>
     </div>

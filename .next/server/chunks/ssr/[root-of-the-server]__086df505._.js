@@ -1,3 +1,0 @@
-module.exports=[54799,(a,b,c)=>{b.exports=a.x("crypto",()=>require("crypto"))},88947,(a,b,c)=>{b.exports=a.x("stream",()=>require("stream"))},874,(a,b,c)=>{b.exports=a.x("buffer",()=>require("buffer"))},235,a=>{"use strict";var b=a.i(53571);a.i(99660);var c=a.i(37616),d=a.i(75343);async function e({children:a}){let e=await (0,d.getSession)();return e||(0,c.redirect)("/admin?redirectTo=/gestion"),(0,d.requireRole)(e,["admin"])||(0,c.redirect)("/403"),(0,b.jsx)("div",{className:"relative min-h-screen bg-black",children:(0,b.jsx)("main",{className:" min-h-screen transition-all duration-300 ",style:{paddingLeft:"var(--sidebar-w)"},children:a})})}a.s(["default",()=>e])}];
-
-//# sourceMappingURL=%5Broot-of-the-server%5D__086df505._.js.map

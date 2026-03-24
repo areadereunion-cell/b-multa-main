@@ -58,7 +58,9 @@ return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, _
 
 __turbopack_context__.s([
     "POST",
-    ()=>POST
+    ()=>POST,
+    "runtime",
+    ()=>runtime
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/b-multa-main/multa-main/node_modules/next/server.js [app-route] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$externals$5d2f$pg__$5b$external$5d$__$28$pg$2c$__esm_import$29$__ = __turbopack_context__.i("[externals]/pg [external] (pg, esm_import)");
@@ -68,47 +70,60 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 [__TURBOPACK__imported__module__$5b$externals$5d2f$pg__$5b$external$5d$__$28$pg$2c$__esm_import$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
 ;
 ;
+const runtime = "nodejs";
 const pool = new __TURBOPACK__imported__module__$5b$externals$5d2f$pg__$5b$external$5d$__$28$pg$2c$__esm_import$29$__["Pool"]({
-    connectionString: process.env.DATABASE_URL
+    connectionString: process.env.DATABASE_URL,
+    ssl: ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : undefined
 });
-async function POST(_req, context) {
-    const client = await pool.connect();
+async function POST(req) {
     try {
-        const { token } = await context.params;
-        await client.query("BEGIN");
-        // Solo verificar que exista la plantilla, pero NO marcar pagado
-        const plantilla = await client.query(`
-      SELECT id, token, pagado
-      FROM plantillas_temporales
+        let token = null;
+        try {
+            const body = await req.json();
+            if (body?.token != null) {
+                token = String(body.token).trim();
+            }
+        } catch  {}
+        if (!token) {
+            const { searchParams } = new URL(req.url);
+            const queryToken = searchParams.get("token");
+            if (queryToken) {
+                token = queryToken.trim();
+            }
+        }
+        if (!token) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                error: "Token requerido"
+            }, {
+                status: 400
+            });
+        }
+        const result = await pool.query(`
+      UPDATE plantillas_temporales
+      SET pagado = false
       WHERE token = $1
-      LIMIT 1
       `, [
             token
         ]);
-        if ((plantilla.rowCount ?? 0) === 0) {
-            await client.query("ROLLBACK");
+        if ((result.rowCount ?? 0) === 0) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: "Plantilla no encontrada"
+                error: "Token no encontrado"
             }, {
                 status: 404
             });
         }
-        await client.query("COMMIT");
         return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             ok: true,
             token,
-            pagado: plantilla.rows[0].pagado ?? false
+            updated: result.rowCount ?? 0
         });
     } catch (error) {
-        await client.query("ROLLBACK");
-        console.error("Error en /api/sync-pago/[token]:", error);
+        console.error("❌ Error actualizando pago:", error);
         return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            error: "Error sync"
+            error: error?.message || "Error actualizando pago"
         }, {
             status: 500
         });
-    } finally{
-        client.release();
     }
 }
 __turbopack_async_result__();

@@ -560,6 +560,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/api/listas/items/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/listas/items">> = Specific
+  const handler = {} as typeof import("../../../app/api/listas/items/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/api/listas/items/tipo/[tipo]/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/listas/items/tipo/[tipo]">> = Specific
@@ -861,6 +870,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/sync-pago/[token]">> = Specific
   const handler = {} as typeof import("../../../app/api/sync-pago/[token]/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/api/sync-pago/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/sync-pago">> = Specific
+  const handler = {} as typeof import("../../../app/api/sync-pago/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

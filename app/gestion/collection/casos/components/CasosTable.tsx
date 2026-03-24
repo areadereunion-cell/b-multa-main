@@ -128,6 +128,47 @@ export default function CasosTable({
     }
   }
 
+  async function generarLiga(row: Caso) {
+    const key = row.numero_prestamo;
+
+    try {
+      setGenerating((p) => ({ ...p, [key]: true }));
+
+      const res = await fetch(
+        `/api/collection/casos/${encodeURIComponent(key)}/generar-liga`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            overwrite: true,
+          }),
+        }
+      );
+
+      const j = await res.json();
+
+      if (!res.ok || !j?.ok) {
+        throw new Error(j?.error || "Error generando liga");
+      }
+
+      await load();
+
+      const finalLink =
+        j.link ||
+        j.liga_pago ||
+        j.data?.liga_pago ||
+        null;
+
+      if (finalLink) {
+        window.open(finalLink, "_blank", "noopener,noreferrer");
+      }
+    } catch (e: any) {
+      alert(e?.message || "Error");
+    } finally {
+      setGenerating((p) => ({ ...p, [key]: false }));
+    }
+  }
+
   const filtered = useMemo(() => {
     const s = (v: any) => String(v ?? "").toLowerCase().trim();
     const onlyDigits = (v: any) => String(v ?? "").replace(/\D/g, "");
@@ -297,41 +338,8 @@ export default function CasosTable({
                   <div className="flex items-center justify-center gap-3">
                     <button
                       className="text-sky-700 hover:underline disabled:opacity-50"
-                      disabled={
-                        !!row.liga_pago || generating[row.numero_prestamo]
-                      }
-                      onClick={async () => {
-                        const key = row.numero_prestamo;
-                        try {
-                          setGenerating((p) => ({ ...p, [key]: true }));
-
-                          const res = await fetch(
-                            `/api/collection/casos/${encodeURIComponent(
-                              key
-                            )}/generar-liga`,
-                            { method: "POST" }
-                          );
-
-                          const j = await res.json();
-                          if (!j?.ok) {
-                            throw new Error(j?.error || "Error");
-                          }
-
-                          window.dispatchEvent(new Event("casos:reload"));
-
-                          if (j.link) {
-                            window.open(
-                              j.link,
-                              "_blank",
-                              "noopener,noreferrer"
-                            );
-                          }
-                        } catch (e: any) {
-                          alert(e?.message || "Error");
-                        } finally {
-                          setGenerating((p) => ({ ...p, [key]: false }));
-                        }
-                      }}
+                      disabled={generating[row.numero_prestamo]}
+                      onClick={() => generarLiga(row)}
                     >
                       {generating[row.numero_prestamo]
                         ? "Generando…"
@@ -341,14 +349,14 @@ export default function CasosTable({
                     <button
                       className="text-emerald-700 hover:underline disabled:opacity-50"
                       disabled={!row.liga_pago}
-                      onClick={() =>
-                        row.liga_pago &&
+                      onClick={() => {
+                        if (!row.liga_pago) return;
                         window.open(
                           row.liga_pago,
                           "_blank",
                           "noopener,noreferrer"
-                        )
-                      }
+                        );
+                      }}
                     >
                       Entrar
                     </button>

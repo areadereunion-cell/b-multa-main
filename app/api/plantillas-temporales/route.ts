@@ -13,12 +13,18 @@ const pool = new Pool({
 });
 
 /* =====================
-  HELPERS
+   HELPERS
 ===================== */
 function safeString(v: any) {
   if (v === undefined || v === null) return null;
   const s = String(v).trim();
   return s === "" ? null : s;
+}
+
+function safeInt(v: any) {
+  if (v === undefined || v === null || v === "") return null;
+  const n = Number(v);
+  return Number.isFinite(n) ? Math.trunc(n) : null;
 }
 
 function safeBool(v: any) {
@@ -28,148 +34,179 @@ function safeBool(v: any) {
   return null;
 }
 
-function safeInt(v: any) {
-  if (v === undefined || v === null || v === "") return null;
-  const n = Number(v);
-  return Number.isFinite(n) ? Math.trunc(n) : null;
-}
-
-async function getLabelById(id: string) {
+async function getItemById(id: number) {
   const r = await pool.query(
-    `SELECT label FROM lista_items WHERE id = $1 LIMIT 1`,
+    `SELECT label, value, url_imagen FROM lista_items WHERE id = $1 LIMIT 1`,
     [id]
   );
-  return r.rows[0]?.label ? String(r.rows[0].label) : null;
-}
-
-async function getCuentaByLigaId(id: string) {
-  const r = await pool.query(
-    `SELECT value FROM lista_items WHERE id = $1 LIMIT 1`,
-    [id]
-  );
-  return r.rows[0]?.value != null ? String(r.rows[0].value) : null;
+  return r.rows[0] || null;
 }
 
 /* =====================
-  POST
+   POST
 ===================== */
 export async function POST(req: Request) {
   try {
     const body = await req.json().catch(() => ({}));
 
-    // 👇 ID DEL USUARIO (CAMBIA ESTO CUANDO TENGAS LOGIN)
+    console.log("BODY:", body);
+
     const usuario_id = 1;
 
-    const producto_lista_id = safeString(body.producto_lista_id);
-    const subproducto_lista_id = safeString(body.subproducto_lista_id);
-    const metodo_pago_lista_id = safeString(body.metodo_pago_lista_id);
-    const liga_pago_lista_id = safeString(body.liga_pago_lista_id);
+    const producto_lista_id = safeInt(body.producto_lista_id);
+    const subproducto_lista_id = safeInt(body.subproducto_lista_id);
+    const metodo_pago_lista_id = safeInt(body.metodo_pago_lista_id);
+    const cuenta_lista_id = safeInt(body.cuenta_bancaria_lista_id);
+    const liga_pago_lista_id = safeInt(body.liga_pago_lista_id);
 
-    /* ===== RESOLVER CAMPOS ===== */
-    const producto =
-      safeString(body.producto) ||
-      (producto_lista_id ? await getLabelById(producto_lista_id) : null);
+    /* =====================
+       PRODUCTO
+    ===================== */
+    let producto = safeString(body.producto);
+
+    if (!producto && producto_lista_id) {
+      const item = await getItemById(producto_lista_id);
+      producto = item?.label;
+    }
+
+    if (!producto && subproducto_lista_id) {
+      const item = await getItemById(subproducto_lista_id);
+      producto = item?.label;
+    }
 
     if (!producto) {
       return NextResponse.json(
-        { error: "No se pudo resolver 'producto'" },
+        { error: "Producto no enviado ni resoluble" },
         { status: 400 }
       );
     }
 
-    const cuenta_bancaria =
-      safeString(body.cuenta_bancaria) ||
-      (liga_pago_lista_id
-        ? await getCuentaByLigaId(liga_pago_lista_id)
-        : null);
+    /* =====================
+       MÉTODO DE PAGO
+    ===================== */
+    let metodo_pago = safeString(body.metodo_pago);
+
+    if (!metodo_pago && metodo_pago_lista_id) {
+      const item = await getItemById(metodo_pago_lista_id);
+      metodo_pago = item?.label;
+    }
+
+    /* =====================
+       CUENTA BANCARIA
+    ===================== */
+    let cuenta_bancaria = safeString(body.cuenta_bancaria);
+
+    if (!cuenta_bancaria && cuenta_lista_id) {
+      const item = await getItemById(cuenta_lista_id);
+      cuenta_bancaria = item?.value;
+    }
+
+    // fallback (si no mandas cuenta explícita)
+    if (!cuenta_bancaria && liga_pago_lista_id) {
+      const item = await getItemById(liga_pago_lista_id);
+      cuenta_bancaria = item?.value;
+    }
 
     if (!cuenta_bancaria) {
       return NextResponse.json(
-        { error: "No se pudo resolver 'cuenta_bancaria'" },
+        { error: "Cuenta bancaria no resoluble" },
         { status: 400 }
       );
     }
 
-    /* ===== TOKEN ===== */
+    /* =====================
+       LOGO (del producto)
+    ===================== */
+    let logo_url = safeString(body.logo_url);
+
+    if (!logo_url && producto_lista_id) {
+      const item = await getItemById(producto_lista_id);
+      logo_url = item?.url_imagen;
+    }
+
+    /* =====================
+       TOKEN
+    ===================== */
     const token = crypto.randomBytes(16).toString("hex");
 
-    /* ===== INSERT ===== */
+    /* =====================
+       INSERT
+    ===================== */
     await pool.query(
       `
       INSERT INTO plantillas_temporales (
         token,
         usuario_id,
-
         producto,
         cuenta_bancaria,
-
+        metodo_pago,
+        logo_url,
         producto_lista_id,
         subproducto_lista_id,
         metodo_pago_lista_id,
         liga_pago_lista_id,
-
         monto,
         importe_pagar,
         fecha_vencimiento,
         dias_vencidos,
-
         nombre_cliente,
         telefono_cliente,
-
         mostrar_extras,
         foto_habilitada,
         card_bg_color,
         primary_color,
-
-        locked
+        tipo_plantilla,
+        locked,
+        pagado
       )
       VALUES (
         $1,$2,
-        $3,$4,
-        $5,$6,$7,$8,
-        $9,$10,$11,$12,
-        $13,$14,
-        $15,$16,$17,$18,
-        true
+        $3,$4,$5,$6,
+        $7,$8,$9,$10,
+        $11,$12,$13,$14,
+        $15,$16,
+        $17,$18,$19,$20,
+        $21,$22,$23
       )
       `,
       [
         token,
         usuario_id,
-
         producto,
         cuenta_bancaria,
-
-        safeInt(producto_lista_id),
-        safeInt(subproducto_lista_id),
-        safeInt(metodo_pago_lista_id),
-        safeInt(liga_pago_lista_id),
-
+        metodo_pago,
+        logo_url,
+        producto_lista_id,
+        subproducto_lista_id,
+        metodo_pago_lista_id,
+        liga_pago_lista_id,
         safeString(body.monto),
         safeString(body.importe_pagar),
         safeString(body.fecha_vencimiento),
         safeInt(body.dias_vencidos),
-
         safeString(body.nombre_cliente),
         safeString(body.telefono_cliente),
-
         safeBool(body.mostrar_extras) ?? true,
         safeBool(body.foto_habilitada) ?? true,
-        safeString(body.card_bg_color),
-        safeString(body.primary_color),
+        safeString(body.card_bg_color) ?? "#FFFFFF",
+        safeString(body.primary_color) ?? "#1D4ED8",
+        safeString(body.tipo_plantilla) ?? "1",
+        true,
+        false
       ]
     );
 
     return NextResponse.json({
       ok: true,
       token,
-      link: `/pago/${token}`,
+      link: `/pay/${token}`,
     });
+
   } catch (e: any) {
-    console.error("POST /api/plantillas-temporales error:", e);
+    console.error(e);
     return NextResponse.json(
       { error: e?.message || "Error interno" },
       { status: 500 }
     );
   }
-}   
+}

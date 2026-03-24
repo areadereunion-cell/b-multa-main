@@ -1,65 +1,94 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { Pool } from "pg";
+
+export const runtime = "nodejs";
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
+  ssl:
+    process.env.NODE_ENV === "production"
+      ? { rejectUnauthorized: false }
+      : undefined,
 });
 
 type Ctx = {
   params: Promise<{ tipo: string }>;
 };
 
-export async function GET(
-  _req: NextRequest,
-  context: Ctx
-): Promise<Response> {
-  try {
-    const { tipo } = await context.params;
+function normalizeTipo(value: string) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "_");
+}
 
-    // 1. Obtener la lista por tipo
-    const listaRes = await pool.query(
+export async function GET(_req: Request, ctx: Ctx) {
+  try {
+    const { tipo } = await ctx.params;
+    const tipoNormalizado = normalizeTipo(tipo);
+
+    if (!tipoNormalizado) {
+      return NextResponse.json(
+        { error: "tipo requerido", data: [] },
+        { status: 400 }
+      );
+    }
+
+    // Busca primero por nombre exacto normalizado
+    const listaResult = await pool.query(
       `
       SELECT id, nombre
       FROM listas
-      WHERE tipo = $1
+      WHERE LOWER(REPLACE(TRIM(nombre), ' ', '_')) = $1
+      ORDER BY id ASC
       LIMIT 1
       `,
-      [tipo]
+      [tipoNormalizado]
     );
 
-    if ((listaRes.rowCount ?? 0) === 0) {
-      return NextResponse.json([]);
+    if (listaResult.rows.length === 0) {
+      return NextResponse.json({
+        data: [],
+        debug: `No existe lista con nombre = ${tipoNormalizado}`,
+      });
     }
 
-    const lista = listaRes.rows[0];
+    const lista = listaResult.rows[0];
 
-    // 2. Obtener los items de esa lista
-    const itemsRes = await pool.query(
+    const itemsResult = await pool.query(
       `
       SELECT
         id,
+        COALESCE(NULLIF(label, ''), NULLIF(nombre, ''), NULLIF(value, ''), CONCAT('Item ', id)) AS nombre,
         label,
         value,
         url_imagen,
-        orden,
-        origen
+        lista_id
       FROM lista_items
       WHERE lista_id = $1
-      ORDER BY orden ASC, id ASC
+      ORDER BY
+        CASE WHEN orden IS NULL THEN 1 ELSE 0 END,
+        orden ASC,
+        id ASC
       `,
       [lista.id]
     );
 
     return NextResponse.json({
-      lista,
-      items: itemsRes.rows,
+      lista: {
+        id: lista.id,
+        nombre: lista.nombre,
+      },
+      data: itemsResult.rows,
     });
-
-  } catch (error) {
-    console.error("ERROR GET listas por tipo:", error);
+  } catch (e: any) {
+    console.error("❌ ERROR GET /api/listas/tipo/[tipo]:", e);
     return NextResponse.json(
-      { error: "Error al obtener listas" },
+      {
+        error: e?.message || "Error interno",
+        data: [],
+      },
       { status: 500 }
     );
   }
-}     
+}

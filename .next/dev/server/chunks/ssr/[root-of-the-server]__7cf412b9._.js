@@ -1356,6 +1356,40 @@ function CasosTable({ role, filters }) {
             setResegLoading(false);
         }
     }
+    async function generarLiga(row) {
+        const key = row.numero_prestamo;
+        try {
+            setGenerating((p)=>({
+                    ...p,
+                    [key]: true
+                }));
+            const res = await fetch(`/api/collection/casos/${encodeURIComponent(key)}/generar-liga`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    overwrite: true
+                })
+            });
+            const j = await res.json();
+            if (!res.ok || !j?.ok) {
+                throw new Error(j?.error || "Error generando liga");
+            }
+            await load();
+            const finalLink = j.link || j.liga_pago || j.data?.liga_pago || null;
+            if (finalLink) {
+                window.open(finalLink, "_blank", "noopener,noreferrer");
+            }
+        } catch (e) {
+            alert(e?.message || "Error");
+        } finally{
+            setGenerating((p)=>({
+                    ...p,
+                    [key]: false
+                }));
+        }
+    }
     const filtered = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
         const s = (v)=>String(v ?? "").toLowerCase().trim();
         const onlyDigits = (v)=>String(v ?? "").replace(/\D/g, "");
@@ -1394,7 +1428,7 @@ function CasosTable({ role, filters }) {
             children: "Cargando casos…"
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-            lineNumber: 179,
+            lineNumber: 220,
             columnNumber: 12
         }, this);
     }
@@ -1410,12 +1444,12 @@ function CasosTable({ role, filters }) {
                     children: resegLoading ? "Procesando..." : "Resegmentar casos"
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                    lineNumber: 185,
+                    lineNumber: 226,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                lineNumber: 184,
+                lineNumber: 225,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1429,7 +1463,7 @@ function CasosTable({ role, filters }) {
                                 children: filtered.length
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                lineNumber: 196,
+                                lineNumber: 237,
                                 columnNumber: 21
                             }, this),
                             " de ",
@@ -1437,13 +1471,13 @@ function CasosTable({ role, filters }) {
                                 children: data.length
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                lineNumber: 196,
+                                lineNumber: 237,
                                 columnNumber: 49
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                        lineNumber: 195,
+                        lineNumber: 236,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
@@ -1458,7 +1492,7 @@ function CasosTable({ role, filters }) {
                                             children: "N° Préstamo"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                            lineNumber: 202,
+                                            lineNumber: 243,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1466,7 +1500,7 @@ function CasosTable({ role, filters }) {
                                             children: "Cliente"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                            lineNumber: 203,
+                                            lineNumber: 244,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1474,7 +1508,7 @@ function CasosTable({ role, filters }) {
                                             children: "Teléfono"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                            lineNumber: 204,
+                                            lineNumber: 245,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1482,7 +1516,7 @@ function CasosTable({ role, filters }) {
                                             children: "Importe Adeudado"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                            lineNumber: 205,
+                                            lineNumber: 246,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1490,7 +1524,7 @@ function CasosTable({ role, filters }) {
                                             children: "Valor Recaudado"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                            lineNumber: 206,
+                                            lineNumber: 247,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1498,7 +1532,7 @@ function CasosTable({ role, filters }) {
                                             children: "Producto"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                            lineNumber: 207,
+                                            lineNumber: 248,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1506,7 +1540,7 @@ function CasosTable({ role, filters }) {
                                             children: "Segmento"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                            lineNumber: 208,
+                                            lineNumber: 249,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1514,7 +1548,7 @@ function CasosTable({ role, filters }) {
                                             children: "Fecha de Cobro"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                            lineNumber: 209,
+                                            lineNumber: 250,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1522,7 +1556,7 @@ function CasosTable({ role, filters }) {
                                             children: "Estado de Pago"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                            lineNumber: 210,
+                                            lineNumber: 251,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1530,7 +1564,7 @@ function CasosTable({ role, filters }) {
                                             children: "Collection Account"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                            lineNumber: 211,
+                                            lineNumber: 252,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1538,18 +1572,18 @@ function CasosTable({ role, filters }) {
                                             children: "Operar"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                            lineNumber: 212,
+                                            lineNumber: 253,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                    lineNumber: 201,
+                                    lineNumber: 242,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                lineNumber: 200,
+                                lineNumber: 241,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -1561,7 +1595,7 @@ function CasosTable({ role, filters }) {
                                                 children: row.numero_prestamo
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                lineNumber: 222,
+                                                lineNumber: 263,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1569,7 +1603,7 @@ function CasosTable({ role, filters }) {
                                                 children: row.nombre_cliente
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                lineNumber: 223,
+                                                lineNumber: 264,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1577,7 +1611,7 @@ function CasosTable({ role, filters }) {
                                                 children: row.telefono_cliente
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                lineNumber: 224,
+                                                lineNumber: 265,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1585,7 +1619,7 @@ function CasosTable({ role, filters }) {
                                                 children: money(row.valor_deuda)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                lineNumber: 225,
+                                                lineNumber: 266,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1597,12 +1631,12 @@ function CasosTable({ role, filters }) {
                                                         })
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                    lineNumber: 229,
+                                                    lineNumber: 270,
                                                     columnNumber: 21
                                                 }, this) : money(row.valor_recaudado)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                lineNumber: 227,
+                                                lineNumber: 268,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1610,7 +1644,7 @@ function CasosTable({ role, filters }) {
                                                 children: row.producto
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                lineNumber: 242,
+                                                lineNumber: 283,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1618,7 +1652,7 @@ function CasosTable({ role, filters }) {
                                                 children: row.segmento ?? "-"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                lineNumber: 243,
+                                                lineNumber: 284,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1626,7 +1660,7 @@ function CasosTable({ role, filters }) {
                                                 children: new Date(row.fecha_cobro).toLocaleDateString()
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                lineNumber: 244,
+                                                lineNumber: 285,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1643,12 +1677,12 @@ function CasosTable({ role, filters }) {
                                                     children: row.estado_pago
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                    lineNumber: 249,
+                                                    lineNumber: 290,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                lineNumber: 248,
+                                                lineNumber: 289,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1665,7 +1699,7 @@ function CasosTable({ role, filters }) {
                                                             children: "— Sin asignar —"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                            lineNumber: 284,
+                                                            lineNumber: 325,
                                                             columnNumber: 23
                                                         }, this),
                                                         users.map((u)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1673,18 +1707,18 @@ function CasosTable({ role, filters }) {
                                                                 children: u.username
                                                             }, u.id, false, {
                                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                                lineNumber: 286,
+                                                                lineNumber: 327,
                                                                 columnNumber: 25
                                                             }, this))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                    lineNumber: 273,
+                                                    lineNumber: 314,
                                                     columnNumber: 21
                                                 }, this) : row.collection_account ?? "—"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                lineNumber: 271,
+                                                lineNumber: 312,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1694,88 +1728,65 @@ function CasosTable({ role, filters }) {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                             className: "text-sky-700 hover:underline disabled:opacity-50",
-                                                            disabled: !!row.liga_pago || generating[row.numero_prestamo],
-                                                            onClick: async ()=>{
-                                                                const key = row.numero_prestamo;
-                                                                try {
-                                                                    setGenerating((p)=>({
-                                                                            ...p,
-                                                                            [key]: true
-                                                                        }));
-                                                                    const res = await fetch(`/api/collection/casos/${encodeURIComponent(key)}/generar-liga`, {
-                                                                        method: "POST"
-                                                                    });
-                                                                    const j = await res.json();
-                                                                    if (!j?.ok) {
-                                                                        throw new Error(j?.error || "Error");
-                                                                    }
-                                                                    window.dispatchEvent(new Event("casos:reload"));
-                                                                    if (j.link) {
-                                                                        window.open(j.link, "_blank", "noopener,noreferrer");
-                                                                    }
-                                                                } catch (e) {
-                                                                    alert(e?.message || "Error");
-                                                                } finally{
-                                                                    setGenerating((p)=>({
-                                                                            ...p,
-                                                                            [key]: false
-                                                                        }));
-                                                                }
-                                                            },
+                                                            disabled: generating[row.numero_prestamo],
+                                                            onClick: ()=>generarLiga(row),
                                                             children: generating[row.numero_prestamo] ? "Generando…" : "Generar"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                            lineNumber: 298,
+                                                            lineNumber: 339,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                             className: "text-emerald-700 hover:underline disabled:opacity-50",
                                                             disabled: !row.liga_pago,
-                                                            onClick: ()=>row.liga_pago && window.open(row.liga_pago, "_blank", "noopener,noreferrer"),
+                                                            onClick: ()=>{
+                                                                if (!row.liga_pago) return;
+                                                                window.open(row.liga_pago, "_blank", "noopener,noreferrer");
+                                                            },
                                                             children: "Entrar"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                            lineNumber: 341,
+                                                            lineNumber: 349,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                    lineNumber: 297,
+                                                    lineNumber: 338,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                                lineNumber: 296,
+                                                lineNumber: 337,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, row.numero_prestamo, true, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                        lineNumber: 218,
+                                        lineNumber: 259,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                                lineNumber: 216,
+                                lineNumber: 257,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                        lineNumber: 199,
+                        lineNumber: 240,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                lineNumber: 194,
+                lineNumber: 235,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-        lineNumber: 183,
+        lineNumber: 224,
         columnNumber: 5
     }, this);
 }
@@ -1802,7 +1813,7 @@ function InputEnterSave({ initial, onEnter }) {
                 className: "w-32 rounded-xl border border-slate-200/70 bg-white/70 px-3 py-2 text-sm"
             }, void 0, false, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                lineNumber: 378,
+                lineNumber: 386,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1810,13 +1821,13 @@ function InputEnterSave({ initial, onEnter }) {
                 children: saving ? "guardando…" : "ENTER"
             }, void 0, false, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-                lineNumber: 396,
+                lineNumber: 404,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/collection/casos/components/CasosTable.tsx",
-        lineNumber: 377,
+        lineNumber: 385,
         columnNumber: 5
     }, this);
 }

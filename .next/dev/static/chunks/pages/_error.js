@@ -1,13 +1,13 @@
 __turbopack_load_page_chunks__("/_error", [
-  "static/chunks/db6c6_next_dist_compiled_944b2033._.js",
-  "static/chunks/db6c6_next_dist_shared_lib_17b19a2a._.js",
-  "static/chunks/db6c6_next_dist_client_3f4bb9fc._.js",
-  "static/chunks/db6c6_next_dist_46e4ad29._.js",
-  "static/chunks/db6c6_next_error_d04fc42e.js",
-  "static/chunks/[next]_entry_page-loader_ts_d0b56510._.js",
-  "static/chunks/db6c6_react-dom_3c58f6e8._.js",
-  "static/chunks/db6c6_5d911dbe._.js",
-  "static/chunks/[root-of-the-server]__d9f69104._.js",
-  "static/chunks/multas_multas_pages__error_2da965e7._.js",
-  "static/chunks/turbopack-multas_multas_pages__error_8062ebb1._.js"
+  "static/chunks/6fdfc_next_dist_compiled_dd2bfb93._.js",
+  "static/chunks/6fdfc_next_dist_shared_lib_0c3e78a6._.js",
+  "static/chunks/6fdfc_next_dist_client_acb0665d._.js",
+  "static/chunks/6fdfc_next_dist_52532e8c._.js",
+  "static/chunks/6fdfc_next_error_ae626a2a.js",
+  "static/chunks/[next]_entry_page-loader_ts_8e0dcc96._.js",
+  "static/chunks/6fdfc_react-dom_25895900._.js",
+  "static/chunks/6fdfc_ced7030a._.js",
+  "static/chunks/[root-of-the-server]__b822f13e._.js",
+  "static/chunks/Downloads_b-multa-main_multa-main_pages__error_2da965e7._.js",
+  "static/chunks/turbopack-Downloads_b-multa-main_multa-main_pages__error_b4834f47._.js"
 ])

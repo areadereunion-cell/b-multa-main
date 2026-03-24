@@ -184,8 +184,6 @@
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
-    --text-5xl: 3rem;
-    --text-5xl--line-height: 1;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -1142,10 +1140,6 @@
     flex: 2;
   }
 
-  .shrink {
-    flex-shrink: 1;
-  }
-
   .shrink-0 {
     flex-shrink: 0;
   }
@@ -1312,10 +1306,6 @@
     :where(.divide-slate-200\/60 > :not(:last-child)) {
       border-color: color-mix(in oklab, var(--color-slate-200) 60%, transparent);
     }
-  }
-
-  .self-start {
-    align-self: flex-start;
   }
 
   .truncate {
@@ -2761,10 +2751,6 @@
     text-align: right;
   }
 
-  .align-top {
-    vertical-align: top;
-  }
-
   .font-sans {
     font-family: var(--font-geist-sans);
   }
@@ -2786,11 +2772,6 @@
   .text-4xl {
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
-  }
-
-  .text-5xl {
-    font-size: var(--text-5xl);
-    line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
 
   .text-base {
@@ -2886,10 +2867,6 @@
     font-size: 36px;
   }
 
-  .text-\[38px\] {
-    font-size: 38px;
-  }
-
   .text-\[42px\] {
     font-size: 42px;
   }
@@ -2982,14 +2959,6 @@
 
   .break-all {
     word-break: break-all;
-  }
-
-  .text-ellipsis {
-    text-overflow: ellipsis;
-  }
-
-  .whitespace-normal {
-    white-space: normal;
   }
 
   .whitespace-nowrap {
@@ -4324,12 +4293,6 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:gap-3 {
-      gap: calc(var(--spacing) * 3);
-    }
-  }
-
-  @media (min-width: 40rem) {
     .sm\:gap-4 {
       gap: calc(var(--spacing) * 4);
     }
@@ -4416,12 +4379,6 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:py-4 {
-      padding-block: calc(var(--spacing) * 4);
-    }
-  }
-
-  @media (min-width: 40rem) {
     .sm\:py-5 {
       padding-block: calc(var(--spacing) * 5);
     }
@@ -4469,13 +4426,6 @@
     .sm\:text-4xl {
       font-size: var(--text-4xl);
       line-height: var(--tw-leading, var(--text-4xl--line-height));
-    }
-  }
-
-  @media (min-width: 40rem) {
-    .sm\:text-lg {
-      font-size: var(--text-lg);
-      line-height: var(--tw-leading, var(--text-lg--line-height));
     }
   }
 
@@ -4547,12 +4497,6 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:text-\[36px\] {
-      font-size: 36px;
-    }
-  }
-
-  @media (min-width: 40rem) {
     .sm\:text-\[38px\] {
       font-size: 38px;
     }
@@ -4571,18 +4515,6 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:text-\[44px\] {
-      font-size: 44px;
-    }
-  }
-
-  @media (min-width: 40rem) {
-    .sm\:text-\[46px\] {
-      font-size: 46px;
-    }
-  }
-
-  @media (min-width: 40rem) {
     .sm\:text-\[48px\] {
       font-size: 48px;
     }
@@ -4595,20 +4527,8 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:text-\[52px\] {
-      font-size: 52px;
-    }
-  }
-
-  @media (min-width: 40rem) {
     .sm\:text-\[56px\] {
       font-size: 56px;
-    }
-  }
-
-  @media (min-width: 40rem) {
-    .sm\:text-\[62px\] {
-      font-size: 62px;
     }
   }
 
@@ -4724,12 +4644,6 @@
   }
 
   @media (min-width: 48rem) {
-    .md\:text-\[26px\] {
-      font-size: 26px;
-    }
-  }
-
-  @media (min-width: 48rem) {
     .md\:text-\[28px\] {
       font-size: 28px;
     }
@@ -4754,44 +4668,14 @@
   }
 
   @media (min-width: 48rem) {
-    .md\:text-\[36px\] {
-      font-size: 36px;
-    }
-  }
-
-  @media (min-width: 48rem) {
     .md\:text-\[42px\] {
       font-size: 42px;
     }
   }
 
   @media (min-width: 48rem) {
-    .md\:text-\[44px\] {
-      font-size: 44px;
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:text-\[46px\] {
-      font-size: 46px;
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:text-\[48px\] {
-      font-size: 48px;
-    }
-  }
-
-  @media (min-width: 48rem) {
     .md\:text-\[50px\] {
       font-size: 50px;
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:text-\[52px\] {
-      font-size: 52px;
     }
   }
 
@@ -4808,38 +4692,8 @@
   }
 
   @media (min-width: 48rem) {
-    .md\:text-\[64px\] {
-      font-size: 64px;
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:text-\[68px\] {
-      font-size: 68px;
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:text-\[72px\] {
-      font-size: 72px;
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:text-\[76px\] {
-      font-size: 76px;
-    }
-  }
-
-  @media (min-width: 48rem) {
     .md\:text-\[82px\] {
       font-size: 82px;
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:text-\[86px\] {
-      font-size: 86px;
     }
   }
 
@@ -4901,60 +4755,6 @@
     .lg\:text-2xl {
       font-size: var(--text-2xl);
       line-height: var(--tw-leading, var(--text-2xl--line-height));
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:text-\[34px\] {
-      font-size: 34px;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:text-\[40px\] {
-      font-size: 40px;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:text-\[42px\] {
-      font-size: 42px;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:text-\[50px\] {
-      font-size: 50px;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:text-\[52px\] {
-      font-size: 52px;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:text-\[58px\] {
-      font-size: 58px;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:text-\[64px\] {
-      font-size: 64px;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:text-\[78px\] {
-      font-size: 78px;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:text-\[86px\] {
-      font-size: 86px;
     }
   }
 

@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 58, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/adlan/Downloads/multa-main/multa-main/app/api/bases-pago/listar/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\nimport { Pool } from \"pg\";\r\n\r\nexport const runtime = \"nodejs\";\r\n\r\nconst pool = new Pool({\r\n  connectionString: process.env.DATABASE_URL,\r\n});\r\n\r\nexport async function GET() {\r\n  try {\r\nconst res = await pool.query(`\r\n  SELECT  \r\n    pt.id,\r\n    pt.producto,\r\n    pt.cuenta_bancaria,\r\n    pt.logo_url,\r\n    pt.created_at,\r\n    pt.token, -- 🔥 AQUI\r\n    u.username AS asesor_nombre\r\n  FROM plantillas_temporales pt\r\n  LEFT JOIN users u ON u.id = pt.usuario_id\r\n  ORDER BY pt.id DESC\r\n`);\r\n\r\n    return NextResponse.json(res.rows);\r\n  } catch (e: any) {\r\n    return NextResponse.json(\r\n      { error: e.message },\r\n      { status: 500 }\r\n    );\r\n  }\r\n}\r\n"],"names":[],"mappings":";;;;;;AAAA;AACA;;;;;;;AAEO,MAAM,UAAU;AAEvB,MAAM,OAAO,IAAI,4GAAI,CAAC;IACpB,kBAAkB,QAAQ,GAAG,CAAC,YAAY;AAC5C;AAEO,eAAe;IACpB,IAAI;QACN,MAAM,MAAM,MAAM,KAAK,KAAK,CAAC,CAAC;;;;;;;;;;;;AAY9B,CAAC;QAEG,OAAO,+LAAY,CAAC,IAAI,CAAC,IAAI,IAAI;IACnC,EAAE,OAAO,GAAQ;QACf,OAAO,+LAAY,CAAC,IAAI,CACtB;YAAE,OAAO,EAAE,OAAO;QAAC,GACnB;YAAE,QAAQ;QAAI;IAElB;AACF"}}]
-}
