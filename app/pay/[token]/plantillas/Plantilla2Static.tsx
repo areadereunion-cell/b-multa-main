@@ -353,13 +353,7 @@ export default function Plantilla2Static({
           </div>
 
           <div className="p-3 sm:p-4 bg-[#efefef]">
-            <button
-              type="button"
-              className="w-full text-white py-3 sm:py-4 rounded-xl text-base sm:text-lg md:text-[24px] font-semibold"
-              style={{ backgroundColor: primaryColor }}
-            >
-              Confirmar y Generar Link
-            </button>
+
           </div>
         </div>
       </div>
