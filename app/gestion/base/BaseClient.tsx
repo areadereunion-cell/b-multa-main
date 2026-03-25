@@ -37,7 +37,7 @@ const normalizeUrl = (u: any) => {
   return `/${s}`;
 };
 
-const PUBLIC_BASE_PATH = "/pago";
+const PUBLIC_BASE_PATH = "/pay";
 
 function buildPublicLink(row: Row) {
   const origin = typeof window !== "undefined" ? window.location.origin : "";

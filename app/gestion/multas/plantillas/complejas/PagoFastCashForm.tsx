@@ -6,9 +6,15 @@ import Plantilla1 from "./plantillas/Plantilla1";
 import Plantilla2 from "./plantillas/Plantilla2";
 import Plantilla3 from "./plantillas/Plantilla3";
 import Plantilla4 from "./plantillas/Plantilla4";
+import Plantilla5 from "./plantillas/Plantilla5";
+import Plantilla6 from "./plantillas/Plantilla6";
+import Plantilla7 from "./plantillas/Plantilla7";
+import Plantilla8 from "./plantillas/Plantilla8";
+import Plantilla9 from "./plantillas/Plantilla9";
 import type { PlantillaProps } from "./plantillas/types";
 
 type AnyRecord = Record<string, unknown>;
+type TemplateId = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
 
 type Caso = {
   numero_prestamo: string;
@@ -36,11 +42,17 @@ function norm(s: unknown) {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
+function isTemplateId(value: string): value is TemplateId {
+  return ["1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(value);
+}
+
 export default function PagoFastCashForm() {
   const params = useParams();
   const numeroPrestamo = String((params as any)?.id ?? "").trim();
 
-  const isHex = (s: unknown): boolean => /^#([0-9A-Fa-f]{6})$/.test(String(s ?? ""));
+  const isHex = (s: unknown): boolean =>
+    /^#([0-9A-Fa-f]{6})$/.test(String(s ?? ""));
+
   const origin = typeof window !== "undefined" ? window.location.origin : "";
 
   const normalizeUrl = (u: unknown): string | null => {
@@ -74,9 +86,12 @@ export default function PagoFastCashForm() {
       setErrorCaso("");
 
       try {
-        const res = await fetch(`/api/collection/casos/${encodeURIComponent(numeroPrestamo)}`, {
-          cache: "no-store",
-        });
+        const res = await fetch(
+          `/api/collection/casos/${encodeURIComponent(numeroPrestamo)}`,
+          {
+            cache: "no-store",
+          }
+        );
 
         const json = await res.json().catch(() => ({}));
         if (!res.ok) {
@@ -104,8 +119,12 @@ export default function PagoFastCashForm() {
     return seg.includes("col");
   }, [caso?.segmento]);
 
-  const listCuentaKey = isCo ? "cuenta_bancaria_colombia" : "cuenta_bancaria_mexico";
-  const listMetodoKey = isCo ? "metodo_pago_colombia" : "metodo_pago_mexico";
+  const listCuentaKey = isCo
+    ? "cuenta_bancaria_colombia"
+    : "cuenta_bancaria_mexico";
+  const listMetodoKey = isCo
+    ? "metodo_pago_colombia"
+    : "metodo_pago_mexico";
   const listProdKey = isCo ? "producto_colombia" : "producto_mexico";
 
   const [optionsCuenta, setOptionsCuenta] = useState<OptionItem[]>([]);
@@ -115,7 +134,9 @@ export default function PagoFastCashForm() {
   const normalizeItem = (o: unknown): OptionItem => {
     const obj = (o ?? {}) as AnyRecord;
     const value = String(obj?.["value"] ?? obj?.["name"] ?? "").trim();
-    const label = String(obj?.["label"] ?? obj?.["value"] ?? obj?.["name"] ?? value).trim();
+    const label = String(
+      obj?.["label"] ?? obj?.["value"] ?? obj?.["name"] ?? value
+    ).trim();
 
     return {
       id: String(obj?.["id"] ?? ""),
@@ -125,10 +146,16 @@ export default function PagoFastCashForm() {
     };
   };
 
-  async function loadLista(listKey: string, setter: (arr: OptionItem[]) => void) {
-    const res = await fetch(`/api/collection/aplicaciones/${encodeURIComponent(listKey)}`, {
-      cache: "no-store",
-    });
+  async function loadLista(
+    listKey: string,
+    setter: (arr: OptionItem[]) => void
+  ) {
+    const res = await fetch(
+      `/api/collection/aplicaciones/${encodeURIComponent(listKey)}`,
+      {
+        cache: "no-store",
+      }
+    );
 
     const json = await res.json().catch(() => ({}));
 
@@ -180,9 +207,12 @@ export default function PagoFastCashForm() {
       if (!caso?.producto) return;
 
       try {
-        const res = await fetch(`/api/collection/aplicaciones/${encodeURIComponent(listProdKey)}`, {
-          cache: "no-store",
-        });
+        const res = await fetch(
+          `/api/collection/aplicaciones/${encodeURIComponent(listProdKey)}`,
+          {
+            cache: "no-store",
+          }
+        );
 
         const json = await res.json().catch(() => ({}));
         if (!res.ok) return;
@@ -236,7 +266,10 @@ export default function PagoFastCashForm() {
   const metodoPagoLabel = selectedMetodo?.label ?? "";
   const cuentaBancaria = selectedCuenta?.value ?? "";
   const logoUrlRaw = logoFromCatalog;
-  const resolvedLogoUrl = useMemo(() => normalizeUrl(logoUrlRaw), [logoUrlRaw]);
+  const resolvedLogoUrl = useMemo(
+    () => normalizeUrl(logoUrlRaw),
+    [logoUrlRaw]
+  );
 
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
@@ -283,7 +316,11 @@ export default function PagoFastCashForm() {
   const [cardBgError, setCardBgError] = useState("");
   const [primaryError, setPrimaryError] = useState("");
 
-  const [plantillaActiva, setPlantillaActiva] = useState<"1" | "2" | "3" | "4">("1");
+  const [plantillaActiva, setPlantillaActiva] = useState<TemplateId>("1");
+
+  const plantillaActivaNormalizada = useMemo<TemplateId>(() => {
+    return isTemplateId(plantillaActiva) ? plantillaActiva : "1";
+  }, [plantillaActiva]);
 
   const handleCardBgHexChange = (value: string) => {
     setCardBgHexInput(value);
@@ -324,17 +361,17 @@ export default function PagoFastCashForm() {
   const [shareLink, setShareLink] = useState<string | null>(null);
   const disabled = saving;
 
-  const plantillaPagoId = isCo ? "2" : "1";
+  const plantillaPagoId = isCo ? 2 : 1;
 
   async function crearLinkEstatico(): Promise<string> {
+    const templateNumber = Number(plantillaActivaNormalizada);
+
     const payload: AnyRecord = {
       plantilla_pago_id: plantillaPagoId,
 
-      // este valor es el que debe usar el static para decidir el diseño
-      tipo_plantilla: plantillaActiva,
-
-      // compatibilidad temporal si tu backend aún usa el nombre viejo
-      template_id: plantillaActiva,
+      // ambos valores salen de la plantilla activa real
+      tipo_plantilla: templateNumber,
+      template_id: templateNumber,
 
       metodo_pago_lista_id: metodoPagoId || null,
       liga_pago_lista_id: cuentaId || null,
@@ -355,6 +392,9 @@ export default function PagoFastCashForm() {
       foto_habilitada: fotoHabilitada,
     };
 
+    console.log("PLANTILLA ACTIVA:", plantillaActivaNormalizada);
+    console.log("PAYLOAD ENVIADO:", payload);
+
     const res = await fetch("/api/plantillas-temporales-3", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -364,7 +404,10 @@ export default function PagoFastCashForm() {
     const json: AnyRecord = (await res.json().catch(() => ({}))) as AnyRecord;
 
     if (!res.ok) {
-      throw new Error((json?.["error"] as string | undefined) ?? "No se pudo generar el link");
+      throw new Error(
+        (json?.["error"] as string | undefined) ??
+          "No se pudo generar el link"
+      );
     }
 
     return String(json?.["link"] ?? "");
@@ -440,7 +483,7 @@ export default function PagoFastCashForm() {
   };
 
   function renderPlantilla() {
-    switch (plantillaActiva) {
+    switch (plantillaActivaNormalizada) {
       case "1":
         return <Plantilla1 {...plantillaProps} />;
       case "2":
@@ -449,6 +492,16 @@ export default function PagoFastCashForm() {
         return <Plantilla3 {...plantillaProps} />;
       case "4":
         return <Plantilla4 {...plantillaProps} />;
+      case "5":
+        return <Plantilla5 {...plantillaProps} />;
+      case "6":
+        return <Plantilla6 {...plantillaProps} />;
+      case "7":
+        return <Plantilla7 {...plantillaProps} />;
+      case "8":
+        return <Plantilla8 {...plantillaProps} />;
+      case "9":
+        return <Plantilla9 {...plantillaProps} />;
       default:
         return <Plantilla1 {...plantillaProps} />;
     }
@@ -466,8 +519,12 @@ export default function PagoFastCashForm() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#152032] text-white p-6">
         <div className="max-w-md">
-          <div className="text-xl font-bold mb-2">No se pudo cargar el caso</div>
-          <div className="text-sm opacity-90">{errorCaso || "Caso no encontrado"}</div>
+          <div className="text-xl font-bold mb-2">
+            No se pudo cargar el caso
+          </div>
+          <div className="text-sm opacity-90">
+            {errorCaso || "Caso no encontrado"}
+          </div>
         </div>
       </div>
     );
@@ -480,19 +537,29 @@ export default function PagoFastCashForm() {
           <div className="text-xs text-white mb-2 font-medium">Plantilla</div>
           <select
             className="w-full p-2 rounded-md text-sm"
-            value={plantillaActiva}
-            onChange={(e) => setPlantillaActiva(e.target.value as "1" | "2" | "3" | "4")}
+            value={plantillaActivaNormalizada}
+            onChange={(e) => {
+              const value = e.target.value;
+              setPlantillaActiva(isTemplateId(value) ? value : "1");
+            }}
             disabled={disabled}
           >
             <option value="1">Plantilla #1</option>
             <option value="2">Plantilla #2</option>
             <option value="3">Plantilla #3</option>
             <option value="4">Plantilla #4</option>
+            <option value="5">Plantilla #5</option>
+            <option value="6">Plantilla #6</option>
+            <option value="7">Plantilla #7</option>
+            <option value="8">Plantilla #8</option>
+            <option value="9">Plantilla #9</option>
           </select>
         </div>
 
         <div className="flex items-center justify-between text-white">
-          <span className="text-sm font-medium">Mostrar datos del cliente</span>
+          <span className="text-sm font-medium">
+            Mostrar datos del cliente
+          </span>
           <label className="relative inline-flex items-center cursor-pointer">
             <input
               type="checkbox"
@@ -510,7 +577,9 @@ export default function PagoFastCashForm() {
         </div>
 
         <div className="bg-white/5 p-3 rounded-lg">
-          <div className="text-xs text-white mb-2 font-medium">Fondo de la tarjeta</div>
+          <div className="text-xs text-white mb-2 font-medium">
+            Fondo de la tarjeta
+          </div>
           <select
             className="w-full p-2 rounded-md mb-2 text-sm"
             value={cardBg}
@@ -539,14 +608,22 @@ export default function PagoFastCashForm() {
             />
             <div
               className="w-10 h-10 rounded-md border"
-              style={{ backgroundColor: isHex(cardBgHexInput) ? cardBgHexInput : cardBg }}
+              style={{
+                backgroundColor: isHex(cardBgHexInput)
+                  ? cardBgHexInput
+                  : cardBg,
+              }}
             />
           </div>
-          {cardBgError && <div className="text-xs text-rose-400 mt-1">{cardBgError}</div>}
+          {cardBgError && (
+            <div className="text-xs text-rose-400 mt-1">{cardBgError}</div>
+          )}
         </div>
 
         <div className="bg-white/5 p-3 rounded-lg">
-          <div className="text-xs text-white mb-2 font-medium">Color del botón</div>
+          <div className="text-xs text-white mb-2 font-medium">
+            Color del botón
+          </div>
           <select
             className="w-full p-2 rounded-md mb-2 text-sm"
             value={primaryColor}
@@ -575,16 +652,28 @@ export default function PagoFastCashForm() {
             />
             <div
               className="w-10 h-10 rounded-md border"
-              style={{ backgroundColor: isHex(primaryHexInput) ? primaryHexInput : primaryColor }}
+              style={{
+                backgroundColor: isHex(primaryHexInput)
+                  ? primaryHexInput
+                  : primaryColor,
+              }}
             />
           </div>
-          {primaryError && <div className="text-xs text-rose-400 mt-1">{primaryError}</div>}
+          {primaryError && (
+            <div className="text-xs text-rose-400 mt-1">{primaryError}</div>
+          )}
         </div>
 
         {shareLink && (
           <div className="bg-white/5 p-3 rounded-lg">
-            <div className="text-xs text-white mb-2 font-medium">Link generado</div>
-            <input className="w-full p-2 rounded-md text-sm" value={shareLink} readOnly />
+            <div className="text-xs text-white mb-2 font-medium">
+              Link generado
+            </div>
+            <input
+              className="w-full p-2 rounded-md text-sm"
+              value={shareLink}
+              readOnly
+            />
             <button
               className="mt-2 w-full p-2 rounded-md text-sm bg-white/10 hover:bg-white/20 text-white"
               onClick={() => navigator.clipboard.writeText(shareLink)}

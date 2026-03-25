@@ -5,6 +5,11 @@ import Plantilla1StaticImport from "./plantillas/Plantilla1Static";
 import Plantilla2StaticImport from "./plantillas/Plantilla2Static";
 import Plantilla3StaticImport from "./plantillas/Plantilla3Static";
 import Plantilla4StaticImport from "./plantillas/Plantilla4Static";
+import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
+import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
+import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
+import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
+import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
 
 type StaticTemplateProps = {
   data: any;
@@ -21,6 +26,16 @@ const Plantilla3Static =
   Plantilla3StaticImport as React.ComponentType<StaticTemplateProps>;
 const Plantilla4Static =
   Plantilla4StaticImport as React.ComponentType<StaticTemplateProps>;
+const Plantilla5Static =
+  Plantilla5StaticImport as React.ComponentType<StaticTemplateProps>;
+const Plantilla6Static =
+  Plantilla6StaticImport as React.ComponentType<StaticTemplateProps>;
+const Plantilla7Static =
+  Plantilla7StaticImport as React.ComponentType<StaticTemplateProps>;
+const Plantilla8Static =
+  Plantilla8StaticImport as React.ComponentType<StaticTemplateProps>;
+const Plantilla9Static =
+  Plantilla9StaticImport as React.ComponentType<StaticTemplateProps>;
 
 export default function PagoFastCashStatic({
   token,
@@ -124,6 +139,16 @@ export default function PagoFastCashStatic({
       return <Plantilla3Static {...props} />;
     case "4":
       return <Plantilla4Static {...props} />;
+    case "5":
+      return <Plantilla5Static {...props} />;
+    case "6":
+      return <Plantilla6Static {...props} />;
+    case "7":
+      return <Plantilla7Static {...props} />;
+    case "8":
+      return <Plantilla8Static {...props} />;
+    case "9":
+      return <Plantilla9Static {...props} />;
     case "1":
     default:
       return <Plantilla1Static {...props} />;
