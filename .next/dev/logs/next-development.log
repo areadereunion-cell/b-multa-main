@@ -1,10 +1,10 @@
-[00:00:02.606] Server  LOG      ✓ Ready in 1911ms
-[00:00:02.669] Server  ERROR   (node:9120) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+[00:00:02.447] Server  LOG      ✓ Ready in 1808ms
+[00:00:02.611] Server  ERROR   (node:14536) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:00:05.711] Server  LOG      ○ Compiling /gestion/collection/casos ...
-[00:00:09.350] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:09.965] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:10.648] Server  ERROR   (node:9120) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+[00:00:45.300] Server  LOG      ○ Compiling / ...
+[00:00:49.950] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:54.953] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:59.468] Server  ERROR   (node:14536) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -12,1334 +12,183 @@ To prepare for this change:
 - If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
-[00:00:20.015] Server  LOG     📦 BODY RECIBIDO: {}
-[00:00:20.235] Server  LOG     ✅ ROW GUARDADA: {}
-[00:00:21.148] Server  ERROR    ⨯ ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:10:1
-Module not found: Can't resolve './plantillas/Plantilla7Static'
-   8 | import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-> 10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:21.266] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:10:1
-Module not found: Can't resolve './plantillas/Plantilla7Static'
-   8 | import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-> 10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:21.266] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:21.266] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:22.322] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:10:1
-Module not found: Can't resolve './plantillas/Plantilla7Static'
-   8 | import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-> 10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:22.322] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:22.322] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:22.322] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:10:1
-Module not found: Can't resolve './plantillas/Plantilla7Static'
-   8 | import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-> 10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:22.322] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:22.322] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:22.980] Browser ERROR   uncaughtError: Error: ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:10:1
-Module not found: Can't resolve './plantillas/Plantilla7Static'
-   8 | import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-> 10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:23.167] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:10:1
-Module not found: Can't resolve './plantillas/Plantilla7Static'
-   8 | import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-> 10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:23.167] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:23.167] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:23.167] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:10:1
-Module not found: Can't resolve './plantillas/Plantilla7Static'
-   8 | import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-> 10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:23.167] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:23.167] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:10:1
-Module not found: Can't resolve './plantillas/Plantilla7Static'
-   8 | import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-> 10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:10:1
-Module not found: Can't resolve './plantillas/Plantilla7Static'
-   8 | import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-> 10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:10:1
-Module not found: Can't resolve './plantillas/Plantilla7Static'
-   8 | import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-> 10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:10:1
-Module not found: Can't resolve './plantillas/Plantilla7Static'
-   8 | import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-> 10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:10:1
-Module not found: Can't resolve './plantillas/Plantilla7Static'
-   8 | import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-> 10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:24.168] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:29.853] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:10:1
-Module not found: Can't resolve './plantillas/Plantilla7Static'
-   8 | import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-> 10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:29.853] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:29.853] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:30.165] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:10:1
-Module not found: Can't resolve './plantillas/Plantilla7Static'
-   8 | import Plantilla5StaticImport from "./plantillas/Plantilla5Static";
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-> 10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:30.166] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:30.166] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:41.186] Server  ERROR    ⨯ ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:41.190] Server  ERROR    ⨯ ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:41.193] Server  ERROR    ⨯ ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:41.195] Server  ERROR    ⨯ ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:41.197] Server  ERROR    ⨯ ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:41.200] Server  ERROR    ⨯ ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:41.202] Server  ERROR    ⨯ ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:41.205] Server  ERROR    ⨯ ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:41.330] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:41.330] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:42.157] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:42.157] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:42.892] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:42.892] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:43.161] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:43.161] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:43.832] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:43.832] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:44.161] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:11:1
-Module not found: Can't resolve './plantillas/Plantilla8Static'
-   9 | import Plantilla6StaticImport from "./plantillas/Plantilla6Static";
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-> 11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-  13 |
-  14 | type StaticTemplateProps = {
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:44.161] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:50.123] Server  ERROR    ⨯ ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:50.125] Server  ERROR    ⨯ ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:50.128] Server  ERROR    ⨯ ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:50.132] Server  ERROR    ⨯ ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:50.266] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:51.164] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx:12:1
-Module not found: Can't resolve './plantillas/Plantilla9Static'
-  10 | import Plantilla7StaticImport from "./plantillas/Plantilla7Static";
-  11 | import Plantilla8StaticImport from "./plantillas/Plantilla8Static";
-> 12 | import Plantilla9StaticImport from "./plantillas/Plantilla9Static";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 | type StaticTemplateProps = {
-  15 |   data: any;
-
-Import trace:
-  Server Component:
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx
-    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:56.971] Server  LOG      ✓ Compiled in 126ms
-[00:00:59.359] Server  LOG     VALOR DB: null
-[00:00:59.591] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:01.525] Server  LOG     ✅ GET ROW: {}
-[00:01:01.636] Browser LOG     tipoPlantilla prop: undefined
-[00:01:01.636] Browser LOG     data.tipo_plantilla: 1
-[00:01:01.636] Browser LOG     plantillaFinal: 1
-[00:01:01.636] Browser LOG     tipoPlantilla prop: undefined
-[00:01:01.636] Browser LOG     data.tipo_plantilla: 1
-[00:01:01.636] Browser LOG     plantillaFinal: 1
-[00:01:01.743] Server  LOG     ✅ GET ROW: {}
-[00:01:02.531] Server  LOG     ✅ GET ROW: {}
-[00:01:05.127] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:11.850] Server  LOG     📦 BODY RECIBIDO: {}
-[00:01:12.075] Server  LOG     ✅ ROW GUARDADA: {}
-[00:01:13.410] Server  LOG     VALOR DB: null
-[00:01:13.675] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:14.740] Server  LOG     ✅ GET ROW: {}
-[00:01:14.855] Browser LOG     tipoPlantilla prop: undefined
-[00:01:14.855] Browser LOG     data.tipo_plantilla: 1
-[00:01:14.855] Browser LOG     plantillaFinal: 1
-[00:01:14.855] Browser LOG     tipoPlantilla prop: undefined
-[00:01:14.855] Browser LOG     data.tipo_plantilla: 1
-[00:01:14.855] Browser LOG     plantillaFinal: 1
-[00:01:14.958] Server  LOG     ✅ GET ROW: {}
-[00:01:15.739] Server  LOG     ✅ GET ROW: {}
-[00:07:08.059] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:07:13.547] Server  LOG     📦 BODY RECIBIDO: {}
-[00:07:13.767] Server  LOG     ✅ ROW GUARDADA: {}
-[00:07:15.354] Server  LOG     VALOR DB: null
-[00:07:15.619] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:07:16.614] Server  LOG     ✅ GET ROW: {}
-[00:07:16.728] Browser LOG     tipoPlantilla prop: undefined
-[00:07:16.728] Browser LOG     data.tipo_plantilla: 1
-[00:07:16.728] Browser LOG     plantillaFinal: 1
-[00:07:16.728] Browser LOG     tipoPlantilla prop: undefined
-[00:07:16.728] Browser LOG     data.tipo_plantilla: 1
-[00:07:16.728] Browser LOG     plantillaFinal: 1
-[00:07:16.820] Server  LOG     ✅ GET ROW: {}
-[00:07:17.601] Server  LOG     ✅ GET ROW: {}
-[00:07:19.218] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:16.286] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:21.546] Server  LOG     📦 BODY RECIBIDO: {}
-[00:09:21.779] Server  LOG     ✅ ROW GUARDADA: {}
-[00:09:23.072] Server  LOG     VALOR DB: null
-[00:09:23.248] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:24.305] Server  LOG     ✅ GET ROW: {}
-[00:09:24.421] Browser LOG     tipoPlantilla prop: undefined
-[00:09:24.421] Browser LOG     data.tipo_plantilla: 5
-[00:09:24.421] Browser LOG     plantillaFinal: 5
-[00:09:24.421] Browser LOG     tipoPlantilla prop: undefined
-[00:09:24.421] Browser LOG     data.tipo_plantilla: 5
-[00:09:24.421] Browser LOG     plantillaFinal: 5
-[00:09:24.517] Server  LOG     ✅ GET ROW: {}
-[00:09:25.376] Server  LOG     ✅ GET ROW: {}
-[00:09:36.330] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:46.004] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:55.863] Server  LOG     📦 BODY RECIBIDO: {}
-[00:09:56.080] Server  LOG     ✅ ROW GUARDADA: {}
-[00:09:57.472] Server  LOG     VALOR DB: null
-[00:09:57.787] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:58.783] Server  LOG     ✅ GET ROW: {}
-[00:09:58.895] Browser LOG     tipoPlantilla prop: undefined
-[00:09:58.895] Browser LOG     data.tipo_plantilla: 5
-[00:09:58.896] Browser LOG     plantillaFinal: 5
-[00:09:58.896] Browser LOG     tipoPlantilla prop: undefined
-[00:09:58.896] Browser LOG     data.tipo_plantilla: 5
-[00:09:58.896] Browser LOG     plantillaFinal: 5
-[00:09:58.991] Server  LOG     ✅ GET ROW: {}
-[00:09:59.765] Server  LOG     ✅ GET ROW: {}
-[00:10:05.122] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:09.768] Server  LOG     VALOR DB: null
-[00:10:09.942] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:10.949] Server  LOG     ✅ GET ROW: {}
-[00:10:11.058] Browser LOG     tipoPlantilla prop: undefined
-[00:10:11.058] Browser LOG     data.tipo_plantilla: 5
-[00:10:11.058] Browser LOG     plantillaFinal: 5
-[00:10:11.058] Browser LOG     tipoPlantilla prop: undefined
-[00:10:11.058] Browser LOG     data.tipo_plantilla: 5
-[00:10:11.058] Browser LOG     plantillaFinal: 5
-[00:10:11.156] Server  LOG     ✅ GET ROW: {}
-[00:10:12.133] Server  LOG     ✅ GET ROW: {}
-[00:13:11.761] Server  LOG      ✓ Compiled in 305ms
-[00:26:25.660] Server  LOG      ✓ Compiled in 172ms
-[00:26:33.871] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:26:37.012] Browser ERROR   uncaughtError: ReferenceError: Plantilla6 is not defined
-[00:26:59.921] Server  LOG      ✓ Compiled in 141ms
-[00:26:59.933] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:27:00.610] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:29:53.816] Server  LOG      ✓ Compiled in 242ms
-[00:33:30.754] Server  LOG      ✓ Compiled in 180ms
-[00:33:51.562] Server  LOG      ✓ Compiled in 129ms
-[00:35:38.527] Server  LOG      ✓ Compiled in 204ms
-[00:37:48.542] Server  LOG      ✓ Compiled in 322ms
-[00:42:11.554] Server  LOG      ✓ Compiled in 217ms
-[00:42:26.504] Browser LOG     PLANTILLA ACTIVA: 6
-[00:42:26.504] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"722969013222768659","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"122","liga_pago_lista_id":"18","locked":true,"metodo_pago":"SPEI","metodo_pago_lista_id":"6","monto":"2021.00","mostrar_extras":true,"nombre_cliente":"Darlin","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"Big pesitos","telefono_cliente":"17","template_id":6,"tipo_plantilla":6,"url":null}
-[00:42:27.361] Server  LOG     📦 BODY RECIBIDO: {}
-[00:42:27.562] Server  LOG     ✅ ROW GUARDADA: {}
-[00:42:29.766] Server  LOG     VALOR DB: null
-[00:42:30.049] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:42:30.990] Server  LOG     ✅ GET ROW: {}
-[00:42:31.106] Browser LOG     tipoPlantilla prop: undefined
-[00:42:31.106] Browser LOG     data.tipo_plantilla: 1
-[00:42:31.106] Browser LOG     plantillaFinal: 1
-[00:42:31.106] Browser LOG     tipoPlantilla prop: undefined
-[00:42:31.106] Browser LOG     data.tipo_plantilla: 1
-[00:42:31.106] Browser LOG     plantillaFinal: 1
-[00:42:31.193] Server  LOG     ✅ GET ROW: {}
-[00:42:31.888] Server  LOG     ✅ GET ROW: {}
-[00:42:33.563] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:50:47.849] Server  LOG      ✓ Compiled in 269ms
-[00:57:49.488] Browser LOG     PLANTILLA ACTIVA: 6
-[00:57:49.488] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"2021.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"2021.00","mostrar_extras":true,"nombre_cliente":"Darlin","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"Big pesitos","telefono_cliente":"17","template_id":6,"tipo_plantilla":6,"url":null}
-[00:57:50.353] Server  LOG     📦 BODY RECIBIDO: {}
-[00:57:50.553] Server  LOG     ✅ ROW GUARDADA: {}
-[00:57:52.645] Server  LOG     VALOR DB: null
-[00:57:52.845] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:57:53.805] Server  LOG     ✅ GET ROW: {}
-[00:57:53.912] Browser LOG     tipoPlantilla prop: undefined
-[00:57:53.912] Browser LOG     data.tipo_plantilla: 1
-[00:57:53.912] Browser LOG     plantillaFinal: 1
-[00:57:53.912] Browser LOG     tipoPlantilla prop: undefined
-[00:57:53.912] Browser LOG     data.tipo_plantilla: 1
-[00:57:53.912] Browser LOG     plantillaFinal: 1
-[00:57:54.005] Server  LOG     ✅ GET ROW: {}
-[00:57:54.803] Server  LOG     ✅ GET ROW: {}
-[00:57:58.853] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:58:34.420] Browser LOG     PLANTILLA ACTIVA: 6
-[00:58:34.420] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"2021.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"2021.00","mostrar_extras":true,"nombre_cliente":"Darlin","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"Big pesitos","telefono_cliente":"17","template_id":6,"tipo_plantilla":6,"url":null}
-[00:58:35.348] Server  LOG     📦 BODY RECIBIDO: {}
-[00:58:35.546] Server  LOG     ✅ ROW GUARDADA: {}
-[00:58:37.515] Server  LOG     VALOR DB: null
-[00:58:37.682] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:58:38.587] Server  LOG     ✅ GET ROW: {}
-[00:58:38.698] Browser LOG     tipoPlantilla prop: undefined
-[00:58:38.698] Browser LOG     data.tipo_plantilla: 6
-[00:58:38.698] Browser LOG     plantillaFinal: 6
-[00:58:38.698] Browser LOG     tipoPlantilla prop: undefined
-[00:58:38.698] Browser LOG     data.tipo_plantilla: 6
-[00:58:38.698] Browser LOG     plantillaFinal: 6
-[00:58:38.767] Server  LOG     ✅ GET ROW: {}
-[00:58:39.484] Server  LOG     ✅ GET ROW: {}
-[00:58:42.803] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:58:59.543] Browser LOG     PLANTILLA ACTIVA: 6
-[00:58:59.543] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"2021.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"2021.00","mostrar_extras":true,"nombre_cliente":"Darlin","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"Big pesitos","telefono_cliente":"17","template_id":6,"tipo_plantilla":6,"url":null}
-[00:59:00.302] Server  LOG     📦 BODY RECIBIDO: {}
-[00:59:00.499] Server  LOG     ✅ ROW GUARDADA: {}
-[00:59:02.314] Server  LOG     VALOR DB: null
-[00:59:02.470] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:59:03.418] Server  LOG     ✅ GET ROW: {}
-[00:59:03.529] Browser LOG     tipoPlantilla prop: undefined
-[00:59:03.529] Browser LOG     data.tipo_plantilla: 6
-[00:59:03.529] Browser LOG     plantillaFinal: 6
-[00:59:03.529] Browser LOG     tipoPlantilla prop: undefined
-[00:59:03.529] Browser LOG     data.tipo_plantilla: 6
-[00:59:03.529] Browser LOG     plantillaFinal: 6
-[00:59:03.611] Server  LOG     ✅ GET ROW: {}
-[00:59:04.305] Server  LOG     ✅ GET ROW: {}
-[00:59:07.752] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:01:04.642] Browser LOG     PLANTILLA ACTIVA: 6
-[01:01:04.642] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"2021.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"2021.00","mostrar_extras":true,"nombre_cliente":"Darlin","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"Big pesitos","telefono_cliente":"17","template_id":6,"tipo_plantilla":6,"url":null}
-[01:01:05.503] Server  LOG     📦 BODY RECIBIDO: {}
-[01:01:05.700] Server  LOG     ✅ ROW GUARDADA: {}
-[01:01:07.794] Server  LOG     VALOR DB: null
-[01:01:07.970] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:01:08.862] Server  LOG     ✅ GET ROW: {}
-[01:01:08.979] Browser LOG     tipoPlantilla prop: undefined
-[01:01:08.979] Browser LOG     data.tipo_plantilla: 6
-[01:01:08.979] Browser LOG     plantillaFinal: 6
-[01:01:08.979] Browser LOG     tipoPlantilla prop: undefined
-[01:01:08.979] Browser LOG     data.tipo_plantilla: 6
-[01:01:08.979] Browser LOG     plantillaFinal: 6
-[01:01:41.204] Server  LOG      ✓ Compiled in 89ms
-[01:01:48.324] Server  LOG      ✓ Compiled in 113ms
-[01:01:59.303] Server  LOG      ✓ Compiled in 74ms
-[01:02:03.820] Server  LOG      ✓ Compiled in 105ms
-[01:02:10.400] Server  LOG      ✓ Compiled in 103ms
-[01:02:19.781] Server  LOG      ✓ Compiled in 82ms
-[01:02:21.122] Browser LOG     tipoPlantilla prop: undefined
-[01:02:21.122] Browser LOG     data.tipo_plantilla: 6
-[01:02:21.122] Browser LOG     plantillaFinal: 6
-[01:02:21.122] Browser LOG     tipoPlantilla prop: undefined
-[01:02:21.122] Browser LOG     data.tipo_plantilla: 6
-[01:02:21.122] Browser LOG     plantillaFinal: 6
-[01:02:23.393] Browser LOG     tipoPlantilla prop: undefined
-[01:02:23.393] Browser LOG     data.tipo_plantilla: 6
-[01:02:23.393] Browser LOG     plantillaFinal: 6
-[01:02:23.393] Browser LOG     tipoPlantilla prop: undefined
-[01:02:23.393] Browser LOG     data.tipo_plantilla: 6
-[01:02:23.393] Browser LOG     plantillaFinal: 6
-[01:04:57.300] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:05:19.716] Server  LOG      ✓ Compiled in 229ms
-[01:07:06.962] Server  LOG      ✓ Compiled in 255ms
-[01:07:10.205] Browser LOG     PLANTILLA ACTIVA: 7
-[01:07:10.206] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"2021.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"2021.00","mostrar_extras":true,"nombre_cliente":"Darlin","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"Big pesitos","telefono_cliente":"17","template_id":7,"tipo_plantilla":7,"url":null}
-[01:07:10.842] Server  LOG     📦 BODY RECIBIDO: {}
-[01:07:11.041] Server  LOG     ✅ ROW GUARDADA: {}
-[01:07:13.273] Server  LOG     VALOR DB: null
-[01:07:13.723] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:07:14.819] Server  LOG     ✅ GET ROW: {}
-[01:07:14.934] Browser LOG     tipoPlantilla prop: undefined
-[01:07:14.934] Browser LOG     data.tipo_plantilla: 7
-[01:07:14.934] Browser LOG     plantillaFinal: 7
-[01:07:14.934] Browser LOG     tipoPlantilla prop: undefined
-[01:07:14.934] Browser LOG     data.tipo_plantilla: 7
-[01:07:14.934] Browser LOG     plantillaFinal: 7
+[00:01:01.784] Server  LOG     OTP INSERTADO: {}
+[00:01:01.899] Server  LOG     OTP DEL USUARIO: [{...},{...},{...},{...},{...}]
+[00:01:20.279] Server  LOG     OTP VERIFY USERNAME BODY: "admin"
+[00:01:20.282] Server  LOG     OTP VERIFY USERNAME TOKEN: "admin"
+[00:01:21.134] Server  LOG     OTP VERIFY DEBUG: [{...},{...},{...},{...},{...}]
+[00:01:52.498] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:00.974] Server  LOG     OTP INSERTADO: {}
+[00:02:01.076] Server  LOG     OTP DEL USUARIO: [{...},{...},{...},{...},{...}]
+[00:02:17.711] Server  LOG     OTP VERIFY USERNAME BODY: "admin"
+[00:02:17.712] Server  LOG     OTP VERIFY USERNAME TOKEN: "admin"
+[00:02:18.797] Server  LOG     OTP VERIFY DEBUG: [{...},{...},{...},{...},{...}]
+[00:02:35.366] Server  LOG     [API PUT] context: {}
+[00:02:35.414] Server  ERROR   C:\Users\adlan\Downloads\b-multa-main\multa-main\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:35.417] Server  ERROR   C:\Users\adlan\Downloads\b-multa-main\multa-main\.next\dev\server\chunks\[root-of-the-server]__acdc9808._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:35.425] Server  ERROR   C:\Users\adlan\Downloads\b-multa-main\multa-main\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:35.431] Server  WARN    Error: Route "/api/usuarios/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:02:35.433] Server  LOG     [API PUT] body: {}
+[00:02:36.477] Server  LOG     [API PUT] updated: {}
+[00:03:06.531] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:07.075] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/asesor/co..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/Downloads...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="es"
+-                         suppresshydrationwarning="true"
+-                         data-lt-installed="true"
+                        >
+                  ...
+
+[00:03:17.482] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:17.609] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/admin" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/Downloads...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <RootLayout>
+                        <html lang="es">
+                          <body
+                            className="bg-gray-100 min-h-screen"
+-                           __processed_78dba971-26dd-48c1-84a6-1b39641c7d44__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+
+[00:03:28.091] Server  LOG     OTP INSERTADO: {}
+[00:03:28.191] Server  LOG     OTP DEL USUARIO: [{...},{...},{...},{...},{...}]
+[00:03:41.671] Server  LOG     OTP VERIFY USERNAME BODY: "admin"
+[00:03:41.672] Server  LOG     OTP VERIFY USERNAME TOKEN: "admin"
+[00:03:42.701] Server  LOG     OTP VERIFY DEBUG: [{...},{...},{...},{...},{...}]
+[00:04:20.450] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:22.192] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/gestion/m..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                    ...
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/Downloads...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="es"
+-                         suppresshydrationwarning="true"
+-                         data-lt-installed="true"
+                        >
+                          <body
+                            className="bg-gray-100 min-h-screen"
+-                           __processed_7942d9a7-d2d2-46f2-ae3d-306452f2cf3a__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            ...
+                              <SegmentViewNode type="layout" pagePath="/Downloads...">
+                                <SegmentTrieNode>
+                                <GestionLayout>
+                                  <div
+                                    className="relative min-h-screen bg-black"
+-                                   bis_skin_checked="1"
+                                  >
+                                    ...
+                                      <SegmentViewNode type="page" pagePath="/Downloads...">
+                                        <SegmentTrieNode>
+                                        <Page>
+                                          <PagoFastCashForm>
+                                            <div
+                                              className="min-h-screen flex items-center justify-center bg-[#152032] te..."
+-                                             bis_skin_checked="1"
+                                            >
++                                             Cargando caso…
+                                      ...
+                  ...
+
+[00:04:27.454] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:32.673] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:39.277] Browser LOG     PLANTILLA ACTIVA: 3
+[00:04:39.277] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"2021.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"2021.00","mostrar_extras":true,"nombre_cliente":"Darlin","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"Big pesitos","telefono_cliente":"17","template_id":3,"tipo_plantilla":3,"url":null}
+[00:04:40.015] Server  LOG     📦 BODY RECIBIDO: {}
+[00:04:40.217] Server  LOG     ✅ ROW GUARDADA: {}
+[00:04:42.570] Server  LOG     VALOR DB: null
+[00:04:42.773] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:44.606] Server  LOG     ✅ GET ROW: {}
+[00:04:44.731] Browser LOG     tipoPlantilla prop: undefined
+[00:04:44.731] Browser LOG     data.tipo_plantilla: 3
+[00:04:44.731] Browser LOG     plantillaFinal: 3
+[00:04:44.731] Browser LOG     tipoPlantilla prop: undefined
+[00:04:44.731] Browser LOG     data.tipo_plantilla: 3
+[00:04:44.731] Browser LOG     plantillaFinal: 3
+[00:04:44.818] Server  LOG     ✅ GET ROW: {}
+[00:04:45.805] Server  LOG     ✅ GET ROW: {}
