@@ -254,4 +254,4 @@ export default function Plantilla6(props: PlantillaProps) {
 
 function Divider({ className = "" }: { className?: string }) {
   return <div className={`w-full h-[1px] bg-[#d6d6d6] ${className}`} />;
-}
+} 

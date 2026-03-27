@@ -65,7 +65,7 @@ export async function GET(_req: Request, ctx: Ctx) {
         url_imagen,
         lista_id
       FROM lista_items
-      WHERE lista_id = $1
+      WHERE lista_id = $1           
       ORDER BY
         CASE WHEN orden IS NULL THEN 1 ELSE 0 END,
         orden ASC,

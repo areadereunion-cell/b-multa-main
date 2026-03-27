@@ -37,6 +37,8 @@ export default function CasosTable({
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState<Record<string, boolean>>({});
   const [resegLoading, setResegLoading] = useState(false);
+  const [changingPago, setChangingPago] = useState<Record<string, boolean>>({});
+  const [openingLiga, setOpeningLiga] = useState<Record<string, boolean>>({});
 
   async function load() {
     setLoading(true);
@@ -95,6 +97,72 @@ export default function CasosTable({
     setData((prev) =>
       prev.map((x) => (x.numero_prestamo === numero_prestamo ? j.data : x))
     );
+
+    return j.data;
+  }
+
+  async function obtenerUltimaLiga(numero_prestamo: string) {
+    const res = await fetch(
+      `/api/collection/casos/${encodeURIComponent(numero_prestamo)}`,
+      {
+        cache: "no-store",
+      }
+    );
+
+    const j = await res.json().catch(() => null);
+
+    if (!res.ok || !j?.ok) {
+      throw new Error(j?.error || "No se pudo obtener el caso");
+    }
+
+    const liga = j?.data?.liga_pago || j?.liga_pago || null;
+
+    if (!liga) {
+      throw new Error("Este cliente no tiene una liga de pago generada");
+    }
+
+    return liga as string;
+  }
+
+  async function cambiarEstadoPago(row: Caso) {
+    if (role !== "admin") return;
+
+    const key = row.numero_prestamo;
+    const nuevoEstado = row.estado_pago === "pagado" ? "pendiente" : "pagado";
+
+    try {
+      setChangingPago((p) => ({ ...p, [key]: true }));
+
+      // SOLO actualizamos el caso.
+      // Los triggers de PostgreSQL se encargan de sincronizar
+      // cliente.pagado / estado_pago / plantillas_temporales.pagado
+      await patchCaso(row.numero_prestamo, {
+        estado_pago: nuevoEstado,
+      });
+
+      await load();
+    } catch (e: any) {
+      alert(e?.message || "Error actualizando estado de pago");
+      await load();
+    } finally {
+      setChangingPago((p) => ({ ...p, [key]: false }));
+    }
+  }
+
+  async function entrarUltimaLiga(row: Caso) {
+    const key = row.numero_prestamo;
+
+    try {
+      setOpeningLiga((p) => ({ ...p, [key]: true }));
+
+      const liga = await obtenerUltimaLiga(row.numero_prestamo);
+
+      window.open(liga, "_blank", "noopener,noreferrer");
+    } catch (e: any) {
+      alert(e?.message || "Error obteniendo la última liga");
+    } finally {
+      setOpeningLiga((p) => ({ ...p, [key]: false }));
+    }
   }
 
   async function resegmentar() {
@@ -153,11 +221,7 @@ export default function CasosTable({
 
       await load();
 
-      const finalLink =
-        j.link ||
-        j.liga_pago ||
-        j.data?.liga_pago ||
-        null;
+      const finalLink = j.link || j.liga_pago || j.data?.liga_pago || null;
 
       if (finalLink) {
         window.open(finalLink, "_blank", "noopener,noreferrer");
@@ -288,24 +352,20 @@ export default function CasosTable({
 
                 <td className="td">
                   <button
-                    disabled={role !== "admin"}
-                    onClick={() =>
-                      role === "admin" &&
-                      patchCaso(row.numero_prestamo, {
-                        estado_pago:
-                          row.estado_pago === "pagado"
-                            ? "pendiente"
-                            : "pagado",
-                      })
+                    disabled={
+                      role !== "admin" || changingPago[row.numero_prestamo]
                     }
+                    onClick={() => cambiarEstadoPago(row)}
                     className={[
-                      "px-2 py-1 rounded-full text-xs font-medium",
+                      "px-2 py-1 rounded-full text-xs font-medium disabled:opacity-50",
                       row.estado_pago === "pagado"
                         ? "bg-emerald-100 text-emerald-700"
                         : "bg-amber-100 text-amber-700",
                     ].join(" ")}
                   >
-                    {row.estado_pago}
+                    {changingPago[row.numero_prestamo]
+                      ? "guardando..."
+                      : row.estado_pago}
                   </button>
                 </td>
 
@@ -348,17 +408,12 @@ export default function CasosTable({
 
                     <button
                       className="text-emerald-700 hover:underline disabled:opacity-50"
-                      disabled={!row.liga_pago}
-                      onClick={() => {
-                        if (!row.liga_pago) return;
-                        window.open(
-                          row.liga_pago,
-                          "_blank",
-                          "noopener,noreferrer"
-                        );
-                      }}
+                      disabled={openingLiga[row.numero_prestamo]}
+                      onClick={() => entrarUltimaLiga(row)}
                     >
-                      Entrar
+                      {openingLiga[row.numero_prestamo]
+                        ? "Abriendo..."
+                        : "Entrar"}
                     </button>
                   </div>
                 </td>

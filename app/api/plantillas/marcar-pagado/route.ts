@@ -1,41 +1,86 @@
-      import { NextResponse } from "next/server";
-    import { Pool } from "pg";
+// app/api/marcar-pagado/route.ts
 
-    const pool = new Pool({
-      connectionString: process.env.DATABASE_URL,
-    });
+import { NextResponse } from "next/server";
+import { Pool } from "pg";
 
-    export async function POST(req: Request) {
-      const client = await pool.connect();
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+});
 
-      try {
-        const { token } = await req.json();
+export async function POST(req: Request) {
+  const client = await pool.connect();
 
-        if (!token) {
-          return NextResponse.json(
-            { error: "token requerido" },
-            { status: 400 }
-          );
-        }
+  try {
+    const body = await req.json().catch(() => ({}));
 
-        // 🔥 actualizar plantillas_temporales
-        await client.query(
-          `
-          UPDATE plantillas_temporales
-          SET pagado = true
-          WHERE token = $1
-          `,
-          [token]
-        );
+    const numero_prestamo = body?.numero_prestamo ?? null;
+    const token = body?.token ?? null;
 
-        return NextResponse.json({ ok: true });
-      } catch (error) {
-        console.error(error);
-        return NextResponse.json(
-          { error: "Error al actualizar" },
-          { status: 500 }
-        );
-      } finally {
-        client.release();
+    if (!numero_prestamo && !token) {
+      return NextResponse.json(
+        { error: "numero_prestamo o token requerido" },
+        { status: 400 }
+      );
+    }
+
+    await client.query("BEGIN");
+
+    let finalToken = token;
+
+    // 🔥 si no viene token → sacarlo desde cliente
+    if (!finalToken && numero_prestamo) {
+      const caso = await client.query(
+        `SELECT liga_pago FROM cliente WHERE numero_prestamo = $1 LIMIT 1`,
+        [numero_prestamo]
+      );
+
+      const liga = caso.rows[0]?.liga_pago ?? "";
+
+      if (liga.includes("/pay/")) {
+        finalToken = liga.split("/pay/")[1]?.split("/")[0] ?? null;
       }
     }
+
+    // 🔥 actualizar cliente
+    if (numero_prestamo) {
+      await client.query(
+        `
+        UPDATE cliente
+        SET pagado = true,
+            estado_pago = 'pagado'
+        WHERE numero_prestamo = $1
+        `,
+        [numero_prestamo]
+      );
+    }
+
+    // 🔥 actualizar plantilla
+    if (finalToken) {
+      await client.query(
+        `
+        UPDATE plantillas_temporales
+        SET pagado = true
+        WHERE token = $1::uuid
+        `,
+        [finalToken]
+      );
+    }
+
+    await client.query("COMMIT");
+
+    return NextResponse.json({
+      ok: true,
+      token: finalToken,
+    });
+  } catch (error) {
+    await client.query("ROLLBACK");
+    console.error(error);
+
+    return NextResponse.json(
+      { error: "Error interno" },
+      { status: 500 }
+    );
+  } finally {
+    client.release();
+  }
+}
