@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 type AnyRecord = Record<string, unknown>;
 
@@ -9,6 +9,8 @@ export default function PagoFastCashForm({
 }: {
   data?: AnyRecord;
 }) {
+  const router = useRouter();
+
   // =========================
   // Helpers
   // =========================
@@ -17,7 +19,6 @@ export default function PagoFastCashForm({
   const origin = typeof window !== "undefined" ? window.location.origin : "";
 
   const normalizeUrl = (u: unknown): string | null => {
-
     if (!u) return null;
     let s = String(u).trim().replaceAll("\\", "/");
 
@@ -117,43 +118,42 @@ export default function PagoFastCashForm({
   const [configListas, setConfigListas] = useState<AnyRecord | null>(null);
   const [loadingConfig, setLoadingConfig] = useState<boolean>(false);
 
-      useEffect(() => {
-      if (!plantillaId) return;
-      const pid = String(plantillaId);
+  useEffect(() => {
+    if (!plantillaId) return;
+    const pid = String(plantillaId);
 
-      let cancel = false;
+    let cancel = false;
 
-      async function fetchConfig() {
-        setLoadingConfig(true);
-        try {
-          const res = await fetch(
-            `/api/plantillas-personalizadas/config?plantilla_id=${encodeURIComponent(pid)}`,
-            { cache: "no-store" }
-          );
+    async function fetchConfig() {
+      setLoadingConfig(true);
+      try {
+        const res = await fetch(
+          `/api/plantillas-personalizadas/config?plantilla_id=${encodeURIComponent(pid)}`,
+          { cache: "no-store" }
+        );
 
-          const json = await res.json().catch(() => null);
+        const json = await res.json().catch(() => null);
 
-          if (!res.ok) {
-            console.log("ℹ️ Sin config personalizada", res.status, json || "");
-            if (!cancel) setConfigListas(null);
-            return;
-          }
-
-          if (!cancel) setConfigListas(json as Record<string, unknown>);
-        } catch (e: unknown) {
-          console.error("❌ Error cargando config personalizada:", e);
+        if (!res.ok) {
+          console.log("ℹ️ Sin config personalizada", res.status, json || "");
           if (!cancel) setConfigListas(null);
-        } finally {
-          if (!cancel) setLoadingConfig(false);
+          return;
         }
+
+        if (!cancel) setConfigListas(json as Record<string, unknown>);
+      } catch (e: unknown) {
+        console.error("❌ Error cargando config personalizada:", e);
+        if (!cancel) setConfigListas(null);
+      } finally {
+        if (!cancel) setLoadingConfig(false);
       }
+    }
 
-      fetchConfig();
-      return () => {
-        cancel = true;
-      };
-    }, [plantillaId]);
-
+    fetchConfig();
+    return () => {
+      cancel = true;
+    };
+  }, [plantillaId]);
 
   // =========================
   // 3) Merge BD + temporal (data)
@@ -557,262 +557,214 @@ export default function PagoFastCashForm({
   // Render
   // =========================
   return (
-    <div className="w-full min-h-screen flex items-center justify-center p-6 relative bg-[#152032]">
-      <div className="absolute right-6 top-16 z-50 flex flex-col gap-4 w-60">
-        {showConfigWarning ? (
-          <div className="bg-yellow-500/15 border border-yellow-400/40 text-yellow-100 text-xs p-3 rounded-lg">
-            Esta plantilla no tiene <b>config personalizada</b> (origen). Los selects filtrados pueden aparecer
-            vacíos.
-          </div>
-        ) : null}
-
-        <div className="flex items-center justify-between text-white">
-          <span className="text-sm font-medium">Mostrar datos del cliente</span>
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              checked={mostrarExtras}
-              onChange={() => setMostrarExtras(!mostrarExtras)}
-              className="sr-only peer"
-              disabled={disabled}
-            />
-            <div
-              className="w-11 h-6 bg-gray-300 peer-checked:bg-blue-600 rounded-full relative
-              after:content-[''] after:w-5 after:h-5 after:bg-white after:rounded-full
-              after:absolute after:left-1 after:top-0.5 peer-checked:after:translate-x-5 transition-all"
-            />
-          </label>
-        </div>
-
-        <div className="bg-white/5 p-3 rounded-lg">
-          <div className="text-xs text-white mb-2 font-medium">Fondo de la tarjeta</div>
-          <select
-            className="w-full p-2 rounded-md mb-2 text-sm"
-            value={cardBg}
-            onChange={(e) => {
-              setCardBg(e.target.value);
-              setCardBgHexInput(e.target.value);
-              setCardBgError("");
-            }}
-            disabled={disabled}
-          >
-            {cardBgOptions.map((o) => (
-              <option key={o.value} value={o.value}>
-                {o.label} — {o.value}
-              </option>
-            ))}
-          </select>
-
-          <div className="flex gap-2">
-            <input
-              type="text"
-              value={cardBgHexInput}
-              onChange={(e) => handleCardBgHexChange(e.target.value)}
-              className="flex-1 p-2 rounded-md text-sm"
-              placeholder="#RRGGBB"
-              disabled={disabled}
-            />
-            <div
-              className="w-10 h-10 rounded-md border"
-              style={{ backgroundColor: isHex(cardBgHexInput) ? cardBgHexInput : cardBg }}
-            />
-          </div>
-          {cardBgError && <div className="text-xs text-rose-400 mt-1">{cardBgError}</div>}
-        </div>
-
-        <div className="bg-white/5 p-3 rounded-lg">
-          <div className="text-xs text-white mb-2 font-medium">Color del botón / burbuja</div>
-          <select
-            className="w-full p-2 rounded-md mb-2 text-sm"
-            value={primaryColor}
-            onChange={(e) => {
-              setPrimaryColor(e.target.value);
-              setPrimaryHexInput(e.target.value);
-              setPrimaryError("");
-            }}
-            disabled={disabled}
-          >
-            {primaryOptions.map((o) => (
-              <option key={o.value} value={o.value}>
-                {o.label} — {o.value}
-              </option>
-            ))}
-          </select>
-
-          <div className="flex gap-2">
-            <input
-              type="text"
-              value={primaryHexInput}
-              onChange={(e) => handlePrimaryHexChange(e.target.value)}
-              className="flex-1 p-2 rounded-md text-sm"
-              placeholder="#RRGGBB"
-              disabled={disabled}
-            />
-            <div
-              className="w-10 h-10 rounded-md border"
-              style={{ backgroundColor: isHex(primaryHexInput) ? primaryHexInput : primaryColor }}
-            />
-          </div>
-          {primaryError && <div className="text-xs text-rose-400 mt-1">{primaryError}</div>}
-        </div>
-
-        {shareLink && (
-          <div className="bg-white/5 p-3 rounded-lg">
-            <div className="text-xs text-white mb-2 font-medium">Link generado</div>
-            <input className="w-full p-2 rounded-md text-sm" value={shareLink} readOnly />
-            <button
-              className="mt-2 w-full p-2 rounded-md text-sm bg-white/10 hover:bg-white/20 text-white"
-              onClick={() => navigator.clipboard.writeText(shareLink)}
-              type="button"
-            >
-              Copiar link
-            </button>
-          </div>
-        )}
-      </div>
-      <div
-        className="w-[420px] rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.45)]"
-        style={{ backgroundColor: cardBg }}
+    <div className="w-full min-h-screen bg-[#152032] relative overflow-x-hidden">
+      <button
+        type="button"
+        onClick={() => router.push("/gestion/multas")}
+        className="fixed left-3 top-3 z-[60] rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20 sm:left-5 sm:top-5"
       >
-        <div
-          className="w-full h-[160px] flex flex-col items-center pt-6"
-          style={{ background: "linear-gradient(180deg,#5CB0FF 0%,#A3D4FF 100%)" }}
-        >
-          {fotoHabilitada ? (
-            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center overflow-hidden shadow">
-              {resolvedLogoUrl ? (
-                <img
-                  src={resolvedLogoUrl}
-                  className="w-full h-full object-cover"
-                  alt="logo"
-                  crossOrigin="anonymous"
-                  onError={() => console.log("❌ NO carga IMG:", resolvedLogoUrl)}
-                />
-              ) : (
-                <span className="text-lg font-bold text-[#142546]">IMG</span>
-              )}
-            </div>
-          ) : null}
+        ← Regresar
+      </button>
 
-          <button
-            type="button"
-            className="mt-2 text-xs px-3 py-1 rounded-md bg-white/70 hover:bg-white text-[#142546] font-semibold disabled:opacity-60"
-            onClick={() => setFotoHabilitada((v) => !v)}
-            disabled={disabled}
-          >
-            {fotoHabilitada ? "Inhabilitar foto" : "Habilitar foto"}
-          </button>
+      <div className="mx-auto flex min-h-screen w-full max-w-[1440px] flex-col items-center justify-start gap-6 px-3 pb-6 pt-20 sm:px-6 sm:pt-24 lg:flex-row lg:items-start lg:justify-center lg:gap-8 lg:px-8 lg:pb-10">
+        <div className="order-2 w-full max-w-[560px] lg:order-1 lg:max-w-[420px] lg:flex-1 lg:pt-6">
+          <div className="w-full lg:sticky lg:top-24">
+            <div className="flex flex-col gap-4">
+              {showConfigWarning ? (
+                <div className="rounded-lg border border-yellow-400/40 bg-yellow-500/15 p-3 text-xs text-yellow-100">
+                  Esta plantilla no tiene <b>config personalizada</b> (origen). Los selects filtrados pueden aparecer
+                  vacíos.
+                </div>
+              ) : null}
 
-          {/* producto debajo de foto */}
-          <div className="mt-2 w-[280px]">
-            <select
-              className="w-full p-2 rounded-md text-sm bg-white/90 text-[#142546] font-semibold"
-              value={productoListaId}
-              onChange={(e) => setProductoListaId(e.target.value)}
-              disabled={disabled}
-            >
-              <option value="">{labelProductoListaId}</option>
-              {optionsProducto.map((o) => (
-                <option key={o.id} value={o.id}>
-                  {o.label}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
+              <div className="flex items-center justify-between gap-4 rounded-xl bg-white/5 p-3 text-white">
+                <span className="text-sm font-medium">Mostrar datos del cliente</span>
+                <label className="relative inline-flex items-center cursor-pointer shrink-0">
+                  <input
+                    type="checkbox"
+                    checked={mostrarExtras}
+                    onChange={() => setMostrarExtras(!mostrarExtras)}
+                    className="sr-only peer"
+                    disabled={disabled}
+                  />
+                  <div
+                    className="relative h-6 w-11 rounded-full bg-gray-300 transition-all peer-checked:bg-blue-600
+                    after:absolute after:left-1 after:top-0.5 after:h-5 after:w-5 after:rounded-full
+                    after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-5"
+                  />
+                </label>
+              </div>
 
-        <div
-          className="mx-4 -mt-4 rounded-xl p-4 text-white shadow-md"
-          style={{ backgroundColor: primaryColor }}
-        >
-          <div className="text-xs opacity-90">Monto de Préstamo</div>
-          <input
-            type="text"
-            value={monto}
-            onChange={(e) => setMonto(e.target.value)}
-            placeholder="$0.00"
-            className="w-full bg-transparent text-3xl font-bold outline-none"
-            disabled={disabled}
-          />
-        </div>
-
-        <div className="px-4 py-5 flex flex-col gap-4">
-          <div className="bg-transparent rounded-xl border p-3 shadow-sm" style={{ backgroundColor: cardBg }}>
-            {/* Subproducto */}
-            <div className="flex justify-between items-center py-3 border-b gap-3">
-              <span className="text-sm font-medium text-gray-700">{labelSubproductoListaId}</span>
-              <select
-                className="text-sm text-gray-700 text-right bg-transparent font-semibold outline-none"
-                value={subproductoListaId}
-                onChange={(e) => setSubproductoListaId(e.target.value)}
-                disabled={disabled}
-              >
-                <option value="">{labelSubproductoListaId}</option>
-                {optionsSubproducto.map((o) => (
-                  <option key={o.id} value={o.id}>
-                    {o.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="flex justify-between items-center py-3 border-b">
-              <span className="text-sm font-medium text-gray-700">Importe a Pagar</span>
-              <input
-                type="text"
-                value={importePagar}
-                onChange={(e) => setImportePagar(e.target.value)}
-                className="text-gray-400 text-right w-28 bg-transparent font-semibold outline-none"
-                disabled={disabled}
-              />
-            </div>
-
-            <div className="flex justify-between items-center py-3 border-b">
-              <span className="text-sm font-medium text-gray-700">Fecha Vencimiento</span>
-              <input
-                type="date"
-                value={fechaVencimiento}
-                onChange={(e) => setFechaVencimiento(e.target.value)}
-                className="text-gray-400 text-right bg-transparent outline-none"
-                disabled={disabled}
-              />
-            </div>
-
-            <div className="flex justify-between items-center py-3">
-              <span className="text-sm font-medium text-gray-700">Días vencimiento</span>
-              <span className="text-sm text-gray-500">{diasVencidos} días</span>
-            </div>
-          </div>
-
-          {/* Método + Liga */}
-          <div className="bg-transparent rounded-xl p-3 shadow-sm" style={{ backgroundColor: cardBg }}>
-            <div className="text-sm font-medium text-gray-700 mb-2">{labelMetodoPagoListaId}</div>
-
-            <div className="flex items-center justify-center bg-[#F8FAFB] p-4 rounded-md">
-              <div className="text-center w-full">
+              <div className="rounded-lg bg-white/5 p-3">
+                <div className="mb-2 text-xs font-medium text-white">Fondo de la tarjeta</div>
                 <select
-                  className="w-full text-center text-xs text-gray-600 bg-transparent outline-none"
-                  value={metodoPagoListaId}
-                  onChange={(e) => setMetodoPagoListaId(e.target.value)}
+                  className="mb-2 w-full rounded-md p-2 text-sm"
+                  value={cardBg}
+                  onChange={(e) => {
+                    setCardBg(e.target.value);
+                    setCardBgHexInput(e.target.value);
+                    setCardBgError("");
+                  }}
                   disabled={disabled}
                 >
-                  <option value="">{labelMetodoPagoListaId}</option>
-                  {optionsMetodoPago.map((o) => (
+                  {cardBgOptions.map((o) => (
+                    <option key={o.value} value={o.value}>
+                      {o.label} — {o.value}
+                    </option>
+                  ))}
+                </select>
+
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={cardBgHexInput}
+                    onChange={(e) => handleCardBgHexChange(e.target.value)}
+                    className="flex-1 rounded-md p-2 text-sm"
+                    placeholder="#RRGGBB"
+                    disabled={disabled}
+                  />
+                  <div
+                    className="h-10 w-10 rounded-md border shrink-0"
+                    style={{ backgroundColor: isHex(cardBgHexInput) ? cardBgHexInput : cardBg }}
+                  />
+                </div>
+                {cardBgError && <div className="mt-1 text-xs text-rose-400">{cardBgError}</div>}
+              </div>
+
+              <div className="rounded-lg bg-white/5 p-3">
+                <div className="mb-2 text-xs font-medium text-white">Color del botón / burbuja</div>
+                <select
+                  className="mb-2 w-full rounded-md p-2 text-sm"
+                  value={primaryColor}
+                  onChange={(e) => {
+                    setPrimaryColor(e.target.value);
+                    setPrimaryHexInput(e.target.value);
+                    setPrimaryError("");
+                  }}
+                  disabled={disabled}
+                >
+                  {primaryOptions.map((o) => (
+                    <option key={o.value} value={o.value}>
+                      {o.label} — {o.value}
+                    </option>
+                  ))}
+                </select>
+
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={primaryHexInput}
+                    onChange={(e) => handlePrimaryHexChange(e.target.value)}
+                    className="flex-1 rounded-md p-2 text-sm"
+                    placeholder="#RRGGBB"
+                    disabled={disabled}
+                  />
+                  <div
+                    className="h-10 w-10 rounded-md border shrink-0"
+                    style={{ backgroundColor: isHex(primaryHexInput) ? primaryHexInput : primaryColor }}
+                  />
+                </div>
+                {primaryError && <div className="mt-1 text-xs text-rose-400">{primaryError}</div>}
+              </div>
+
+              {shareLink && (
+                <div className="rounded-lg bg-white/5 p-3">
+                  <div className="mb-2 text-xs font-medium text-white">Link generado</div>
+                  <input className="w-full rounded-md p-2 text-sm" value={shareLink} readOnly />
+                  <button
+                    className="mt-2 w-full rounded-md bg-white/10 p-2 text-sm text-white hover:bg-white/20"
+                    onClick={() => navigator.clipboard.writeText(shareLink)}
+                    type="button"
+                  >
+                    Copiar link
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="order-1 w-full max-w-[420px] sm:max-w-[460px] lg:order-2 lg:pt-6">
+          <div
+            className="w-full overflow-hidden rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.45)]"
+            style={{ backgroundColor: cardBg }}
+          >
+            <div
+              className="flex h-auto min-h-[160px] w-full flex-col items-center px-4 pt-6 pb-4 sm:min-h-[170px]"
+              style={{ background: "linear-gradient(180deg,#5CB0FF 0%,#A3D4FF 100%)" }}
+            >
+              {fotoHabilitada ? (
+                <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl bg-white shadow">
+                  {resolvedLogoUrl ? (
+                    <img
+                      src={resolvedLogoUrl}
+                      className="h-full w-full object-cover"
+                      alt="logo"
+                      crossOrigin="anonymous"
+                      onError={() => console.log("❌ NO carga IMG:", resolvedLogoUrl)}
+                    />
+                  ) : (
+                    <span className="text-lg font-bold text-[#142546]">IMG</span>
+                  )}
+                </div>
+              ) : null}
+
+              <button
+                type="button"
+                className="mt-2 rounded-md bg-white/70 px-3 py-1 text-xs font-semibold text-[#142546] hover:bg-white disabled:opacity-60"
+                onClick={() => setFotoHabilitada((v) => !v)}
+                disabled={disabled}
+              >
+                {fotoHabilitada ? "Inhabilitar foto" : "Habilitar foto"}
+              </button>
+
+              <div className="mt-2 w-full max-w-[280px] sm:max-w-[320px]">
+                <select
+                  className="w-full rounded-md bg-white/90 p-2 text-sm font-semibold text-[#142546]"
+                  value={productoListaId}
+                  onChange={(e) => setProductoListaId(e.target.value)}
+                  disabled={disabled}
+                >
+                  <option value="">{labelProductoListaId}</option>
+                  {optionsProducto.map((o) => (
                     <option key={o.id} value={o.id}>
                       {o.label}
                     </option>
                   ))}
                 </select>
+              </div>
+            </div>
 
-                <div className="mt-2">
+            <div
+              className="mx-3 -mt-4 rounded-xl p-4 text-white shadow-md sm:mx-4"
+              style={{ backgroundColor: primaryColor }}
+            >
+              <div className="text-xs opacity-90">Monto de Préstamo</div>
+              <input
+                type="text"
+                value={monto}
+                onChange={(e) => setMonto(e.target.value)}
+                placeholder="$0.00"
+                className="w-full bg-transparent text-2xl font-bold outline-none sm:text-3xl"
+                disabled={disabled}
+              />
+            </div>
+
+            <div className="flex flex-col gap-4 px-3 py-5 sm:px-4">
+              <div
+                className="rounded-xl border bg-transparent p-3 shadow-sm"
+                style={{ backgroundColor: cardBg }}
+              >
+                <div className="flex flex-col gap-2 border-b py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+                  <span className="text-sm font-medium text-gray-700">{labelSubproductoListaId}</span>
                   <select
-                    className="w-full text-center text-lg md:text-xl lg:text-2xl font-extrabold text-gray-700 bg-transparent outline-none"
-                    value={ligaPagoListaId}
-                    onChange={(e) => setLigaPagoListaId(e.target.value)}
+                    className="w-full bg-transparent text-left text-sm font-semibold text-gray-700 outline-none sm:w-auto sm:min-w-[150px] sm:text-right"
+                    value={subproductoListaId}
+                    onChange={(e) => setSubproductoListaId(e.target.value)}
                     disabled={disabled}
                   >
-                    <option value="">{labelLigaPagoListaId}</option>
-                    {optionsLigaPago.map((o) => (
+                    <option value="">{labelSubproductoListaId}</option>
+                    {optionsSubproducto.map((o) => (
                       <option key={o.id} value={o.id}>
                         {o.label}
                       </option>
@@ -820,52 +772,125 @@ export default function PagoFastCashForm({
                   </select>
                 </div>
 
-                {cuentaBancaria ? <div className="mt-1 text-xs text-gray-500">{cuentaBancaria}</div> : null}
+                <div className="flex flex-col gap-2 border-b py-3 sm:flex-row sm:items-center sm:justify-between">
+                  <span className="text-sm font-medium text-gray-700">Importe a Pagar</span>
+                  <input
+                    type="text"
+                    value={importePagar}
+                    onChange={(e) => setImportePagar(e.target.value)}
+                    className="w-full bg-transparent text-left font-semibold text-gray-400 outline-none sm:w-28 sm:text-right"
+                    disabled={disabled}
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2 border-b py-3 sm:flex-row sm:items-center sm:justify-between">
+                  <span className="text-sm font-medium text-gray-700">Fecha Vencimiento</span>
+                  <input
+                    type="date"
+                    value={fechaVencimiento}
+                    onChange={(e) => setFechaVencimiento(e.target.value)}
+                    className="bg-transparent text-left text-gray-400 outline-none sm:text-right"
+                    disabled={disabled}
+                  />
+                </div>
+
+                <div className="flex flex-col gap-1 py-3 sm:flex-row sm:items-center sm:justify-between">
+                  <span className="text-sm font-medium text-gray-700">Días vencimiento</span>
+                  <span className="text-sm text-gray-500">{diasVencidos} días</span>
+                </div>
               </div>
+
+              <div
+                className="rounded-xl bg-transparent p-3 shadow-sm"
+                style={{ backgroundColor: cardBg }}
+              >
+                <div className="mb-2 text-sm font-medium text-gray-700">{labelMetodoPagoListaId}</div>
+
+                <div className="flex items-center justify-center rounded-md bg-[#F8FAFB] p-4">
+                  <div className="w-full text-center">
+                    <select
+                      className="w-full bg-transparent text-center text-xs text-gray-600 outline-none"
+                      value={metodoPagoListaId}
+                      onChange={(e) => setMetodoPagoListaId(e.target.value)}
+                      disabled={disabled}
+                    >
+                      <option value="">{labelMetodoPagoListaId}</option>
+                      {optionsMetodoPago.map((o) => (
+                        <option key={o.id} value={o.id}>
+                          {o.label}
+                        </option>
+                      ))}
+                    </select>
+
+                    <div className="mt-2">
+                      <select
+                        className="w-full bg-transparent text-center text-base font-extrabold text-gray-700 outline-none sm:text-lg md:text-xl lg:text-2xl"
+                        value={ligaPagoListaId}
+                        onChange={(e) => setLigaPagoListaId(e.target.value)}
+                        disabled={disabled}
+                      >
+                        <option value="">{labelLigaPagoListaId}</option>
+                        {optionsLigaPago.map((o) => (
+                          <option key={o.id} value={o.id}>
+                            {o.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    {cuentaBancaria ? (
+                      <div className="mt-1 break-all text-xs text-gray-500">{cuentaBancaria}</div>
+                    ) : null}
+                  </div>
+                </div>
+              </div>
+
+              {mostrarExtras && (
+                <div
+                  className="rounded-xl bg-transparent p-3 shadow-sm"
+                  style={{ backgroundColor: cardBg }}
+                >
+                  <div className="flex flex-col gap-2 border-b py-2 sm:flex-row sm:items-center sm:justify-between">
+                    <span className="text-sm font-medium text-gray-700">Nombre</span>
+                    <input
+                      className="bg-transparent text-left text-sm text-gray-700 outline-none sm:text-right"
+                      placeholder="Nombre"
+                      value={nombre}
+                      onChange={(e) => setNombre(e.target.value)}
+                      disabled={disabled}
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-2 py-2 sm:flex-row sm:items-center sm:justify-between">
+                    <span className="text-sm font-medium text-gray-700">Teléfono</span>
+                    <input
+                      className="bg-transparent text-left text-sm text-gray-700 outline-none sm:text-right"
+                      placeholder="Teléfono"
+                      value={telefono}
+                      onChange={(e) => setTelefono(e.target.value)}
+                      disabled={disabled}
+                    />
+                  </div>
+                </div>
+              )}
+
+              <button
+                onClick={handleConfirmAndLock}
+                className="mt-2 w-full rounded-xl p-3 text-lg font-semibold text-white disabled:opacity-60"
+                style={{ backgroundColor: primaryColor }}
+                disabled={disabled}
+                type="button"
+              >
+                {saving ? "Generando link..." : "Confirmar y Generar Link"}
+              </button>
+
+              {!baseListo ? (
+                <div className="mt-1 text-center text-xs text-white/70">
+                  Tip: selecciona <b>Producto</b> y <b>Liga</b> para que aparezcan título/cuenta.
+                </div>
+              ) : null}
             </div>
           </div>
-
-          {mostrarExtras && (
-            <div className="bg-transparent rounded-xl p-3 shadow-sm" style={{ backgroundColor: cardBg }}>
-              <div className="flex justify-between items-center py-2 border-b">
-                <span className="text-sm font-medium text-gray-700">Nombre</span>
-                <input
-                  className="text-sm text-right bg-transparent outline-none text-gray-700"
-                  placeholder="Nombre"
-                  value={nombre}
-                  onChange={(e) => setNombre(e.target.value)}
-                  disabled={disabled}
-                />
-              </div>
-
-              <div className="flex justify-between items-center py-2">
-                <span className="text-sm font-medium text-gray-700">Teléfono</span>
-                <input
-                  className="text-sm text-right bg-transparent outline-none text-gray-700"
-                  placeholder="Teléfono"
-                  value={telefono}
-                  onChange={(e) => setTelefono(e.target.value)}
-                  disabled={disabled}
-                />
-              </div>
-            </div>
-          )}
-
-          <button
-            onClick={handleConfirmAndLock}
-            className="w-full text-white p-3 rounded-xl text-lg font-semibold mt-2 disabled:opacity-60"
-            style={{ backgroundColor: primaryColor }}
-            disabled={disabled}
-            type="button"
-          >
-            {saving ? "Generando link..." : "Confirmar y Generar Link"}
-          </button>
-
-          {!baseListo ? (
-            <div className="text-xs text-white/70 text-center mt-1">
-              Tip: selecciona <b>Producto</b> y <b>Liga</b> para que aparezcan título/cuenta.
-            </div>
-          ) : null}
         </div>
       </div>
     </div>

@@ -75,21 +75,28 @@ const pool = new __TURBOPACK__imported__module__$5b$externals$5d2f$pg__$5b$exter
     connectionString: process.env.DATABASE_URL,
     ssl: ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : undefined
 });
-async function POST(req) {
+function normalize(v) {
+    return String(v ?? "").trim();
+}
+async function POST(req, context) {
+    const client = await pool.connect();
     try {
-        let token = null;
-        try {
-            const body = await req.json();
-            if (body?.token != null) {
-                token = String(body.token).trim();
-            }
-        } catch  {}
-        if (!token) {
+        let token = "";
+        /* =====================
+       TOKEN DESDE URL (NEXT 16)
+    ===================== */ const params = await context.params;
+        if (params?.token) {
+            token = normalize(params.token);
+        }
+        /* fallback body */ if (!token) {
+            try {
+                const body = await req.json();
+                if (body?.token) token = normalize(body.token);
+            } catch  {}
+        }
+        /* fallback query */ if (!token) {
             const { searchParams } = new URL(req.url);
-            const queryToken = searchParams.get("token");
-            if (queryToken) {
-                token = queryToken.trim();
-            }
+            token = normalize(searchParams.get("token"));
         }
         if (!token) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
@@ -98,32 +105,51 @@ async function POST(req) {
                 status: 400
             });
         }
-        const result = await pool.query(`
-      UPDATE plantillas_temporales
-      SET pagado = false
-      WHERE token = $1
-      `, [
+        console.log("🔍 TOKEN FINAL:", token);
+        /* =====================
+       VALIDAR EXISTENCIA
+    ===================== */ const check = await client.query(`SELECT token FROM plantillas_temporales WHERE token::text = $1 LIMIT 1`, [
             token
         ]);
-        if ((result.rowCount ?? 0) === 0) {
+        if ((check.rowCount ?? 0) === 0) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: "Token no encontrado"
+                error: "Token no encontrado",
+                token
             }, {
                 status: 404
             });
         }
+        /* =====================
+       🔥 DESACTIVAR TRIGGERS
+    ===================== */ await client.query("BEGIN");
+        await client.query("SET LOCAL session_replication_role = replica");
+        /* =====================
+       UPDATE SEGURO
+    ===================== */ await client.query(`
+      UPDATE plantillas_temporales
+      SET pagado = false
+      WHERE token::text = $1
+      `, [
+            token
+        ]);
+        await client.query("COMMIT");
         return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             ok: true,
             token,
-            updated: result.rowCount ?? 0
+            message: "Pago actualizado correctamente"
         });
     } catch (error) {
-        console.error("❌ Error actualizando pago:", error);
+        try {
+            await client.query("ROLLBACK");
+        } catch  {}
+        console.error("❌ Error sync-pago:", error);
         return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            error: error?.message || "Error actualizando pago"
+            error: error?.message || "Error interno"
         }, {
             status: 500
         });
+    } finally{
+        client.release();
     }
 }
 __turbopack_async_result__();

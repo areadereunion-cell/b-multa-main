@@ -11,23 +11,41 @@ const pool = new Pool({
       : undefined,
 });
 
-export async function POST(req: Request) {
-  try {
-    let token: string | null = null;
+function normalizeToken(v: any) {
+  return String(v ?? "").trim();
+}
 
+function getTokenFromPath(req: Request) {
+  try {
+    const url = new URL(req.url);
+    const parts = url.pathname.split("/").filter(Boolean);
+    return parts[parts.length - 1] || "";
+  } catch {
+    return "";
+  }
+}
+
+export async function POST(req: Request) {
+  const client = await pool.connect();
+
+  try {
+    let token = "";
+
+    // body
     try {
       const body = await req.json();
-      if (body?.token != null) {
-        token = String(body.token).trim();
-      }
+      if (body?.token) token = normalizeToken(body.token);
     } catch {}
 
+    // query
     if (!token) {
       const { searchParams } = new URL(req.url);
-      const queryToken = searchParams.get("token");
-      if (queryToken) {
-        token = queryToken.trim();
-      }
+      token = normalizeToken(searchParams.get("token"));
+    }
+
+    // path
+    if (!token) {
+      token = normalizeToken(getTokenFromPath(req));
     }
 
     if (!token) {
@@ -37,32 +55,52 @@ export async function POST(req: Request) {
       );
     }
 
-    const result = await pool.query(
+    console.log("🔍 TOKEN BUSCADO:", token);
+
+    // 🔥 SOLO VALIDAR EN plantillas_temporales
+    const check = await client.query(
       `
-      UPDATE plantillas_temporales
-      SET pagado = true
-      WHERE token = $1
+      SELECT token
+      FROM plantillas_temporales
+      WHERE token::text = $1
+      LIMIT 1
       `,
       [token]
     );
 
-    if ((result.rowCount ?? 0) === 0) {
+    if ((check.rowCount ?? 0) === 0) {
       return NextResponse.json(
-        { error: "Token no encontrado" },
+        {
+          error: "Token no encontrado",
+          debug: token,
+        },
         { status: 404 }
       );
     }
 
+    // actualizar plantilla
+    await client.query(
+      `
+      UPDATE plantillas_temporales
+      SET pagado = true
+      WHERE token::text = $1
+      `,
+      [token]
+    );
+
     return NextResponse.json({
       ok: true,
       token,
-      updated: result.rowCount ?? 0,
+      message: "Pago actualizado correctamente",
     });
   } catch (error: any) {
-    console.error("❌ Error actualizando pago:", error);
+    console.error("❌ Error sync-pago:", error);
+
     return NextResponse.json(
-      { error: error?.message || "Error actualizando pago" },
+      { error: error?.message || "Error interno" },
       { status: 500 }
     );
+  } finally {
+    client.release();
   }
 }

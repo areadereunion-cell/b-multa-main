@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Plantilla1 from "./plantillas/Plantilla1";
 import Plantilla2 from "./plantillas/Plantilla2";
 import Plantilla3 from "./plantillas/Plantilla3";
@@ -48,6 +48,7 @@ function isTemplateId(value: string): value is TemplateId {
 
 export default function PagoFastCashForm() {
   const params = useParams();
+  const router = useRouter();
   const numeroPrestamo = String((params as any)?.id ?? "").trim();
 
   const isHex = (s: unknown): boolean =>
@@ -368,11 +369,8 @@ export default function PagoFastCashForm() {
 
     const payload: AnyRecord = {
       plantilla_pago_id: plantillaPagoId,
-
-      // ambos valores salen de la plantilla activa real
       tipo_plantilla: templateNumber,
       template_id: templateNumber,
-
       metodo_pago_lista_id: metodoPagoId || null,
       liga_pago_lista_id: cuentaId || null,
       subproducto: productoTitulo,
@@ -518,7 +516,15 @@ export default function PagoFastCashForm() {
   if (errorCaso || !caso) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#152032] text-white p-6">
-        <div className="max-w-md">
+        <div className="max-w-md w-full">
+          <button
+            type="button"
+            onClick={() => router.push("/gestion/collection/casos")}
+            className="mb-4 inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15 transition"
+          >
+            ← Regresar
+          </button>
+
           <div className="text-xl font-bold mb-2">
             No se pudo cargar el caso
           </div>
@@ -531,161 +537,196 @@ export default function PagoFastCashForm() {
   }
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center p-6 relative bg-[#152032]">
-      <div className="absolute right-6 top-16 z-50 flex flex-col gap-4 w-60">
-        <div className="bg-white/5 p-3 rounded-lg">
-          <div className="text-xs text-white mb-2 font-medium">Plantilla</div>
-          <select
-            className="w-full p-2 rounded-md text-sm"
-            value={plantillaActivaNormalizada}
-            onChange={(e) => {
-              const value = e.target.value;
-              setPlantillaActiva(isTemplateId(value) ? value : "1");
-            }}
-            disabled={disabled}
-          >
-            <option value="1">Plantilla #1</option>
-            <option value="2">Plantilla #2</option>
-            <option value="3">Plantilla #3</option>
-            <option value="4">Plantilla #4</option>
-            <option value="5">Plantilla #5</option>
-            <option value="6">Plantilla #6</option>
-            <option value="7">Plantilla #7</option>
-            <option value="8">Plantilla #8</option>
-            <option value="9">Plantilla #9</option>
-          </select>
-        </div>
-
-        <div className="flex items-center justify-between text-white">
-          <span className="text-sm font-medium">
-            Mostrar datos del cliente
-          </span>
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              checked={mostrarExtras}
-              onChange={() => setMostrarExtras(!mostrarExtras)}
-              className="sr-only peer"
-              disabled={disabled}
-            />
-            <div
-              className="w-11 h-6 bg-gray-300 peer-checked:bg-blue-600 rounded-full relative
-              after:content-[''] after:w-5 after:h-5 after:bg-white after:rounded-full
-              after:absolute after:left-1 after:top-0.5 peer-checked:after:translate-x-5 transition-all"
-            />
-          </label>
-        </div>
-
-        <div className="bg-white/5 p-3 rounded-lg">
-          <div className="text-xs text-white mb-2 font-medium">
-            Fondo de la tarjeta
-          </div>
-          <select
-            className="w-full p-2 rounded-md mb-2 text-sm"
-            value={cardBg}
-            onChange={(e) => {
-              setCardBg(e.target.value);
-              setCardBgHexInput(e.target.value);
-              setCardBgError("");
-            }}
-            disabled={disabled}
-          >
-            {cardBgOptions.map((o) => (
-              <option key={o.value} value={o.value}>
-                {o.label} — {o.value}
-              </option>
-            ))}
-          </select>
-
-          <div className="flex gap-2">
-            <input
-              type="text"
-              value={cardBgHexInput}
-              onChange={(e) => handleCardBgHexChange(e.target.value)}
-              className="flex-1 p-2 rounded-md text-sm"
-              placeholder="#RRGGBB"
-              disabled={disabled}
-            />
-            <div
-              className="w-10 h-10 rounded-md border"
-              style={{
-                backgroundColor: isHex(cardBgHexInput)
-                  ? cardBgHexInput
-                  : cardBg,
-              }}
-            />
-          </div>
-          {cardBgError && (
-            <div className="text-xs text-rose-400 mt-1">{cardBgError}</div>
-          )}
-        </div>
-
-        <div className="bg-white/5 p-3 rounded-lg">
-          <div className="text-xs text-white mb-2 font-medium">
-            Color del botón
-          </div>
-          <select
-            className="w-full p-2 rounded-md mb-2 text-sm"
-            value={primaryColor}
-            onChange={(e) => {
-              setPrimaryColor(e.target.value);
-              setPrimaryHexInput(e.target.value);
-              setPrimaryError("");
-            }}
-            disabled={disabled}
-          >
-            {primaryOptions.map((o) => (
-              <option key={o.value} value={o.value}>
-                {o.label} — {o.value}
-              </option>
-            ))}
-          </select>
-
-          <div className="flex gap-2">
-            <input
-              type="text"
-              value={primaryHexInput}
-              onChange={(e) => handlePrimaryHexChange(e.target.value)}
-              className="flex-1 p-2 rounded-md text-sm"
-              placeholder="#RRGGBB"
-              disabled={disabled}
-            />
-            <div
-              className="w-10 h-10 rounded-md border"
-              style={{
-                backgroundColor: isHex(primaryHexInput)
-                  ? primaryHexInput
-                  : primaryColor,
-              }}
-            />
-          </div>
-          {primaryError && (
-            <div className="text-xs text-rose-400 mt-1">{primaryError}</div>
-          )}
-        </div>
-
-        {shareLink && (
-          <div className="bg-white/5 p-3 rounded-lg">
-            <div className="text-xs text-white mb-2 font-medium">
-              Link generado
-            </div>
-            <input
-              className="w-full p-2 rounded-md text-sm"
-              value={shareLink}
-              readOnly
-            />
+    <div className="w-full min-h-screen bg-[#152032]">
+      <div className="mx-auto flex min-h-screen w-full max-w-[1800px] flex-col xl:flex-row xl:items-start xl:justify-center">
+        <aside
+          className="
+            w-full
+            xl:sticky xl:top-0 xl:h-screen xl:w-[320px] xl:min-w-[320px]
+            border-b border-white/10 xl:border-b-0 xl:border-r xl:border-white/10
+            bg-[#152032]/95 backdrop-blur-sm
+            z-40
+          "
+        >
+          <div className="flex h-full flex-col gap-4 p-4 sm:p-5 xl:p-6 overflow-y-auto">
             <button
-              className="mt-2 w-full p-2 rounded-md text-sm bg-white/10 hover:bg-white/20 text-white"
-              onClick={() => navigator.clipboard.writeText(shareLink)}
               type="button"
+              onClick={() => router.push("/gestion/collection/casos")}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-semibold text-white hover:bg-white/15 transition"
             >
-              Copiar link
+              ← Regresar a casos
             </button>
-          </div>
-        )}
-      </div>
 
-      {renderPlantilla()}
+            <div className="bg-white/5 p-3 rounded-lg">
+              <div className="text-xs text-white mb-2 font-medium">Plantilla</div>
+              <select
+                className="w-full p-2 rounded-md text-sm"
+                value={plantillaActivaNormalizada}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setPlantillaActiva(isTemplateId(value) ? value : "1");
+                }}
+                disabled={disabled}
+              >
+                <option value="1">Plantilla #1</option>
+                <option value="2">Plantilla #2</option>
+                <option value="3">Plantilla #3</option>
+                <option value="4">Plantilla #4</option>
+                <option value="5">Plantilla #5</option>
+                <option value="6">Plantilla #6</option>
+                <option value="7">Plantilla #7</option>
+                <option value="8">Plantilla #8</option>
+                <option value="9">Plantilla #9</option>
+              </select>
+            </div>
+
+            <div className="flex items-center justify-between gap-3 text-white bg-white/5 p-3 rounded-lg">
+              <span className="text-sm font-medium">
+                Mostrar datos del cliente
+              </span>
+              <label className="relative inline-flex items-center cursor-pointer shrink-0">
+                <input
+                  type="checkbox"
+                  checked={mostrarExtras}
+                  onChange={() => setMostrarExtras(!mostrarExtras)}
+                  className="sr-only peer"
+                  disabled={disabled}
+                />
+                <div
+                  className="w-11 h-6 bg-gray-300 peer-checked:bg-blue-600 rounded-full relative
+                  after:content-[''] after:w-5 after:h-5 after:bg-white after:rounded-full
+                  after:absolute after:left-1 after:top-0.5 peer-checked:after:translate-x-5 transition-all"
+                />
+              </label>
+            </div>
+
+            <div className="bg-white/5 p-3 rounded-lg">
+              <div className="text-xs text-white mb-2 font-medium">
+                Fondo de la tarjeta
+              </div>
+              <select
+                className="w-full p-2 rounded-md mb-2 text-sm"
+                value={cardBg}
+                onChange={(e) => {
+                  setCardBg(e.target.value);
+                  setCardBgHexInput(e.target.value);
+                  setCardBgError("");
+                }}
+                disabled={disabled}
+              >
+                {cardBgOptions.map((o) => (
+                  <option key={o.value} value={o.value}>
+                    {o.label} — {o.value}
+                  </option>
+                ))}
+              </select>
+
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={cardBgHexInput}
+                  onChange={(e) => handleCardBgHexChange(e.target.value)}
+                  className="flex-1 min-w-0 p-2 rounded-md text-sm"
+                  placeholder="#RRGGBB"
+                  disabled={disabled}
+                />
+                <div
+                  className="w-10 h-10 rounded-md border shrink-0"
+                  style={{
+                    backgroundColor: isHex(cardBgHexInput)
+                      ? cardBgHexInput
+                      : cardBg,
+                  }}
+                />
+              </div>
+              {cardBgError && (
+                <div className="text-xs text-rose-400 mt-1">{cardBgError}</div>
+              )}
+            </div>
+
+            <div className="bg-white/5 p-3 rounded-lg">
+              <div className="text-xs text-white mb-2 font-medium">
+                Color del botón
+              </div>
+              <select
+                className="w-full p-2 rounded-md mb-2 text-sm"
+                value={primaryColor}
+                onChange={(e) => {
+                  setPrimaryColor(e.target.value);
+                  setPrimaryHexInput(e.target.value);
+                  setPrimaryError("");
+                }}
+                disabled={disabled}
+              >
+                {primaryOptions.map((o) => (
+                  <option key={o.value} value={o.value}>
+                    {o.label} — {o.value}
+                  </option>
+                ))}
+              </select>
+
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={primaryHexInput}
+                  onChange={(e) => handlePrimaryHexChange(e.target.value)}
+                  className="flex-1 min-w-0 p-2 rounded-md text-sm"
+                  placeholder="#RRGGBB"
+                  disabled={disabled}
+                />
+                <div
+                  className="w-10 h-10 rounded-md border shrink-0"
+                  style={{
+                    backgroundColor: isHex(primaryHexInput)
+                      ? primaryHexInput
+                      : primaryColor,
+                  }}
+                />
+              </div>
+              {primaryError && (
+                <div className="text-xs text-rose-400 mt-1">{primaryError}</div>
+              )}
+            </div>
+
+            {shareLink && (
+              <div className="bg-white/5 p-3 rounded-lg">
+                <div className="text-xs text-white mb-2 font-medium">
+                  Link generado
+                </div>
+                <input
+                  className="w-full p-2 rounded-md text-sm"
+                  value={shareLink}
+                  readOnly
+                />
+                <button
+                  className="mt-2 w-full p-2 rounded-md text-sm bg-white/10 hover:bg-white/20 text-white transition"
+                  onClick={() => navigator.clipboard.writeText(shareLink)}
+                  type="button"
+                >
+                  Copiar link
+                </button>
+              </div>
+            )}
+          </div>
+        </aside>
+
+        <main
+          className="
+            flex-1
+            min-w-0
+            flex
+            items-start
+            xl:items-center
+            justify-center
+            px-3 sm:px-4 md:px-6 xl:px-8
+            py-4 sm:py-6 xl:py-8
+          "
+        >
+          <div className="w-full max-w-full overflow-x-auto">
+            {renderPlantilla()}
+          </div>
+        </main>
+      </div>
     </div>
   );
 }

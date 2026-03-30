@@ -230,7 +230,8 @@ export default function Plantilla2Static({
   const diasVencidos = data.dias_vencidos ?? 0;
   const fechaVencimiento = data.fecha_vencimiento || "";
   const metodoPagoLabel = data.metodo_pago_label || "SPEI";
-  const cuentaBancaria = data.cuenta_bancaria || data.liga_pago_label || ".";
+  const cuentaBancaria =
+    data.cuenta_bancaria || data.liga_pago_label || ".";
   const mostrarExtras = data.mostrar_extras !== false;
   const nombre = data.nombre_cliente || "—";
   const telefono = data.telefono_cliente || "—";
@@ -276,19 +277,19 @@ export default function Plantilla2Static({
                 <div className="min-w-0 overflow-hidden">
                   {typeof moneyBig === "string" ? (
                     <div
-                      className={`${moneyScale.int} font-serif font-bold text-[#4A55D9] leading-[0.9] whitespace-nowrap`}
+                      className={`${moneyScale.int} font-sans font-bold text-[#4A55D9] leading-[0.9] whitespace-nowrap`}
                     >
                       {moneyBig}
                     </div>
                   ) : (
                     <div className="flex items-start whitespace-nowrap min-w-0">
                       <span
-                        className={`${moneyScale.int} font-serif font-bold text-[#4A55D9] leading-[0.9] shrink-0`}
+                        className={`${moneyScale.int} font-sans font-bold text-[#4A55D9] leading-[0.9] shrink-0`}
                       >
                         {moneyBig.intPart}
                       </span>
                       <span
-                        className={`${moneyScale.dec} font-serif font-bold text-[#4A55D9] leading-[0.9] shrink-0 mt-[2px] sm:mt-1`}
+                        className={`${moneyScale.dec} font-sans font-bold text-[#4A55D9] leading-[0.9] shrink-0 mt-[2px] sm:mt-1`}
                       >
                         .{moneyBig.decPart}
                       </span>
@@ -327,7 +328,7 @@ export default function Plantilla2Static({
                 </div>
 
                 <div className="mt-5 sm:mt-7 w-full flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-                  <div className="text-[22px] sm:text-[38px] md:text-[56px] font-serif text-[#183A72] tracking-wide break-all leading-tight text-center">
+                  <div className="text-[22px] sm:text-[38px] md:text-[56px] font-sans text-[#183A72] tracking-wide break-all leading-tight text-center">
                     {cuentaBancaria}
                   </div>
 
@@ -408,4 +409,4 @@ export default function Plantilla2Static({
       </div>
     </div>
   );
-}
+}   

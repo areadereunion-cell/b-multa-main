@@ -37,7 +37,7 @@ export default function CasosView() {
     }
   };
 
-  // ✅ Resegmentar (si ya tienes el endpoint; si no existe, puedes quitar el botón o crear este API)
+  // ✅ Resegmentar
   const resegment = async () => {
     if (role !== "admin") return;
 
@@ -74,7 +74,12 @@ export default function CasosView() {
   };
 
   return (
-    <div className="space-y-6">
+    <div
+      className="space-y-6"
+      style={{
+        paddingLeft: "var(--sidebar-w)", // 👈 ÚNICO CAMBIO (espacio real del sidebar)
+      }}
+    >
       {/* Header */}
       <div className="flex items-start justify-between gap-4">
         <div>
@@ -90,14 +95,14 @@ export default function CasosView() {
         filters={filters}
         onChange={setFilters}
         onOpenImport={() => setImportOpen(true)}
-        onOpenAutoAssign={() => setAutoOpen(true)} // ✅ correcto (antes tenías setAutoAssignOpen)
-        onResetAssign={onResetAssign}              // ✅ correcto (antes tenías resetAssign)
-        onResegment={resegment}                    // ✅
-        onWipeDb={wipeDb}                          // ✅
+        onOpenAutoAssign={() => setAutoOpen(true)}
+        onResetAssign={onResetAssign}
+        onResegment={resegment}
+        onWipeDb={wipeDb}
         role={role}
       />
 
-      {/* Tabla (con filtros) */}
+      {/* Tabla */}
       <CasosTable role={role} filters={filters} />
 
       {/* Modales */}

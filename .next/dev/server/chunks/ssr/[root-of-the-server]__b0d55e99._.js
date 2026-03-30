@@ -114,12 +114,10 @@ function LandingPage() {
                 setLoading(false);
                 return;
             }
-            // Si backend indica que NO requiere OTP -> entra directo
             if (!data?.requiresOtp) {
                 router.push("/gestion");
                 return;
             }
-            // Requiere OTP (solo admins)
             const loginTimeISO = new Date().toISOString();
             const sendRes = await fetch("/api/otp/send", {
                 method: "POST",
@@ -185,9 +183,9 @@ function LandingPage() {
         setLoading(false);
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-        className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_7b91189f$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].variable} min-h-screen flex items-center justify-center bg-[#e0ccb1] px-4`,
+        className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_7b91189f$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].variable} min-h-screen flex items-center justify-center bg-[#e0ccb1] px-4 py-6 sm:px-6 sm:py-8`,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-            className: "w-[900px] h-[520px] rounded-3xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.75)] relative",
+            className: "w-full max-w-[900px] min-h-[520px] rounded-3xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.75)] relative",
             style: {
                 backgroundImage: "url(/fondo.jpeg)",
                 backgroundSize: "cover",
@@ -198,43 +196,43 @@ function LandingPage() {
                     className: "absolute inset-0 bg-black/15"
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                    lineNumber: 152,
+                    lineNumber: 150,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "relative grid grid-cols-1 md:grid-cols-2 h-full",
+                    className: "relative grid grid-cols-1 md:grid-cols-2 min-h-[520px]",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "relative flex items-center justify-center px-10 md:px-12",
+                            className: "relative flex items-center justify-center px-6 py-10 sm:px-8 md:px-10 md:py-0 lg:px-12",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "absolute inset-0 bg-black/40"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                    lineNumber: 157,
+                                    lineNumber: 155,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "relative w-full max-w-md text-white",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                            className: "font-[var(--font-inter)] font-semibold tracking-wide text-[34px]",
+                                            className: "font-[var(--font-inter)] font-semibold tracking-wide text-[28px] sm:text-[32px] md:text-[34px] text-center md:text-left",
                                             children: "Administrador"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                            lineNumber: 160,
+                                            lineNumber: 158,
                                             columnNumber: 15
                                         }, this),
                                         phase === "login" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                                             onSubmit: handleSubmitLogin,
-                                            className: "mt-12 space-y-10",
+                                            className: "mt-8 sm:mt-10 md:mt-12 space-y-8 sm:space-y-10",
                                             children: [
                                                 error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "rounded-xl bg-red-500/20 border border-red-200/20 px-4 py-3 text-sm",
                                                     children: error
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                                    lineNumber: 167,
+                                                    lineNumber: 165,
                                                     columnNumber: 21
                                                 }, this),
                                                 info && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -242,43 +240,43 @@ function LandingPage() {
                                                     children: info
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                                    lineNumber: 172,
+                                                    lineNumber: 170,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                            className: "block text-white/90 text-[16px] mb-2",
+                                                            className: "block text-white/90 text-[15px] sm:text-[16px] mb-2",
                                                             children: "Usuario"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                                            lineNumber: 179,
+                                                            lineNumber: 177,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                             value: username,
                                                             onChange: (e)=>setUsername(e.target.value),
                                                             autoComplete: "off",
-                                                            className: " w-full bg-transparent border-0 border-b border-white/90 rounded-none px-0 py-2 text-white text-[16px] outline-none focus:border-white focus:ring-0 "
+                                                            className: " w-full bg-transparent border-0 border-b border-white/90 rounded-none px-0 py-2 text-white text-[15px] sm:text-[16px] outline-none focus:border-white focus:ring-0 "
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                                            lineNumber: 182,
+                                                            lineNumber: 180,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                                    lineNumber: 178,
+                                                    lineNumber: 176,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                            className: "block text-white/90 text-[16px] mb-2",
+                                                            className: "block text-white/90 text-[15px] sm:text-[16px] mb-2",
                                                             children: "Contraseña"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                                            lineNumber: 206,
+                                                            lineNumber: 204,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -286,43 +284,43 @@ function LandingPage() {
                                                             value: password,
                                                             onChange: (e)=>setPassword(e.target.value),
                                                             autoComplete: "new-password",
-                                                            className: " w-full bg-transparent border-0 border-b border-white/90 rounded-none px-0 py-2 text-white text-[16px] outline-none focus:border-white focus:ring-0 "
+                                                            className: " w-full bg-transparent border-0 border-b border-white/90 rounded-none px-0 py-2 text-white text-[15px] sm:text-[16px] outline-none focus:border-white focus:ring-0 "
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                                            lineNumber: 209,
+                                                            lineNumber: 207,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                                    lineNumber: 205,
+                                                    lineNumber: 203,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     disabled: !canSubmitLogin,
-                                                    className: " w-full mt-2 rounded-2xl py-4 text-[18px] font-medium text-white bg-white/35 hover:bg-white/45 active:scale-[0.99] transition disabled:opacity-60 disabled:cursor-not-allowed ",
+                                                    className: " w-full mt-2 rounded-2xl py-3.5 sm:py-4 text-[16px] sm:text-[18px] font-medium text-white bg-white/35 hover:bg-white/45 active:scale-[0.99] transition disabled:opacity-60 disabled:cursor-not-allowed ",
                                                     children: loading ? "Entrando..." : "Ingresar"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                                    lineNumber: 232,
+                                                    lineNumber: 230,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-xs text-white/70",
+                                                    className: "text-xs text-white/70 text-center md:text-left",
                                                     children: "Acceso administrativo"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                                    lineNumber: 251,
+                                                    lineNumber: 249,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                            lineNumber: 165,
+                                            lineNumber: 163,
                                             columnNumber: 17
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                                             onSubmit: handleSubmitOtp,
-                                            className: "mt-12 space-y-10",
+                                            className: "mt-8 sm:mt-10 md:mt-12 space-y-8 sm:space-y-10",
                                             children: [
                                                 error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "rounded-xl bg-red-500/20 border border-red-200/20 px-4 py-3 text-sm",
@@ -343,7 +341,7 @@ function LandingPage() {
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                            className: "block text-white/90 text-[16px] mb-2",
+                                                            className: "block text-white/90 text-[15px] sm:text-[16px] mb-2",
                                                             children: "Código OTP (6 dígitos)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
@@ -355,7 +353,7 @@ function LandingPage() {
                                                             onChange: (e)=>setOtp(e.target.value.replace(/\D/g, "").slice(0, 6)),
                                                             inputMode: "numeric",
                                                             autoComplete: "one-time-code",
-                                                            className: " w-full bg-transparent border-0 border-b border-white/90 rounded-none px-0 py-2 text-white text-[16px] outline-none focus:border-white focus:ring-0 tracking-[0.35em] ",
+                                                            className: " w-full bg-transparent border-0 border-b border-white/90 rounded-none px-0 py-2 text-white text-[15px] sm:text-[16px] outline-none focus:border-white focus:ring-0 tracking-[0.2em] sm:tracking-[0.35em] ",
                                                             placeholder: "••••••"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
@@ -388,7 +386,7 @@ function LandingPage() {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     disabled: !canSubmitOtp,
-                                                    className: " w-full mt-2 rounded-2xl py-4 text-[18px] font-medium text-white bg-white/35 hover:bg-white/45 active:scale-[0.99] transition disabled:opacity-60 disabled:cursor-not-allowed ",
+                                                    className: " w-full mt-2 rounded-2xl py-3.5 sm:py-4 text-[16px] sm:text-[18px] font-medium text-white bg-white/35 hover:bg-white/45 active:scale-[0.99] transition disabled:opacity-60 disabled:cursor-not-allowed ",
                                                     children: loading ? "Verificando..." : "Verificar OTP"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
@@ -407,7 +405,7 @@ function LandingPage() {
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-xs text-white/70",
+                                                    className: "text-xs text-white/70 text-center md:text-left",
                                                     children: "Validación administrativa"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
@@ -423,51 +421,51 @@ function LandingPage() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                    lineNumber: 159,
+                                    lineNumber: 157,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                            lineNumber: 156,
+                            lineNumber: 154,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "relative flex items-center justify-center px-10 md:px-12",
+                            className: "relative flex items-center justify-center px-6 py-10 sm:px-8 md:px-10 md:py-0 lg:px-12",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "absolute inset-0 bg-white/25"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                    lineNumber: 337,
+                                    lineNumber: 339,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "relative w-full max-w-md text-center text-white",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-[34px] font-semibold tracking-wide",
+                                            className: "text-[28px] sm:text-[32px] md:text-[34px] font-semibold tracking-wide",
                                             children: "¿Eres asesor?"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                            lineNumber: 340,
+                                            lineNumber: 342,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "mt-10 text-[22px] text-white/90",
+                                            className: "mt-8 sm:mt-10 text-[18px] sm:text-[20px] md:text-[22px] text-white/90",
                                             children: "Ingresa aquí"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                            lineNumber: 344,
+                                            lineNumber: 346,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                             href: "/asesor",
-                                            className: " inline-flex items-center justify-center w-full mt-12 rounded-2xl py-4 text-[18px] font-medium text-white bg-black/35 hover:bg-black/45 active:scale-[0.99] transition ",
+                                            className: " inline-flex items-center justify-center w-full mt-8 sm:mt-10 md:mt-12 rounded-2xl py-3.5 sm:py-4 text-[16px] sm:text-[18px] font-medium text-white bg-black/35 hover:bg-black/45 active:scale-[0.99] transition ",
                                             children: "Presiona aquí"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                            lineNumber: 346,
+                                            lineNumber: 350,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -475,36 +473,36 @@ function LandingPage() {
                                             children: "Acceso para asesores"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                            lineNumber: 365,
+                                            lineNumber: 369,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                                    lineNumber: 339,
+                                    lineNumber: 341,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                            lineNumber: 336,
+                            lineNumber: 338,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-                    lineNumber: 154,
+                    lineNumber: 152,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-            lineNumber: 143,
+            lineNumber: 141,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Downloads/b-multa-main/multa-main/app/admin/page.tsx",
-        lineNumber: 140,
+        lineNumber: 138,
         columnNumber: 5
     }, this);
 }

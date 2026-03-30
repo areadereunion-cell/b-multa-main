@@ -11,23 +11,40 @@ const pool = new Pool({
       : undefined,
 });
 
-export async function POST(req: Request) {
+type Context = {
+  params: Promise<{ token: string }>;
+};
+
+function normalize(v: any) {
+  return String(v ?? "").trim();
+}
+
+export async function POST(req: Request, context: Context) {
+  const client = await pool.connect();
+
   try {
-    let token: string | null = null;
+    let token = "";
 
-    try {
-      const body = await req.json();
-      if (body?.token != null) {
-        token = String(body.token).trim();
-      }
-    } catch {}
+    /* =====================
+       TOKEN DESDE URL (NEXT 16)
+    ===================== */
+    const params = await context.params;
+    if (params?.token) {
+      token = normalize(params.token);
+    }
 
+    /* fallback body */
+    if (!token) {
+      try {
+        const body = await req.json();
+        if (body?.token) token = normalize(body.token);
+      } catch {}
+    }
+
+    /* fallback query */
     if (!token) {
       const { searchParams } = new URL(req.url);
-      const queryToken = searchParams.get("token");
-      if (queryToken) {
-        token = queryToken.trim();
-      }
+      token = normalize(searchParams.get("token"));
     }
 
     if (!token) {
@@ -37,32 +54,62 @@ export async function POST(req: Request) {
       );
     }
 
-    const result = await pool.query(
-      `
-      UPDATE plantillas_temporales
-      SET pagado = false
-      WHERE token = $1
-      `,
+    console.log("🔍 TOKEN FINAL:", token);
+
+    /* =====================
+       VALIDAR EXISTENCIA
+    ===================== */
+    const check = await client.query(
+      `SELECT token FROM plantillas_temporales WHERE token::text = $1 LIMIT 1`,
       [token]
     );
 
-    if ((result.rowCount ?? 0) === 0) {
+    if ((check.rowCount ?? 0) === 0) {
       return NextResponse.json(
-        { error: "Token no encontrado" },
+        { error: "Token no encontrado", token },
         { status: 404 }
       );
     }
 
+    /* =====================
+       🔥 DESACTIVAR TRIGGERS
+    ===================== */
+    await client.query("BEGIN");
+    await client.query("SET LOCAL session_replication_role = replica");
+
+    /* =====================
+       UPDATE SEGURO
+    ===================== */
+    await client.query(
+      `
+      UPDATE plantillas_temporales
+      SET pagado = false
+      WHERE token::text = $1
+      `,
+      [token]
+    );
+
+    await client.query("COMMIT");
+
     return NextResponse.json({
       ok: true,
       token,
-      updated: result.rowCount ?? 0,
+      message: "Pago actualizado correctamente",
     });
   } catch (error: any) {
-    console.error("❌ Error actualizando pago:", error);
+    try {
+      await client.query("ROLLBACK");
+    } catch {}
+
+    console.error("❌ Error sync-pago:", error);
+
     return NextResponse.json(
-      { error: error?.message || "Error actualizando pago" },
+      {
+        error: error?.message || "Error interno",
+      },
       { status: 500 }
     );
+  } finally {
+    client.release();
   }
 }

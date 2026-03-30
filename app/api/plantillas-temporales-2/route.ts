@@ -4,9 +4,6 @@ import crypto from "crypto";
 
 export const runtime = "nodejs";
 
-/* =====================
-  DB
-===================== */
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl:
@@ -37,8 +34,9 @@ function safeInt(v: any) {
   return Number.isFinite(n) ? Math.trunc(n) : null;
 }
 
+/* 🔥 TOKEN UUID CORRECTO */
 function generarToken() {
-  return crypto.randomBytes(16).toString("hex");
+  return crypto.randomUUID();
 }
 
 /* =====================
@@ -52,32 +50,39 @@ export async function POST(req: Request) {
 
     console.log("📦 BODY RECIBIDO:", body);
 
-    /* ===== VALIDACIONES REALES (LO QUE TU FRONT USA) ===== */
-    const producto = safeString(body.subproducto);
-    const cuenta_bancaria = safeString(body.cuenta_bancaria);
+    const producto =
+      safeString(body.subproducto) ||
+      safeString(body.producto);
+
+    const cuenta_bancaria =
+      safeString(body.cuenta_bancaria) ||
+      safeString(body.cuenta);
 
     if (!producto || !cuenta_bancaria) {
       return NextResponse.json(
-        { error: "producto y cuenta_bancaria son obligatorios" },
+        {
+          error: "producto y cuenta_bancaria son obligatorios",
+        },
         { status: 400 }
       );
     }
 
-    /* ===== TOKEN ÚNICO ===== */
+    /* ===== TOKEN ÚNICO UUID ===== */
     let token: string | null = null;
     let existe = true;
 
     while (existe) {
       token = generarToken();
+
       const check = await client.query(
         `SELECT 1 FROM plantillas_temporales WHERE token = $1 LIMIT 1`,
         [token]
       );
-      existe = (check.rowCount ?? 0) > 0;
 
+      existe = (check.rowCount ?? 0) > 0;
     }
 
-    /* ===== INSERT (SOLO COLUMNAS EXISTENTES) ===== */
+    /* ===== INSERT ===== */
     await client.query(
       `
       INSERT INTO plantillas_temporales (
@@ -118,14 +123,16 @@ export async function POST(req: Request) {
       ]
     );
 
-    /* ===== RESPUESTA ===== */
+    const link = `/pay/${token}`;
+
     return NextResponse.json({
       ok: true,
       token,
-      link: `/pago/${token}`,
+      link,
     });
   } catch (error: any) {
     console.error("❌ Error plantillas-temporales-2:", error);
+
     return NextResponse.json(
       { error: error?.message || "Error interno del servidor" },
       { status: 500 }
@@ -134,4 +141,3 @@ export async function POST(req: Request) {
     client.release();
   }
 }
-  

@@ -90,7 +90,8 @@ export default function PagoFastCashForm({ data = {} }) {
     [plantillaBD, data]
   );
 
-  const producto = merged?.subproducto ?? merged?.ubproducto ?? merged?.producto ?? "";
+  const producto =
+    merged?.subproducto ?? merged?.ubproducto ?? merged?.producto ?? "";
   const cuentaBancaria = merged?.cuenta_bancaria ?? "";
 
   const logoUrlRaw =
@@ -293,191 +294,209 @@ export default function PagoFastCashForm({ data = {} }) {
   }
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center p-6 relative bg-[#152032]">
-      <div className="absolute right-6 top-16 z-50 flex flex-col gap-4 w-60">
-        <div className="flex items-center justify-between text-white">
-          <span className="text-sm font-medium">Mostrar datos del cliente</span>
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              checked={mostrarExtras}
-              onChange={() => setMostrarExtras(!mostrarExtras)}
-              className="sr-only peer"
-              disabled={saving}
-            />
-            <div className="w-11 h-6 bg-gray-300 peer-checked:bg-blue-600 rounded-full relative after:content-[''] after:w-5 after:h-5 after:bg-white after:rounded-full after:absolute after:left-1 after:top-0.5 peer-checked:after:translate-x-5 transition-all" />
-          </label>
-        </div>
-
-        <div className="bg-white/5 p-3 rounded-lg">
-          <div className="text-xs text-white mb-2 font-medium">Fondo de la tarjeta</div>
-          <div className="flex gap-2">
-            <input
-              type="text"
-              value={cardBgHexInput}
-              onChange={(e) => handleCardBgHexChange(e.target.value)}
-              className="flex-1 p-2 rounded-md text-sm"
-              placeholder="#RRGGBB"
-              disabled={saving}
-            />
-            <div
-              className="w-10 h-10 rounded-md border"
-              style={{ backgroundColor: isHex(cardBgHexInput) ? cardBgHexInput : cardBg }}
-            />
-          </div>
-          {cardBgError && <div className="text-xs text-rose-400 mt-1">{cardBgError}</div>}
-        </div>
-
-        <div className="bg-white/5 p-3 rounded-lg">
-          <div className="text-xs text-white mb-2 font-medium">Color principal</div>
-          <div className="flex gap-2">
-            <input
-              type="text"
-              value={primaryHexInput}
-              onChange={(e) => handlePrimaryHexChange(e.target.value)}
-              className="flex-1 p-2 rounded-md text-sm"
-              placeholder="#RRGGBB"
-              disabled={saving}
-            />
-            <div
-              className="w-10 h-10 rounded-md border"
-              style={{ backgroundColor: isHex(primaryHexInput) ? primaryHexInput : primaryColor }}
-            />
-          </div>
-          {primaryError && <div className="text-xs text-rose-400 mt-1">{primaryError}</div>}
-        </div>
-
-        {shareLink && (
-          <div className="bg-white/5 p-3 rounded-lg">
-            <div className="text-xs text-white mb-2 font-medium">Link generado</div>
-            <input className="w-full p-2 rounded-md text-sm" value={shareLink} readOnly />
-          </div>
-        )}
-      </div>
-
-      <div
-        className="w-[420px] rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.45)]"
-        style={{ backgroundColor: cardBg }}
+    <div className="w-full min-h-screen bg-[#152032] relative overflow-x-hidden">
+      <button
+        onClick={() => (window.location.href = "/gestion/multas")}
+        className="fixed z-50 top-3 left-3 sm:top-5 sm:left-5 px-3 py-2 sm:px-4 sm:py-2.5 text-sm sm:text-base rounded-lg bg-black/40 hover:bg-black/60 text-white border border-white/20 backdrop-blur-md transition-all"
+        type="button"
       >
-        <div
-          className="w-full h-[160px] flex flex-col items-center pt-6"
-          style={{ background: "linear-gradient(180deg,#5CB0FF 0%,#A3D4FF 100%)" }}
-        >
-          <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center overflow-hidden shadow">
-            {resolvedLogoUrl ? (
-              <img
-                src={resolvedLogoUrl}
-                className="w-full h-full object-cover"
-                alt="logo"
-                crossOrigin="anonymous"
-              />
-            ) : (
-              <span className="text-lg font-bold text-[#142546]">IMG</span>
+        ← Regresar
+      </button>
+
+      <div className="w-full min-h-screen flex flex-col xl:flex-row items-center xl:items-start justify-center gap-5 xl:gap-8 px-3 pt-16 pb-6 sm:px-4 sm:pt-20 md:px-6 lg:px-8">
+        <div className="w-full max-w-[420px] xl:order-2 order-1">
+          <div className="flex flex-col gap-4 w-full xl:w-60 xl:ml-auto">
+            <div className="flex items-center justify-between text-white">
+              <span className="text-sm font-medium">Mostrar datos del cliente</span>
+              <label className="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={mostrarExtras}
+                  onChange={() => setMostrarExtras(!mostrarExtras)}
+                  className="sr-only peer"
+                  disabled={saving}
+                />
+                <div className="w-11 h-6 bg-gray-300 peer-checked:bg-blue-600 rounded-full relative after:content-[''] after:w-5 after:h-5 after:bg-white after:rounded-full after:absolute after:left-1 after:top-0.5 peer-checked:after:translate-x-5 transition-all" />
+              </label>
+            </div>
+
+            <div className="bg-white/5 p-3 rounded-lg">
+              <div className="text-xs text-white mb-2 font-medium">Fondo de la tarjeta</div>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={cardBgHexInput}
+                  onChange={(e) => handleCardBgHexChange(e.target.value)}
+                  className="flex-1 p-2 rounded-md text-sm min-w-0"
+                  placeholder="#RRGGBB"
+                  disabled={saving}
+                />
+                <div
+                  className="w-10 h-10 rounded-md border shrink-0"
+                  style={{ backgroundColor: isHex(cardBgHexInput) ? cardBgHexInput : cardBg }}
+                />
+              </div>
+              {cardBgError && <div className="text-xs text-rose-400 mt-1">{cardBgError}</div>}
+            </div>
+
+            <div className="bg-white/5 p-3 rounded-lg">
+              <div className="text-xs text-white mb-2 font-medium">Color principal</div>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={primaryHexInput}
+                  onChange={(e) => handlePrimaryHexChange(e.target.value)}
+                  className="flex-1 p-2 rounded-md text-sm min-w-0"
+                  placeholder="#RRGGBB"
+                  disabled={saving}
+                />
+                <div
+                  className="w-10 h-10 rounded-md border shrink-0"
+                  style={{ backgroundColor: isHex(primaryHexInput) ? primaryHexInput : primaryColor }}
+                />
+              </div>
+              {primaryError && <div className="text-xs text-rose-400 mt-1">{primaryError}</div>}
+            </div>
+
+            {shareLink && (
+              <div className="bg-white/5 p-3 rounded-lg">
+                <div className="text-xs text-white mb-2 font-medium">Link generado</div>
+                <input className="w-full p-2 rounded-md text-sm min-w-0" value={shareLink} readOnly />
+              </div>
             )}
           </div>
-
-          <h2 className="text-lg font-bold text-[#142546] mt-4">{producto}</h2>
         </div>
 
-        <div
-          className="mx-4 -mt-4 rounded-xl p-4 text-white shadow-md"
-          style={{ backgroundColor: primaryColor }}
-        >
-          <div className="text-xs opacity-90">Monto de Préstamo</div>
-          <input
-            type="text"
-            value={monto}
-            onChange={(e) => setMonto(e.target.value)}
-            placeholder="$0.00"
-            className="w-full bg-transparent text-3xl font-bold outline-none"
-            disabled={saving}
-          />
-        </div>
+        <div className="w-full max-w-[420px] xl:order-1 order-2">
+          <div
+            className="w-full rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.45)]"
+            style={{ backgroundColor: cardBg }}
+          >
+            <div
+              className="w-full h-[160px] flex flex-col items-center pt-6 px-4"
+              style={{ background: "linear-gradient(180deg,#5CB0FF 0%,#A3D4FF 100%)" }}
+            >
+              <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center overflow-hidden shadow shrink-0">
+                {resolvedLogoUrl ? (
+                  <img
+                    src={resolvedLogoUrl}
+                    className="w-full h-full object-cover"
+                    alt="logo"
+                    crossOrigin="anonymous"
+                  />
+                ) : (
+                  <span className="text-lg font-bold text-[#142546]">IMG</span>
+                )}
+              </div>
 
-        <div className="px-4 py-5 flex flex-col gap-4">
-          <div className="bg-transparent rounded-xl border p-3 shadow-sm" style={{ backgroundColor: cardBg }}>
-            <div className="flex justify-between items-center py-3 border-b">
-              <span className="text-sm font-medium text-gray-700">Producto</span>
-              <span className="text-sm text-gray-600">{producto}</span>
+              <h2 className="text-lg font-bold text-[#142546] mt-4 text-center break-words">
+                {producto}
+              </h2>
             </div>
 
-            <div className="flex justify-between items-center py-3 border-b">
-              <span className="text-sm font-medium text-gray-700">Importe a Pagar</span>
+            <div
+              className="mx-4 -mt-4 rounded-xl p-4 text-white shadow-md"
+              style={{ backgroundColor: primaryColor }}
+            >
+              <div className="text-xs opacity-90">Monto de Préstamo</div>
               <input
                 type="text"
-                value={importePagar}
-                onChange={(e) => setImportePagar(e.target.value)}
-                className="text-gray-400 text-right w-28 bg-transparent font-semibold outline-none"
+                value={monto}
+                onChange={(e) => setMonto(e.target.value)}
+                placeholder="$0.00"
+                className="w-full bg-transparent text-2xl sm:text-3xl font-bold outline-none"
                 disabled={saving}
               />
             </div>
 
-            <div className="flex justify-between items-center py-3 border-b">
-              <span className="text-sm font-medium text-gray-700">Fecha Vencimiento</span>
-              <input
-                type="date"
-                value={fechaVencimiento}
-                onChange={(e) => setFechaVencimiento(e.target.value)}
-                className="text-gray-400 text-right bg-transparent outline-none"
+            <div className="px-4 py-5 flex flex-col gap-4">
+              <div className="bg-transparent rounded-xl border p-3 shadow-sm" style={{ backgroundColor: cardBg }}>
+                <div className="flex justify-between items-center gap-3 py-3 border-b">
+                  <span className="text-sm font-medium text-gray-700">Producto</span>
+                  <span className="text-sm text-gray-600 text-right break-words max-w-[55%]">
+                    {producto}
+                  </span>
+                </div>
+
+                <div className="flex justify-between items-center gap-3 py-3 border-b">
+                  <span className="text-sm font-medium text-gray-700">Importe a Pagar</span>
+                  <input
+                    type="text"
+                    value={importePagar}
+                    onChange={(e) => setImportePagar(e.target.value)}
+                    className="text-gray-400 text-right w-28 sm:w-32 bg-transparent font-semibold outline-none"
+                    disabled={saving}
+                  />
+                </div>
+
+                <div className="flex justify-between items-center gap-3 py-3 border-b">
+                  <span className="text-sm font-medium text-gray-700">Fecha Vencimiento</span>
+                  <input
+                    type="date"
+                    value={fechaVencimiento}
+                    onChange={(e) => setFechaVencimiento(e.target.value)}
+                    className="text-gray-400 text-right bg-transparent outline-none min-w-0"
+                    disabled={saving}
+                  />
+                </div>
+
+                <div className="flex justify-between items-center gap-3 py-3">
+                  <span className="text-sm font-medium text-gray-700">Días vencimiento</span>
+                  <span className="text-sm text-gray-500 text-right">{diasVencidos} días</span>
+                </div>
+              </div>
+
+              <div className="bg-transparent rounded-xl p-3 shadow-sm" style={{ backgroundColor: cardBg }}>
+                <div className="text-sm font-medium text-gray-700 mb-2">Elige el método de pago</div>
+                <div className="flex items-center justify-center bg-[#F8FAFB] p-4 rounded-md">
+                  <div className="text-center w-full">
+                    <div className="text-xs text-gray-500 break-words">
+                      {merged?.metodo_pago ?? merged?.metodo_pago_label ?? "Método de pago"}
+                    </div>
+                    <div className="text-lg sm:text-xl md:text-2xl font-extrabold text-gray-700 mt-1 break-all">
+                      {cuentaBancaria}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {mostrarExtras && (
+                <div className="bg-transparent rounded-xl p-3 shadow-sm" style={{ backgroundColor: cardBg }}>
+                  <div className="flex justify-between items-center gap-3 py-2 border-b">
+                    <span className="text-sm font-medium text-gray-700">Nombre</span>
+                    <input
+                      className="text-sm text-right bg-transparent outline-none text-gray-700 min-w-0 max-w-[60%]"
+                      placeholder="Nombre"
+                      value={nombre}
+                      onChange={(e) => setNombre(e.target.value)}
+                      disabled={saving}
+                    />
+                  </div>
+
+                  <div className="flex justify-between items-center gap-3 py-2">
+                    <span className="text-sm font-medium text-gray-700">Teléfono</span>
+                    <input
+                      className="text-sm text-right bg-transparent outline-none text-gray-700 min-w-0 max-w-[60%]"
+                      placeholder="Teléfono"
+                      value={telefono}
+                      onChange={(e) => setTelefono(e.target.value)}
+                      disabled={saving}
+                    />
+                  </div>
+                </div>
+              )}
+
+              <button
+                onClick={handleConfirmAndLock}
+                className="w-full text-white p-3 rounded-xl text-base sm:text-lg font-semibold mt-2 disabled:opacity-60"
+                style={{ backgroundColor: primaryColor }}
                 disabled={saving}
-              />
-            </div>
-
-            <div className="flex justify-between items-center py-3">
-              <span className="text-sm font-medium text-gray-700">Días vencimiento</span>
-              <span className="text-sm text-gray-500">{diasVencidos} días</span>
+                type="button"
+              >
+                {saving ? "Generando link..." : "Confirmar y Generar Link"}
+              </button>
             </div>
           </div>
-
-          <div className="bg-transparent rounded-xl p-3 shadow-sm" style={{ backgroundColor: cardBg }}>
-            <div className="text-sm font-medium text-gray-700 mb-2">Elige el método de pago</div>
-            <div className="flex items-center justify-center bg-[#F8FAFB] p-4 rounded-md">
-              <div className="text-center">
-                <div className="text-xs text-gray-500">
-                  {merged?.metodo_pago ?? merged?.metodo_pago_label ?? "Método de pago"}
-                </div>
-                <div className="text-lg md:text-xl lg:text-2xl font-extrabold text-gray-700 mt-1">
-                  {cuentaBancaria}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {mostrarExtras && (
-            <div className="bg-transparent rounded-xl p-3 shadow-sm" style={{ backgroundColor: cardBg }}>
-              <div className="flex justify-between items-center py-2 border-b">
-                <span className="text-sm font-medium text-gray-700">Nombre</span>
-                <input
-                  className="text-sm text-right bg-transparent outline-none text-gray-700"
-                  placeholder="Nombre"
-                  value={nombre}
-                  onChange={(e) => setNombre(e.target.value)}
-                  disabled={saving}
-                />
-              </div>
-
-              <div className="flex justify-between items-center py-2">
-                <span className="text-sm font-medium text-gray-700">Teléfono</span>
-                <input
-                  className="text-sm text-right bg-transparent outline-none text-gray-700"
-                  placeholder="Teléfono"
-                  value={telefono}
-                  onChange={(e) => setTelefono(e.target.value)}
-                  disabled={saving}
-                />
-              </div>
-            </div>
-          )}
-
-          <button
-            onClick={handleConfirmAndLock}
-            className="w-full text-white p-3 rounded-xl text-lg font-semibold mt-2 disabled:opacity-60"
-            style={{ backgroundColor: primaryColor }}
-            disabled={saving}
-            type="button"
-          >
-            {saving ? "Generando link..." : "Confirmar y Generar Link"}
-          </button>
         </div>
       </div>
     </div>

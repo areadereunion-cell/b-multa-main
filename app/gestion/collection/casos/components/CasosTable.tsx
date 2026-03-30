@@ -133,9 +133,6 @@ export default function CasosTable({
     try {
       setChangingPago((p) => ({ ...p, [key]: true }));
 
-      // SOLO actualizamos el caso.
-      // Los triggers de PostgreSQL se encargan de sincronizar
-      // cliente.pagado / estado_pago / plantillas_temporales.pagado
       await patchCaso(row.numero_prestamo, {
         estado_pago: nuevoEstado,
       });
@@ -281,146 +278,161 @@ export default function CasosTable({
   }, [data, filters]);
 
   if (loading) {
-    return <div className="p-6 text-sm text-slate-500">Cargando casos…</div>;
+    return <div className="p-4 sm:p-6 text-sm text-slate-500">Cargando casos…</div>;
   }
 
   return (
-    <div className="space-y-3">
-      <div className="flex justify-end px-2">
+    <div className="space-y-3 w-full">
+      <div className="flex justify-stretch sm:justify-end px-1 sm:px-2">
         <button
           onClick={resegmentar}
           disabled={resegLoading}
-          className="bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow"
+          className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow"
         >
           {resegLoading ? "Procesando..." : "Resegmentar casos"}
         </button>
       </div>
 
-      <div className="overflow-x-auto rounded-3xl bg-white/55 backdrop-blur-xl border border-slate-200/60 shadow">
-        <div className="px-4 pt-4 text-xs text-slate-500">
+      <div className="rounded-3xl bg-white/55 backdrop-blur-xl border border-slate-200/60 shadow overflow-hidden">
+        <div className="px-4 pt-4 text-xs text-slate-500 break-words">
           Mostrando <b>{filtered.length}</b> de <b>{data.length}</b>
         </div>
 
-        <table className="min-w-full text-sm">
-          <thead className="bg-slate-100/70 text-slate-700">
-            <tr>
-              <th className="th">N° Préstamo</th>
-              <th className="th">Cliente</th>
-              <th className="th">Teléfono</th>
-              <th className="th">Importe Adeudado</th>
-              <th className="th">Valor Recaudado</th>
-              <th className="th">Producto</th>
-              <th className="th">Segmento</th>
-              <th className="th">Fecha de Cobro</th>
-              <th className="th">Estado de Pago</th>
-              <th className="th">Collection Account</th>
-              <th className="th text-center">Operar</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {filtered.map((row) => (
-              <tr
-                key={row.numero_prestamo}
-                className="border-t border-slate-200/60"
-              >
-                <td className="td">{row.numero_prestamo}</td>
-                <td className="td">{row.nombre_cliente}</td>
-                <td className="td">{row.telefono_cliente}</td>
-                <td className="td">{money(row.valor_deuda)}</td>
-
-                <td className="td">
-                  {role === "admin" ? (
-                    <InputEnterSave
-                      initial={row.valor_recaudado ?? 0}
-                      onEnter={async (val) =>
-                        patchCaso(row.numero_prestamo, {
-                          valor_recaudado: val,
-                        })
-                      }
-                    />
-                  ) : (
-                    money(row.valor_recaudado)
-                  )}
-                </td>
-
-                <td className="td">{row.producto}</td>
-                <td className="td">{row.segmento ?? "-"}</td>
-                <td className="td">
-                  {new Date(row.fecha_cobro).toLocaleDateString()}
-                </td>
-
-                <td className="td">
-                  <button
-                    disabled={
-                      role !== "admin" || changingPago[row.numero_prestamo]
-                    }
-                    onClick={() => cambiarEstadoPago(row)}
-                    className={[
-                      "px-2 py-1 rounded-full text-xs font-medium disabled:opacity-50",
-                      row.estado_pago === "pagado"
-                        ? "bg-emerald-100 text-emerald-700"
-                        : "bg-amber-100 text-amber-700",
-                    ].join(" ")}
-                  >
-                    {changingPago[row.numero_prestamo]
-                      ? "guardando..."
-                      : row.estado_pago}
-                  </button>
-                </td>
-
-                <td className="td">
-                  {role === "admin" ? (
-                    <select
-                      className="w-full rounded-xl border border-slate-200/70 bg-white/70 px-3 py-2 text-sm"
-                      value={row.collection_account ?? ""}
-                      onChange={(e) =>
-                        patchCaso(row.numero_prestamo, {
-                          collection_account: e.target.value
-                            ? Number(e.target.value)
-                            : null,
-                        })
-                      }
-                    >
-                      <option value="">— Sin asignar —</option>
-                      {users.map((u) => (
-                        <option key={u.id} value={u.id}>
-                          {u.username}
-                        </option>
-                      ))}
-                    </select>
-                  ) : (
-                    row.collection_account ?? "—"
-                  )}
-                </td>
-
-                <td className="td text-center">
-                  <div className="flex items-center justify-center gap-3">
-                    <button
-                      className="text-sky-700 hover:underline disabled:opacity-50"
-                      disabled={generating[row.numero_prestamo]}
-                      onClick={() => generarLiga(row)}
-                    >
-                      {generating[row.numero_prestamo]
-                        ? "Generando…"
-                        : "Generar"}
-                    </button>
-
-                    <button
-                      className="text-emerald-700 hover:underline disabled:opacity-50"
-                      disabled={openingLiga[row.numero_prestamo]}
-                      onClick={() => entrarUltimaLiga(row)}
-                    >
-                      {openingLiga[row.numero_prestamo]
-                        ? "Abriendo..."
-                        : "Entrar"}
-                    </button>
-                  </div>
-                </td>
+        <div className="w-full overflow-x-auto">
+          <table className="min-w-[1200px] w-full text-sm">
+            <thead className="bg-slate-100/70 text-slate-700">
+              <tr>
+                <th className="th whitespace-nowrap">N° Préstamo</th>
+                <th className="th whitespace-nowrap">Cliente</th>
+                <th className="th whitespace-nowrap">Teléfono</th>
+                <th className="th whitespace-nowrap">Importe Adeudado</th>
+                <th className="th whitespace-nowrap">Valor Recaudado</th>
+                <th className="th whitespace-nowrap">Producto</th>
+                <th className="th whitespace-nowrap">Segmento</th>
+                <th className="th whitespace-nowrap">Fecha de Cobro</th>
+                <th className="th whitespace-nowrap">Estado de Pago</th>
+                <th className="th whitespace-nowrap">Collection Account</th>
+                <th className="th text-center whitespace-nowrap">Operar</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {filtered.map((row) => (
+                <tr
+                  key={row.numero_prestamo}
+                  className="border-t border-slate-200/60"
+                >
+                  <td className="td whitespace-nowrap">{row.numero_prestamo}</td>
+                  <td className="td min-w-[180px]">{row.nombre_cliente}</td>
+                  <td className="td whitespace-nowrap">{row.telefono_cliente}</td>
+                  <td className="td whitespace-nowrap">{money(row.valor_deuda)}</td>
+
+                  <td className="td">
+                    {role === "admin" ? (
+                      <InputEnterSave
+                        initial={row.valor_recaudado ?? 0}
+                        onEnter={async (val) =>
+                          patchCaso(row.numero_prestamo, {
+                            valor_recaudado: val,
+                          })
+                        }
+                      />
+                    ) : (
+                      <span className="whitespace-nowrap">
+                        {money(row.valor_recaudado)}
+                      </span>
+                    )}
+                  </td>
+
+                  <td className="td whitespace-nowrap">{row.producto}</td>
+                  <td className="td whitespace-nowrap">{row.segmento ?? "-"}</td>
+                  <td className="td whitespace-nowrap">
+                    {new Date(row.fecha_cobro).toLocaleDateString()}
+                  </td>
+
+                  <td className="td whitespace-nowrap">
+                    <button
+                      disabled={
+                        role !== "admin" || changingPago[row.numero_prestamo]
+                      }
+                      onClick={() => cambiarEstadoPago(row)}
+                      className={[
+                        "px-2 py-1 rounded-full text-xs font-medium disabled:opacity-50 whitespace-nowrap",
+                        row.estado_pago === "pagado"
+                          ? "bg-emerald-100 text-emerald-700"
+                          : "bg-amber-100 text-amber-700",
+                      ].join(" ")}
+                    >
+                      {changingPago[row.numero_prestamo]
+                        ? "guardando..."
+                        : row.estado_pago}
+                    </button>
+                  </td>
+
+                  <td className="td min-w-[220px]">
+                    {role === "admin" ? (
+                      <select
+                        className="w-full rounded-xl border border-slate-200/70 bg-white/70 px-3 py-2 text-sm"
+                        value={row.collection_account ?? ""}
+                        onChange={(e) =>
+                          patchCaso(row.numero_prestamo, {
+                            collection_account: e.target.value
+                              ? Number(e.target.value)
+                              : null,
+                          })
+                        }
+                      >
+                        <option value="">— Sin asignar —</option>
+                        {users.map((u) => (
+                          <option key={u.id} value={u.id}>
+                            {u.username}
+                          </option>
+                        ))}
+                      </select>
+                    ) : (
+                      row.collection_account ?? "—"
+                    )}
+                  </td>
+
+                  <td className="td text-center">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3">
+                      <button
+                        className="text-sky-700 hover:underline disabled:opacity-50 whitespace-nowrap"
+                        disabled={generating[row.numero_prestamo]}
+                        onClick={() => generarLiga(row)}
+                      >
+                        {generating[row.numero_prestamo]
+                          ? "Generando…"
+                          : "Generar"}
+                      </button>
+
+                      <button
+                        className="text-emerald-700 hover:underline disabled:opacity-50 whitespace-nowrap"
+                        disabled={openingLiga[row.numero_prestamo]}
+                        onClick={() => entrarUltimaLiga(row)}
+                      >
+                        {openingLiga[row.numero_prestamo]
+                          ? "Abriendo..."
+                          : "Entrar"}
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+
+              {filtered.length === 0 && (
+                <tr>
+                  <td
+                    colSpan={11}
+                    className="px-4 py-10 text-center text-sm text-slate-500"
+                  >
+                    No se encontraron casos con los filtros actuales.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
@@ -437,7 +449,7 @@ function InputEnterSave({
   const [saving, setSaving] = useState(false);
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 min-w-[140px]">
       <input
         value={val}
         onChange={(e) => setVal(e.target.value)}
@@ -454,9 +466,9 @@ function InputEnterSave({
             setSaving(false);
           }
         }}
-        className="w-32 rounded-xl border border-slate-200/70 bg-white/70 px-3 py-2 text-sm"
+        className="w-full sm:w-32 rounded-xl border border-slate-200/70 bg-white/70 px-3 py-2 text-sm"
       />
-      <span className="text-xs text-slate-400">
+      <span className="text-xs text-slate-400 whitespace-nowrap">
         {saving ? "guardando…" : "ENTER"}
       </span>
     </div>

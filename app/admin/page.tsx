@@ -59,13 +59,11 @@ export default function LandingPage() {
         return;
       }
 
-      // Si backend indica que NO requiere OTP -> entra directo
       if (!data?.requiresOtp) {
         router.push("/gestion");
         return;
       }
 
-      // Requiere OTP (solo admins)
       const loginTimeISO = new Date().toISOString();
 
       const sendRes = await fetch("/api/otp/send", {
@@ -73,7 +71,7 @@ export default function LandingPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           username,
-          loginTimeISO, // backend lo usará para el correo de Alan (hora inicio sesión)
+          loginTimeISO,
         }),
         credentials: "include",
       });
@@ -138,10 +136,10 @@ export default function LandingPage() {
 
   return (
     <main
-      className={`${inter.variable} min-h-screen flex items-center justify-center bg-[#e0ccb1] px-4`}
+      className={`${inter.variable} min-h-screen flex items-center justify-center bg-[#e0ccb1] px-4 py-6 sm:px-6 sm:py-8`}
     >
       <section
-        className="w-[900px] h-[520px] rounded-3xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.75)] relative"
+        className="w-full max-w-[900px] min-h-[520px] rounded-3xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.75)] relative"
         style={{
           backgroundImage: "url(/fondo.jpeg)",
           backgroundSize: "cover",
@@ -151,18 +149,18 @@ export default function LandingPage() {
         {/* overlay leve para legibilidad */}
         <div className="absolute inset-0 bg-black/15" />
 
-        <div className="relative grid grid-cols-1 md:grid-cols-2 h-full">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 min-h-[520px]">
           {/* IZQUIERDA: ADMIN */}
-          <div className="relative flex items-center justify-center px-10 md:px-12">
+          <div className="relative flex items-center justify-center px-6 py-10 sm:px-8 md:px-10 md:py-0 lg:px-12">
             <div className="absolute inset-0 bg-black/40" />
 
             <div className="relative w-full max-w-md text-white">
-              <h1 className="font-[var(--font-inter)] font-semibold tracking-wide text-[34px]">
+              <h1 className="font-[var(--font-inter)] font-semibold tracking-wide text-[28px] sm:text-[32px] md:text-[34px] text-center md:text-left">
                 Administrador
               </h1>
 
               {phase === "login" ? (
-                <form onSubmit={handleSubmitLogin} className="mt-12 space-y-10">
+                <form onSubmit={handleSubmitLogin} className="mt-8 sm:mt-10 md:mt-12 space-y-8 sm:space-y-10">
                   {error && (
                     <div className="rounded-xl bg-red-500/20 border border-red-200/20 px-4 py-3 text-sm">
                       {error}
@@ -176,7 +174,7 @@ export default function LandingPage() {
 
                   {/* Usuario */}
                   <div>
-                    <label className="block text-white/90 text-[16px] mb-2">
+                    <label className="block text-white/90 text-[15px] sm:text-[16px] mb-2">
                       Usuario
                     </label>
                     <input
@@ -193,7 +191,7 @@ export default function LandingPage() {
                         px-0
                         py-2
                         text-white
-                        text-[16px]
+                        text-[15px] sm:text-[16px]
                         outline-none
                         focus:border-white
                         focus:ring-0
@@ -203,7 +201,7 @@ export default function LandingPage() {
 
                   {/* Contraseña */}
                   <div>
-                    <label className="block text-white/90 text-[16px] mb-2">
+                    <label className="block text-white/90 text-[15px] sm:text-[16px] mb-2">
                       Contraseña
                     </label>
                     <input
@@ -221,7 +219,7 @@ export default function LandingPage() {
                         px-0
                         py-2
                         text-white
-                        text-[16px]
+                        text-[15px] sm:text-[16px]
                         outline-none
                         focus:border-white
                         focus:ring-0
@@ -234,8 +232,8 @@ export default function LandingPage() {
                     className="
                       w-full mt-2
                       rounded-2xl
-                      py-4
-                      text-[18px]
+                      py-3.5 sm:py-4
+                      text-[16px] sm:text-[18px]
                       font-medium
                       text-white
                       bg-white/35
@@ -248,10 +246,12 @@ export default function LandingPage() {
                     {loading ? "Entrando..." : "Ingresar"}
                   </button>
 
-                  <p className="text-xs text-white/70">Acceso administrativo</p>
+                  <p className="text-xs text-white/70 text-center md:text-left">
+                    Acceso administrativo
+                  </p>
                 </form>
               ) : (
-                <form onSubmit={handleSubmitOtp} className="mt-12 space-y-10">
+                <form onSubmit={handleSubmitOtp} className="mt-8 sm:mt-10 md:mt-12 space-y-8 sm:space-y-10">
                   {error && (
                     <div className="rounded-xl bg-red-500/20 border border-red-200/20 px-4 py-3 text-sm">
                       {error}
@@ -265,7 +265,7 @@ export default function LandingPage() {
 
                   {/* OTP */}
                   <div>
-                    <label className="block text-white/90 text-[16px] mb-2">
+                    <label className="block text-white/90 text-[15px] sm:text-[16px] mb-2">
                       Código OTP (6 dígitos)
                     </label>
                     <input
@@ -285,11 +285,11 @@ export default function LandingPage() {
                         px-0
                         py-2
                         text-white
-                        text-[16px]
+                        text-[15px] sm:text-[16px]
                         outline-none
                         focus:border-white
                         focus:ring-0
-                        tracking-[0.35em]
+                        tracking-[0.2em] sm:tracking-[0.35em]
                       "
                       placeholder="••••••"
                     />
@@ -303,8 +303,8 @@ export default function LandingPage() {
                     className="
                       w-full mt-2
                       rounded-2xl
-                      py-4
-                      text-[18px]
+                      py-3.5 sm:py-4
+                      text-[16px] sm:text-[18px]
                       font-medium
                       text-white
                       bg-white/35
@@ -326,31 +326,35 @@ export default function LandingPage() {
                     Volver
                   </button>
 
-                  <p className="text-xs text-white/70">Validación administrativa</p>
+                  <p className="text-xs text-white/70 text-center md:text-left">
+                    Validación administrativa
+                  </p>
                 </form>
               )}
             </div>
           </div>
 
           {/* DERECHA: ASESOR (OPCIÓN 2) */}
-          <div className="relative flex items-center justify-center px-10 md:px-12">
+          <div className="relative flex items-center justify-center px-6 py-10 sm:px-8 md:px-10 md:py-0 lg:px-12">
             <div className="absolute inset-0 bg-white/25" />
 
             <div className="relative w-full max-w-md text-center text-white">
-              <p className="text-[34px] font-semibold tracking-wide">
+              <p className="text-[28px] sm:text-[32px] md:text-[34px] font-semibold tracking-wide">
                 ¿Eres asesor?
               </p>
 
-              <p className="mt-10 text-[22px] text-white/90">Ingresa aquí</p>
+              <p className="mt-8 sm:mt-10 text-[18px] sm:text-[20px] md:text-[22px] text-white/90">
+                Ingresa aquí
+              </p>
 
               <Link
                 href="/asesor"
                 className="
                   inline-flex items-center justify-center
-                  w-full mt-12
+                  w-full mt-8 sm:mt-10 md:mt-12
                   rounded-2xl
-                  py-4
-                  text-[18px]
+                  py-3.5 sm:py-4
+                  text-[16px] sm:text-[18px]
                   font-medium
                   text-white
                   bg-black/35

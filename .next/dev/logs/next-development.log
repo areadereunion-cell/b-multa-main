@@ -1,9 +1,9 @@
-[00:00:03.000] Server  LOG      ✓ Ready in 2.2s
-[00:00:03.140] Server  ERROR   (node:11424) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+[00:00:02.043] Server  ERROR   (node:14228) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:05:20.668] Server  LOG      ○ Compiling / ...
-[00:05:22.534] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:43.275] Server  ERROR   (node:11424) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+[00:00:02.055] Server  LOG      ✓ Ready in 1477ms
+[00:00:07.058] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:07.237] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:17.877] Server  ERROR   (node:14228) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -11,120 +11,96 @@ To prepare for this change:
 - If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
-[00:05:45.304] Server  LOG     OTP INSERTADO: {}
-[00:05:45.704] Server  LOG     OTP DEL USUARIO: [{...},{...},{...},{...},{...}]
-[00:06:06.302] Server  LOG     OTP VERIFY USERNAME BODY: "admin"
-[00:06:06.304] Server  LOG     OTP VERIFY USERNAME TOKEN: "admin"
-[00:06:07.270] Server  LOG     OTP VERIFY DEBUG: [{...},{...},{...},{...},{...}]
-[00:14:42.175] Server  LOG      ✓ Compiled in 244ms
-[00:14:48.867] Server  LOG      ✓ Compiled in 192ms
-[00:20:48.610] Server  LOG      ✓ Compiled in 169ms
-[00:21:05.506] Server  LOG     VALOR DB: null
-[00:21:05.937] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:07.962] Server  LOG     ✅ GET ROW: {}
-[00:21:08.103] Browser LOG     tipoPlantilla prop: undefined
-[00:21:08.103] Browser LOG     data.tipo_plantilla: 3
-[00:21:08.103] Browser LOG     plantillaFinal: 3
-[00:21:08.103] Browser LOG     tipoPlantilla prop: undefined
-[00:21:08.103] Browser LOG     data.tipo_plantilla: 3
-[00:21:08.103] Browser LOG     plantillaFinal: 3
-[00:21:08.187] Server  LOG     ✅ GET ROW: {}
-[00:21:09.001] Server  LOG     ✅ GET ROW: {}
-[00:21:19.859] Server  LOG     VALOR DB: null
-[00:21:20.119] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:21.066] Server  LOG     ✅ GET ROW: {}
-[00:21:21.172] Browser LOG     tipoPlantilla prop: undefined
-[00:21:21.172] Browser LOG     data.tipo_plantilla: 3
-[00:21:21.172] Browser LOG     plantillaFinal: 3
-[00:21:21.172] Browser LOG     tipoPlantilla prop: undefined
-[00:21:21.172] Browser LOG     data.tipo_plantilla: 3
-[00:21:21.172] Browser LOG     plantillaFinal: 3
-[00:21:21.199] Server  LOG     ✅ GET ROW: {}
-[00:21:21.879] Server  LOG     ✅ GET ROW: {}
-[00:22:52.296] Server  LOG     VALOR DB: null
-[00:22:52.528] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:22:53.496] Server  LOG     ✅ GET ROW: {}
-[00:22:53.610] Browser LOG     tipoPlantilla prop: undefined
-[00:22:53.611] Browser LOG     data.tipo_plantilla: 1
-[00:22:53.611] Browser LOG     plantillaFinal: 1
-[00:22:53.611] Browser LOG     tipoPlantilla prop: undefined
-[00:22:53.611] Browser LOG     data.tipo_plantilla: 1
-[00:22:53.611] Browser LOG     plantillaFinal: 1
-[00:22:53.631] Server  LOG     ✅ GET ROW: {}
-[00:22:54.359] Server  LOG     ✅ GET ROW: {}
-[00:25:20.985] Server  LOG      ✓ Compiled in 140ms
-[00:29:29.824] Server  LOG     VALOR DB: true
-[00:29:30.724] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:29:45.729] Server  LOG     VALOR DB: null
-[00:29:45.982] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:29:46.929] Server  LOG     ✅ GET ROW: {}
-[00:29:47.046] Browser LOG     tipoPlantilla prop: undefined
-[00:29:47.046] Browser LOG     data.tipo_plantilla: 3
-[00:29:47.046] Browser LOG     plantillaFinal: 3
-[00:29:47.046] Browser LOG     tipoPlantilla prop: undefined
-[00:29:47.046] Browser LOG     data.tipo_plantilla: 3
-[00:29:47.046] Browser LOG     plantillaFinal: 3
-[00:29:47.065] Server  LOG     ✅ GET ROW: {}
-[00:29:47.799] Server  LOG     ✅ GET ROW: {}
-[00:29:56.988] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:30:01.388] Browser LOG     PLANTILLA ACTIVA: 1
-[00:30:01.388] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"2021.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"2021.00","mostrar_extras":true,"nombre_cliente":"Darlin","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"Big pesitos","telefono_cliente":"17","template_id":1,"tipo_plantilla":1,"url":null}
-[00:30:02.152] Server  LOG     📦 BODY RECIBIDO: {}
-[00:30:02.356] Server  LOG     ✅ ROW GUARDADA: {}
-[00:30:03.599] Server  LOG     VALOR DB: null
-[00:30:03.844] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:30:05.137] Server  LOG     ✅ GET ROW: {}
-[00:30:05.436] Server  LOG     ✅ GET ROW: {}
-[00:30:05.860] Browser LOG     tipoPlantilla prop: undefined
-[00:30:05.860] Browser LOG     data.tipo_plantilla: 1
-[00:30:05.860] Browser LOG     plantillaFinal: 1
-[00:30:05.860] Browser LOG     tipoPlantilla prop: undefined
-[00:30:05.860] Browser LOG     data.tipo_plantilla: 1
-[00:30:05.860] Browser LOG     plantillaFinal: 1
-[00:30:06.190] Server  LOG     ✅ GET ROW: {}
-[00:30:06.593] Server  LOG     VALOR DB: null
-[00:30:06.866] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:30:07.193] Server  LOG     ✅ GET ROW: {}
-[00:30:07.314] Browser LOG     tipoPlantilla prop: undefined
-[00:30:07.314] Browser LOG     data.tipo_plantilla: 1
-[00:30:07.314] Browser LOG     plantillaFinal: 1
-[00:30:07.314] Browser LOG     tipoPlantilla prop: undefined
-[00:30:07.314] Browser LOG     data.tipo_plantilla: 1
-[00:30:07.314] Browser LOG     plantillaFinal: 1
-[00:30:07.388] Server  LOG     ✅ GET ROW: {}
-[00:30:07.403] Server  LOG     ✅ GET ROW: {}
-[00:33:00.550] Server  LOG      ✓ Compiled in 186ms
-[00:33:34.378] Server  LOG     VALOR DB: true
-[00:33:34.710] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:33:38.146] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:33:55.222] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:33:57.386] Browser LOG     PLANTILLA ACTIVA: 1
-[00:33:57.386] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"2021.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"2021.00","mostrar_extras":true,"nombre_cliente":"Darlin","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"Big pesitos","telefono_cliente":"17","template_id":1,"tipo_plantilla":1,"url":null}
-[00:33:57.982] Server  LOG     📦 BODY RECIBIDO: {}
-[00:33:58.177] Server  LOG     ✅ ROW GUARDADA: {}
-[00:33:59.392] Server  LOG     VALOR DB: null
-[00:33:59.605] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:34:00.566] Server  LOG     ✅ GET ROW: {}
-[00:34:00.701] Server  LOG     ✅ GET ROW: {}
-[00:34:00.850] Browser LOG     tipoPlantilla prop: undefined
-[00:34:00.850] Browser LOG     data.tipo_plantilla: 1
-[00:34:00.850] Browser LOG     plantillaFinal: 1
-[00:34:00.850] Browser LOG     tipoPlantilla prop: undefined
-[00:34:00.850] Browser LOG     data.tipo_plantilla: 1
-[00:34:00.850] Browser LOG     plantillaFinal: 1
-[00:34:01.413] Server  LOG     ✅ GET ROW: {}
-[00:34:06.914] Server  LOG     VALOR DB: null
-[00:34:07.326] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:34:07.703] Server  LOG     ✅ GET ROW: {}
-[00:34:07.860] Browser LOG     tipoPlantilla prop: undefined
-[00:34:07.860] Browser LOG     data.tipo_plantilla: 1
-[00:34:07.860] Browser LOG     plantillaFinal: 1
-[00:34:07.860] Browser LOG     tipoPlantilla prop: undefined
-[00:34:07.860] Browser LOG     data.tipo_plantilla: 1
-[00:34:07.860] Browser LOG     plantillaFinal: 1
-[00:34:07.864] Server  LOG     ✅ GET ROW: {}
-[00:34:07.876] Server  LOG     ✅ GET ROW: {}
-[00:34:20.028] Server  LOG     VALOR DB: true
-[00:34:20.332] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:34:23.250] Server  LOG     VALOR DB: true
-[00:34:23.547] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:19.869] Server  LOG     OTP INSERTADO: {}
+[00:00:19.962] Server  LOG     OTP DEL USUARIO: [{...},{...},{...},{...},{...}]
+[00:00:42.465] Server  LOG     OTP VERIFY USERNAME BODY: "admin"
+[00:00:42.467] Server  LOG     OTP VERIFY USERNAME TOKEN: "admin"
+[00:00:43.434] Server  LOG     OTP VERIFY DEBUG: [{...},{...},{...},{...},{...}]
+[00:01:16.801] Server  LOG     OTP INSERTADO: {}
+[00:01:16.901] Server  LOG     OTP DEL USUARIO: [{...},{...},{...},{...},{...}]
+[00:01:27.041] Server  LOG     OTP VERIFY USERNAME BODY: "admin"
+[00:01:27.041] Server  LOG     OTP VERIFY USERNAME TOKEN: "admin"
+[00:01:27.974] Server  LOG     OTP VERIFY DEBUG: [{...},{...},{...},{...},{...}]
+[00:01:52.095] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:38.492] Browser LOG     PLANTILLA ACTIVA: 5
+[00:06:38.492] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":"2026-03-29","foto_habilitada":true,"importe_pagar":"1380.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1380.00","mostrar_extras":true,"nombre_cliente":"LARISA ORTEGA PENA","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"CHARRO CRÉDITO","telefono_cliente":"2881103907","template_id":5,"tipo_plantilla":5,"url":"https://i.ibb.co/fZgNZzh/logo-charro.png"}
+[00:06:39.323] Server  LOG     📦 BODY RECIBIDO: {}
+[00:06:39.515] Server  LOG     ✅ ROW GUARDADA: {}
+[00:06:42.052] Server  LOG     VALOR DB: null
+[00:06:42.220] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:43.763] Server  LOG     ✅ GET ROW: {}
+[00:06:43.867] Browser LOG     tipoPlantilla prop: undefined
+[00:06:43.867] Browser LOG     data.tipo_plantilla: 5
+[00:06:43.867] Browser LOG     plantillaFinal: 5
+[00:06:43.867] Browser LOG     tipoPlantilla prop: undefined
+[00:06:43.867] Browser LOG     data.tipo_plantilla: 5
+[00:06:43.867] Browser LOG     plantillaFinal: 5
+[00:07:08.039] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:16.324] Browser LOG     PLANTILLA ACTIVA: 2
+[00:07:16.325] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1380.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1380.00","mostrar_extras":true,"nombre_cliente":"LARISA ORTEGA PENA","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"CHARRO CRÉDITO","telefono_cliente":"2881103907","template_id":2,"tipo_plantilla":2,"url":"https://i.ibb.co/fZgNZzh/logo-charro.png"}
+[00:07:17.236] Server  LOG     📦 BODY RECIBIDO: {}
+[00:07:17.428] Server  LOG     ✅ ROW GUARDADA: {}
+[00:07:18.502] Server  LOG     VALOR DB: null
+[00:07:18.651] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:19.453] Server  LOG     ✅ GET ROW: {}
+[00:07:19.568] Browser LOG     tipoPlantilla prop: undefined
+[00:07:19.568] Browser LOG     data.tipo_plantilla: 2
+[00:07:19.568] Browser LOG     plantillaFinal: 2
+[00:07:19.568] Browser LOG     tipoPlantilla prop: undefined
+[00:07:19.568] Browser LOG     data.tipo_plantilla: 2
+[00:07:19.568] Browser LOG     plantillaFinal: 2
+[00:07:19.583] Server  LOG     ✅ GET ROW: {}
+[00:07:20.262] Server  LOG     ✅ GET ROW: {}
+[00:07:39.339] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:42.561] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:44.059] Browser LOG     PLANTILLA ACTIVA: 1
+[00:26:44.059] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1380.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1380.00","mostrar_extras":true,"nombre_cliente":"LARISA ORTEGA PENA","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"CHARRO CRÉDITO","telefono_cliente":"2881103907","template_id":1,"tipo_plantilla":1,"url":"https://i.ibb.co/fZgNZzh/logo-charro.png"}
+[00:26:44.644] Server  LOG     📦 BODY RECIBIDO: {}
+[00:26:44.839] Server  LOG     ✅ ROW GUARDADA: {}
+[00:26:45.842] Server  LOG     VALOR DB: null
+[00:26:45.968] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:46.793] Server  LOG     ✅ GET ROW: {}
+[00:26:46.907] Browser LOG     tipoPlantilla prop: undefined
+[00:26:46.907] Browser LOG     data.tipo_plantilla: 1
+[00:26:46.907] Browser LOG     plantillaFinal: 1
+[00:26:46.907] Browser LOG     tipoPlantilla prop: undefined
+[00:26:46.907] Browser LOG     data.tipo_plantilla: 1
+[00:26:46.907] Browser LOG     plantillaFinal: 1
+[00:26:46.909] Server  LOG     ✅ GET ROW: {}
+[00:26:47.594] Server  LOG     ✅ GET ROW: {}
+[00:54:54.861] Browser LOG     📦 LISTAS: [{"id":9,"nombre":"asdad","tipo":"liga_pago"},{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"},{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
+[00:54:54.861] Browser LOG     ✅ subproductos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"}]
+[00:54:54.861] Browser LOG     ✅ ligas: [{"id":9,"nombre":"asdad","tipo":"liga_pago"}]
+[00:54:54.861] Browser LOG     ✅ metodos: [{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
+[00:54:54.861] Browser LOG     ✅ productos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"}]
+[00:54:54.861] Browser LOG     📦 LISTAS: [{"id":9,"nombre":"asdad","tipo":"liga_pago"},{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"},{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
+[00:54:54.861] Browser LOG     ✅ subproductos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"}]
+[00:54:54.861] Browser LOG     ✅ ligas: [{"id":9,"nombre":"asdad","tipo":"liga_pago"}]
+[00:54:54.861] Browser LOG     ✅ metodos: [{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
+[00:54:54.861] Browser LOG     ✅ productos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"}]
+[00:55:01.074] Browser LOG     📦 LISTAS: [{"id":9,"nombre":"asdad","tipo":"liga_pago"},{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"},{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
+[00:55:01.074] Browser LOG     ✅ subproductos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"}]
+[00:55:01.074] Browser LOG     ✅ ligas: [{"id":9,"nombre":"asdad","tipo":"liga_pago"}]
+[00:55:01.074] Browser LOG     ✅ metodos: [{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
+[00:55:01.074] Browser LOG     ✅ productos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"}]
+[00:55:01.074] Browser LOG     📦 LISTAS: [{"id":9,"nombre":"asdad","tipo":"liga_pago"},{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"},{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
+[00:55:01.074] Browser LOG     ✅ subproductos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"}]
+[00:55:01.074] Browser LOG     ✅ ligas: [{"id":9,"nombre":"asdad","tipo":"liga_pago"}]
+[00:55:01.074] Browser LOG     ✅ metodos: [{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
+[00:55:01.074] Browser LOG     ✅ productos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"}]
+[00:56:19.708] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:20.863] Browser LOG     📦 LISTAS: [{"id":9,"nombre":"asdad","tipo":"liga_pago"},{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"},{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
+[00:56:20.863] Browser LOG     ✅ subproductos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"}]
+[00:56:20.863] Browser LOG     ✅ ligas: [{"id":9,"nombre":"asdad","tipo":"liga_pago"}]
+[00:56:20.863] Browser LOG     ✅ metodos: [{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
+[00:56:20.863] Browser LOG     ✅ productos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"}]
+[00:56:28.568] Browser LOG     📦 LISTAS: [{"id":9,"nombre":"asdad","tipo":"liga_pago"},{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"},{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
+[00:56:28.568] Browser LOG     ✅ subproductos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"}]
+[00:56:28.568] Browser LOG     ✅ ligas: [{"id":9,"nombre":"asdad","tipo":"liga_pago"}]
+[00:56:28.568] Browser LOG     ✅ metodos: [{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
+[00:56:28.568] Browser LOG     ✅ productos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"}]
+[00:56:29.374] Browser LOG     📦 LISTAS: [{"id":9,"nombre":"asdad","tipo":"liga_pago"},{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"},{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
+[00:56:29.374] Browser LOG     ✅ subproductos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"}]
+[00:56:29.374] Browser LOG     ✅ ligas: [{"id":9,"nombre":"asdad","tipo":"liga_pago"}]
+[00:56:29.374] Browser LOG     ✅ metodos: [{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
+[00:56:29.374] Browser LOG     ✅ productos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"}]

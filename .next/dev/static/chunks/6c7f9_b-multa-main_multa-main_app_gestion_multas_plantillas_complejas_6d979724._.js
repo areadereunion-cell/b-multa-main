@@ -3809,6 +3809,7 @@ function isTemplateId(value) {
 function PagoFastCashForm() {
     _s();
     const params = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"])();
+    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const numeroPrestamo = String(params?.id ?? "").trim();
     const isHex = (s)=>/^#([0-9A-Fa-f]{6})$/.test(String(s ?? ""));
     const origin = ("TURBOPACK compile-time truthy", 1) ? window.location.origin : "TURBOPACK unreachable";
@@ -4150,7 +4151,6 @@ function PagoFastCashForm() {
         const templateNumber = Number(plantillaActivaNormalizada);
         const payload = {
             plantilla_pago_id: plantillaPagoId,
-            // ambos valores salen de la plantilla activa real
             tipo_plantilla: templateNumber,
             template_id: templateNumber,
             metodo_pago_lista_id: metodoPagoId || null,
@@ -4259,7 +4259,7 @@ function PagoFastCashForm() {
                     ...plantillaProps
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                    lineNumber: 488,
+                    lineNumber: 486,
                     columnNumber: 16
                 }, this);
             case "2":
@@ -4267,7 +4267,7 @@ function PagoFastCashForm() {
                     ...plantillaProps
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                    lineNumber: 490,
+                    lineNumber: 488,
                     columnNumber: 16
                 }, this);
             case "3":
@@ -4275,7 +4275,7 @@ function PagoFastCashForm() {
                     ...plantillaProps
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                    lineNumber: 492,
+                    lineNumber: 490,
                     columnNumber: 16
                 }, this);
             case "4":
@@ -4283,7 +4283,7 @@ function PagoFastCashForm() {
                     ...plantillaProps
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                    lineNumber: 494,
+                    lineNumber: 492,
                     columnNumber: 16
                 }, this);
             case "5":
@@ -4291,7 +4291,7 @@ function PagoFastCashForm() {
                     ...plantillaProps
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                    lineNumber: 496,
+                    lineNumber: 494,
                     columnNumber: 16
                 }, this);
             case "6":
@@ -4299,7 +4299,7 @@ function PagoFastCashForm() {
                     ...plantillaProps
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                    lineNumber: 498,
+                    lineNumber: 496,
                     columnNumber: 16
                 }, this);
             case "7":
@@ -4307,7 +4307,7 @@ function PagoFastCashForm() {
                     ...plantillaProps
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                    lineNumber: 500,
+                    lineNumber: 498,
                     columnNumber: 16
                 }, this);
             case "8":
@@ -4315,7 +4315,7 @@ function PagoFastCashForm() {
                     ...plantillaProps
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                    lineNumber: 502,
+                    lineNumber: 500,
                     columnNumber: 16
                 }, this);
             case "9":
@@ -4323,7 +4323,7 @@ function PagoFastCashForm() {
                     ...plantillaProps
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                    lineNumber: 504,
+                    lineNumber: 502,
                     columnNumber: 16
                 }, this);
             default:
@@ -4331,7 +4331,7 @@ function PagoFastCashForm() {
                     ...plantillaProps
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                    lineNumber: 506,
+                    lineNumber: 504,
                     columnNumber: 16
                 }, this);
         }
@@ -4342,7 +4342,7 @@ function PagoFastCashForm() {
             children: "Cargando caso…"
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-            lineNumber: 512,
+            lineNumber: 510,
             columnNumber: 7
         }, this);
     }
@@ -4350,14 +4350,24 @@ function PagoFastCashForm() {
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "min-h-screen flex items-center justify-center bg-[#152032] text-white p-6",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "max-w-md",
+                className: "max-w-md w-full",
                 children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        type: "button",
+                        onClick: ()=>router.push("/gestion/collection/casos"),
+                        className: "mb-4 inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15 transition",
+                        children: "← Regresar"
+                    }, void 0, false, {
+                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                        lineNumber: 520,
+                        columnNumber: 11
+                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "text-xl font-bold mb-2",
                         children: "No se pudo cargar el caso"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                        lineNumber: 522,
+                        lineNumber: 528,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4365,392 +4375,431 @@ function PagoFastCashForm() {
                         children: errorCaso || "Caso no encontrado"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                        lineNumber: 525,
+                        lineNumber: 531,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                lineNumber: 521,
+                lineNumber: 519,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-            lineNumber: 520,
+            lineNumber: 518,
             columnNumber: 7
         }, this);
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-full min-h-screen flex items-center justify-center p-6 relative bg-[#152032]",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute right-6 top-16 z-50 flex flex-col gap-4 w-60",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-white/5 p-3 rounded-lg",
+        className: "w-full min-h-screen bg-[#152032]",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "mx-auto flex min-h-screen w-full max-w-[1800px] flex-col xl:flex-row xl:items-start xl:justify-center",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("aside", {
+                    className: " w-full xl:sticky xl:top-0 xl:h-screen xl:w-[320px] xl:min-w-[320px] border-b border-white/10 xl:border-b-0 xl:border-r xl:border-white/10 bg-[#152032]/95 backdrop-blur-sm z-40 ",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex h-full flex-col gap-4 p-4 sm:p-5 xl:p-6 overflow-y-auto",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-xs text-white mb-2 font-medium",
-                                children: "Plantilla"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                type: "button",
+                                onClick: ()=>router.push("/gestion/collection/casos"),
+                                className: "inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-semibold text-white hover:bg-white/15 transition",
+                                children: "← Regresar a casos"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                lineNumber: 537,
-                                columnNumber: 11
+                                lineNumber: 552,
+                                columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                className: "w-full p-2 rounded-md text-sm",
-                                value: plantillaActivaNormalizada,
-                                onChange: (e)=>{
-                                    const value = e.target.value;
-                                    setPlantillaActiva(isTemplateId(value) ? value : "1");
-                                },
-                                disabled: disabled,
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "bg-white/5 p-3 rounded-lg",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: "1",
-                                        children: "Plantilla #1"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-xs text-white mb-2 font-medium",
+                                        children: "Plantilla"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 547,
-                                        columnNumber: 13
+                                        lineNumber: 561,
+                                        columnNumber: 15
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: "2",
-                                        children: "Plantilla #2"
-                                    }, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                        className: "w-full p-2 rounded-md text-sm",
+                                        value: plantillaActivaNormalizada,
+                                        onChange: (e)=>{
+                                            const value = e.target.value;
+                                            setPlantillaActiva(isTemplateId(value) ? value : "1");
+                                        },
+                                        disabled: disabled,
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: "1",
+                                                children: "Plantilla #1"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 571,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: "2",
+                                                children: "Plantilla #2"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 572,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: "3",
+                                                children: "Plantilla #3"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 573,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: "4",
+                                                children: "Plantilla #4"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 574,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: "5",
+                                                children: "Plantilla #5"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 575,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: "6",
+                                                children: "Plantilla #6"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 576,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: "7",
+                                                children: "Plantilla #7"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 577,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: "8",
+                                                children: "Plantilla #8"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 578,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: "9",
+                                                children: "Plantilla #9"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 579,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 548,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: "3",
-                                        children: "Plantilla #3"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 549,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: "4",
-                                        children: "Plantilla #4"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 550,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: "5",
-                                        children: "Plantilla #5"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 551,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: "6",
-                                        children: "Plantilla #6"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 552,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: "7",
-                                        children: "Plantilla #7"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 553,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: "8",
-                                        children: "Plantilla #8"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 554,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: "9",
-                                        children: "Plantilla #9"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 555,
-                                        columnNumber: 13
+                                        lineNumber: 562,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                lineNumber: 538,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                        lineNumber: 536,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center justify-between text-white",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-sm font-medium",
-                                children: "Mostrar datos del cliente"
-                            }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
                                 lineNumber: 560,
-                                columnNumber: 11
+                                columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                className: "relative inline-flex items-center cursor-pointer",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center justify-between gap-3 text-white bg-white/5 p-3 rounded-lg",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                        type: "checkbox",
-                                        checked: mostrarExtras,
-                                        onChange: ()=>setMostrarExtras(!mostrarExtras),
-                                        className: "sr-only peer",
-                                        disabled: disabled
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-sm font-medium",
+                                        children: "Mostrar datos del cliente"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 564,
-                                        columnNumber: 13
+                                        lineNumber: 584,
+                                        columnNumber: 15
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "w-11 h-6 bg-gray-300 peer-checked:bg-blue-600 rounded-full relative after:content-[''] after:w-5 after:h-5 after:bg-white after:rounded-full after:absolute after:left-1 after:top-0.5 peer-checked:after:translate-x-5 transition-all"
-                                    }, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                        className: "relative inline-flex items-center cursor-pointer shrink-0",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                type: "checkbox",
+                                                checked: mostrarExtras,
+                                                onChange: ()=>setMostrarExtras(!mostrarExtras),
+                                                className: "sr-only peer",
+                                                disabled: disabled
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 588,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "w-11 h-6 bg-gray-300 peer-checked:bg-blue-600 rounded-full relative after:content-[''] after:w-5 after:h-5 after:bg-white after:rounded-full after:absolute after:left-1 after:top-0.5 peer-checked:after:translate-x-5 transition-all"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 595,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 571,
-                                        columnNumber: 13
+                                        lineNumber: 587,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                lineNumber: 563,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                        lineNumber: 559,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-white/5 p-3 rounded-lg",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-xs text-white mb-2 font-medium",
-                                children: "Fondo de la tarjeta"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                lineNumber: 580,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                className: "w-full p-2 rounded-md mb-2 text-sm",
-                                value: cardBg,
-                                onChange: (e)=>{
-                                    setCardBg(e.target.value);
-                                    setCardBgHexInput(e.target.value);
-                                    setCardBgError("");
-                                },
-                                disabled: disabled,
-                                children: cardBgOptions.map((o)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: o.value,
-                                        children: [
-                                            o.label,
-                                            " — ",
-                                            o.value
-                                        ]
-                                    }, o.value, true, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 594,
-                                        columnNumber: 15
-                                    }, this))
-                            }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
                                 lineNumber: 583,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex gap-2",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                        type: "text",
-                                        value: cardBgHexInput,
-                                        onChange: (e)=>handleCardBgHexChange(e.target.value),
-                                        className: "flex-1 p-2 rounded-md text-sm",
-                                        placeholder: "#RRGGBB",
-                                        disabled: disabled
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 601,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "w-10 h-10 rounded-md border",
-                                        style: {
-                                            backgroundColor: isHex(cardBgHexInput) ? cardBgHexInput : cardBg
-                                        }
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 609,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                lineNumber: 600,
-                                columnNumber: 11
-                            }, this),
-                            cardBgError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-xs text-rose-400 mt-1",
-                                children: cardBgError
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                lineNumber: 619,
                                 columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                        lineNumber: 579,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-white/5 p-3 rounded-lg",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-xs text-white mb-2 font-medium",
-                                children: "Color del botón"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                lineNumber: 624,
-                                columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                className: "w-full p-2 rounded-md mb-2 text-sm",
-                                value: primaryColor,
-                                onChange: (e)=>{
-                                    setPrimaryColor(e.target.value);
-                                    setPrimaryHexInput(e.target.value);
-                                    setPrimaryError("");
-                                },
-                                disabled: disabled,
-                                children: primaryOptions.map((o)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: o.value,
-                                        children: [
-                                            o.label,
-                                            " — ",
-                                            o.value
-                                        ]
-                                    }, o.value, true, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "bg-white/5 p-3 rounded-lg",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-xs text-white mb-2 font-medium",
+                                        children: "Fondo de la tarjeta"
+                                    }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 638,
+                                        lineNumber: 604,
                                         columnNumber: 15
-                                    }, this))
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                lineNumber: 627,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex gap-2",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                        type: "text",
-                                        value: primaryHexInput,
-                                        onChange: (e)=>handlePrimaryHexChange(e.target.value),
-                                        className: "flex-1 p-2 rounded-md text-sm",
-                                        placeholder: "#RRGGBB",
-                                        disabled: disabled
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                        className: "w-full p-2 rounded-md mb-2 text-sm",
+                                        value: cardBg,
+                                        onChange: (e)=>{
+                                            setCardBg(e.target.value);
+                                            setCardBgHexInput(e.target.value);
+                                            setCardBgError("");
+                                        },
+                                        disabled: disabled,
+                                        children: cardBgOptions.map((o)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: o.value,
+                                                children: [
+                                                    o.label,
+                                                    " — ",
+                                                    o.value
+                                                ]
+                                            }, o.value, true, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 618,
+                                                columnNumber: 19
+                                            }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 645,
-                                        columnNumber: 13
+                                        lineNumber: 607,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "w-10 h-10 rounded-md border",
-                                        style: {
-                                            backgroundColor: isHex(primaryHexInput) ? primaryHexInput : primaryColor
-                                        }
+                                        className: "flex gap-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                type: "text",
+                                                value: cardBgHexInput,
+                                                onChange: (e)=>handleCardBgHexChange(e.target.value),
+                                                className: "flex-1 min-w-0 p-2 rounded-md text-sm",
+                                                placeholder: "#RRGGBB",
+                                                disabled: disabled
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 625,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "w-10 h-10 rounded-md border shrink-0",
+                                                style: {
+                                                    backgroundColor: isHex(cardBgHexInput) ? cardBgHexInput : cardBg
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 633,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                        lineNumber: 624,
+                                        columnNumber: 15
+                                    }, this),
+                                    cardBgError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-xs text-rose-400 mt-1",
+                                        children: cardBgError
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                        lineNumber: 653,
-                                        columnNumber: 13
+                                        lineNumber: 643,
+                                        columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                lineNumber: 644,
-                                columnNumber: 11
-                            }, this),
-                            primaryError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-xs text-rose-400 mt-1",
-                                children: primaryError
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                lineNumber: 663,
+                                lineNumber: 603,
                                 columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                        lineNumber: 623,
-                        columnNumber: 9
-                    }, this),
-                    shareLink && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-white/5 p-3 rounded-lg",
-                        children: [
+                            }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-xs text-white mb-2 font-medium",
-                                children: "Link generado"
-                            }, void 0, false, {
+                                className: "bg-white/5 p-3 rounded-lg",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-xs text-white mb-2 font-medium",
+                                        children: "Color del botón"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                        lineNumber: 648,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                        className: "w-full p-2 rounded-md mb-2 text-sm",
+                                        value: primaryColor,
+                                        onChange: (e)=>{
+                                            setPrimaryColor(e.target.value);
+                                            setPrimaryHexInput(e.target.value);
+                                            setPrimaryError("");
+                                        },
+                                        disabled: disabled,
+                                        children: primaryOptions.map((o)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: o.value,
+                                                children: [
+                                                    o.label,
+                                                    " — ",
+                                                    o.value
+                                                ]
+                                            }, o.value, true, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 662,
+                                                columnNumber: 19
+                                            }, this))
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                        lineNumber: 651,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex gap-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                type: "text",
+                                                value: primaryHexInput,
+                                                onChange: (e)=>handlePrimaryHexChange(e.target.value),
+                                                className: "flex-1 min-w-0 p-2 rounded-md text-sm",
+                                                placeholder: "#RRGGBB",
+                                                disabled: disabled
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 669,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "w-10 h-10 rounded-md border shrink-0",
+                                                style: {
+                                                    backgroundColor: isHex(primaryHexInput) ? primaryHexInput : primaryColor
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                                lineNumber: 677,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                        lineNumber: 668,
+                                        columnNumber: 15
+                                    }, this),
+                                    primaryError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-xs text-rose-400 mt-1",
+                                        children: primaryError
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                        lineNumber: 687,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                lineNumber: 669,
+                                lineNumber: 647,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                className: "w-full p-2 rounded-md text-sm",
-                                value: shareLink,
-                                readOnly: true
-                            }, void 0, false, {
+                            shareLink && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "bg-white/5 p-3 rounded-lg",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-xs text-white mb-2 font-medium",
+                                        children: "Link generado"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                        lineNumber: 693,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                        className: "w-full p-2 rounded-md text-sm",
+                                        value: shareLink,
+                                        readOnly: true
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                        lineNumber: 696,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        className: "mt-2 w-full p-2 rounded-md text-sm bg-white/10 hover:bg-white/20 text-white transition",
+                                        onClick: ()=>navigator.clipboard.writeText(shareLink),
+                                        type: "button",
+                                        children: "Copiar link"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                                        lineNumber: 701,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                lineNumber: 672,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "mt-2 w-full p-2 rounded-md text-sm bg-white/10 hover:bg-white/20 text-white",
-                                onClick: ()=>navigator.clipboard.writeText(shareLink),
-                                type: "button",
-                                children: "Copiar link"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                                lineNumber: 677,
-                                columnNumber: 13
+                                lineNumber: 692,
+                                columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                        lineNumber: 668,
+                        lineNumber: 551,
                         columnNumber: 11
                     }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-                lineNumber: 535,
-                columnNumber: 7
-            }, this),
-            renderPlantilla()
-        ]
-    }, void 0, true, {
+                }, void 0, false, {
+                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                    lineNumber: 542,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
+                    className: " flex-1 min-w-0 flex items-start xl:items-center justify-center px-3 sm:px-4 md:px-6 xl:px-8 py-4 sm:py-6 xl:py-8 ",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "w-full max-w-full overflow-x-auto",
+                        children: renderPlantilla()
+                    }, void 0, false, {
+                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                        lineNumber: 725,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+                    lineNumber: 713,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
+            lineNumber: 541,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/PagoFastCashForm.tsx",
-        lineNumber: 534,
+        lineNumber: 540,
         columnNumber: 5
     }, this);
 }
-_s(PagoFastCashForm, "GLS4W1hbqhiEwMRzuj8b+BF3ZJk=", false, function() {
+_s(PagoFastCashForm, "7Rbv981X7W8dChqewxxDiTq/Fp0=", false, function() {
     return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"]
+        __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];
 });
 _c = PagoFastCashForm;

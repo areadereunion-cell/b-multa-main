@@ -55,6 +55,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$m
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$column$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__BarChart3$3e$__ = __turbopack_context__.i("[project]/Downloads/b-multa-main/multa-main/node_modules/lucide-react/dist/esm/icons/chart-column.js [app-ssr] (ecmascript) <export default as BarChart3>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$briefcase$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Briefcase$3e$__ = __turbopack_context__.i("[project]/Downloads/b-multa-main/multa-main/node_modules/lucide-react/dist/esm/icons/briefcase.js [app-ssr] (ecmascript) <export default as Briefcase>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$app$2d$window$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AppWindow$3e$__ = __turbopack_context__.i("[project]/Downloads/b-multa-main/multa-main/node_modules/lucide-react/dist/esm/icons/app-window.js [app-ssr] (ecmascript) <export default as AppWindow>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__ = __turbopack_context__.i("[project]/Downloads/b-multa-main/multa-main/node_modules/lucide-react/dist/esm/icons/menu.js [app-ssr] (ecmascript) <export default as Menu>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/Downloads/b-multa-main/multa-main/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript) <export default as X>");
 "use client";
 ;
 ;
@@ -69,7 +71,7 @@ const themeOptions = [
             size: 18
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-            lineNumber: 41,
+            lineNumber: 49,
             columnNumber: 49
         }, ("TURBOPACK compile-time value", void 0))
     },
@@ -80,7 +82,7 @@ const themeOptions = [
             size: 18
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-            lineNumber: 42,
+            lineNumber: 50,
             columnNumber: 43
         }, ("TURBOPACK compile-time value", void 0))
     },
@@ -91,7 +93,7 @@ const themeOptions = [
             size: 18
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-            lineNumber: 43,
+            lineNumber: 51,
             columnNumber: 39
         }, ("TURBOPACK compile-time value", void 0))
     },
@@ -102,7 +104,7 @@ const themeOptions = [
             size: 18
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-            lineNumber: 44,
+            lineNumber: 52,
             columnNumber: 43
         }, ("TURBOPACK compile-time value", void 0))
     },
@@ -113,7 +115,7 @@ const themeOptions = [
             size: 18
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-            lineNumber: 45,
+            lineNumber: 53,
             columnNumber: 43
         }, ("TURBOPACK compile-time value", void 0))
     },
@@ -124,7 +126,7 @@ const themeOptions = [
             size: 18
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-            lineNumber: 46,
+            lineNumber: 54,
             columnNumber: 49
         }, ("TURBOPACK compile-time value", void 0))
     }
@@ -132,7 +134,7 @@ const themeOptions = [
 function Sidebar() {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["usePathname"])();
-    const [open, setOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [open, setOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [settingsOpen, setSettingsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [tab, setTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("sesion");
     const [theme, setTheme] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("principal");
@@ -159,7 +161,7 @@ function Sidebar() {
     ]);
     // ✅ CSS var para que el layout se ajuste (main no se meta debajo)
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        const w = open ? "18rem" : "88px";
+        const w = open ? "0px" : "0px";
         document.documentElement.style.setProperty("--sidebar-w", w);
         return ()=>{
             document.documentElement.style.removeProperty("--sidebar-w");
@@ -180,28 +182,28 @@ function Sidebar() {
     };
     const styles = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
         const principal = {
-            shell: "bg-gradient-to-b from-sky-100/70 to-stone-100/60 backdrop-blur-xl text-slate-800 border-sky-200/40",
-            brand: "text-slate-900",
-            item: "hover:bg-sky-200/40 hover:shadow-sm text-slate-700",
-            itemActive: "bg-white/70 shadow-md text-slate-900",
-            divider: "border-sky-200/40",
-            subtle: "text-slate-500",
-            panel: "bg-white/60 backdrop-blur-xl border-sky-200/40 shadow-lg",
-            tab: "bg-white/40 hover:bg-white/60 border-sky-200/40 text-slate-600",
-            tabActive: "bg-white/80 border-sky-300/50 text-slate-900 shadow",
+            shell: "bg-white/10 backdrop-blur-2xl text-slate-800 border-white/20",
+            brand: "text-white",
+            item: "hover:bg-white/12 hover:shadow-sm text-white/90",
+            itemActive: "bg-white/18 shadow-md text-white",
+            divider: "border-white/15",
+            subtle: "text-white/60",
+            panel: "bg-white/10 backdrop-blur-2xl border-white/15 shadow-lg",
+            tab: "bg-white/8 hover:bg-white/12 border-white/15 text-white/80",
+            tabActive: "bg-white/18 border-white/20 text-white shadow",
             button: "bg-gradient-to-r from-amber-700 to-stone-700 text-white hover:from-amber-800 hover:to-stone-800",
-            ghost: "hover:bg-sky-200/30",
-            iconBox: "bg-white/60 border-sky-200/40 shadow-sm",
-            iconBoxHover: "hover:bg-white/80",
-            card: "bg-white/50 border-sky-200/40",
-            childWrap: "bg-white/40 border-sky-200/40",
-            childBorder: "border-sky-200/50",
-            childItem: "text-slate-700 hover:bg-white/60",
-            childItemActive: "bg-white/80 text-slate-900 shadow-sm",
-            caret: "text-slate-500"
+            ghost: "hover:bg-white/10",
+            iconBox: "bg-white/80 border-white/40 shadow-md text-slate-900",
+            iconBoxHover: "hover:bg-white/18",
+            card: "bg-white/10 border-white/15",
+            childWrap: "bg-white/8 border-white/15",
+            childBorder: "border-white/15",
+            childItem: "text-white/85 hover:bg-white/10",
+            childItemActive: "bg-white/18 text-white shadow-sm",
+            caret: "text-white/70"
         };
         const oscuro = {
-            shell: "bg-slate-950/60 backdrop-blur-xl text-slate-100 border-white/10",
+            shell: "bg-slate-950/70 backdrop-blur-2xl text-slate-100 border-white/10",
             brand: "text-white",
             item: "hover:bg-white/10 text-slate-100/90",
             itemActive: "bg-white/10 text-white",
@@ -212,7 +214,7 @@ function Sidebar() {
             tabActive: "bg-white/10 border-white/10 text-white",
             button: "bg-white text-slate-950 hover:bg-slate-100",
             ghost: "hover:bg-white/10",
-            iconBox: "bg-white/10 border-white/10",
+            iconBox: "bg-white/10 border-white/10 text-white",
             iconBoxHover: "hover:bg-white/15",
             card: "bg-white/5 border-white/10",
             childWrap: "bg-white/5 border-white/10",
@@ -222,88 +224,88 @@ function Sidebar() {
             caret: "text-slate-100/60"
         };
         const cafe = {
-            shell: "bg-gradient-to-b from-amber-50/70 to-stone-100/60 backdrop-blur-xl text-stone-800 border-amber-200/40",
-            brand: "text-stone-900",
-            item: "hover:bg-amber-200/35 hover:shadow-sm text-stone-700",
-            itemActive: "bg-white/70 shadow-md text-stone-900",
-            divider: "border-amber-200/40",
-            subtle: "text-stone-500",
-            panel: "bg-white/60 backdrop-blur-xl border-amber-200/40 shadow-lg",
-            tab: "bg-white/40 hover:bg-white/60 border-amber-200/40 text-stone-600",
-            tabActive: "bg-white/80 border-amber-300/50 text-stone-900 shadow",
+            shell: "bg-stone-900/45 backdrop-blur-2xl text-stone-100 border-amber-200/15",
+            brand: "text-white",
+            item: "hover:bg-white/10 hover:shadow-sm text-stone-100/90",
+            itemActive: "bg-white/14 shadow-md text-white",
+            divider: "border-white/10",
+            subtle: "text-stone-200/60",
+            panel: "bg-white/8 backdrop-blur-xl border-white/12 shadow-lg",
+            tab: "bg-white/6 hover:bg-white/10 border-white/12 text-stone-100/80",
+            tabActive: "bg-white/16 border-white/18 text-white shadow",
             button: "bg-gradient-to-r from-stone-800 to-amber-800 text-white hover:from-stone-900 hover:to-amber-900",
-            ghost: "hover:bg-amber-200/25",
-            iconBox: "bg-white/60 border-amber-200/40 shadow-sm",
-            iconBoxHover: "hover:bg-white/80",
-            card: "bg-white/50 border-amber-200/40",
-            childWrap: "bg-white/40 border-amber-200/40",
-            childBorder: "border-amber-200/50",
-            childItem: "text-stone-700 hover:bg-white/60",
-            childItemActive: "bg-white/80 text-stone-900 shadow-sm",
-            caret: "text-stone-500"
+            ghost: "hover:bg-white/10",
+            iconBox: "bg-white/10 border-white/12 shadow-sm text-white",
+            iconBoxHover: "hover:bg-white/14",
+            card: "bg-white/8 border-white/12",
+            childWrap: "bg-white/7 border-white/12",
+            childBorder: "border-white/12",
+            childItem: "text-stone-100/85 hover:bg-white/10",
+            childItemActive: "bg-white/16 text-white shadow-sm",
+            caret: "text-stone-200/65"
         };
         const aurora = {
-            shell: "bg-gradient-to-b from-cyan-100/70 to-indigo-100/55 backdrop-blur-xl text-slate-800 border-cyan-200/40",
-            brand: "text-slate-900",
-            item: "hover:bg-cyan-200/35 hover:shadow-sm text-slate-700",
-            itemActive: "bg-white/70 shadow-md text-slate-900",
-            divider: "border-cyan-200/40",
-            subtle: "text-slate-500",
-            panel: "bg-white/60 backdrop-blur-xl border-cyan-200/40 shadow-lg",
-            tab: "bg-white/40 hover:bg-white/60 border-cyan-200/40 text-slate-600",
-            tabActive: "bg-white/80 border-cyan-300/50 text-slate-900 shadow",
+            shell: "bg-cyan-950/35 backdrop-blur-2xl text-slate-100 border-cyan-200/15",
+            brand: "text-white",
+            item: "hover:bg-white/10 hover:shadow-sm text-white/90",
+            itemActive: "bg-white/16 shadow-md text-white",
+            divider: "border-white/10",
+            subtle: "text-white/60",
+            panel: "bg-white/8 backdrop-blur-xl border-white/12 shadow-lg",
+            tab: "bg-white/6 hover:bg-white/10 border-white/12 text-white/80",
+            tabActive: "bg-white/16 border-white/18 text-white shadow",
             button: "bg-gradient-to-r from-indigo-700 to-cyan-700 text-white hover:from-indigo-800 hover:to-cyan-800",
-            ghost: "hover:bg-cyan-200/25",
-            iconBox: "bg-white/60 border-cyan-200/40 shadow-sm",
-            iconBoxHover: "hover:bg-white/80",
-            card: "bg-white/50 border-cyan-200/40",
-            childWrap: "bg-white/40 border-cyan-200/40",
-            childBorder: "border-cyan-200/50",
-            childItem: "text-slate-700 hover:bg-white/60",
-            childItemActive: "bg-white/80 text-slate-900 shadow-sm",
-            caret: "text-slate-500"
+            ghost: "hover:bg-white/10",
+            iconBox: "bg-white/10 border-white/12 shadow-sm text-white",
+            iconBoxHover: "hover:bg-white/14",
+            card: "bg-white/8 border-white/12",
+            childWrap: "bg-white/7 border-white/12",
+            childBorder: "border-white/12",
+            childItem: "text-white/85 hover:bg-white/10",
+            childItemActive: "bg-white/16 text-white shadow-sm",
+            caret: "text-white/65"
         };
         const bosque = {
-            shell: "bg-gradient-to-b from-emerald-50/75 to-lime-50/60 backdrop-blur-xl text-slate-800 border-emerald-200/40",
-            brand: "text-slate-900",
-            item: "hover:bg-emerald-200/30 hover:shadow-sm text-slate-700",
-            itemActive: "bg-white/70 shadow-md text-slate-900",
-            divider: "border-emerald-200/40",
-            subtle: "text-slate-500",
-            panel: "bg-white/60 backdrop-blur-xl border-emerald-200/40 shadow-lg",
-            tab: "bg-white/40 hover:bg-white/60 border-emerald-200/40 text-slate-600",
-            tabActive: "bg-white/80 border-emerald-300/50 text-slate-900 shadow",
+            shell: "bg-emerald-950/35 backdrop-blur-2xl text-slate-100 border-emerald-200/15",
+            brand: "text-white",
+            item: "hover:bg-white/10 hover:shadow-sm text-white/90",
+            itemActive: "bg-white/16 shadow-md text-white",
+            divider: "border-white/10",
+            subtle: "text-white/60",
+            panel: "bg-white/8 backdrop-blur-xl border-white/12 shadow-lg",
+            tab: "bg-white/6 hover:bg-white/10 border-white/12 text-white/80",
+            tabActive: "bg-white/16 border-white/18 text-white shadow",
             button: "bg-gradient-to-r from-emerald-700 to-lime-700 text-white hover:from-emerald-800 hover:to-lime-800",
-            ghost: "hover:bg-emerald-200/25",
-            iconBox: "bg-white/60 border-emerald-200/40 shadow-sm",
-            iconBoxHover: "hover:bg-white/80",
-            card: "bg-white/50 border-emerald-200/40",
-            childWrap: "bg-white/40 border-emerald-200/40",
-            childBorder: "border-emerald-200/50",
-            childItem: "text-slate-700 hover:bg-white/60",
-            childItemActive: "bg-white/80 text-slate-900 shadow-sm",
-            caret: "text-slate-500"
+            ghost: "hover:bg-white/10",
+            iconBox: "bg-white/10 border-white/12 shadow-sm text-white",
+            iconBoxHover: "hover:bg-white/14",
+            card: "bg-white/8 border-white/12",
+            childWrap: "bg-white/7 border-white/12",
+            childBorder: "border-white/12",
+            childItem: "text-white/85 hover:bg-white/10",
+            childItemActive: "bg-white/16 text-white shadow-sm",
+            caret: "text-white/65"
         };
         const atardecer = {
-            shell: "bg-gradient-to-b from-rose-50/75 to-amber-50/60 backdrop-blur-xl text-slate-800 border-rose-200/40",
-            brand: "text-slate-900",
-            item: "hover:bg-rose-200/30 hover:shadow-sm text-slate-700",
-            itemActive: "bg-white/70 shadow-md text-slate-900",
-            divider: "border-rose-200/40",
-            subtle: "text-slate-500",
-            panel: "bg-white/60 backdrop-blur-xl border-rose-200/40 shadow-lg",
-            tab: "bg-white/40 hover:bg-white/60 border-rose-200/40 text-slate-600",
-            tabActive: "bg-white/80 border-rose-300/50 text-slate-900 shadow",
+            shell: "bg-rose-950/30 backdrop-blur-2xl text-slate-100 border-rose-200/15",
+            brand: "text-white",
+            item: "hover:bg-white/10 hover:shadow-sm text-white/90",
+            itemActive: "bg-white/16 shadow-md text-white",
+            divider: "border-white/10",
+            subtle: "text-white/60",
+            panel: "bg-white/8 backdrop-blur-xl border-white/12 shadow-lg",
+            tab: "bg-white/6 hover:bg-white/10 border-white/12 text-white/80",
+            tabActive: "bg-white/16 border-white/18 text-white shadow",
             button: "bg-gradient-to-r from-rose-700 to-amber-700 text-white hover:from-rose-800 hover:to-amber-800",
-            ghost: "hover:bg-rose-200/25",
-            iconBox: "bg-white/60 border-rose-200/40 shadow-sm",
-            iconBoxHover: "hover:bg-white/80",
-            card: "bg-white/50 border-rose-200/40",
-            childWrap: "bg-white/40 border-rose-200/40",
-            childBorder: "border-rose-200/50",
-            childItem: "text-slate-700 hover:bg-white/60",
-            childItemActive: "bg-white/80 text-slate-900 shadow-sm",
-            caret: "text-slate-500"
+            ghost: "hover:bg-white/10",
+            iconBox: "bg-white/10 border-white/12 shadow-sm text-white",
+            iconBoxHover: "hover:bg-white/14",
+            card: "bg-white/8 border-white/12",
+            childWrap: "bg-white/7 border-white/12",
+            childBorder: "border-white/12",
+            childItem: "text-white/85 hover:bg-white/10",
+            childItemActive: "bg-white/16 text-white shadow-sm",
+            caret: "text-white/65"
         };
         const map = {
             principal,
@@ -331,704 +333,797 @@ function Sidebar() {
         open,
         isCollectionRoute
     ]);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("aside", {
-        className: [
-            open ? "w-72" : "w-[88px]",
-            "fixed left-0 top-0 h-screen transition-all duration-300 flex flex-col border-r z-[9999] isolate",
-            styles.shell
-        ].join(" "),
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "p-4 flex items-center justify-between gap-3",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center gap-3",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: [
-                                    "h-10 w-10 rounded-2xl border flex items-center justify-center",
-                                    styles.iconBox
-                                ].join(" "),
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__["Home"], {
-                                    size: 18
-                                }, void 0, false, {
-                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                    lineNumber: 282,
-                                    columnNumber: 13
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                lineNumber: 281,
-                                columnNumber: 11
-                            }, this),
-                            open && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: [
-                                    "font-semibold tracking-tight",
-                                    styles.brand
-                                ].join(" "),
-                                children: "Panel"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                lineNumber: 284,
-                                columnNumber: 20
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                        lineNumber: 280,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        onClick: ()=>setOpen((v)=>!v),
-                        className: [
-                            "h-10 w-10 rounded-2xl border flex items-center justify-center transition",
-                            styles.iconBox,
-                            styles.iconBoxHover
-                        ].join(" "),
-                        "aria-label": open ? "Contraer sidebar" : "Expandir sidebar",
-                        title: open ? "Contraer" : "Expandir",
-                        children: open ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__["ChevronLeft"], {
-                            size: 18
-                        }, void 0, false, {
-                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                            lineNumber: 297,
-                            columnNumber: 19
-                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
-                            size: 18
-                        }, void 0, false, {
-                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                            lineNumber: 297,
-                            columnNumber: 47
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                        lineNumber: 287,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                lineNumber: 279,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                onClick: ()=>setOpen(true),
                 className: [
-                    "mx-4 border-t",
-                    styles.divider
-                ].join(" ")
-            }, void 0, false, {
-                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                lineNumber: 301,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-                className: "flex flex-col gap-2 p-4",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
-                        open: open,
-                        href: "/gestion",
-                        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__["Home"], {
-                            size: 20
-                        }, void 0, false, {
-                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                            lineNumber: 306,
-                            columnNumber: 52
-                        }, void 0),
-                        label: "Inicio",
-                        styles: styles
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                        lineNumber: 306,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
-                        open: open,
-                        href: "/gestion/multas",
-                        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldAlert$3e$__["ShieldAlert"], {
-                            size: 20
-                        }, void 0, false, {
-                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                            lineNumber: 307,
-                            columnNumber: 59
-                        }, void 0),
-                        label: "Multas",
-                        styles: styles
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                        lineNumber: 307,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
-                        open: open,
-                        href: "/gestion/reportes",
-                        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$column$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__BarChart3$3e$__["BarChart3"], {
-                            size: 20
-                        }, void 0, false, {
-                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                            lineNumber: 310,
-                            columnNumber: 61
-                        }, void 0),
-                        label: "Reportes",
-                        styles: styles
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                        lineNumber: 310,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "relative",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: ()=>{
-                                    if (!open) {
-                                        setOpen(true);
-                                        return;
-                                    }
-                                    setCollectionOpen((v)=>!v);
-                                },
-                                className: [
-                                    "w-full flex items-center gap-3 p-3 rounded-2xl transition border border-transparent group",
-                                    isCollectionRoute ? styles.itemActive : styles.item
-                                ].join(" "),
-                                "aria-expanded": collectionOpen,
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$folder$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Folder$3e$__["Folder"], {
-                                        size: 20
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                        lineNumber: 328,
-                                        columnNumber: 13
-                                    }, this),
-                                    open && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-sm font-medium flex-1",
-                                                children: "Collection"
-                                            }, void 0, false, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                lineNumber: 331,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: [
-                                                    "h-7 px-2 rounded-xl border flex items-center justify-center transition",
-                                                    styles.card
-                                                ].join(" "),
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
-                                                    size: 16,
-                                                    className: [
-                                                        "transition",
-                                                        collectionOpen ? "rotate-180" : "",
-                                                        styles.caret
-                                                    ].join(" ")
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                    lineNumber: 339,
-                                                    columnNumber: 19
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                lineNumber: 333,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                lineNumber: 314,
-                                columnNumber: 11
-                            }, this),
-                            open && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: [
-                                    "mt-2 overflow-hidden transition-all duration-300",
-                                    collectionOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-                                ].join(" "),
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: [
-                                        "rounded-2xl border p-2",
-                                        styles.childWrap
-                                    ].join(" "),
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: [
-                                            "ml-1 pl-3 border-l flex flex-col gap-1",
-                                            styles.childBorder
-                                        ].join(" "),
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SubItem, {
-                                                href: "/gestion/collection/casos",
-                                                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$briefcase$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Briefcase$3e$__["Briefcase"], {
-                                                    size: 16
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                    lineNumber: 364,
-                                                    columnNumber: 27
-                                                }, void 0),
-                                                label: "Casos",
-                                                active: pathname === "/gestion/collection/casos",
-                                                styles: styles
-                                            }, void 0, false, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                lineNumber: 362,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SubItem, {
-                                                href: "/gestion/collection/aplicaciones",
-                                                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$app$2d$window$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AppWindow$3e$__["AppWindow"], {
-                                                    size: 16
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                    lineNumber: 371,
-                                                    columnNumber: 27
-                                                }, void 0),
-                                                label: "Aplicaciones",
-                                                active: pathname === "/gestion/collection/aplicaciones",
-                                                styles: styles
-                                            }, void 0, false, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                lineNumber: 369,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                        lineNumber: 360,
-                                        columnNumber: 17
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                    lineNumber: 359,
-                                    columnNumber: 15
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                lineNumber: 353,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                        lineNumber: 313,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
-                        open: open,
-                        href: "/gestion/base",
-                        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__["Database"], {
-                            size: 20
-                        }, void 0, false, {
-                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                            lineNumber: 383,
-                            columnNumber: 57
-                        }, void 0),
-                        label: "Ligas",
-                        styles: styles
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                        lineNumber: 383,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
-                        open: open,
-                        href: "/gestion/usuarios",
-                        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$round$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__UserRound$3e$__["UserRound"], {
-                            size: 20
-                        }, void 0, false, {
-                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                            lineNumber: 384,
-                            columnNumber: 61
-                        }, void 0),
-                        label: "Usuarios",
-                        styles: styles
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                        lineNumber: 384,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
-                        open: open,
-                        href: "/gestion/base-datos",
-                        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__["FileText"], {
-                            size: 20
-                        }, void 0, false, {
-                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                            lineNumber: 387,
-                            columnNumber: 63
-                        }, void 0),
-                        label: "Base de datos",
-                        styles: styles
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                        lineNumber: 387,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                lineNumber: 304,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mt-auto p-4",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: [
-                        "border-t pt-4",
-                        styles.divider
-                    ].join(" "),
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            onClick: ()=>{
-                                if (!open) {
-                                    setOpen(true);
-                                    setSettingsOpen(false);
-                                    return;
-                                }
-                                setSettingsOpen((v)=>!v);
-                            },
-                            className: [
-                                "w-full flex items-center gap-3 p-3 rounded-2xl border transition",
-                                styles.card
-                            ].join(" "),
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$settings$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Settings$3e$__["Settings"], {
-                                    size: 20
-                                }, void 0, false, {
-                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                    lineNumber: 407,
-                                    columnNumber: 13
-                                }, this),
-                                open && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex-1 flex items-center justify-between",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "font-medium",
-                                            children: "Ajustes"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                            lineNumber: 410,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: [
-                                                "text-xs",
-                                                styles.subtle
-                                            ].join(" "),
-                                            children: settingsOpen ? "abierto" : "cerrado"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                            lineNumber: 411,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                    lineNumber: 409,
-                                    columnNumber: 15
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                            lineNumber: 393,
-                            columnNumber: 11
-                        }, this),
-                        settingsOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: [
-                                "mt-3 p-3 rounded-2xl border",
-                                styles.panel
-                            ].join(" "),
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex gap-2",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            onClick: ()=>setTab("sesion"),
-                                            className: [
-                                                "flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-xl border text-sm transition",
-                                                tab === "sesion" ? styles.tabActive : styles.tab
-                                            ].join(" "),
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$cog$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__UserCog$3e$__["UserCog"], {
-                                                    size: 16
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                    lineNumber: 429,
-                                                    columnNumber: 19
-                                                }, this),
-                                                open && "Sesión"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                            lineNumber: 422,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            onClick: ()=>setTab("diseno"),
-                                            className: [
-                                                "flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-xl border text-sm transition",
-                                                tab === "diseno" ? styles.tabActive : styles.tab
-                                            ].join(" "),
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$palette$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Palette$3e$__["Palette"], {
-                                                    size: 16
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                    lineNumber: 440,
-                                                    columnNumber: 19
-                                                }, this),
-                                                open && "Diseño"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                            lineNumber: 433,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                    lineNumber: 421,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mt-3",
-                                    children: tab === "sesion" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "space-y-2",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/",
-                                                className: [
-                                                    "w-full flex items-center gap-3 p-3 rounded-2xl border transition",
-                                                    styles.card
-                                                ].join(" "),
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$cog$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__UserCog$3e$__["UserCog"], {
-                                                        size: 18
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                        lineNumber: 455,
-                                                        columnNumber: 23
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-sm font-medium",
-                                                        children: "Cambiar sesión"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                        lineNumber: 456,
-                                                        columnNumber: 23
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                lineNumber: 448,
-                                                columnNumber: 21
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: handleLogout,
-                                                className: [
-                                                    "w-full flex items-center gap-3 p-3 rounded-2xl transition",
-                                                    styles.button
-                                                ].join(" "),
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$out$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__LogOut$3e$__["LogOut"], {
-                                                        size: 18
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                        lineNumber: 466,
-                                                        columnNumber: 23
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-sm font-semibold",
-                                                        children: "Cerrar sesión"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                        lineNumber: 467,
-                                                        columnNumber: 23
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                lineNumber: 459,
-                                                columnNumber: 21
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                        lineNumber: 447,
-                                        columnNumber: 19
-                                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "space-y-2",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: [
-                                                    "text-xs",
-                                                    styles.subtle
-                                                ].join(" "),
-                                                children: "Tema de la sidebar"
-                                            }, void 0, false, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                lineNumber: 472,
-                                                columnNumber: 21
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "max-h-56 overflow-y-auto pr-1",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "grid grid-cols-1 gap-2",
-                                                    children: themeOptions.map((opt)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                            onClick: ()=>setTheme(opt.key),
-                                                            className: [
-                                                                "w-full flex items-center justify-between gap-3 p-3 rounded-2xl border transition",
-                                                                styles.card
-                                                            ].join(" "),
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "flex items-center gap-2",
-                                                                    children: [
-                                                                        opt.icon,
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                            className: "text-sm font-medium",
-                                                                            children: opt.label
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                                            lineNumber: 487,
-                                                                            columnNumber: 31
-                                                                        }, this)
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                                    lineNumber: 485,
-                                                                    columnNumber: 29
-                                                                }, this),
-                                                                theme === opt.key && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "text-xs",
-                                                                    children: "✅"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                                    lineNumber: 489,
-                                                                    columnNumber: 51
-                                                                }, this)
-                                                            ]
-                                                        }, opt.key, true, {
-                                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                            lineNumber: 477,
-                                                            columnNumber: 27
-                                                        }, this))
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                    lineNumber: 475,
-                                                    columnNumber: 23
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                                lineNumber: 474,
-                                                columnNumber: 21
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                        lineNumber: 471,
-                                        columnNumber: 19
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                    lineNumber: 445,
-                                    columnNumber: 15
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                            lineNumber: 419,
-                            columnNumber: 13
-                        }, this),
-                        !open && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            onClick: handleLogout,
-                            className: [
-                                "mt-3 w-full flex items-center justify-center p-3 rounded-2xl transition",
-                                styles.ghost
-                            ].join(" "),
-                            "aria-label": "Cerrar sesión",
-                            title: "Cerrar sesión",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$out$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__LogOut$3e$__["LogOut"], {
-                                size: 20
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                                lineNumber: 510,
-                                columnNumber: 15
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                            lineNumber: 501,
-                            columnNumber: 13
-                        }, this)
-                    ]
-                }, void 0, true, {
+                    "fixed left-4 top-4 z-[10000] h-12 w-12 rounded-2xl border flex items-center justify-center transition shadow-[0_10px_40px_rgba(0,0,0,0.25)]",
+                    styles.iconBox,
+                    styles.iconBoxHover,
+                    open ? "pointer-events-none opacity-0" : "opacity-100"
+                ].join(" "),
+                "aria-label": "Abrir menú",
+                title: "Abrir menú",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
+                    size: 22
+                }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                    lineNumber: 392,
+                    lineNumber: 294,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                lineNumber: 391,
+                lineNumber: 283,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                onClick: ()=>setOpen(false),
+                className: [
+                    "fixed inset-0 z-[9997] bg-black/40 backdrop-blur-[2px] transition-all duration-300",
+                    open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                ].join(" ")
+            }, void 0, false, {
+                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                lineNumber: 298,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("aside", {
+                className: [
+                    "fixed left-0 top-0 h-screen w-[290px] max-w-[86vw] transition-all duration-300 flex flex-col border-r z-[9999] isolate shadow-[0_20px_80px_rgba(0,0,0,0.35)]",
+                    open ? "translate-x-0" : "-translate-x-full",
+                    styles.shell
+                ].join(" "),
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "p-4 flex items-center justify-between gap-3",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center gap-3 min-w-0",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: [
+                                            "h-10 w-10 rounded-2xl border flex items-center justify-center shrink-0",
+                                            styles.iconBox
+                                        ].join(" "),
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__["Home"], {
+                                            size: 18
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                            lineNumber: 322,
+                                            columnNumber: 15
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                        lineNumber: 316,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "min-w-0",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: [
+                                                "font-semibold tracking-tight text-base truncate",
+                                                styles.brand
+                                            ].join(" "),
+                                            children: "Panel"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                            lineNumber: 326,
+                                            columnNumber: 15
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                        lineNumber: 325,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                lineNumber: 315,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center gap-2 shrink-0",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: ()=>setOpen(false),
+                                        className: [
+                                            "h-10 w-10 rounded-2xl border flex items-center justify-center transition",
+                                            styles.iconBox,
+                                            styles.iconBoxHover
+                                        ].join(" "),
+                                        "aria-label": "Cerrar menú",
+                                        title: "Cerrar menú",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                                            size: 18
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                            lineNumber: 348,
+                                            columnNumber: 15
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                        lineNumber: 338,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: ()=>setOpen((v)=>!v),
+                                        className: [
+                                            "hidden h-10 w-10 rounded-2xl border items-center justify-center transition",
+                                            styles.iconBox,
+                                            styles.iconBoxHover
+                                        ].join(" "),
+                                        "aria-label": open ? "Contraer sidebar" : "Expandir sidebar",
+                                        title: open ? "Contraer" : "Expandir",
+                                        children: open ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__["ChevronLeft"], {
+                                            size: 18
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                            lineNumber: 361,
+                                            columnNumber: 23
+                                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
+                                            size: 18
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                            lineNumber: 361,
+                                            columnNumber: 51
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                        lineNumber: 351,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                lineNumber: 337,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                        lineNumber: 314,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: [
+                            "mx-4 border-t",
+                            styles.divider
+                        ].join(" ")
+                    }, void 0, false, {
+                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                        lineNumber: 366,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
+                        className: "flex flex-col gap-2 p-4 overflow-y-auto",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
+                                open: true,
+                                href: "/gestion",
+                                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__["Home"], {
+                                    size: 20
+                                }, void 0, false, {
+                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                    lineNumber: 374,
+                                    columnNumber: 19
+                                }, void 0),
+                                label: "Inicio",
+                                styles: styles,
+                                active: pathname === "/gestion",
+                                onNavigate: ()=>setOpen(false)
+                            }, void 0, false, {
+                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                lineNumber: 371,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
+                                open: true,
+                                href: "/gestion/multas",
+                                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldAlert$3e$__["ShieldAlert"], {
+                                    size: 20
+                                }, void 0, false, {
+                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                    lineNumber: 383,
+                                    columnNumber: 19
+                                }, void 0),
+                                label: "Multas",
+                                styles: styles,
+                                active: pathname === "/gestion/multas",
+                                onNavigate: ()=>setOpen(false)
+                            }, void 0, false, {
+                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                lineNumber: 380,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
+                                open: true,
+                                href: "/gestion/reportes",
+                                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$column$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__BarChart3$3e$__["BarChart3"], {
+                                    size: 20
+                                }, void 0, false, {
+                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                    lineNumber: 394,
+                                    columnNumber: 19
+                                }, void 0),
+                                label: "Reportes",
+                                styles: styles,
+                                active: pathname === "/gestion/reportes",
+                                onNavigate: ()=>setOpen(false)
+                            }, void 0, false, {
+                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                lineNumber: 391,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "relative",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: ()=>{
+                                            setCollectionOpen((v)=>!v);
+                                        },
+                                        className: [
+                                            "w-full flex items-center gap-3 p-3 rounded-2xl transition border border-transparent group",
+                                            isCollectionRoute ? styles.itemActive : styles.item
+                                        ].join(" "),
+                                        "aria-expanded": collectionOpen,
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$folder$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Folder$3e$__["Folder"], {
+                                                size: 20,
+                                                className: "shrink-0"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                lineNumber: 413,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-sm font-medium flex-1 text-left truncate",
+                                                        children: "Collection"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                        lineNumber: 416,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: [
+                                                            "h-7 px-2 rounded-xl border flex items-center justify-center transition shrink-0",
+                                                            styles.card
+                                                        ].join(" "),
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
+                                                            size: 16,
+                                                            className: [
+                                                                "transition",
+                                                                collectionOpen ? "rotate-180" : "",
+                                                                styles.caret
+                                                            ].join(" ")
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                            lineNumber: 426,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                        lineNumber: 420,
+                                                        columnNumber: 17
+                                                    }, this)
+                                                ]
+                                            }, void 0, true)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                        lineNumber: 403,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: [
+                                            "mt-2 overflow-hidden transition-all duration-300",
+                                            collectionOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                                        ].join(" "),
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: [
+                                                "rounded-2xl border p-2",
+                                                styles.childWrap
+                                            ].join(" "),
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: [
+                                                    "ml-1 pl-3 border-l flex flex-col gap-1",
+                                                    styles.childBorder
+                                                ].join(" "),
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SubItem, {
+                                                        href: "/gestion/collection/casos",
+                                                        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$briefcase$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Briefcase$3e$__["Briefcase"], {
+                                                            size: 16
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                            lineNumber: 458,
+                                                            columnNumber: 27
+                                                        }, void 0),
+                                                        label: "Casos",
+                                                        active: pathname === "/gestion/collection/casos",
+                                                        styles: styles,
+                                                        onNavigate: ()=>setOpen(false)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                        lineNumber: 456,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SubItem, {
+                                                        href: "/gestion/collection/aplicaciones",
+                                                        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$app$2d$window$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AppWindow$3e$__["AppWindow"], {
+                                                            size: 16
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                            lineNumber: 466,
+                                                            columnNumber: 27
+                                                        }, void 0),
+                                                        label: "Aplicaciones",
+                                                        active: pathname === "/gestion/collection/aplicaciones",
+                                                        styles: styles,
+                                                        onNavigate: ()=>setOpen(false)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                        lineNumber: 464,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                lineNumber: 450,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                            lineNumber: 444,
+                                            columnNumber: 15
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                        lineNumber: 438,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                lineNumber: 402,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
+                                open: true,
+                                href: "/gestion/base",
+                                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__["Database"], {
+                                    size: 20
+                                }, void 0, false, {
+                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                    lineNumber: 481,
+                                    columnNumber: 19
+                                }, void 0),
+                                label: "Ligas",
+                                styles: styles,
+                                active: pathname === "/gestion/base",
+                                onNavigate: ()=>setOpen(false)
+                            }, void 0, false, {
+                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                lineNumber: 478,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
+                                open: true,
+                                href: "/gestion/usuarios",
+                                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$round$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__UserRound$3e$__["UserRound"], {
+                                    size: 20
+                                }, void 0, false, {
+                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                    lineNumber: 490,
+                                    columnNumber: 19
+                                }, void 0),
+                                label: "Usuarios",
+                                styles: styles,
+                                active: pathname === "/gestion/usuarios",
+                                onNavigate: ()=>setOpen(false)
+                            }, void 0, false, {
+                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                lineNumber: 487,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
+                                open: true,
+                                href: "/gestion/base-datos",
+                                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__["FileText"], {
+                                    size: 20
+                                }, void 0, false, {
+                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                    lineNumber: 501,
+                                    columnNumber: 19
+                                }, void 0),
+                                label: "Base de datos",
+                                styles: styles,
+                                active: pathname === "/gestion/base-datos",
+                                onNavigate: ()=>setOpen(false)
+                            }, void 0, false, {
+                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                lineNumber: 498,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                        lineNumber: 369,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-auto p-4",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: [
+                                "border-t pt-4",
+                                styles.divider
+                            ].join(" "),
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: ()=>{
+                                        setSettingsOpen((v)=>!v);
+                                    },
+                                    className: [
+                                        "w-full flex items-center gap-3 p-3 rounded-2xl border transition",
+                                        styles.card
+                                    ].join(" "),
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$settings$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Settings$3e$__["Settings"], {
+                                            size: 20,
+                                            className: "shrink-0"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                            lineNumber: 521,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex-1 flex items-center justify-between min-w-0",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "font-medium text-sm truncate",
+                                                    children: "Ajustes"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                    lineNumber: 523,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: [
+                                                        "text-xs",
+                                                        styles.subtle
+                                                    ].join(" "),
+                                                    children: settingsOpen ? "abierto" : "cerrado"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                    lineNumber: 524,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                            lineNumber: 522,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                    lineNumber: 512,
+                                    columnNumber: 13
+                                }, this),
+                                settingsOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: [
+                                        "mt-3 p-3 rounded-2xl border",
+                                        styles.panel
+                                    ].join(" "),
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex gap-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: ()=>setTab("sesion"),
+                                                    className: [
+                                                        "flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-xl border text-sm transition",
+                                                        tab === "sesion" ? styles.tabActive : styles.tab
+                                                    ].join(" "),
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$cog$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__UserCog$3e$__["UserCog"], {
+                                                            size: 16
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                            lineNumber: 546,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        "Sesión"
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                    lineNumber: 539,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: ()=>setTab("diseno"),
+                                                    className: [
+                                                        "flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-xl border text-sm transition",
+                                                        tab === "diseno" ? styles.tabActive : styles.tab
+                                                    ].join(" "),
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$palette$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Palette$3e$__["Palette"], {
+                                                            size: 16
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                            lineNumber: 557,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        "Diseño"
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                    lineNumber: 550,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                            lineNumber: 538,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "mt-3",
+                                            children: tab === "sesion" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "space-y-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                        href: "/",
+                                                        className: [
+                                                            "w-full flex items-center gap-3 p-3 rounded-2xl border transition",
+                                                            styles.card
+                                                        ].join(" "),
+                                                        onClick: ()=>setOpen(false),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$cog$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__UserCog$3e$__["UserCog"], {
+                                                                size: 18,
+                                                                className: "shrink-0"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                                lineNumber: 573,
+                                                                columnNumber: 25
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-sm font-medium",
+                                                                children: "Cambiar sesión"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                                lineNumber: 574,
+                                                                columnNumber: 25
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                        lineNumber: 565,
+                                                        columnNumber: 23
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        onClick: handleLogout,
+                                                        className: [
+                                                            "w-full flex items-center gap-3 p-3 rounded-2xl transition",
+                                                            styles.button
+                                                        ].join(" "),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$out$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__LogOut$3e$__["LogOut"], {
+                                                                size: 18,
+                                                                className: "shrink-0"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                                lineNumber: 586,
+                                                                columnNumber: 25
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-sm font-semibold",
+                                                                children: "Cerrar sesión"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                                lineNumber: 587,
+                                                                columnNumber: 25
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                        lineNumber: 579,
+                                                        columnNumber: 23
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                lineNumber: 564,
+                                                columnNumber: 21
+                                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "space-y-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: [
+                                                            "text-xs",
+                                                            styles.subtle
+                                                        ].join(" "),
+                                                        children: "Tema de la sidebar"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                        lineNumber: 594,
+                                                        columnNumber: 23
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "max-h-56 overflow-y-auto pr-1",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "grid grid-cols-1 gap-2",
+                                                            children: themeOptions.map((opt)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                    onClick: ()=>setTheme(opt.key),
+                                                                    className: [
+                                                                        "w-full flex items-center justify-between gap-3 p-3 rounded-2xl border transition",
+                                                                        styles.card
+                                                                    ].join(" "),
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "flex items-center gap-2 min-w-0",
+                                                                            children: [
+                                                                                opt.icon,
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "text-sm font-medium truncate",
+                                                                                    children: opt.label
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                                                    lineNumber: 611,
+                                                                                    columnNumber: 33
+                                                                                }, this)
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                                            lineNumber: 609,
+                                                                            columnNumber: 31
+                                                                        }, this),
+                                                                        theme === opt.key && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "text-xs",
+                                                                            children: "✅"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                                            lineNumber: 616,
+                                                                            columnNumber: 33
+                                                                        }, this)
+                                                                    ]
+                                                                }, opt.key, true, {
+                                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                                    lineNumber: 601,
+                                                                    columnNumber: 29
+                                                                }, this))
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                            lineNumber: 599,
+                                                            columnNumber: 25
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                        lineNumber: 598,
+                                                        columnNumber: 23
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                                lineNumber: 593,
+                                                columnNumber: 21
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                            lineNumber: 562,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                    lineNumber: 531,
+                                    columnNumber: 15
+                                }, this),
+                                !open && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: handleLogout,
+                                    className: [
+                                        "mt-3 w-full flex items-center justify-center p-3 rounded-2xl transition",
+                                        styles.ghost
+                                    ].join(" "),
+                                    "aria-label": "Cerrar sesión",
+                                    title: "Cerrar sesión",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$out$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__LogOut$3e$__["LogOut"], {
+                                        size: 20
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                        lineNumber: 638,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                                    lineNumber: 629,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                            lineNumber: 511,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                        lineNumber: 510,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                lineNumber: 306,
                 columnNumber: 7
             }, this)
         ]
-    }, void 0, true, {
-        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-        lineNumber: 271,
-        columnNumber: 5
-    }, this);
+    }, void 0, true);
 }
-function NavItem({ open, href, icon, label, styles }) {
+function NavItem({ open, href, icon, label, styles, active, onNavigate }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
         href: href,
+        onClick: onNavigate,
         className: [
             "flex items-center gap-3 p-3 rounded-2xl transition border border-transparent",
-            styles.item
+            active ? styles.itemActive : styles.item
         ].join(" "),
         title: !open ? label : undefined,
         children: [
-            icon,
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "shrink-0",
+                children: icon
+            }, void 0, false, {
+                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
+                lineNumber: 675,
+                columnNumber: 7
+            }, this),
             open && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "text-sm font-medium",
+                className: "text-sm font-medium truncate",
                 children: label
             }, void 0, false, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                lineNumber: 542,
+                lineNumber: 676,
                 columnNumber: 16
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-        lineNumber: 533,
+        lineNumber: 666,
         columnNumber: 5
     }, this);
 }
-function SubItem({ href, icon, label, active, styles }) {
+function SubItem({ href, icon, label, active, styles, onNavigate }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
         href: href,
+        onClick: onNavigate,
         className: [
             "flex items-center gap-2 px-3 py-2 rounded-xl text-sm transition",
             active ? styles.childItemActive : styles.childItem
         ].join(" "),
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "opacity-90",
+                className: "opacity-90 shrink-0",
                 children: icon
             }, void 0, false, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                lineNumber: 568,
+                lineNumber: 705,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "font-medium",
+                className: "font-medium truncate",
                 children: label
             }, void 0, false, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-                lineNumber: 569,
+                lineNumber: 706,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/components/Sidebar.tsx",
-        lineNumber: 561,
+        lineNumber: 697,
         columnNumber: 5
     }, this);
 }
@@ -1935,87 +2030,82 @@ function MultasPage() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-                className: " min-h-screen px-6 sm:px-10 py-8 sm:py-10 bg-gradient-to-b from-slate-50 via-sky-50/60 to-slate-100 transition-[padding] duration-300 ",
-                style: {
-                    // ✅ Si --sidebar-w es 18rem (abierta), quitamos el padding para overlay.
-                    // ✅ Si es 88px (cerrada), dejamos 88px para que no tape.
-                    paddingLeft: "min(var(--sidebar-w), 88px)"
-                },
+                className: " min-h-screen pl-[76px] sm:pl-[88px] md:pl-[96px] lg:pl-[110px] pr-4 sm:pr-6 md:pr-10 py-6 sm:py-8 md:py-10 bg-gradient-to-b from-slate-50 via-sky-50/60 to-slate-100 transition-[padding] duration-300 ",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-start justify-between gap-4",
+                        className: "flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                        className: "text-3xl sm:text-4xl font-semibold tracking-tight",
+                                        className: "text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight",
                                         children: "Multas"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/page.tsx",
-                                        lineNumber: 30,
+                                        lineNumber: 26,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-slate-500 mt-2",
+                                        className: "text-slate-500 mt-2 text-sm sm:text-base",
                                         children: "Administración y gestión de multas."
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/page.tsx",
-                                        lineNumber: 33,
+                                        lineNumber: 29,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/page.tsx",
-                                lineNumber: 29,
+                                lineNumber: 25,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: " hidden sm:flex items-center gap-2 px-4 py-2 rounded-2xl bg-white/60 backdrop-blur-xl border border-slate-200/60 shadow-sm text-sm text-slate-600 ",
+                                className: " hidden sm:flex items-center gap-2 px-3 sm:px-4 py-2 rounded-2xl bg-white/60 backdrop-blur-xl border border-slate-200/60 shadow-sm text-xs sm:text-sm text-slate-600 ",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "h-2 w-2 rounded-full bg-sky-500"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/page.tsx",
-                                        lineNumber: 48,
+                                        lineNumber: 44,
                                         columnNumber: 13
                                     }, this),
                                     "Gestión"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/page.tsx",
-                                lineNumber: 38,
+                                lineNumber: 34,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/page.tsx",
-                        lineNumber: 28,
+                        lineNumber: 24,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mt-8 border-t border-slate-200/70"
+                        className: "mt-6 sm:mt-8 border-t border-slate-200/70"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/page.tsx",
-                        lineNumber: 54,
+                        lineNumber: 50,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                        className: " mt-8 rounded-3xl bg-white/55 backdrop-blur-xl border border-slate-200/60 shadow-[0_8px_30px_rgba(15,23,42,0.06)] p-4 sm:p-6 ",
+                        className: " mt-6 sm:mt-8 rounded-3xl bg-white/55 backdrop-blur-xl border border-slate-200/60 shadow-[0_8px_30px_rgba(15,23,42,0.06)] p-3 sm:p-4 md:p-6 ",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "rounded-2xl bg-white/50 border border-slate-200/60 p-4 sm:p-6",
+                            className: "rounded-2xl bg-white/50 border border-slate-200/60 p-3 sm:p-4 md:p-6",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$app$2f$gestion$2f$multas$2f$templates$2f$TemplatesView$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/page.tsx",
-                                lineNumber: 69,
+                                lineNumber: 65,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/page.tsx",
-                            lineNumber: 68,
+                            lineNumber: 64,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/page.tsx",
-                        lineNumber: 57,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, this)
                 ]
