@@ -449,20 +449,20 @@ function Plantilla2(props) {
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                 lineNumber: 38,
-                                columnNumber: 13
+                                columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute -left-1 top-2 w-20 h-1.5 bg-[#183A72] rotate-[-45deg]"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                 lineNumber: 39,
-                                columnNumber: 13
+                                columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                         lineNumber: 37,
-                        columnNumber: 11
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex justify-end",
@@ -472,18 +472,18 @@ function Plantilla2(props) {
                         }, void 0, false, {
                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                             lineNumber: 43,
-                            columnNumber: 13
+                            columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                         lineNumber: 42,
-                        columnNumber: 11
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                 lineNumber: 36,
-                columnNumber: 9
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mx-4 mb-4 bg-[#f7f7f7] rounded-xl p-5 shadow-sm border border-[#efefef]",
@@ -496,12 +496,12 @@ function Plantilla2(props) {
                         }, void 0, false, {
                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                             lineNumber: 51,
-                            columnNumber: 13
+                            columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                         lineNumber: 50,
-                        columnNumber: 11
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "grid grid-cols-2 gap-4 items-end mb-8",
@@ -514,30 +514,30 @@ function Plantilla2(props) {
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                         lineNumber: 59,
-                                        columnNumber: 15
+                                        columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                         type: "text",
                                         value: importePagar,
                                         onChange: (e)=>setImportePagar(e.target.value),
                                         disabled: disabled,
-                                        className: "w-full bg-transparent outline-none text-[56px] leading-none font-serif font-bold text-[#4A55D9]",
+                                        className: "w-full bg-transparent outline-none text-[56px] leading-none font-sans font-bold text-[#4A55D9]",
                                         placeholder: "$0.00"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                         lineNumber: 63,
-                                        columnNumber: 15
+                                        columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                 lineNumber: 58,
-                                columnNumber: 13
+                                columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex justify-end",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "w-full border border-red-400 rounded-[22px] px-6 py-4 text-red-500 text-[24px] leading-none font-serif bg-[#fff7f7] text-center",
+                                    className: "w-full border border-red-400 rounded-[22px] px-6 py-4 text-red-500 text-[24px] leading-none font-sans bg-[#fff7f7] text-center",
                                     children: [
                                         diasVencidos,
                                         " días de retraso"
@@ -545,18 +545,18 @@ function Plantilla2(props) {
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                     lineNumber: 74,
-                                    columnNumber: 15
+                                    columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                 lineNumber: 73,
-                                columnNumber: 13
+                                columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                         lineNumber: 57,
-                        columnNumber: 11
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mb-10",
@@ -569,29 +569,29 @@ function Plantilla2(props) {
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                     lineNumber: 83,
-                                    columnNumber: 15
+                                    columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                     type: "date",
                                     value: fechaVencimiento,
                                     onChange: (e)=>setFechaVencimiento(e.target.value),
                                     disabled: disabled,
-                                    className: "bg-transparent outline-none text-right text-[18px] font-medium text-[#5c5c5c] font-serif"
+                                    className: "bg-transparent outline-none text-right text-[18px] font-medium text-[#5c5c5c] font-sans"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                     lineNumber: 87,
-                                    columnNumber: 15
+                                    columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                             lineNumber: 82,
-                            columnNumber: 13
+                            columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                         lineNumber: 81,
-                        columnNumber: 11
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mb-10",
@@ -602,7 +602,7 @@ function Plantilla2(props) {
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                 lineNumber: 99,
-                                columnNumber: 13
+                                columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "bg-[#f8f8f8] rounded-xl p-4 border border-[#ececec]",
@@ -621,7 +621,7 @@ function Plantilla2(props) {
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                                     lineNumber: 111,
-                                                    columnNumber: 19
+                                                    columnNumber: 17
                                                 }, this),
                                                 optionsMetodo.map((o)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: o.id,
@@ -629,25 +629,25 @@ function Plantilla2(props) {
                                                     }, o.id, false, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                                         lineNumber: 115,
-                                                        columnNumber: 21
+                                                        columnNumber: 19
                                                     }, this))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                             lineNumber: 105,
-                                            columnNumber: 17
+                                            columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                         lineNumber: 104,
-                                        columnNumber: 15
+                                        columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                                             value: cuentaId,
                                             onChange: (e)=>setCuentaId(e.target.value),
                                             disabled: disabled || loadingListas,
-                                            className: "w-full bg-transparent outline-none text-[26px] font-medium text-[#183A72] font-serif text-center appearance-none tracking-wide",
+                                            className: "w-full bg-transparent outline-none text-[26px] font-medium text-[#183A72] font-sans text-center appearance-none tracking-wide",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                     value: "",
@@ -655,7 +655,7 @@ function Plantilla2(props) {
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                                     lineNumber: 129,
-                                                    columnNumber: 19
+                                                    columnNumber: 17
                                                 }, this),
                                                 optionsCuenta.map((o)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: o.id,
@@ -663,18 +663,18 @@ function Plantilla2(props) {
                                                     }, o.id, false, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                                         lineNumber: 133,
-                                                        columnNumber: 21
+                                                        columnNumber: 19
                                                     }, this))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                             lineNumber: 123,
-                                            columnNumber: 17
+                                            columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                         lineNumber: 122,
-                                        columnNumber: 15
+                                        columnNumber: 13
                                     }, this),
                                     metodoPagoLabel ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "mt-4 text-center text-sm text-[#56627a]",
@@ -682,7 +682,7 @@ function Plantilla2(props) {
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                         lineNumber: 141,
-                                        columnNumber: 17
+                                        columnNumber: 15
                                     }, this) : null,
                                     cuentaBancaria ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "mt-1 text-center text-sm text-[#56627a] break-all",
@@ -690,19 +690,19 @@ function Plantilla2(props) {
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                         lineNumber: 147,
-                                        columnNumber: 17
+                                        columnNumber: 15
                                     }, this) : null
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                 lineNumber: 103,
-                                columnNumber: 13
+                                columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                         lineNumber: 98,
-                        columnNumber: 11
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         children: [
@@ -712,7 +712,7 @@ function Plantilla2(props) {
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                 lineNumber: 156,
-                                columnNumber: 13
+                                columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "space-y-5",
@@ -726,10 +726,10 @@ function Plantilla2(props) {
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                                 lineNumber: 162,
-                                                columnNumber: 17
+                                                columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-[18px] font-serif text-black",
+                                                className: "text-[18px] font-sans text-black",
                                                 children: [
                                                     "$",
                                                     importePagar || "0"
@@ -737,13 +737,13 @@ function Plantilla2(props) {
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                                 lineNumber: 165,
-                                                columnNumber: 17
+                                                columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                         lineNumber: 161,
-                                        columnNumber: 15
+                                        columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex justify-between items-center gap-4",
@@ -754,21 +754,21 @@ function Plantilla2(props) {
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                                 lineNumber: 171,
-                                                columnNumber: 17
+                                                columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-[18px] font-serif text-black",
+                                                className: "text-[18px] font-sans text-black",
                                                 children: "$ 0"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                                 lineNumber: 174,
-                                                columnNumber: 17
+                                                columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                         lineNumber: 170,
-                                        columnNumber: 15
+                                        columnNumber: 13
                                     }, this),
                                     mostrarExtras && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                         children: [
@@ -781,7 +781,7 @@ function Plantilla2(props) {
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                                         lineNumber: 180,
-                                                        columnNumber: 21
+                                                        columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                         value: nombre,
@@ -792,13 +792,13 @@ function Plantilla2(props) {
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                                         lineNumber: 183,
-                                                        columnNumber: 21
+                                                        columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                                 lineNumber: 179,
-                                                columnNumber: 19
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "flex justify-between items-center gap-4",
@@ -809,7 +809,7 @@ function Plantilla2(props) {
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                                         lineNumber: 193,
-                                                        columnNumber: 21
+                                                        columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                         value: telefono,
@@ -820,13 +820,13 @@ function Plantilla2(props) {
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                                         lineNumber: 196,
-                                                        columnNumber: 21
+                                                        columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                                 lineNumber: 192,
-                                                columnNumber: 19
+                                                columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true)
@@ -834,19 +834,19 @@ function Plantilla2(props) {
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                                 lineNumber: 160,
-                                columnNumber: 13
+                                columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                         lineNumber: 155,
-                        columnNumber: 11
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                 lineNumber: 48,
-                columnNumber: 9
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "px-6 py-7 text-white text-[18px] leading-snug font-serif",
@@ -857,7 +857,7 @@ function Plantilla2(props) {
             }, void 0, false, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                 lineNumber: 211,
-                columnNumber: 9
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "p-4 bg-[#f3f3f3]",
@@ -873,18 +873,18 @@ function Plantilla2(props) {
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                     lineNumber: 220,
-                    columnNumber: 11
+                    columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
                 lineNumber: 219,
-                columnNumber: 9
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/multas/plantillas/complejas/plantillas/Plantilla2.tsx",
         lineNumber: 34,
-        columnNumber: 7
+        columnNumber: 5
     }, this);
 }
 _c = Plantilla2;

@@ -209,6 +209,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/gestion/multas/plantillas/prorroga/[id]/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/gestion/multas/plantillas/prorroga/[id]">> = Specific
+  const handler = {} as typeof import("../../../app/gestion/multas/plantillas/prorroga/[id]/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/gestion/multas/templates/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/gestion/multas/templates">> = Specific
@@ -407,6 +416,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/api/collection/casos/[numero_prestamo]/generar-prorroga/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/collection/casos/[numero_prestamo]/generar-prorroga">> = Specific
+  const handler = {} as typeof import("../../../app/api/collection/casos/[numero_prestamo]/generar-prorroga/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/api/collection/casos/[numero_prestamo]/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/collection/casos/[numero_prestamo]">> = Specific
@@ -420,6 +438,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/collection/casos/auto-assign">> = Specific
   const handler = {} as typeof import("../../../app/api/collection/casos/auto-assign/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/api/collection/casos/crear/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/collection/casos/crear">> = Specific
+  const handler = {} as typeof import("../../../app/api/collection/casos/crear/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

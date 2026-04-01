@@ -36,6 +36,7 @@ export default function CasosTable({
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState<Record<string, boolean>>({});
+  const [prorrogaLoading, setProrrogaLoading] = useState<Record<string, boolean>>({});
   const [resegLoading, setResegLoading] = useState(false);
   const [changingPago, setChangingPago] = useState<Record<string, boolean>>({});
   const [openingLiga, setOpeningLiga] = useState<Record<string, boolean>>({});
@@ -230,6 +231,73 @@ export default function CasosTable({
     }
   }
 
+  async function generarProrroga(row: Caso) {
+    const key = row.numero_prestamo;
+
+    try {
+      setProrrogaLoading((p) => ({ ...p, [key]: true }));
+
+      const res = await fetch(
+        `/api/collection/casos/${encodeURIComponent(key)}/generar-prorroga`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            overwrite: true,
+          }),
+        }
+      );
+
+      const j = await res.json();
+
+      if (!res.ok || !j?.ok) {
+        throw new Error(j?.error || "Error generando prórroga");
+      }
+
+      await load();
+
+      const finalLink = j.link || j.liga_pago || j.data?.liga_pago || null;
+
+      if (finalLink) {
+        window.open(finalLink, "_blank", "noopener,noreferrer");
+      }
+    } catch (e: any) {
+      alert(e?.message || "Error");
+    } finally {
+      setProrrogaLoading((p) => ({ ...p, [key]: false }));
+    }
+  }
+
+  function normalizarTelefono(raw: string | null | undefined) {
+    return String(raw ?? "").replace(/\D/g, "");
+  }
+
+  function abrirWhatsApp(row: Caso) {
+    const phone = normalizarTelefono(row.telefono_cliente);
+    if (!phone) {
+      alert("Este cliente no tiene teléfono válido");
+      return;
+    }
+   const cleanPhone = String(phone || "")
+  .replace(/\D/g, "") // quita todo lo que no sea número
+  .replace(/^52/, ""); // evita duplicar si ya lo trae
+
+window.open(`https://wa.me/52${cleanPhone}`, "_blank", "noopener,noreferrer");
+  }
+
+  function abrirTelegram(row: Caso) {
+    const phone = normalizarTelefono(row.telefono_cliente);
+    if (!phone) {
+      alert("Este cliente no tiene teléfono válido");
+      return;
+    }
+    const cleanPhone = String(phone || "")
+  .replace(/\D/g, "") // quita todo lo que no sea número
+  .replace(/^52/, ""); // evita duplicar si ya lo trae
+
+    window.open(`https://t.me/+52${phone}`, "_blank", "noopener,noreferrer");
+  }
+
   const filtered = useMemo(() => {
     const s = (v: any) => String(v ?? "").toLowerCase().trim();
     const onlyDigits = (v: any) => String(v ?? "").replace(/\D/g, "");
@@ -278,41 +346,68 @@ export default function CasosTable({
   }, [data, filters]);
 
   if (loading) {
-    return <div className="p-4 sm:p-6 text-sm text-slate-500">Cargando casos…</div>;
+    return (
+      <div className="p-4 sm:p-6 text-sm text-slate-500">Cargando casos…</div>
+    );
   }
 
   return (
-    <div className="space-y-3 w-full">
+    <div className="space-y-4 w-full">
       <div className="flex justify-stretch sm:justify-end px-1 sm:px-2">
         <button
           onClick={resegmentar}
           disabled={resegLoading}
-          className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow"
+          className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white px-4 py-2 rounded-2xl text-sm font-semibold shadow-sm transition"
         >
           {resegLoading ? "Procesando..." : "Resegmentar casos"}
         </button>
       </div>
 
-      <div className="rounded-3xl bg-white/55 backdrop-blur-xl border border-slate-200/60 shadow overflow-hidden">
+      <div className="rounded-[28px] bg-white/80 backdrop-blur-xl border border-slate-200/70 shadow-[0_10px_35px_rgba(15,23,42,0.07)] overflow-hidden">
         <div className="px-4 pt-4 text-xs text-slate-500 break-words">
           Mostrando <b>{filtered.length}</b> de <b>{data.length}</b>
         </div>
 
         <div className="w-full overflow-x-auto">
-          <table className="min-w-[1200px] w-full text-sm">
-            <thead className="bg-slate-100/70 text-slate-700">
+          <table className="min-w-[1440px] w-full text-sm border-separate border-spacing-0">
+            <thead className="bg-slate-100/80 text-slate-700">
               <tr>
-                <th className="th whitespace-nowrap">N° Préstamo</th>
-                <th className="th whitespace-nowrap">Cliente</th>
-                <th className="th whitespace-nowrap">Teléfono</th>
-                <th className="th whitespace-nowrap">Importe Adeudado</th>
-                <th className="th whitespace-nowrap">Valor Recaudado</th>
-                <th className="th whitespace-nowrap">Producto</th>
-                <th className="th whitespace-nowrap">Segmento</th>
-                <th className="th whitespace-nowrap">Fecha de Cobro</th>
-                <th className="th whitespace-nowrap">Estado de Pago</th>
-                <th className="th whitespace-nowrap">Collection Account</th>
-                <th className="th text-center whitespace-nowrap">Operar</th>
+                <th className="whitespace-nowrap px-4 py-4 text-left font-semibold min-w-[180px]">
+                  Acciones
+                </th>
+                <th className="whitespace-nowrap px-4 py-4 text-left font-semibold">
+                  N° Préstamo
+                </th>
+                <th className="whitespace-nowrap px-4 py-4 text-left font-semibold">
+                  Cliente
+                </th>
+                <th className="whitespace-nowrap px-4 py-4 text-left font-semibold">
+                  Teléfono
+                </th>
+                <th className="whitespace-nowrap px-4 py-4 text-left font-semibold">
+                  Importe Adeudado
+                </th>
+                <th className="whitespace-nowrap px-4 py-4 text-left font-semibold">
+                  Valor Recaudado
+                </th>
+                <th className="whitespace-nowrap px-4 py-4 text-left font-semibold">
+                  Producto
+                </th>
+                <th className="whitespace-nowrap px-4 py-4 text-left font-semibold">
+                  Segmento
+                </th>
+                <th className="whitespace-nowrap px-4 py-4 text-left font-semibold">
+                  Fecha de Cobro
+                </th>
+                <th className="whitespace-nowrap px-4 py-4 text-left font-semibold">
+                  Estado de Pago
+                </th>
+                <th className="whitespace-nowrap px-4 py-4 text-left font-semibold">
+                  Collection Account
+                </th>
+                <th className="text-center whitespace-nowrap px-4 py-4 font-semibold">
+                  Operar
+                </th>
               </tr>
             </thead>
 
@@ -320,14 +415,53 @@ export default function CasosTable({
               {filtered.map((row) => (
                 <tr
                   key={row.numero_prestamo}
-                  className="border-t border-slate-200/60"
+                  className="border-t border-slate-200/60 hover:bg-slate-50/80 transition-colors"
                 >
-                  <td className="td whitespace-nowrap">{row.numero_prestamo}</td>
-                  <td className="td min-w-[180px]">{row.nombre_cliente}</td>
-                  <td className="td whitespace-nowrap">{row.telefono_cliente}</td>
-                  <td className="td whitespace-nowrap">{money(row.valor_deuda)}</td>
+                  <td className="px-4 py-4 align-middle">
+                    <div className="flex flex-wrap items-center gap-2 min-w-[170px]">
+                      <button
+                        type="button"
+                        onClick={() => abrirWhatsApp(row)}
+                        className="inline-flex items-center justify-center rounded-full bg-emerald-100 px-3 py-1.5 text-xs font-semibold text-emerald-700 hover:bg-emerald-200 transition whitespace-nowrap"
+                      >
+                        WhatsApp
+                      </button>
 
-                  <td className="td">
+                      <button
+                        type="button"
+                        onClick={() => abrirTelegram(row)}
+                        className="inline-flex items-center justify-center rounded-full bg-sky-100 px-3 py-1.5 text-xs font-semibold text-sky-700 hover:bg-sky-200 transition whitespace-nowrap"
+                      >
+                        Telegram
+                      </button>
+
+                      <button
+                        type="button"
+                        disabled
+                        className="inline-flex items-center justify-center rounded-full bg-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-400 cursor-not-allowed whitespace-nowrap"
+                      >
+                        Llamar
+                      </button>
+                    </div>
+                  </td>
+
+                  <td className="whitespace-nowrap px-4 py-4 font-semibold text-slate-800">
+                    {row.numero_prestamo}
+                  </td>
+
+                  <td className="min-w-[220px] px-4 py-4 text-slate-700">
+                    {row.nombre_cliente}
+                  </td>
+
+                  <td className="whitespace-nowrap px-4 py-4 text-slate-700">
+                    {row.telefono_cliente}
+                  </td>
+
+                  <td className="whitespace-nowrap px-4 py-4 text-slate-700 font-medium">
+                    {money(row.valor_deuda)}
+                  </td>
+
+                  <td className="px-4 py-4">
                     {role === "admin" ? (
                       <InputEnterSave
                         initial={row.valor_recaudado ?? 0}
@@ -344,23 +478,29 @@ export default function CasosTable({
                     )}
                   </td>
 
-                  <td className="td whitespace-nowrap">{row.producto}</td>
-                  <td className="td whitespace-nowrap">{row.segmento ?? "-"}</td>
-                  <td className="td whitespace-nowrap">
+                  <td className="whitespace-nowrap px-4 py-4 text-slate-700">
+                    {row.producto}
+                  </td>
+
+                  <td className="whitespace-nowrap px-4 py-4 text-slate-700">
+                    {row.segmento ?? "-"}
+                  </td>
+
+                  <td className="whitespace-nowrap px-4 py-4 text-slate-700">
                     {new Date(row.fecha_cobro).toLocaleDateString()}
                   </td>
 
-                  <td className="td whitespace-nowrap">
+                  <td className="whitespace-nowrap px-4 py-4">
                     <button
                       disabled={
                         role !== "admin" || changingPago[row.numero_prestamo]
                       }
                       onClick={() => cambiarEstadoPago(row)}
                       className={[
-                        "px-2 py-1 rounded-full text-xs font-medium disabled:opacity-50 whitespace-nowrap",
+                        "px-3 py-1.5 rounded-full text-xs font-semibold disabled:opacity-50 whitespace-nowrap transition",
                         row.estado_pago === "pagado"
-                          ? "bg-emerald-100 text-emerald-700"
-                          : "bg-amber-100 text-amber-700",
+                          ? "bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
+                          : "bg-amber-100 text-amber-700 hover:bg-amber-200",
                       ].join(" ")}
                     >
                       {changingPago[row.numero_prestamo]
@@ -369,10 +509,10 @@ export default function CasosTable({
                     </button>
                   </td>
 
-                  <td className="td min-w-[220px]">
+                  <td className="min-w-[220px] px-4 py-4">
                     {role === "admin" ? (
                       <select
-                        className="w-full rounded-xl border border-slate-200/70 bg-white/70 px-3 py-2 text-sm"
+                        className="w-full rounded-2xl border border-slate-200/80 bg-white px-3 py-2.5 text-sm text-slate-700 shadow-sm outline-none focus:border-slate-300"
                         value={row.collection_account ?? ""}
                         onChange={(e) =>
                           patchCaso(row.numero_prestamo, {
@@ -394,10 +534,10 @@ export default function CasosTable({
                     )}
                   </td>
 
-                  <td className="td text-center">
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3">
+                  <td className="text-center px-4 py-4">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5">
                       <button
-                        className="text-sky-700 hover:underline disabled:opacity-50 whitespace-nowrap"
+                        className="inline-flex items-center justify-center rounded-full bg-sky-100 px-3.5 py-1.5 text-xs font-semibold text-sky-700 hover:bg-sky-200 disabled:opacity-50 transition whitespace-nowrap"
                         disabled={generating[row.numero_prestamo]}
                         onClick={() => generarLiga(row)}
                       >
@@ -407,7 +547,18 @@ export default function CasosTable({
                       </button>
 
                       <button
-                        className="text-emerald-700 hover:underline disabled:opacity-50 whitespace-nowrap"
+                        className="inline-flex items-center justify-center rounded-full bg-violet-100 px-3.5 py-1.5 text-xs font-semibold text-violet-700 hover:bg-violet-200 disabled:opacity-50 transition whitespace-nowrap"
+                        disabled={prorrogaLoading[row.numero_prestamo]}
+                        onClick={() => generarProrroga(row)}
+                        type="button"
+                      >
+                        {prorrogaLoading[row.numero_prestamo]
+                          ? "Generando…"
+                          : "Prórroga"}
+                      </button>
+
+                      <button
+                        className="inline-flex items-center justify-center rounded-full bg-emerald-100 px-3.5 py-1.5 text-xs font-semibold text-emerald-700 hover:bg-emerald-200 disabled:opacity-50 transition whitespace-nowrap"
                         disabled={openingLiga[row.numero_prestamo]}
                         onClick={() => entrarUltimaLiga(row)}
                       >
@@ -423,7 +574,7 @@ export default function CasosTable({
               {filtered.length === 0 && (
                 <tr>
                   <td
-                    colSpan={11}
+                    colSpan={12}
                     className="px-4 py-10 text-center text-sm text-slate-500"
                   >
                     No se encontraron casos con los filtros actuales.
@@ -466,7 +617,7 @@ function InputEnterSave({
             setSaving(false);
           }
         }}
-        className="w-full sm:w-32 rounded-xl border border-slate-200/70 bg-white/70 px-3 py-2 text-sm"
+        className="w-full sm:w-32 rounded-2xl border border-slate-200/80 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm outline-none focus:border-slate-300"
       />
       <span className="text-xs text-slate-400 whitespace-nowrap">
         {saving ? "guardando…" : "ENTER"}

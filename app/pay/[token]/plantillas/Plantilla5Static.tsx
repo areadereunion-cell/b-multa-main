@@ -21,16 +21,28 @@ function formatMoney(value: any) {
   });
 }
 
+/* 🔥 CORREGIDO: elimina hora y deja día-mes-texto-año */
 function formatDateDisplay(value: any) {
   const s = String(value ?? "").trim();
-  if (!s) return "dd-mm-aaaa";
+  if (!s) return "dd-mes-aaaa";
 
-  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
-    const [y, m, d] = s.split("-");
-    return `${d}-${m}-${y}`;
+  // 🔥 elimina la hora tipo T05:00:00.000Z
+  const soloFecha = s.split("T")[0];
+
+  if (/^\d{4}-\d{2}-\d{2}$/.test(soloFecha)) {
+    const [y, m, d] = soloFecha.split("-");
+
+    const meses = [
+      "enero","febrero","marzo","abril","mayo","junio",
+      "julio","agosto","septiembre","octubre","noviembre","diciembre"
+    ];
+
+    const mesTexto = meses[Number(m) - 1] || m;
+
+    return `${d}-${mesTexto}-${y}`;
   }
 
-  return s;
+  return soloFecha;
 }
 
 export default function Plantilla5Static({
@@ -52,8 +64,15 @@ export default function Plantilla5Static({
 
   const fechaVencimiento = formatDateDisplay(data?.fecha_vencimiento);
 
-  const nombre = data?.mostrar_extras === false ? "" : String(data?.nombre_cliente ?? "—");
-  const telefono = data?.mostrar_extras === false ? "" : String(data?.telefono_cliente ?? "—");
+  const nombre =
+    data?.mostrar_extras === false
+      ? ""
+      : String(data?.nombre_cliente ?? "—");
+
+  const telefono =
+    data?.mostrar_extras === false
+      ? ""
+      : String(data?.telefono_cliente ?? "—");
 
   const metodoPago = String(
     data?.metodo_pago_label ??

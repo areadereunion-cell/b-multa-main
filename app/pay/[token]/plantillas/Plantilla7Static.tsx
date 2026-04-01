@@ -21,16 +21,19 @@ function formatMoney(value: any) {
   });
 }
 
+/* 🔥 dd/mm/yyyy sin hora */
 function formatDate(value: any) {
   const s = String(value ?? "").trim();
-  if (!s) return "dd-mm-aaaa";
+  if (!s) return "dd/mm/aaaa";
 
-  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
-    const [y, m, d] = s.split("-");
-    return `${d}-${m}-${y}`;
+  const soloFecha = s.split("T")[0];
+
+  if (/^\d{4}-\d{2}-\d{2}$/.test(soloFecha)) {
+    const [y, m, d] = soloFecha.split("-");
+    return `${d}/${m}/${y}`;
   }
 
-  return s;
+  return soloFecha;
 }
 
 function normalizeUrl(u: any, origin: string) {
@@ -103,12 +106,12 @@ export default function Plantilla7Static({
   const copiedFinal = copied || copiedLocal;
 
   return (
-    <div className="min-h-screen bg-[#dcdcdc] flex items-center justify-center px-3 py-6">
+    <div className="min-h-screen bg-[#dcdcdc] flex items-center justify-center px-3 py-4">
       <div className="w-full max-w-[760px] flex justify-center">
         <div className="w-full max-w-[430px]">
 
           {/* HEADER */}
-          <div className="flex items-center justify-center gap-4 mb-4">
+          <div className="flex items-center justify-center gap-4 mb-3">
             {resolvedLogoUrl ? (
               <img
                 src={resolvedLogoUrl}
@@ -125,13 +128,13 @@ export default function Plantilla7Static({
           </div>
 
           {/* CARD ROJA */}
-          <div className="rounded-[20px] bg-[#ff1a23] px-5 pt-5 pb-4 shadow-lg">
+          <div className="rounded-[20px] bg-[#ff1a23] px-5 pt-4 pb-3 shadow-lg">
 
             <div className="text-center text-[18px] text-[#6f5d5d]">
               Monto a rembolsar
             </div>
 
-            <div className="mt-4 flex items-center justify-between">
+            <div className="mt-3 flex items-center justify-between">
               <div className="flex items-center justify-center gap-2 w-full">
                 <span className="text-[46px] text-white">$</span>
                 <span className="text-[46px] text-white">
@@ -145,7 +148,7 @@ export default function Plantilla7Static({
               </div>
             </div>
 
-            <div className="mt-10 flex justify-between">
+            <div className="mt-6 flex justify-between">
               <span className="text-[22px] text-[#3d3838]">
                 Fecha de pago:
               </span>
@@ -155,7 +158,7 @@ export default function Plantilla7Static({
               </span>
             </div>
 
-            <div className="mt-8 rounded-[20px] border border-white/30 bg-[#ff2530] px-4 py-4 flex items-center gap-4">
+            <div className="mt-5 rounded-[20px] border border-white/30 bg-[#ff2530] px-4 py-3 flex items-center gap-4">
               <div className="w-[50px] h-[50px] rounded-full bg-[#4b49a9] flex items-center justify-center text-white text-[24px]">
                 !
               </div>
@@ -167,30 +170,30 @@ export default function Plantilla7Static({
           </div>
 
           {/* CLIENTE */}
-          <div className="mt-5 rounded-[18px] bg-[#f5f5f5] px-5 py-6 shadow">
+          <div className="mt-4 rounded-[18px] bg-[#f5f5f5] px-5 py-4 shadow">
             <Row label="Cliente:" value={nombre} />
             <Row label="Número:" value={telefono} />
           </div>
 
           {/* MÉTODO */}
-          <div className="mt-5">
+          <div className="mt-4">
             <div className="mx-auto w-full max-w-[360px] bg-white/30 p-2">
-              <div className="rounded-[18px] bg-[#e57d80] text-center py-3 text-[28px] text-black">
+              <div className="rounded-[18px] bg-[#e57d80] text-center py-2 text-[28px] text-black">
                 Metodo de rembolso
               </div>
             </div>
 
-            <div className="mt-5 text-center">
+            <div className="mt-4 text-center">
               <div className="text-[44px] font-black text-[#3441b2]">
                 {metodoPago}
               </div>
 
-              <div className="mt-2 text-[16px] italic text-[#3441b2]">
+              <div className="mt-1 text-[16px] italic text-[#3441b2]">
                 pagos más rápidos y seguros
               </div>
             </div>
 
-            <div className="mt-6 border-t pt-6 text-center">
+            <div className="mt-4 border-t pt-4 text-center">
               <div className="text-[30px] font-bold text-[#1f3f86] break-all">
                 {cuentaBancaria || "No disponible"}
               </div>
@@ -198,7 +201,7 @@ export default function Plantilla7Static({
               {textoParaCopiar && (
                 <button
                   onClick={handleCopy}
-                  className="mt-4 px-4 py-2 bg-white rounded-lg shadow text-sm font-semibold text-[#1f3f86]"
+                  className="mt-3 px-4 py-2 bg-white rounded-lg shadow text-sm font-semibold text-[#1f3f86]"
                 >
                   {copiedFinal ? "Copiado" : "Copiar"}
                 </button>
@@ -211,11 +214,14 @@ export default function Plantilla7Static({
   );
 }
 
+/* 🔥 FIX: valores alineados a la derecha */
 function Row({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex justify-between py-3">
+    <div className="flex justify-between py-2">
       <span className="text-[22px] text-[#555] font-bold">{label}</span>
-      <span className="text-[22px] text-black">{value}</span>
+      <span className="text-[22px] text-black text-right break-words">
+        {value}
+      </span>
     </div>
   );
 }

@@ -130,15 +130,15 @@ export default function Plantilla3Static({
   const cuenta = data.liga_pago_label || data.cuenta_bancaria || ".";
 
   return (
-    <div className="min-h-screen w-full bg-[#F3A316] flex items-center justify-center px-3 py-6">
+    <div className="min-h-screen w-full bg-[#F3A316] flex items-center justify-center px-3 py-3">
       <div className="w-full max-w-[420px]">
-        <div className="mb-4 text-center text-[28px] font-medium text-white">
+        <div className="mb-2 text-center text-[28px] font-medium text-white">
           Pago de crédito
         </div>
 
         <div className="overflow-hidden rounded-[42px] bg-[#F4F4F4] shadow-[0_18px_40px_rgba(0,0,0,0.22)] border border-[#E5E5E5]">
-          <div className="relative px-5 pt-7 pb-5">
-            <div className="absolute inset-x-0 top-3 flex justify-center pointer-events-none select-none">
+          <div className="relative px-5 pt-5 pb-4">
+            <div className="absolute inset-x-0 top-2 flex justify-center pointer-events-none select-none">
               <div className="text-[86px] font-black leading-none text-[#ECECEC]">
                 MX
               </div>
@@ -151,20 +151,20 @@ export default function Plantilla3Static({
             </div>
           </div>
 
-          <div className="border-t border-[#E4E4E4] px-5 py-6">
+          <div className="border-t border-[#E4E4E4] px-5 py-4">
             <div className="text-center">
               <div className="w-full bg-transparent text-center text-[34px] sm:text-[40px] font-medium text-black">
                 {formatMoney(monto)}
               </div>
 
-              <div className="mt-2 text-[16px] sm:text-[18px] text-[#B7B7B7]">
+              <div className="mt-1 text-[16px] sm:text-[18px] text-[#B7B7B7]">
                 Monto de rembolso&nbsp; (MXN)
               </div>
             </div>
           </div>
 
-          <div className="border-t border-[#E4E4E4] px-7 py-4">
-            <div className="flex items-center justify-between gap-4 py-2">
+          <div className="border-t border-[#E4E4E4] px-7 py-3">
+            <div className="flex items-center justify-between gap-4 py-1">
               <span className="text-[18px] sm:text-[20px] text-[#B7B7B7]">
                 Valor abonado
               </span>
@@ -173,7 +173,7 @@ export default function Plantilla3Static({
               </span>
             </div>
 
-            <div className="flex items-center justify-between gap-4 py-2">
+            <div className="flex items-center justify-between gap-4 py-1">
               <span className="text-[18px] sm:text-[20px] text-[#B7B7B7]">
                 Fecha de rembolso
               </span>
@@ -182,7 +182,7 @@ export default function Plantilla3Static({
               </span>
             </div>
 
-            <div className="flex items-center justify-between gap-4 py-2">
+            <div className="flex items-center justify-between gap-4 py-1">
               <span className="text-[18px] sm:text-[20px] text-[#B7B7B7]">
                 Días vencidos
               </span>
@@ -192,82 +192,81 @@ export default function Plantilla3Static({
             </div>
           </div>
 
-          <div className="border-t border-[#E4E4E4] px-5 py-4">
+          <div className="border-t border-[#E4E4E4] px-5 py-3">
             <div className="mx-auto w-full max-w-[270px]">
-              <div className="w-full rounded-full bg-[#F3A316] px-6 py-3 text-center text-[22px] sm:text-[24px] font-bold text-white shadow-md">
+              <div className="w-full rounded-full bg-[#F3A316] px-6 py-2 text-center text-[22px] sm:text-[24px] font-bold text-white shadow-md">
                 Datos cliente
               </div>
             </div>
           </div>
 
-          <div className="px-5 pb-5">
-            <div className="h-[10px] w-full bg-[#F3A316]" />
+          <div className="px-5 pb-3">
+            <div className="h-[8px] w-full bg-[#F3A316]" />
           </div>
 
-          <div className="px-6 pb-6 text-center">
-            <div className="text-[30px] sm:text-[34px] font-extrabold text-black">
-              Pago del préstamo
-            </div>
-
-            <div className="mt-8 text-[26px] sm:text-[30px] text-[#6C6C6C]">
-              Nombre
-            </div>
-            <div className="mt-2 text-[24px] sm:text-[26px] leading-tight text-black text-center break-words">
-              {nombre}
-            </div>
-
-            <div className="mt-4 text-[26px] sm:text-[30px] text-[#6C6C6C]">
-              Telefono
-            </div>
-            <div className="mt-2 text-[24px] sm:text-[26px] text-black text-center break-words">
-              {telefono}
-            </div>
-
-            <div className="mt-8 text-[26px] sm:text-[30px] text-[#6C6C6C]">
-              Forma de pago
-            </div>
-
-            <div className="mt-2 text-[28px] sm:text-[30px] font-semibold text-[#646464]">
-              {metodo}
-            </div>
-
-
-
-                <div className="mt-4 bg-[linear-gradient(90deg,#D9D9D9_0%,#F4F4F4_20%,#F4F4F4_80%,#D9D9D9_100%)] px-4 py-6">
-
-  <div className="flex items-center justify-center gap-3 flex-wrap">
-
-    {/* Cuenta */}
-    <div className="text-[26px] sm:text-[34px] md:text-[42px] font-bold leading-tight text-[#4D4D4D] text-center break-all">
-      {cuenta}
-    </div>
-
-    {/* Botón copiar transparente */}
-    <button
-      type="button"
-      onClick={() => handleCopy(cuenta)}
-      title={copied ? "Copiado" : "Copiar"}
-      aria-label={copied ? "Copiado" : "Copiar cuenta"}
-      className="inline-flex items-center justify-center w-9 h-9 rounded-lg text-[#4D4D4D] hover:bg-black/5 transition"
-    >
-      {copied ? (
-        <CheckIcon className="w-5 h-5" />
-      ) : (
-        <CopyIcon className="w-5 h-5" />
-      )}
-    </button>
-
-  </div>
-
+          <div className="px-6 pb-4 text-center">
+            <div className="text-[24px] sm:text-[26px] font-extrabold text-black">
+  Pago del préstamo
 </div>
 
-            <div className="mt-3 border-t border-[#DCDCDC] pt-3 text-[11px] leading-snug text-[#8C1F1F]">
+<div className="mt-4 text-[20px] sm:text-[22px] text-[#6C6C6C]">
+  Nombre
+</div>
+<div className="mt-1 text-[18px] sm:text-[20px] leading-tight text-black text-center break-words">
+  {nombre}
+</div>
+
+<div className="mt-3 text-[20px] sm:text-[22px] text-[#6C6C6C]">
+  Telefono
+</div>
+<div className="mt-1 text-[18px] sm:text-[20px] text-black text-center break-words">
+  {telefono}
+</div>
+
+<div className="mt-4 text-[20px] sm:text-[22px] text-[#6C6C6C]">
+  Forma de pago
+</div>
+
+<div className="mt-1 text-[20px] sm:text-[22px] font-semibold text-[#646464]">
+  {metodo}
+</div>
+
+            <div className="mt-3 bg-[linear-gradient(90deg,#D9D9D9_0%,#F4F4F4_20%,#F4F4F4_80%,#D9D9D9_100%)] px-4 py-4">
+              <div className="flex items-center justify-center gap-3 flex-wrap">
+                <div
+                  className="text-[18px] sm:text-[24px] md:text-[28px] font-semibold leading-tight text-[#4D4D4D] text-center break-all max-w-full"
+                  style={{
+                    wordBreak: "break-word",
+                    overflowWrap: "anywhere",
+                  }}
+                  title={cuenta}
+                >
+                  {cuenta}
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => handleCopy(cuenta)}
+                  title={copied ? "Copiado" : "Copiar"}
+                  aria-label={copied ? "Copiado" : "Copiar cuenta"}
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-lg text-[#4D4D4D] hover:bg-black/5 transition"
+                >
+                  {copied ? (
+                    <CheckIcon className="w-5 h-5" />
+                  ) : (
+                    <CopyIcon className="w-5 h-5" />
+                  )}
+                </button>
+              </div>
+            </div>
+
+            <div className="mt-2 border-t border-[#DCDCDC] pt-2 text-[11px] leading-snug text-[#8C1F1F]">
               Confirme el método de pago que sea el correcto con el asesor,
               recuerde el rembolso a tiempo aumenta el cupo de crédito
             </div>
           </div>
 
-          <div className="h-8" />
+          <div className="h-4" />
         </div>
       </div>
     </div>

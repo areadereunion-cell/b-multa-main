@@ -21,16 +21,20 @@ function formatMoney(value: any) {
   });
 }
 
+/* 🔥 CORREGIDO: dd/mm/yyyy sin hora */
 function formatDate(value: any) {
   const s = String(value ?? "").trim();
-  if (!s) return "dd-mm-aaaa";
+  if (!s) return "dd/mm/aaaa";
 
-  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
-    const [y, m, d] = s.split("-");
-    return `${d}-${m}-${y}`;
+  // 🔥 elimina la hora
+  const soloFecha = s.split("T")[0];
+
+  if (/^\d{4}-\d{2}-\d{2}$/.test(soloFecha)) {
+    const [y, m, d] = soloFecha.split("-");
+    return `${d}/${m}/${y}`;
   }
 
-  return s;
+  return soloFecha;
 }
 
 function normalizeUrl(u: any, origin: string) {
@@ -225,8 +229,6 @@ export default function Plantilla6Static({
             <Divider />
 
             <div className="mt-5">
-
-
               <div className="flex justify-center">
                 <div className="max-w-full text-center text-[24px] sm:text-[30px] font-semibold text-black break-words">
                   {metodoPago}

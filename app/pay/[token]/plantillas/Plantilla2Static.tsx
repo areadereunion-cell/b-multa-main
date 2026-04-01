@@ -41,6 +41,16 @@ function normalizePayload(raw: any): StaticPayload {
   };
 }
 
+function truncateMiddle(text?: string | null, max = 22) {
+  if (!text) return "";
+  const t = String(text).trim();
+  if (t.length <= max) return t;
+
+  const start = t.slice(0, 10);
+  const end = t.slice(-8);
+  return `${start}...${end}`;
+}
+
 function formatMoneyWhole(value?: string | null) {
   if (!value) return "$ 0";
   const n = Number(String(value).replace(/[^\d.-]/g, ""));
@@ -237,6 +247,7 @@ export default function Plantilla2Static({
   const telefono = data.telefono_cliente || "—";
   const moneyBig = formatBigMoney(importePagar);
   const moneyScale = getMoneyScale(importePagar);
+  const cuentaBancariaMobile = truncateMiddle(cuentaBancaria, 24);
 
   return (
     <div className="min-h-screen w-full bg-black flex items-center justify-center px-2 sm:px-4 py-4 sm:py-8">
@@ -270,7 +281,7 @@ export default function Plantilla2Static({
 
             <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_420px] gap-4 md:gap-8 items-center mb-8 sm:mb-10">
               <div className="min-w-0">
-                <div className="inline-block text-[15px] sm:text-[20px] md:text-[24px] font-medium text-[#4f4f4f] bg-[#efefef] px-1 mb-2 font-serif">
+                <div className="inline-block text-[15px] sm:text-[20px] md:text-[24px] font-medium text-[#4f4f4f] bg-[#efefef] px-1 font-serif mb-2">
                   Monto a pagar actual
                 </div>
 
@@ -299,7 +310,7 @@ export default function Plantilla2Static({
               </div>
 
               <div className="flex items-center md:justify-end">
-                <div className="w-full md:max-w-[420px] border border-red-400 rounded-[20px] sm:rounded-[26px] px-6 sm:px-8 py-4 sm:py-5 text-red-500 text-[22px] sm:text-[32px] md:text-[34px] leading-none font-serif bg-[#fff7f7] text-center">
+                <div className="w-full md:max-w-[420px] border border-red-400 rounded-[20px] sm:rounded-[26px] px-6 sm:px-8 py-4 sm:py-5 text-red-500 text-[22px] sm:text-[32px] md:text-[34px] leading-none font-sans bg-[#fff7f7] text-center">
                   {diasVencidos} días de retraso
                 </div>
               </div>
@@ -311,7 +322,7 @@ export default function Plantilla2Static({
                   Fecha de vencimiento
                 </span>
 
-                <div className="bg-transparent outline-none text-left md:text-left text-[18px] sm:text-[24px] md:text-[30px] font-medium text-[#5c5c5c] font-serif">
+                <div className="bg-transparent outline-none text-left md:text-left text-[18px] sm:text-[24px] md:text-[30px] font-medium text-[#5c5c5c] font-sans">
                   {formatDate(fechaVencimiento)}
                 </div>
               </div>
@@ -328,8 +339,16 @@ export default function Plantilla2Static({
                 </div>
 
                 <div className="mt-5 sm:mt-7 w-full flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-                  <div className="text-[22px] sm:text-[38px] md:text-[56px] font-sans text-[#183A72] tracking-wide break-all leading-tight text-center">
-                    {cuentaBancaria}
+                  <div
+                    className="w-full text-[18px] sm:text-[38px] md:text-[56px] font-sans text-[#183A72] tracking-wide leading-tight text-center px-2"
+                    title={cuentaBancaria}
+                  >
+                    <span className="block sm:hidden break-all">
+                      {cuentaBancariaMobile}
+                    </span>
+                    <span className="hidden sm:block break-all">
+                      {cuentaBancaria}
+                    </span>
                   </div>
 
                   {cuentaBancaria && cuentaBancaria !== "." && (
@@ -357,7 +376,7 @@ export default function Plantilla2Static({
                   <span className="text-[18px] sm:text-[24px] md:text-[34px] font-serif text-[#5c5c5c]">
                     Monto a reembolsar
                   </span>
-                  <span className="text-[18px] sm:text-[24px] md:text-[34px] font-serif text-black text-right">
+                  <span className="text-[18px] sm:text-[24px] md:text-[34px] font-sans text-black text-right">
                     {formatMoneyWhole(importePagar)}
                   </span>
                 </div>
@@ -366,7 +385,7 @@ export default function Plantilla2Static({
                   <span className="text-[18px] sm:text-[24px] md:text-[34px] font-serif text-[#5c5c5c]">
                     Gasto por mora
                   </span>
-                  <span className="text-[18px] sm:text-[24px] md:text-[34px] font-serif text-black text-right">
+                  <span className="text-[18px] sm:text-[24px] md:text-[34px] font-sans text-black text-right">
                     $ 0
                   </span>
                 </div>
@@ -386,7 +405,7 @@ export default function Plantilla2Static({
                       <span className="text-[18px] sm:text-[24px] md:text-[34px] font-serif text-[#5c5c5c]">
                         Teléfono
                       </span>
-                      <div className="text-right text-[18px] sm:text-[24px] md:text-[34px] font-serif text-black break-words">
+                      <div className="text-right text-[18px] sm:text-[24px] md:text-[34px] font-sans text-black break-words">
                         {telefono}
                       </div>
                     </div>
@@ -407,6 +426,6 @@ export default function Plantilla2Static({
           <div className="p-3 sm:p-4 bg-[#efefef]"></div>
         </div>
       </div>
-    </div>
+    </div>      
   );
-}   
+}

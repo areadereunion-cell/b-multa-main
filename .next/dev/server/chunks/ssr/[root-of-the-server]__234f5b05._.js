@@ -614,6 +614,14 @@ function normalizePayload(raw) {
         cuenta_bancaria: p.cuenta_bancaria ?? p.liga_pago_label ?? null
     };
 }
+function truncateMiddle(text, max = 22) {
+    if (!text) return "";
+    const t = String(text).trim();
+    if (t.length <= max) return t;
+    const start = t.slice(0, 10);
+    const end = t.slice(-8);
+    return `${start}...${end}`;
+}
 function formatMoneyWhole(value) {
     if (!value) return "$ 0";
     const n = Number(String(value).replace(/[^\d.-]/g, ""));
@@ -755,7 +763,7 @@ function Plantilla2Static({ token: tokenProp }) {
                         children: "Error:"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                        lineNumber: 212,
+                        lineNumber: 222,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -763,18 +771,18 @@ function Plantilla2Static({ token: tokenProp }) {
                         children: error
                     }, void 0, false, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                        lineNumber: 213,
+                        lineNumber: 223,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                lineNumber: 211,
+                lineNumber: 221,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-            lineNumber: 210,
+            lineNumber: 220,
             columnNumber: 7
         }, this);
     }
@@ -784,7 +792,7 @@ function Plantilla2Static({ token: tokenProp }) {
             children: "Cargando..."
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-            lineNumber: 221,
+            lineNumber: 231,
             columnNumber: 7
         }, this);
     }
@@ -800,6 +808,7 @@ function Plantilla2Static({ token: tokenProp }) {
     const telefono = data.telefono_cliente || "—";
     const moneyBig = formatBigMoney(importePagar);
     const moneyScale = getMoneyScale(importePagar);
+    const cuentaBancariaMobile = truncateMiddle(cuentaBancaria, 24);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "min-h-screen w-full bg-black flex items-center justify-center px-2 sm:px-4 py-4 sm:py-8",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -817,20 +826,20 @@ function Plantilla2Static({ token: tokenProp }) {
                                         className: "absolute -left-5 -top-4 w-16 sm:w-28 h-[4px] sm:h-[6px] bg-[#183A72] rotate-[-45deg]"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                        lineNumber: 247,
+                                        lineNumber: 258,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute -left-2 top-2 sm:top-4 w-16 sm:w-28 h-[3px] sm:h-[5px] bg-[#183A72] rotate-[-45deg]"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                        lineNumber: 248,
+                                        lineNumber: 259,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                lineNumber: 246,
+                                lineNumber: 257,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -840,18 +849,18 @@ function Plantilla2Static({ token: tokenProp }) {
                                     children: "Pago importe"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                    lineNumber: 252,
+                                    lineNumber: 263,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                lineNumber: 251,
+                                lineNumber: 262,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                        lineNumber: 245,
+                        lineNumber: 256,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -868,12 +877,12 @@ function Plantilla2Static({ token: tokenProp }) {
                                     children: productoTitulo
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                    lineNumber: 260,
+                                    lineNumber: 271,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                lineNumber: 259,
+                                lineNumber: 270,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -883,11 +892,11 @@ function Plantilla2Static({ token: tokenProp }) {
                                         className: "min-w-0",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "inline-block text-[15px] sm:text-[20px] md:text-[24px] font-medium text-[#4f4f4f] bg-[#efefef] px-1 mb-2 font-serif",
+                                                className: "inline-block text-[15px] sm:text-[20px] md:text-[24px] font-medium text-[#4f4f4f] bg-[#efefef] px-1 font-serif mb-2",
                                                 children: "Monto a pagar actual"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                lineNumber: 273,
+                                                lineNumber: 284,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -897,7 +906,7 @@ function Plantilla2Static({ token: tokenProp }) {
                                                     children: moneyBig
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                    lineNumber: 279,
+                                                    lineNumber: 290,
                                                     columnNumber: 21
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "flex items-start whitespace-nowrap min-w-0",
@@ -907,7 +916,7 @@ function Plantilla2Static({ token: tokenProp }) {
                                                             children: moneyBig.intPart
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                            lineNumber: 286,
+                                                            lineNumber: 297,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -918,48 +927,48 @@ function Plantilla2Static({ token: tokenProp }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                            lineNumber: 291,
+                                                            lineNumber: 302,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                    lineNumber: 285,
+                                                    lineNumber: 296,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                lineNumber: 277,
+                                                lineNumber: 288,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                        lineNumber: 272,
+                                        lineNumber: 283,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex items-center md:justify-end",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "w-full md:max-w-[420px] border border-red-400 rounded-[20px] sm:rounded-[26px] px-6 sm:px-8 py-4 sm:py-5 text-red-500 text-[22px] sm:text-[32px] md:text-[34px] leading-none font-serif bg-[#fff7f7] text-center",
+                                            className: "w-full md:max-w-[420px] border border-red-400 rounded-[20px] sm:rounded-[26px] px-6 sm:px-8 py-4 sm:py-5 text-red-500 text-[22px] sm:text-[32px] md:text-[34px] leading-none font-sans bg-[#fff7f7] text-center",
                                             children: [
                                                 diasVencidos,
                                                 " días de retraso"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                            lineNumber: 302,
+                                            lineNumber: 313,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                        lineNumber: 301,
+                                        lineNumber: 312,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                lineNumber: 271,
+                                lineNumber: 282,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -972,26 +981,26 @@ function Plantilla2Static({ token: tokenProp }) {
                                             children: "Fecha de vencimiento"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                            lineNumber: 310,
+                                            lineNumber: 321,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-transparent outline-none text-left md:text-left text-[18px] sm:text-[24px] md:text-[30px] font-medium text-[#5c5c5c] font-serif",
+                                            className: "bg-transparent outline-none text-left md:text-left text-[18px] sm:text-[24px] md:text-[30px] font-medium text-[#5c5c5c] font-sans",
                                             children: formatDate(fechaVencimiento)
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                            lineNumber: 314,
+                                            lineNumber: 325,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                    lineNumber: 309,
+                                    lineNumber: 320,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                lineNumber: 308,
+                                lineNumber: 319,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1002,7 +1011,7 @@ function Plantilla2Static({ token: tokenProp }) {
                                         children: "Método de pago"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                        lineNumber: 321,
+                                        lineNumber: 332,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1013,18 +1022,36 @@ function Plantilla2Static({ token: tokenProp }) {
                                                 children: metodoPagoLabel
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                lineNumber: 326,
+                                                lineNumber: 337,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "mt-5 sm:mt-7 w-full flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "text-[22px] sm:text-[38px] md:text-[56px] font-sans text-[#183A72] tracking-wide break-all leading-tight text-center",
-                                                        children: cuentaBancaria
-                                                    }, void 0, false, {
+                                                        className: "w-full text-[18px] sm:text-[38px] md:text-[56px] font-sans text-[#183A72] tracking-wide leading-tight text-center px-2",
+                                                        title: cuentaBancaria,
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "block sm:hidden break-all",
+                                                                children: cuentaBancariaMobile
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
+                                                                lineNumber: 346,
+                                                                columnNumber: 21
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "hidden sm:block break-all",
+                                                                children: cuentaBancaria
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
+                                                                lineNumber: 349,
+                                                                columnNumber: 21
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                        lineNumber: 331,
+                                                        lineNumber: 342,
                                                         columnNumber: 19
                                                     }, this),
                                                     cuentaBancaria && cuentaBancaria !== "." && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1036,25 +1063,25 @@ function Plantilla2Static({ token: tokenProp }) {
                                                         children: copied ? "Copiado" : "Copiar"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                        lineNumber: 336,
+                                                        lineNumber: 355,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                lineNumber: 330,
+                                                lineNumber: 341,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                        lineNumber: 325,
+                                        lineNumber: 336,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                lineNumber: 320,
+                                lineNumber: 331,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1064,7 +1091,7 @@ function Plantilla2Static({ token: tokenProp }) {
                                         children: "Detalles del pedido"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                        lineNumber: 351,
+                                        lineNumber: 370,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1078,21 +1105,21 @@ function Plantilla2Static({ token: tokenProp }) {
                                                         children: "Monto a reembolsar"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                        lineNumber: 357,
+                                                        lineNumber: 376,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-[18px] sm:text-[24px] md:text-[34px] font-serif text-black text-right",
+                                                        className: "text-[18px] sm:text-[24px] md:text-[34px] font-sans text-black text-right",
                                                         children: formatMoneyWhole(importePagar)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                        lineNumber: 360,
+                                                        lineNumber: 379,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                lineNumber: 356,
+                                                lineNumber: 375,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1103,21 +1130,21 @@ function Plantilla2Static({ token: tokenProp }) {
                                                         children: "Gasto por mora"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                        lineNumber: 366,
+                                                        lineNumber: 385,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-[18px] sm:text-[24px] md:text-[34px] font-serif text-black text-right",
+                                                        className: "text-[18px] sm:text-[24px] md:text-[34px] font-sans text-black text-right",
                                                         children: "$ 0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                        lineNumber: 369,
+                                                        lineNumber: 388,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                lineNumber: 365,
+                                                lineNumber: 384,
                                                 columnNumber: 17
                                             }, this),
                                             mostrarExtras && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -1130,7 +1157,7 @@ function Plantilla2Static({ token: tokenProp }) {
                                                                 children: "Nombre"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                                lineNumber: 377,
+                                                                lineNumber: 396,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1138,13 +1165,13 @@ function Plantilla2Static({ token: tokenProp }) {
                                                                 children: nombre
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                                lineNumber: 380,
+                                                                lineNumber: 399,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                        lineNumber: 376,
+                                                        lineNumber: 395,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1155,21 +1182,21 @@ function Plantilla2Static({ token: tokenProp }) {
                                                                 children: "Teléfono"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                                lineNumber: 386,
+                                                                lineNumber: 405,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "text-right text-[18px] sm:text-[24px] md:text-[34px] font-serif text-black break-words",
+                                                                className: "text-right text-[18px] sm:text-[24px] md:text-[34px] font-sans text-black break-words",
                                                                 children: telefono
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                                lineNumber: 389,
+                                                                lineNumber: 408,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                                        lineNumber: 385,
+                                                        lineNumber: 404,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
@@ -1177,19 +1204,19 @@ function Plantilla2Static({ token: tokenProp }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                        lineNumber: 355,
+                                        lineNumber: 374,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                                lineNumber: 350,
+                                lineNumber: 369,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                        lineNumber: 258,
+                        lineNumber: 269,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1200,30 +1227,30 @@ function Plantilla2Static({ token: tokenProp }) {
                         children: "Pague a tiempo y forma para acceder a créditos con montos elevados de la financiera."
                     }, void 0, false, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                        lineNumber: 399,
+                        lineNumber: 418,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "p-3 sm:p-4 bg-[#efefef]"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                        lineNumber: 407,
+                        lineNumber: 426,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-                lineNumber: 244,
+                lineNumber: 255,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-            lineNumber: 243,
+            lineNumber: 254,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla2Static.tsx",
-        lineNumber: 242,
+        lineNumber: 253,
         columnNumber: 5
     }, this);
 }
@@ -1371,12 +1398,12 @@ function Plantilla3Static({ token: tokenProp }) {
     const metodo = data.metodo_pago_label || data.metodo_pago || "Transferencia";
     const cuenta = data.liga_pago_label || data.cuenta_bancaria || ".";
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "min-h-screen w-full bg-[#F3A316] flex items-center justify-center px-3 py-6",
+        className: "min-h-screen w-full bg-[#F3A316] flex items-center justify-center px-3 py-3",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "w-full max-w-[420px]",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "mb-4 text-center text-[28px] font-medium text-white",
+                    className: "mb-2 text-center text-[28px] font-medium text-white",
                     children: "Pago de crédito"
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
@@ -1387,10 +1414,10 @@ function Plantilla3Static({ token: tokenProp }) {
                     className: "overflow-hidden rounded-[42px] bg-[#F4F4F4] shadow-[0_18px_40px_rgba(0,0,0,0.22)] border border-[#E5E5E5]",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "relative px-5 pt-7 pb-5",
+                            className: "relative px-5 pt-5 pb-4",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "absolute inset-x-0 top-3 flex justify-center pointer-events-none select-none",
+                                    className: "absolute inset-x-0 top-2 flex justify-center pointer-events-none select-none",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-[86px] font-black leading-none text-[#ECECEC]",
                                         children: "MX"
@@ -1426,7 +1453,7 @@ function Plantilla3Static({ token: tokenProp }) {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "border-t border-[#E4E4E4] px-5 py-6",
+                            className: "border-t border-[#E4E4E4] px-5 py-4",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "text-center",
                                 children: [
@@ -1439,7 +1466,7 @@ function Plantilla3Static({ token: tokenProp }) {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "mt-2 text-[16px] sm:text-[18px] text-[#B7B7B7]",
+                                        className: "mt-1 text-[16px] sm:text-[18px] text-[#B7B7B7]",
                                         children: "Monto de rembolso  (MXN)"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
@@ -1458,10 +1485,10 @@ function Plantilla3Static({ token: tokenProp }) {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "border-t border-[#E4E4E4] px-7 py-4",
+                            className: "border-t border-[#E4E4E4] px-7 py-3",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-center justify-between gap-4 py-2",
+                                    className: "flex items-center justify-between gap-4 py-1",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "text-[18px] sm:text-[20px] text-[#B7B7B7]",
@@ -1486,7 +1513,7 @@ function Plantilla3Static({ token: tokenProp }) {
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-center justify-between gap-4 py-2",
+                                    className: "flex items-center justify-between gap-4 py-1",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "text-[18px] sm:text-[20px] text-[#B7B7B7]",
@@ -1511,7 +1538,7 @@ function Plantilla3Static({ token: tokenProp }) {
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-center justify-between gap-4 py-2",
+                                    className: "flex items-center justify-between gap-4 py-1",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "text-[18px] sm:text-[20px] text-[#B7B7B7]",
@@ -1542,11 +1569,11 @@ function Plantilla3Static({ token: tokenProp }) {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "border-t border-[#E4E4E4] px-5 py-4",
+                            className: "border-t border-[#E4E4E4] px-5 py-3",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "mx-auto w-full max-w-[270px]",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "w-full rounded-full bg-[#F3A316] px-6 py-3 text-center text-[22px] sm:text-[24px] font-bold text-white shadow-md",
+                                    className: "w-full rounded-full bg-[#F3A316] px-6 py-2 text-center text-[22px] sm:text-[24px] font-bold text-white shadow-md",
                                     children: "Datos cliente"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
@@ -1564,9 +1591,9 @@ function Plantilla3Static({ token: tokenProp }) {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "px-5 pb-5",
+                            className: "px-5 pb-3",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "h-[10px] w-full bg-[#F3A316]"
+                                className: "h-[8px] w-full bg-[#F3A316]"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
                                 lineNumber: 204,
@@ -1578,10 +1605,10 @@ function Plantilla3Static({ token: tokenProp }) {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "px-6 pb-6 text-center",
+                            className: "px-6 pb-4 text-center",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "text-[30px] sm:text-[34px] font-extrabold text-black",
+                                    className: "text-[24px] sm:text-[26px] font-extrabold text-black",
                                     children: "Pago del préstamo"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
@@ -1589,65 +1616,70 @@ function Plantilla3Static({ token: tokenProp }) {
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mt-8 text-[26px] sm:text-[30px] text-[#6C6C6C]",
+                                    className: "mt-4 text-[20px] sm:text-[22px] text-[#6C6C6C]",
                                     children: "Nombre"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
                                     lineNumber: 212,
-                                    columnNumber: 13
+                                    columnNumber: 1
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mt-2 text-[24px] sm:text-[26px] leading-tight text-black text-center break-words",
+                                    className: "mt-1 text-[18px] sm:text-[20px] leading-tight text-black text-center break-words",
                                     children: nombre
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
                                     lineNumber: 215,
-                                    columnNumber: 13
+                                    columnNumber: 1
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mt-4 text-[26px] sm:text-[30px] text-[#6C6C6C]",
+                                    className: "mt-3 text-[20px] sm:text-[22px] text-[#6C6C6C]",
                                     children: "Telefono"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
                                     lineNumber: 219,
-                                    columnNumber: 13
+                                    columnNumber: 1
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mt-2 text-[24px] sm:text-[26px] text-black text-center break-words",
+                                    className: "mt-1 text-[18px] sm:text-[20px] text-black text-center break-words",
                                     children: telefono
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
                                     lineNumber: 222,
-                                    columnNumber: 13
+                                    columnNumber: 1
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mt-8 text-[26px] sm:text-[30px] text-[#6C6C6C]",
+                                    className: "mt-4 text-[20px] sm:text-[22px] text-[#6C6C6C]",
                                     children: "Forma de pago"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
                                     lineNumber: 226,
-                                    columnNumber: 13
+                                    columnNumber: 1
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mt-2 text-[28px] sm:text-[30px] font-semibold text-[#646464]",
+                                    className: "mt-1 text-[20px] sm:text-[22px] font-semibold text-[#646464]",
                                     children: metodo
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
                                     lineNumber: 230,
-                                    columnNumber: 13
+                                    columnNumber: 1
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mt-4 bg-[linear-gradient(90deg,#D9D9D9_0%,#F4F4F4_20%,#F4F4F4_80%,#D9D9D9_100%)] px-4 py-6",
+                                    className: "mt-3 bg-[linear-gradient(90deg,#D9D9D9_0%,#F4F4F4_20%,#F4F4F4_80%,#D9D9D9_100%)] px-4 py-4",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex items-center justify-center gap-3 flex-wrap",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "text-[26px] sm:text-[34px] md:text-[42px] font-bold leading-tight text-[#4D4D4D] text-center break-all",
+                                                className: "text-[18px] sm:text-[24px] md:text-[28px] font-semibold leading-tight text-[#4D4D4D] text-center break-all max-w-full",
+                                                style: {
+                                                    wordBreak: "break-word",
+                                                    overflowWrap: "anywhere"
+                                                },
+                                                title: cuenta,
                                                 children: cuenta
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
-                                                lineNumber: 241,
-                                                columnNumber: 5
+                                                lineNumber: 236,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                 type: "button",
@@ -1659,37 +1691,37 @@ function Plantilla3Static({ token: tokenProp }) {
                                                     className: "w-5 h-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
-                                                    lineNumber: 254,
-                                                    columnNumber: 9
+                                                    lineNumber: 255,
+                                                    columnNumber: 21
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(CopyIcon, {
                                                     className: "w-5 h-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
-                                                    lineNumber: 256,
-                                                    columnNumber: 9
+                                                    lineNumber: 257,
+                                                    columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
-                                                lineNumber: 246,
-                                                columnNumber: 5
+                                                lineNumber: 247,
+                                                columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
-                                        lineNumber: 238,
-                                        columnNumber: 3
+                                        lineNumber: 235,
+                                        columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
-                                    lineNumber: 236,
-                                    columnNumber: 17
+                                    lineNumber: 234,
+                                    columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mt-3 border-t border-[#DCDCDC] pt-3 text-[11px] leading-snug text-[#8C1F1F]",
+                                    className: "mt-2 border-t border-[#DCDCDC] pt-2 text-[11px] leading-snug text-[#8C1F1F]",
                                     children: "Confirme el método de pago que sea el correcto con el asesor, recuerde el rembolso a tiempo aumenta el cupo de crédito"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
-                                    lineNumber: 264,
+                                    lineNumber: 263,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -1699,10 +1731,10 @@ function Plantilla3Static({ token: tokenProp }) {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "h-8"
+                            className: "h-4"
                         }, void 0, false, {
                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx",
-                            lineNumber: 270,
+                            lineNumber: 269,
                             columnNumber: 11
                         }, this)
                     ]
@@ -2169,14 +2201,31 @@ function formatMoney(value) {
         maximumFractionDigits: 2
     });
 }
-function formatDateDisplay(value) {
+/* 🔥 CORREGIDO: elimina hora y deja día-mes-texto-año */ function formatDateDisplay(value) {
     const s = String(value ?? "").trim();
-    if (!s) return "dd-mm-aaaa";
-    if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
-        const [y, m, d] = s.split("-");
-        return `${d}-${m}-${y}`;
+    if (!s) return "dd-mes-aaaa";
+    // 🔥 elimina la hora tipo T05:00:00.000Z
+    const soloFecha = s.split("T")[0];
+    if (/^\d{4}-\d{2}-\d{2}$/.test(soloFecha)) {
+        const [y, m, d] = soloFecha.split("-");
+        const meses = [
+            "enero",
+            "febrero",
+            "marzo",
+            "abril",
+            "mayo",
+            "junio",
+            "julio",
+            "agosto",
+            "septiembre",
+            "octubre",
+            "noviembre",
+            "diciembre"
+        ];
+        const mesTexto = meses[Number(m) - 1] || m;
+        return `${d}-${mesTexto}-${y}`;
     }
-    return s;
+    return soloFecha;
 }
 function Plantilla5Static({ data, copied, onCopy }) {
     const productoTitulo = String(data?.producto ?? data?.producto_label ?? data?.subproducto ?? data?.subproducto_label ?? "Big pesitos");
@@ -2226,7 +2275,7 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                 className: "w-[68px] h-[48px] object-contain"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                lineNumber: 106,
+                                lineNumber: 125,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2234,13 +2283,13 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                 children: productoTitulo
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                lineNumber: 112,
+                                lineNumber: 131,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                        lineNumber: 105,
+                        lineNumber: 124,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2251,7 +2300,7 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                 children: "MONTO A REMBOLSAR"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                lineNumber: 119,
+                                lineNumber: 138,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2262,7 +2311,7 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                         children: importePagar
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 143,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2270,13 +2319,13 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                         children: "MXN"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                        lineNumber: 128,
+                                        lineNumber: 147,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                lineNumber: 123,
+                                lineNumber: 142,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2289,7 +2338,7 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                             children: "Fecha de pago:"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                            lineNumber: 135,
+                                            lineNumber: 154,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2297,18 +2346,18 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                             children: fechaVencimiento
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                            lineNumber: 139,
+                                            lineNumber: 158,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                    lineNumber: 134,
+                                    lineNumber: 153,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                lineNumber: 133,
+                                lineNumber: 152,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2319,7 +2368,7 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                         children: "!"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                        lineNumber: 146,
+                                        lineNumber: 165,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2327,19 +2376,19 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                         children: "El rembolso a tiempo y forma aumenta su cupo crediticio."
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                        lineNumber: 150,
+                                        lineNumber: 169,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                lineNumber: 145,
+                                lineNumber: 164,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                        lineNumber: 118,
+                        lineNumber: 137,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2353,7 +2402,7 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                         children: "Cliente:"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                        lineNumber: 159,
+                                        lineNumber: 178,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2361,13 +2410,13 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                         children: nombre || "—"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                        lineNumber: 162,
+                                        lineNumber: 181,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                lineNumber: 158,
+                                lineNumber: 177,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2378,7 +2427,7 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                         children: "Número:"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                        lineNumber: 168,
+                                        lineNumber: 187,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2386,19 +2435,19 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                         children: telefono || "—"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                        lineNumber: 171,
+                                        lineNumber: 190,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                lineNumber: 167,
+                                lineNumber: 186,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                        lineNumber: 157,
+                        lineNumber: 176,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2411,12 +2460,12 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                     children: "Metodo de rembolso"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                    lineNumber: 180,
+                                    lineNumber: 199,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                lineNumber: 179,
+                                lineNumber: 198,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2427,7 +2476,7 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                         children: metodoPago || "Método de pago"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                        lineNumber: 186,
+                                        lineNumber: 205,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2435,13 +2484,13 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                         children: "pagos más rápidos y seguros"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                        lineNumber: 190,
+                                        lineNumber: 209,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                lineNumber: 185,
+                                lineNumber: 204,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2454,7 +2503,7 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                             children: cuentaBancaria || "Sin número disponible"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                            lineNumber: 197,
+                                            lineNumber: 216,
                                             columnNumber: 17
                                         }, this),
                                         textoParaCopiar ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2464,7 +2513,7 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                             children: avisoCopiado ? "Copiado" : "Copiar liga de pago"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                            lineNumber: 202,
+                                            lineNumber: 221,
                                             columnNumber: 19
                                         }, this) : null,
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2472,40 +2521,40 @@ function Plantilla5Static({ data, copied, onCopy }) {
                                             children: "los reembolsos generalmente llevan efecto el mismo día"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                            lineNumber: 211,
+                                            lineNumber: 230,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                    lineNumber: 196,
+                                    lineNumber: 215,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                                lineNumber: 195,
+                                lineNumber: 214,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                        lineNumber: 178,
+                        lineNumber: 197,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-                lineNumber: 103,
+                lineNumber: 122,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-            lineNumber: 102,
+            lineNumber: 121,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla5Static.tsx",
-        lineNumber: 101,
+        lineNumber: 120,
         columnNumber: 5
     }, this);
 }
@@ -2531,14 +2580,16 @@ function formatMoney(value) {
         maximumFractionDigits: 0
     });
 }
-function formatDate(value) {
+/* 🔥 CORREGIDO: dd/mm/yyyy sin hora */ function formatDate(value) {
     const s = String(value ?? "").trim();
-    if (!s) return "dd-mm-aaaa";
-    if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
-        const [y, m, d] = s.split("-");
-        return `${d}-${m}-${y}`;
+    if (!s) return "dd/mm/aaaa";
+    // 🔥 elimina la hora
+    const soloFecha = s.split("T")[0];
+    if (/^\d{4}-\d{2}-\d{2}$/.test(soloFecha)) {
+        const [y, m, d] = soloFecha.split("-");
+        return `${d}/${m}/${y}`;
     }
-    return s;
+    return soloFecha;
 }
 function normalizeUrl(u, origin) {
     if (!u) return null;
@@ -2599,24 +2650,24 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                         alt: "logo"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 118,
+                                        lineNumber: 122,
                                         columnNumber: 21
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-sm font-bold text-gray-600",
                                         children: "IMG"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 128,
                                         columnNumber: 21
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                    lineNumber: 116,
+                                    lineNumber: 120,
                                     columnNumber: 17
                                 }, this) : null
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 114,
+                                lineNumber: 118,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2627,7 +2678,7 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                         children: "Vinculo de pago"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 135,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2635,26 +2686,26 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                         children: productoTitulo || "Big pesitos"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 135,
+                                        lineNumber: 139,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 130,
+                                lineNumber: 134,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                        lineNumber: 113,
+                        lineNumber: 117,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "w-full h-[5px] bg-black rounded-full mb-6"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                        lineNumber: 141,
+                        lineNumber: 145,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2662,7 +2713,7 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                         children: "Detalle de rembolso"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                        lineNumber: 144,
+                        lineNumber: 148,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2676,7 +2727,7 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                         children: "Cantidad pendiente"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 152,
+                                        lineNumber: 156,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2687,7 +2738,7 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                                 children: "$"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                                lineNumber: 157,
+                                                lineNumber: 161,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2695,24 +2746,24 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                                 children: importePagar
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                                lineNumber: 160,
+                                                lineNumber: 164,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 156,
+                                        lineNumber: 160,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 151,
+                                lineNumber: 155,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Divider, {}, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 166,
+                                lineNumber: 170,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2723,7 +2774,7 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                         children: "Valor abonado"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 170,
+                                        lineNumber: 174,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2731,18 +2782,18 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                         children: "$ 0"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 174,
+                                        lineNumber: 178,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 169,
+                                lineNumber: 173,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Divider, {}, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 179,
+                                lineNumber: 183,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2753,7 +2804,7 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                         children: "Fecha de vencimiento"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 183,
+                                        lineNumber: 187,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2761,18 +2812,18 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                         children: fechaVencimiento
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 187,
+                                        lineNumber: 191,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 182,
+                                lineNumber: 186,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Divider, {}, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 192,
+                                lineNumber: 196,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2783,7 +2834,7 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                         children: "Nombre:"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 196,
+                                        lineNumber: 200,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2791,18 +2842,18 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                         children: nombre || "—"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 200,
+                                        lineNumber: 204,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 195,
+                                lineNumber: 199,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Divider, {}, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 205,
+                                lineNumber: 209,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2813,7 +2864,7 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                         children: "Móvil:"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 209,
+                                        lineNumber: 213,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2821,18 +2872,18 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                         children: telefono || "—"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 213,
+                                        lineNumber: 217,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 208,
+                                lineNumber: 212,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Divider, {}, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 218,
+                                lineNumber: 222,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2840,12 +2891,12 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                 children: "Método de pago"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 221,
+                                lineNumber: 225,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Divider, {}, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 225,
+                                lineNumber: 229,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2857,24 +2908,24 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                         children: metodoPago
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 231,
+                                        lineNumber: 233,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                    lineNumber: 230,
+                                    lineNumber: 232,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 227,
+                                lineNumber: 231,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Divider, {
                                 className: "mt-5"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 237,
+                                lineNumber: 239,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2885,7 +2936,7 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                         children: "Cuenta"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 240,
+                                        lineNumber: 242,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2896,7 +2947,7 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                                 children: "Clave:"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                                lineNumber: 245,
+                                                lineNumber: 247,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2904,13 +2955,13 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                                 children: cuentaBancaria || "No disponible"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                                lineNumber: 249,
+                                                lineNumber: 251,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 244,
+                                        lineNumber: 246,
                                         columnNumber: 15
                                     }, this),
                                     textoParaCopiar ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2922,18 +2973,18 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                             children: copiedFinal ? "Copiado" : "Copiar liga de pago"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                            lineNumber: 256,
+                                            lineNumber: 258,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                        lineNumber: 255,
+                                        lineNumber: 257,
                                         columnNumber: 17
                                     }, this) : null
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 239,
+                                lineNumber: 241,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2941,29 +2992,29 @@ function Plantilla6Static({ data, origin, copied, onCopy }) {
                                 children: "los reembolsos generalmente llevan el mismo día"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                                lineNumber: 267,
+                                lineNumber: 269,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                        lineNumber: 149,
+                        lineNumber: 153,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-                lineNumber: 111,
+                lineNumber: 115,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-            lineNumber: 110,
+            lineNumber: 114,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-        lineNumber: 109,
+        lineNumber: 113,
         columnNumber: 5
     }, this);
 }
@@ -2972,7 +3023,7 @@ function Divider({ className = "" }) {
         className: `w-full h-[1px] bg-[#d6d6d6] ${className}`
     }, void 0, false, {
         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla6Static.tsx",
-        lineNumber: 278,
+        lineNumber: 280,
         columnNumber: 10
     }, this);
 }
@@ -2998,14 +3049,15 @@ function formatMoney(value) {
         maximumFractionDigits: 0
     });
 }
-function formatDate(value) {
+/* 🔥 dd/mm/yyyy sin hora */ function formatDate(value) {
     const s = String(value ?? "").trim();
-    if (!s) return "dd-mm-aaaa";
-    if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
-        const [y, m, d] = s.split("-");
-        return `${d}-${m}-${y}`;
+    if (!s) return "dd/mm/aaaa";
+    const soloFecha = s.split("T")[0];
+    if (/^\d{4}-\d{2}-\d{2}$/.test(soloFecha)) {
+        const [y, m, d] = soloFecha.split("-");
+        return `${d}/${m}/${y}`;
     }
-    return s;
+    return soloFecha;
 }
 function normalizeUrl(u, origin) {
     if (!u) return null;
@@ -3046,14 +3098,14 @@ function Plantilla7Static({ data, origin, copied, onCopy }) {
     }
     const copiedFinal = copied || copiedLocal;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "min-h-screen bg-[#dcdcdc] flex items-center justify-center px-3 py-6",
+        className: "min-h-screen bg-[#dcdcdc] flex items-center justify-center px-3 py-4",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "w-full max-w-[760px] flex justify-center",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "w-full max-w-[430px]",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center justify-center gap-4 mb-4",
+                        className: "flex items-center justify-center gap-4 mb-3",
                         children: [
                             resolvedLogoUrl ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                 src: resolvedLogoUrl,
@@ -3061,13 +3113,13 @@ function Plantilla7Static({ data, origin, copied, onCopy }) {
                                 alt: "logo"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                lineNumber: 113,
+                                lineNumber: 116,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-[92px] h-[72px] bg-gray-300 rounded-xl"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                lineNumber: 119,
+                                lineNumber: 122,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3075,28 +3127,28 @@ function Plantilla7Static({ data, origin, copied, onCopy }) {
                                 children: productoTitulo
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                lineNumber: 122,
+                                lineNumber: 125,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                        lineNumber: 111,
+                        lineNumber: 114,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "rounded-[20px] bg-[#ff1a23] px-5 pt-5 pb-4 shadow-lg",
+                        className: "rounded-[20px] bg-[#ff1a23] px-5 pt-4 pb-3 shadow-lg",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "text-center text-[18px] text-[#6f5d5d]",
                                 children: "Monto a rembolsar"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                lineNumber: 130,
+                                lineNumber: 133,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mt-4 flex items-center justify-between",
+                                className: "mt-3 flex items-center justify-between",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex items-center justify-center gap-2 w-full",
@@ -3106,7 +3158,7 @@ function Plantilla7Static({ data, origin, copied, onCopy }) {
                                                 children: "$"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                                lineNumber: 136,
+                                                lineNumber: 139,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3114,7 +3166,7 @@ function Plantilla7Static({ data, origin, copied, onCopy }) {
                                                 children: importePagar
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                                lineNumber: 137,
+                                                lineNumber: 140,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3122,13 +3174,13 @@ function Plantilla7Static({ data, origin, copied, onCopy }) {
                                                 children: "MXN"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                                lineNumber: 140,
+                                                lineNumber: 143,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                        lineNumber: 135,
+                                        lineNumber: 138,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3136,24 +3188,24 @@ function Plantilla7Static({ data, origin, copied, onCopy }) {
                                         children: "▶"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                        lineNumber: 143,
+                                        lineNumber: 146,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                lineNumber: 134,
+                                lineNumber: 137,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mt-10 flex justify-between",
+                                className: "mt-6 flex justify-between",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-[22px] text-[#3d3838]",
                                         children: "Fecha de pago:"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                        lineNumber: 149,
+                                        lineNumber: 152,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3161,24 +3213,24 @@ function Plantilla7Static({ data, origin, copied, onCopy }) {
                                         children: fechaVencimiento
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                        lineNumber: 153,
+                                        lineNumber: 156,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                lineNumber: 148,
+                                lineNumber: 151,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mt-8 rounded-[20px] border border-white/30 bg-[#ff2530] px-4 py-4 flex items-center gap-4",
+                                className: "mt-5 rounded-[20px] border border-white/30 bg-[#ff2530] px-4 py-3 flex items-center gap-4",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "w-[50px] h-[50px] rounded-full bg-[#4b49a9] flex items-center justify-center text-white text-[24px]",
                                         children: "!"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                        lineNumber: 159,
+                                        lineNumber: 162,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3186,30 +3238,30 @@ function Plantilla7Static({ data, origin, copied, onCopy }) {
                                         children: "El rembolso a tiempo aumentará su cupo de crédito."
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                        lineNumber: 163,
+                                        lineNumber: 166,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                lineNumber: 158,
+                                lineNumber: 161,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                        lineNumber: 128,
+                        lineNumber: 131,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mt-5 rounded-[18px] bg-[#f5f5f5] px-5 py-6 shadow",
+                        className: "mt-4 rounded-[18px] bg-[#f5f5f5] px-5 py-4 shadow",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Row, {
                                 label: "Cliente:",
                                 value: nombre
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                lineNumber: 171,
+                                lineNumber: 174,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Row, {
@@ -3217,131 +3269,131 @@ function Plantilla7Static({ data, origin, copied, onCopy }) {
                                 value: telefono
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                lineNumber: 172,
+                                lineNumber: 175,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                        lineNumber: 170,
+                        lineNumber: 173,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mt-5",
+                        className: "mt-4",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "mx-auto w-full max-w-[360px] bg-white/30 p-2",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "rounded-[18px] bg-[#e57d80] text-center py-3 text-[28px] text-black",
+                                    className: "rounded-[18px] bg-[#e57d80] text-center py-2 text-[28px] text-black",
                                     children: "Metodo de rembolso"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                    lineNumber: 178,
+                                    lineNumber: 181,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                lineNumber: 177,
+                                lineNumber: 180,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mt-5 text-center",
+                                className: "mt-4 text-center",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-[44px] font-black text-[#3441b2]",
                                         children: metodoPago
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                        lineNumber: 184,
+                                        lineNumber: 187,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "mt-2 text-[16px] italic text-[#3441b2]",
+                                        className: "mt-1 text-[16px] italic text-[#3441b2]",
                                         children: "pagos más rápidos y seguros"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                        lineNumber: 188,
+                                        lineNumber: 191,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                lineNumber: 183,
+                                lineNumber: 186,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mt-6 border-t pt-6 text-center",
+                                className: "mt-4 border-t pt-4 text-center",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-[30px] font-bold text-[#1f3f86] break-all",
                                         children: cuentaBancaria || "No disponible"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                        lineNumber: 194,
+                                        lineNumber: 197,
                                         columnNumber: 15
                                     }, this),
                                     textoParaCopiar && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: handleCopy,
-                                        className: "mt-4 px-4 py-2 bg-white rounded-lg shadow text-sm font-semibold text-[#1f3f86]",
+                                        className: "mt-3 px-4 py-2 bg-white rounded-lg shadow text-sm font-semibold text-[#1f3f86]",
                                         children: copiedFinal ? "Copiado" : "Copiar"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                        lineNumber: 199,
+                                        lineNumber: 202,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                                lineNumber: 193,
+                                lineNumber: 196,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                        lineNumber: 176,
+                        lineNumber: 179,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                lineNumber: 108,
+                lineNumber: 111,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-            lineNumber: 107,
+            lineNumber: 110,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-        lineNumber: 106,
+        lineNumber: 109,
         columnNumber: 5
     }, this);
 }
-function Row({ label, value }) {
+/* 🔥 FIX: valores alineados a la derecha */ function Row({ label, value }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "flex justify-between py-3",
+        className: "flex justify-between py-2",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                 className: "text-[22px] text-[#555] font-bold",
                 children: label
             }, void 0, false, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                lineNumber: 217,
+                lineNumber: 221,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "text-[22px] text-black",
+                className: "text-[22px] text-black text-right break-words",
                 children: value
             }, void 0, false, {
                 fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-                lineNumber: 218,
+                lineNumber: 222,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla7Static.tsx",
-        lineNumber: 216,
+        lineNumber: 220,
         columnNumber: 5
     }, this);
 }

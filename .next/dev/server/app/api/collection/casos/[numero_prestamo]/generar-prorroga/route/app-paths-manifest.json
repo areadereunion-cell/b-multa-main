@@ -1,0 +1,3 @@
+{
+  "/api/collection/casos/[numero_prestamo]/generar-prorroga/route": "app/api/collection/casos/[numero_prestamo]/generar-prorroga/route.js"
+}

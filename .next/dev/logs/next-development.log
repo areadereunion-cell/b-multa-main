@@ -1,9 +1,10 @@
-[00:00:02.043] Server  ERROR   (node:14228) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+[00:00:01.482] Server  LOG      ✓ Ready in 1104ms
+[00:00:01.517] Server  ERROR   (node:9388) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:00:02.055] Server  LOG      ✓ Ready in 1477ms
-[00:00:07.058] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:07.237] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:17.877] Server  ERROR   (node:14228) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+[00:00:04.562] Server  LOG      ○ Compiling /gestion/multas/plantillas/prorroga/[id] ...
+[00:00:07.195] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:07.212] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:08.158] Server  ERROR   (node:9388) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -11,96 +12,382 @@ To prepare for this change:
 - If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
-[00:00:19.869] Server  LOG     OTP INSERTADO: {}
-[00:00:19.962] Server  LOG     OTP DEL USUARIO: [{...},{...},{...},{...},{...}]
-[00:00:42.465] Server  LOG     OTP VERIFY USERNAME BODY: "admin"
-[00:00:42.467] Server  LOG     OTP VERIFY USERNAME TOKEN: "admin"
-[00:00:43.434] Server  LOG     OTP VERIFY DEBUG: [{...},{...},{...},{...},{...}]
-[00:01:16.801] Server  LOG     OTP INSERTADO: {}
-[00:01:16.901] Server  LOG     OTP DEL USUARIO: [{...},{...},{...},{...},{...}]
-[00:01:27.041] Server  LOG     OTP VERIFY USERNAME BODY: "admin"
-[00:01:27.041] Server  LOG     OTP VERIFY USERNAME TOKEN: "admin"
-[00:01:27.974] Server  LOG     OTP VERIFY DEBUG: [{...},{...},{...},{...},{...}]
-[00:01:52.095] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:38.492] Browser LOG     PLANTILLA ACTIVA: 5
-[00:06:38.492] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":"2026-03-29","foto_habilitada":true,"importe_pagar":"1380.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1380.00","mostrar_extras":true,"nombre_cliente":"LARISA ORTEGA PENA","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"CHARRO CRÉDITO","telefono_cliente":"2881103907","template_id":5,"tipo_plantilla":5,"url":"https://i.ibb.co/fZgNZzh/logo-charro.png"}
-[00:06:39.323] Server  LOG     📦 BODY RECIBIDO: {}
-[00:06:39.515] Server  LOG     ✅ ROW GUARDADA: {}
-[00:06:42.052] Server  LOG     VALOR DB: null
-[00:06:42.220] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:43.763] Server  LOG     ✅ GET ROW: {}
-[00:06:43.867] Browser LOG     tipoPlantilla prop: undefined
-[00:06:43.867] Browser LOG     data.tipo_plantilla: 5
-[00:06:43.867] Browser LOG     plantillaFinal: 5
-[00:06:43.867] Browser LOG     tipoPlantilla prop: undefined
-[00:06:43.867] Browser LOG     data.tipo_plantilla: 5
-[00:06:43.867] Browser LOG     plantillaFinal: 5
-[00:07:08.039] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:07:16.324] Browser LOG     PLANTILLA ACTIVA: 2
-[00:07:16.325] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1380.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1380.00","mostrar_extras":true,"nombre_cliente":"LARISA ORTEGA PENA","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"CHARRO CRÉDITO","telefono_cliente":"2881103907","template_id":2,"tipo_plantilla":2,"url":"https://i.ibb.co/fZgNZzh/logo-charro.png"}
-[00:07:17.236] Server  LOG     📦 BODY RECIBIDO: {}
-[00:07:17.428] Server  LOG     ✅ ROW GUARDADA: {}
-[00:07:18.502] Server  LOG     VALOR DB: null
-[00:07:18.651] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:07:19.453] Server  LOG     ✅ GET ROW: {}
-[00:07:19.568] Browser LOG     tipoPlantilla prop: undefined
-[00:07:19.568] Browser LOG     data.tipo_plantilla: 2
-[00:07:19.568] Browser LOG     plantillaFinal: 2
-[00:07:19.568] Browser LOG     tipoPlantilla prop: undefined
-[00:07:19.568] Browser LOG     data.tipo_plantilla: 2
-[00:07:19.568] Browser LOG     plantillaFinal: 2
-[00:07:19.583] Server  LOG     ✅ GET ROW: {}
-[00:07:20.262] Server  LOG     ✅ GET ROW: {}
-[00:07:39.339] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:26:42.561] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:26:44.059] Browser LOG     PLANTILLA ACTIVA: 1
-[00:26:44.059] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1380.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1380.00","mostrar_extras":true,"nombre_cliente":"LARISA ORTEGA PENA","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"CHARRO CRÉDITO","telefono_cliente":"2881103907","template_id":1,"tipo_plantilla":1,"url":"https://i.ibb.co/fZgNZzh/logo-charro.png"}
-[00:26:44.644] Server  LOG     📦 BODY RECIBIDO: {}
-[00:26:44.839] Server  LOG     ✅ ROW GUARDADA: {}
-[00:26:45.842] Server  LOG     VALOR DB: null
-[00:26:45.968] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:26:46.793] Server  LOG     ✅ GET ROW: {}
-[00:26:46.907] Browser LOG     tipoPlantilla prop: undefined
-[00:26:46.907] Browser LOG     data.tipo_plantilla: 1
-[00:26:46.907] Browser LOG     plantillaFinal: 1
-[00:26:46.907] Browser LOG     tipoPlantilla prop: undefined
-[00:26:46.907] Browser LOG     data.tipo_plantilla: 1
-[00:26:46.907] Browser LOG     plantillaFinal: 1
-[00:26:46.909] Server  LOG     ✅ GET ROW: {}
-[00:26:47.594] Server  LOG     ✅ GET ROW: {}
-[00:54:54.861] Browser LOG     📦 LISTAS: [{"id":9,"nombre":"asdad","tipo":"liga_pago"},{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"},{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
-[00:54:54.861] Browser LOG     ✅ subproductos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"}]
-[00:54:54.861] Browser LOG     ✅ ligas: [{"id":9,"nombre":"asdad","tipo":"liga_pago"}]
-[00:54:54.861] Browser LOG     ✅ metodos: [{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
-[00:54:54.861] Browser LOG     ✅ productos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"}]
-[00:54:54.861] Browser LOG     📦 LISTAS: [{"id":9,"nombre":"asdad","tipo":"liga_pago"},{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"},{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
-[00:54:54.861] Browser LOG     ✅ subproductos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"}]
-[00:54:54.861] Browser LOG     ✅ ligas: [{"id":9,"nombre":"asdad","tipo":"liga_pago"}]
-[00:54:54.861] Browser LOG     ✅ metodos: [{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
-[00:54:54.861] Browser LOG     ✅ productos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"}]
-[00:55:01.074] Browser LOG     📦 LISTAS: [{"id":9,"nombre":"asdad","tipo":"liga_pago"},{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"},{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
-[00:55:01.074] Browser LOG     ✅ subproductos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"}]
-[00:55:01.074] Browser LOG     ✅ ligas: [{"id":9,"nombre":"asdad","tipo":"liga_pago"}]
-[00:55:01.074] Browser LOG     ✅ metodos: [{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
-[00:55:01.074] Browser LOG     ✅ productos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"}]
-[00:55:01.074] Browser LOG     📦 LISTAS: [{"id":9,"nombre":"asdad","tipo":"liga_pago"},{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"},{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
-[00:55:01.074] Browser LOG     ✅ subproductos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"}]
-[00:55:01.074] Browser LOG     ✅ ligas: [{"id":9,"nombre":"asdad","tipo":"liga_pago"}]
-[00:55:01.074] Browser LOG     ✅ metodos: [{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
-[00:55:01.074] Browser LOG     ✅ productos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"}]
-[00:56:19.708] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:56:20.863] Browser LOG     📦 LISTAS: [{"id":9,"nombre":"asdad","tipo":"liga_pago"},{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"},{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
-[00:56:20.863] Browser LOG     ✅ subproductos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"}]
-[00:56:20.863] Browser LOG     ✅ ligas: [{"id":9,"nombre":"asdad","tipo":"liga_pago"}]
-[00:56:20.863] Browser LOG     ✅ metodos: [{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
-[00:56:20.863] Browser LOG     ✅ productos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"}]
-[00:56:28.568] Browser LOG     📦 LISTAS: [{"id":9,"nombre":"asdad","tipo":"liga_pago"},{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"},{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
-[00:56:28.568] Browser LOG     ✅ subproductos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"}]
-[00:56:28.568] Browser LOG     ✅ ligas: [{"id":9,"nombre":"asdad","tipo":"liga_pago"}]
-[00:56:28.568] Browser LOG     ✅ metodos: [{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
-[00:56:28.568] Browser LOG     ✅ productos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"}]
-[00:56:29.374] Browser LOG     📦 LISTAS: [{"id":9,"nombre":"asdad","tipo":"liga_pago"},{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"},{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
-[00:56:29.374] Browser LOG     ✅ subproductos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"}]
-[00:56:29.374] Browser LOG     ✅ ligas: [{"id":9,"nombre":"asdad","tipo":"liga_pago"}]
-[00:56:29.374] Browser LOG     ✅ metodos: [{"id":6,"nombre":"aaaa","tipo":"metodo_pago"}]
-[00:56:29.374] Browser LOG     ✅ productos: [{"id":8,"nombre":"Subproductos México","tipo":"subproducto_mexico"},{"id":7,"nombre":"Productos México","tipo":"producto_mexico"}]
+[00:00:10.259] Browser ERROR   uncaughtError: ReferenceError: money is not defined
+[00:00:47.256] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:47.661] Browser ERROR   uncaughtError: ReferenceError: money is not defined
+[00:02:01.408] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:02:01.428] Server  LOG      ✓ Compiled in 167ms
+[00:02:02.024] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:17.088] Browser LOG     PLANTILLA ACTIVA: 1
+[00:02:17.088] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"722969013222768659","dias_vencidos":0,"es_prorroga":true,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"764.5","liga_pago_lista_id":"18","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"764.5","monto_original":1390,"monto_prorroga":764.5,"mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"porcentaje_prorroga":0.55,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":1,"tipo_plantilla":1,"url":null}
+[00:02:17.938] Server  LOG     📦 BODY RECIBIDO: {}
+[00:02:18.136] Server  LOG     ✅ ROW GUARDADA: {}
+[00:02:21.040] Server  LOG     VALOR DB: null
+[00:02:21.288] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:23.271] Server  LOG     ✅ GET ROW: {}
+[00:02:23.382] Browser LOG     tipoPlantilla prop: undefined
+[00:02:23.383] Browser LOG     data.tipo_plantilla: 1
+[00:02:23.383] Browser LOG     plantillaFinal: 1
+[00:02:23.383] Browser LOG     tipoPlantilla prop: undefined
+[00:02:23.383] Browser LOG     data.tipo_plantilla: 1
+[00:02:23.383] Browser LOG     plantillaFinal: 1
+[00:02:23.461] Server  LOG     ✅ GET ROW: {}
+[00:02:24.140] Server  LOG     ✅ GET ROW: {}
+[00:02:48.813] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:04.119] Server  LOG      ✓ Compiled in 134ms
+[00:06:08.078] Browser LOG     PLANTILLA ACTIVA: 2
+[00:06:08.078] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":2,"tipo_plantilla":2,"url":null}
+[00:06:08.840] Server  LOG     📦 BODY RECIBIDO: {}
+[00:06:09.033] Server  LOG     ✅ ROW GUARDADA: {}
+[00:06:10.901] Server  LOG     VALOR DB: null
+[00:06:11.112] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:12.049] Server  LOG     ✅ GET ROW: {}
+[00:06:12.167] Browser LOG     tipoPlantilla prop: undefined
+[00:06:12.167] Browser LOG     data.tipo_plantilla: 2
+[00:06:12.167] Browser LOG     plantillaFinal: 2
+[00:06:12.167] Browser LOG     tipoPlantilla prop: undefined
+[00:06:12.167] Browser LOG     data.tipo_plantilla: 2
+[00:06:12.167] Browser LOG     plantillaFinal: 2
+[00:06:12.231] Server  LOG     ✅ GET ROW: {}
+[00:06:12.935] Server  LOG     ✅ GET ROW: {}
+[00:06:19.231] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:23.090] Browser LOG     PLANTILLA ACTIVA: 1
+[00:06:23.090] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":1,"tipo_plantilla":1,"url":null}
+[00:06:23.668] Server  LOG     📦 BODY RECIBIDO: {}
+[00:06:23.860] Server  LOG     ✅ ROW GUARDADA: {}
+[00:06:24.974] Server  LOG     VALOR DB: null
+[00:06:25.307] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:26.396] Server  LOG     ✅ GET ROW: {}
+[00:06:26.510] Browser LOG     tipoPlantilla prop: undefined
+[00:06:26.510] Browser LOG     data.tipo_plantilla: 1
+[00:06:26.510] Browser LOG     plantillaFinal: 1
+[00:06:26.510] Browser LOG     tipoPlantilla prop: undefined
+[00:06:26.510] Browser LOG     data.tipo_plantilla: 1
+[00:06:26.510] Browser LOG     plantillaFinal: 1
+[00:06:26.536] Server  LOG     ✅ GET ROW: {}
+[00:06:27.211] Server  LOG     ✅ GET ROW: {}
+[00:06:31.308] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:34.880] Browser LOG     PLANTILLA ACTIVA: 2
+[00:06:34.880] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":2,"tipo_plantilla":2,"url":null}
+[00:06:35.506] Server  LOG     📦 BODY RECIBIDO: {}
+[00:06:35.711] Server  LOG     ✅ ROW GUARDADA: {}
+[00:06:36.813] Server  LOG     VALOR DB: null
+[00:06:37.162] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:38.252] Server  LOG     ✅ GET ROW: {}
+[00:06:38.372] Browser LOG     tipoPlantilla prop: undefined
+[00:06:38.372] Browser LOG     data.tipo_plantilla: 2
+[00:06:38.372] Browser LOG     plantillaFinal: 2
+[00:06:38.372] Browser LOG     tipoPlantilla prop: undefined
+[00:06:38.372] Browser LOG     data.tipo_plantilla: 2
+[00:06:38.372] Browser LOG     plantillaFinal: 2
+[00:06:38.388] Server  LOG     ✅ GET ROW: {}
+[00:06:39.099] Server  LOG     ✅ GET ROW: {}
+[00:08:37.050] Server  LOG      ✓ Compiled in 144ms
+[00:08:37.995] Server  LOG     ✅ GET ROW: {}
+[00:08:41.638] Server  LOG      ✓ Compiled in 155ms
+[00:08:41.814] Server  LOG     ✅ GET ROW: {}
+[00:12:41.288] Server  LOG      ✓ Compiled in 194ms
+[00:14:27.337] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:38.285] Browser LOG     PLANTILLA ACTIVA: 3
+[00:14:38.285] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"2242  1728  2876  2249","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"19","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":3,"tipo_plantilla":3,"url":null}
+[00:14:39.037] Server  LOG     📦 BODY RECIBIDO: {}
+[00:14:39.228] Server  LOG     ✅ ROW GUARDADA: {}
+[00:14:40.639] Server  LOG     VALOR DB: null
+[00:14:41.044] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:41.976] Server  LOG     ✅ GET ROW: {}
+[00:14:42.086] Browser LOG     tipoPlantilla prop: undefined
+[00:14:42.086] Browser LOG     data.tipo_plantilla: 3
+[00:14:42.086] Browser LOG     plantillaFinal: 3
+[00:14:42.086] Browser LOG     tipoPlantilla prop: undefined
+[00:14:42.086] Browser LOG     data.tipo_plantilla: 3
+[00:14:42.086] Browser LOG     plantillaFinal: 3
+[00:14:42.112] Server  LOG     ✅ GET ROW: {}
+[00:14:42.799] Server  LOG     ✅ GET ROW: {}
+[00:24:11.489] Server  LOG      ✓ Compiled in 147ms
+[00:26:01.032] Server  LOG      ✓ Compiled in 240ms
+[00:28:45.551] Server  LOG      ✓ Compiled in 157ms
+[00:28:53.610] Server  LOG      ✓ Compiled in 77ms
+[00:31:49.123] Server  LOG      ✓ Compiled in 184ms
+[00:32:47.553] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:54.107] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:59.799] Browser LOG     PLANTILLA ACTIVA: 1
+[00:32:59.800] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":-1,"fecha_vencimiento":"2026-03-29","foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":1,"tipo_plantilla":1,"url":null}
+[00:33:00.436] Server  LOG     📦 BODY RECIBIDO: {}
+[00:33:00.635] Server  LOG     ✅ ROW GUARDADA: {}
+[00:33:01.969] Server  LOG     VALOR DB: null
+[00:33:02.140] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:03.055] Server  LOG     ✅ GET ROW: {}
+[00:33:03.168] Browser LOG     tipoPlantilla prop: undefined
+[00:33:03.169] Browser LOG     data.tipo_plantilla: 1
+[00:33:03.169] Browser LOG     plantillaFinal: 1
+[00:33:03.169] Browser LOG     tipoPlantilla prop: undefined
+[00:33:03.169] Browser LOG     data.tipo_plantilla: 1
+[00:33:03.169] Browser LOG     plantillaFinal: 1
+[00:33:03.241] Server  LOG     ✅ GET ROW: {}
+[00:33:04.019] Server  LOG     ✅ GET ROW: {}
+[00:33:06.602] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:15.439] Browser LOG     PLANTILLA ACTIVA: 2
+[00:33:15.439] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":-1,"fecha_vencimiento":"2026-03-29","foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":2,"tipo_plantilla":2,"url":null}
+[00:33:16.191] Server  LOG     📦 BODY RECIBIDO: {}
+[00:33:16.381] Server  LOG     ✅ ROW GUARDADA: {}
+[00:33:17.547] Server  LOG     VALOR DB: null
+[00:33:17.706] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:18.647] Server  LOG     ✅ GET ROW: {}
+[00:33:18.766] Browser LOG     tipoPlantilla prop: undefined
+[00:33:18.766] Browser LOG     data.tipo_plantilla: 2
+[00:33:18.767] Browser LOG     plantillaFinal: 2
+[00:33:18.767] Browser LOG     tipoPlantilla prop: undefined
+[00:33:18.767] Browser LOG     data.tipo_plantilla: 2
+[00:33:18.767] Browser LOG     plantillaFinal: 2
+[00:33:18.835] Server  LOG     ✅ GET ROW: {}
+[00:33:19.557] Server  LOG     ✅ GET ROW: {}
+[00:33:29.538] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:34:01.319] Server  LOG      ✓ Compiled in 104ms
+[00:34:02.268] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx:271:6
+Parsing ecmascript source code failed
+  269 |         </div>
+  270 |       </div>
+> 271 |     </div>
+      |      ^^^^^
+  272 |   );
+  273 | }
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx [Client Component Browser]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx [Client Component Browser]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx [Server Component]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx [Client Component SSR]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx [Client Component SSR]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx [Server Component]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx [Server Component]
+[00:34:02.268] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx:271:6
+Parsing ecmascript source code failed
+  269 |         </div>
+  270 |       </div>
+> 271 |     </div>
+      |      ^^^^^
+  272 |   );
+  273 | }
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx [Client Component Browser]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx [Client Component Browser]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx [Server Component]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx [Client Component SSR]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx [Client Component SSR]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx [Server Component]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx [Server Component]
+[00:34:02.268] Browser ERROR   ./Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx:271:6
+Parsing ecmascript source code failed
+  269 |         </div>
+  270 |       </div>
+> 271 |     </div>
+      |      ^^^^^
+  272 |   );
+  273 | }
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx [Client Component Browser]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx [Client Component Browser]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx [Server Component]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/plantillas/Plantilla3Static.tsx [Client Component SSR]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx [Client Component SSR]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/static.tsx [Server Component]
+    ./Downloads/b-multa-main/multa-main/app/pay/[token]/page.tsx [Server Component]
+[00:34:52.039] Server  LOG      ✓ Compiled in 99ms
+[00:34:53.398] Server  LOG     VALOR DB: null
+[00:34:54.275] Browser LOG     tipoPlantilla prop: undefined
+[00:34:54.275] Browser LOG     data.tipo_plantilla: 3
+[00:34:54.275] Browser LOG     plantillaFinal: 3
+[00:34:54.275] Browser LOG     tipoPlantilla prop: undefined
+[00:34:54.275] Browser LOG     data.tipo_plantilla: 3
+[00:34:54.275] Browser LOG     plantillaFinal: 3
+[00:35:19.778] Browser LOG     PLANTILLA ACTIVA: 3
+[00:35:19.778] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":-1,"fecha_vencimiento":"2026-03-29","foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":3,"tipo_plantilla":3,"url":null}
+[00:35:20.425] Server  LOG     📦 BODY RECIBIDO: {}
+[00:35:20.618] Server  LOG     ✅ ROW GUARDADA: {}
+[00:35:22.475] Server  LOG     VALOR DB: null
+[00:35:22.650] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:35:23.503] Server  LOG     ✅ GET ROW: {}
+[00:35:23.618] Browser LOG     tipoPlantilla prop: undefined
+[00:35:23.618] Browser LOG     data.tipo_plantilla: 3
+[00:35:23.618] Browser LOG     plantillaFinal: 3
+[00:35:23.618] Browser LOG     tipoPlantilla prop: undefined
+[00:35:23.618] Browser LOG     data.tipo_plantilla: 3
+[00:35:23.618] Browser LOG     plantillaFinal: 3
+[00:35:23.684] Server  LOG     ✅ GET ROW: {}
+[00:35:24.373] Server  LOG     ✅ GET ROW: {}
+[00:35:33.717] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:35:42.538] Browser LOG     PLANTILLA ACTIVA: 4
+[00:35:42.538] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"638180000105179225","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"15","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":4,"tipo_plantilla":4,"url":null}
+[00:35:43.147] Server  LOG     📦 BODY RECIBIDO: {}
+[00:35:43.336] Server  LOG     ✅ ROW GUARDADA: {}
+[00:35:44.552] Server  LOG     VALOR DB: null
+[00:35:44.910] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:35:46.024] Server  LOG     ✅ GET ROW: {}
+[00:35:46.137] Browser LOG     tipoPlantilla prop: undefined
+[00:35:46.137] Browser LOG     data.tipo_plantilla: 4
+[00:35:46.137] Browser LOG     plantillaFinal: 4
+[00:35:46.137] Browser LOG     tipoPlantilla prop: undefined
+[00:35:46.137] Browser LOG     data.tipo_plantilla: 4
+[00:35:46.137] Browser LOG     plantillaFinal: 4
+[00:35:46.228] Server  LOG     ✅ GET ROW: {}
+[00:35:46.908] Server  LOG     ✅ GET ROW: {}
+[00:35:50.272] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:36:02.466] Browser LOG     PLANTILLA ACTIVA: 4
+[00:36:02.466] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":"2026-03-30","foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":4,"tipo_plantilla":4,"url":null}
+[00:36:03.066] Server  LOG     📦 BODY RECIBIDO: {}
+[00:36:03.254] Server  LOG     ✅ ROW GUARDADA: {}
+[00:36:05.020] Server  LOG     VALOR DB: null
+[00:36:05.377] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:36:06.493] Server  LOG     ✅ GET ROW: {}
+[00:36:06.603] Browser LOG     tipoPlantilla prop: undefined
+[00:36:06.603] Browser LOG     data.tipo_plantilla: 4
+[00:36:06.603] Browser LOG     plantillaFinal: 4
+[00:36:06.603] Browser LOG     tipoPlantilla prop: undefined
+[00:36:06.603] Browser LOG     data.tipo_plantilla: 4
+[00:36:06.603] Browser LOG     plantillaFinal: 4
+[00:36:06.626] Server  LOG     ✅ GET ROW: {}
+[00:36:07.318] Server  LOG     ✅ GET ROW: {}
+[00:36:11.442] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:36:20.581] Browser LOG     PLANTILLA ACTIVA: 5
+[00:36:20.581] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"722969013222768659","dias_vencidos":-1,"fecha_vencimiento":"2026-03-29","foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"18","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":5,"tipo_plantilla":5,"url":null}
+[00:36:21.191] Server  LOG     📦 BODY RECIBIDO: {}
+[00:36:21.382] Server  LOG     ✅ ROW GUARDADA: {}
+[00:36:22.510] Server  LOG     VALOR DB: null
+[00:36:22.884] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:36:23.887] Server  LOG     ✅ GET ROW: {}
+[00:36:23.994] Browser LOG     tipoPlantilla prop: undefined
+[00:36:23.994] Browser LOG     data.tipo_plantilla: 5
+[00:36:23.994] Browser LOG     plantillaFinal: 5
+[00:36:23.994] Browser LOG     tipoPlantilla prop: undefined
+[00:36:23.994] Browser LOG     data.tipo_plantilla: 5
+[00:36:23.994] Browser LOG     plantillaFinal: 5
+[00:36:31.665] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:48.448] Browser LOG     PLANTILLA ACTIVA: 5
+[01:00:48.448] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":5,"tipo_plantilla":5,"url":null}
+[01:00:49.385] Server  LOG     📦 BODY RECIBIDO: {}
+[01:00:49.605] Server  LOG     ✅ ROW GUARDADA: {}
+[01:00:51.865] Server  LOG     VALOR DB: null
+[01:00:52.392] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:53.562] Server  LOG     ✅ GET ROW: {}
+[01:00:53.675] Browser LOG     tipoPlantilla prop: undefined
+[01:00:53.675] Browser LOG     data.tipo_plantilla: 5
+[01:00:53.675] Browser LOG     plantillaFinal: 5
+[01:00:53.675] Browser LOG     tipoPlantilla prop: undefined
+[01:00:53.675] Browser LOG     data.tipo_plantilla: 5
+[01:00:53.675] Browser LOG     plantillaFinal: 5
+[01:00:55.618] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:03.889] Browser LOG     PLANTILLA ACTIVA: 5
+[01:01:03.889] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":"2026-03-30","foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":5,"tipo_plantilla":5,"url":null}
+[01:01:04.699] Server  LOG     📦 BODY RECIBIDO: {}
+[01:01:04.902] Server  LOG     ✅ ROW GUARDADA: {}
+[01:01:06.065] Server  LOG     VALOR DB: null
+[01:01:06.469] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:07.625] Server  LOG     ✅ GET ROW: {}
+[01:01:07.734] Browser LOG     tipoPlantilla prop: undefined
+[01:01:07.734] Browser LOG     data.tipo_plantilla: 5
+[01:01:07.734] Browser LOG     plantillaFinal: 5
+[01:01:07.734] Browser LOG     tipoPlantilla prop: undefined
+[01:01:07.734] Browser LOG     data.tipo_plantilla: 5
+[01:01:07.734] Browser LOG     plantillaFinal: 5
+[01:15:47.936] Server  LOG      ✓ Compiled in 165ms
+[01:16:04.937] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:16:11.711] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:16:17.734] Browser LOG     PLANTILLA ACTIVA: 6
+[01:16:17.734] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":6,"tipo_plantilla":6,"url":null}
+[01:16:18.700] Server  LOG     📦 BODY RECIBIDO: {}
+[01:16:18.889] Server  LOG     ✅ ROW GUARDADA: {}
+[01:16:20.311] Server  LOG     VALOR DB: null
+[01:16:20.515] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:16:21.379] Server  LOG     ✅ GET ROW: {}
+[01:16:21.496] Browser LOG     tipoPlantilla prop: undefined
+[01:16:21.496] Browser LOG     data.tipo_plantilla: 6
+[01:16:21.496] Browser LOG     plantillaFinal: 6
+[01:16:21.496] Browser LOG     tipoPlantilla prop: undefined
+[01:16:21.496] Browser LOG     data.tipo_plantilla: 6
+[01:16:21.496] Browser LOG     plantillaFinal: 6
+[01:16:23.850] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:16:31.521] Browser LOG     PLANTILLA ACTIVA: 6
+[01:16:31.521] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":"2026-03-30","foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":6,"tipo_plantilla":6,"url":null}
+[01:16:32.309] Server  LOG     📦 BODY RECIBIDO: {}
+[01:16:32.502] Server  LOG     ✅ ROW GUARDADA: {}
+[01:16:33.629] Server  LOG     VALOR DB: null
+[01:16:33.797] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:16:34.677] Server  LOG     ✅ GET ROW: {}
+[01:16:34.788] Browser LOG     tipoPlantilla prop: undefined
+[01:16:34.788] Browser LOG     data.tipo_plantilla: 6
+[01:16:34.788] Browser LOG     plantillaFinal: 6
+[01:16:34.788] Browser LOG     tipoPlantilla prop: undefined
+[01:16:34.788] Browser LOG     data.tipo_plantilla: 6
+[01:16:34.788] Browser LOG     plantillaFinal: 6
+[01:16:36.896] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:01.423] Browser LOG     PLANTILLA ACTIVA: 6
+[01:19:01.423] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":"2026-03-30","foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":6,"tipo_plantilla":6,"url":null}
+[01:19:02.023] Server  LOG     📦 BODY RECIBIDO: {}
+[01:19:02.211] Server  LOG     ✅ ROW GUARDADA: {}
+[01:19:04.274] Server  LOG     VALOR DB: null
+[01:19:04.531] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:05.511] Server  LOG     ✅ GET ROW: {}
+[01:19:05.619] Browser LOG     tipoPlantilla prop: undefined
+[01:19:05.619] Browser LOG     data.tipo_plantilla: 6
+[01:19:05.619] Browser LOG     plantillaFinal: 6
+[01:19:05.619] Browser LOG     tipoPlantilla prop: undefined
+[01:19:05.619] Browser LOG     data.tipo_plantilla: 6
+[01:19:05.619] Browser LOG     plantillaFinal: 6
+[01:19:19.430] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:22.808] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:31.133] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:48.416] Browser LOG     PLANTILLA ACTIVA: 7
+[01:19:48.416] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"722969013222768659","dias_vencidos":-1,"fecha_vencimiento":"2026-03-29","foto_habilitada":true,"importe_pagar":"1390.00","liga_pago_lista_id":"18","locked":true,"metodo_pago":"Mercado Pago W","metodo_pago_lista_id":"17","monto":"1390.00","mostrar_extras":true,"nombre_cliente":"ANA ZULEIKA VIVERO VILLEGAS","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"AMX CRÉDITO","telefono_cliente":"7291007040","template_id":7,"tipo_plantilla":7,"url":null}
+[01:19:49.015] Server  LOG     📦 BODY RECIBIDO: {}
+[01:19:49.204] Server  LOG     ✅ ROW GUARDADA: {}
+[01:19:51.040] Server  LOG     VALOR DB: null
+[01:19:51.213] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:52.107] Server  LOG     ✅ GET ROW: {}
+[01:19:52.220] Browser LOG     tipoPlantilla prop: undefined
+[01:19:52.220] Browser LOG     data.tipo_plantilla: 7
+[01:19:52.220] Browser LOG     plantillaFinal: 7
+[01:19:52.220] Browser LOG     tipoPlantilla prop: undefined
+[01:19:52.220] Browser LOG     data.tipo_plantilla: 7
+[01:19:52.220] Browser LOG     plantillaFinal: 7
+[01:22:51.844] Server  LOG      ✓ Compiled in 154ms
+[01:24:42.362] Server  LOG      ✓ Compiled in 130ms
+[01:26:26.490] Server  LOG      ✓ Compiled in 121ms
+[01:27:03.072] Server  LOG      ✓ Compiled in 119ms
+[01:35:45.146] Server  LOG      ✓ Compiled in 154ms
+[01:44:03.691] Server  LOG      ✓ Compiled in 106ms
+[01:44:09.833] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:44:15.918] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:45:54.264] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:53:08.236] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:53:10.178] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:53:20.651] Browser LOG     __next_hmr_refresh_hash__=519
+[01:54:00.548] Browser LOG     {"_grecaptcha":"09AKhCRwhsBlMFQG97-PImZn-Db53mFe59TQRU7-8T6I59sWGo7gamgRwwG1un27ic4eCx3j2txCmRfqZKfngxIMdUfoJxvzJsvh9CiIfxdDsBzn3I0rFOHkjAgmgLlNNc","asesor_theme_v2":"principal","lastExternalReferrer":"empty","lastExternalReferrerTime":"1767217545772","sidebarTheme":"principal","topicsLastReferenceTime":"1767217556739"}
+[01:55:09.546] Browser LOG     {"_grecaptcha":"09AKhCRwhsBlMFQG97-PImZn-Db53mFe59TQRU7-8T6I59sWGo7gamgRwwG1un27ic4eCx3j2txCmRfqZKfngxIMdUfoJxvzJsvh9CiIfxdDsBzn3I0rFOHkjAgmgLlNNc","asesor_theme_v2":"principal","lastExternalReferrer":"empty","lastExternalReferrerTime":"1767217545772","sidebarTheme":"principal","topicsLastReferenceTime":"1767217556739"}
+[01:55:17.381] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:55:19.369] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:55:25.211] Server  LOG     OTP INSERTADO: {}
+[01:55:25.318] Server  LOG     OTP DEL USUARIO: [{...},{...},{...},{...},{...}]
+[01:55:39.987] Server  LOG     OTP VERIFY USERNAME BODY: "admin"
+[01:55:39.989] Server  LOG     OTP VERIFY USERNAME TOKEN: "admin"
+[01:55:40.834] Server  LOG     OTP VERIFY DEBUG: [{...},{...},{...},{...},{...}]
+[01:56:01.184] Browser LOG     {"_grecaptcha":"09AKhCRwhsBlMFQG97-PImZn-Db53mFe59TQRU7-8T6I59sWGo7gamgRwwG1un27ic4eCx3j2txCmRfqZKfngxIMdUfoJxvzJsvh9CiIfxdDsBzn3I0rFOHkjAgmgLlNNc","asesor_theme_v2":"principal","lastExternalReferrer":"empty","lastExternalReferrerTime":"1767217545772","sidebarTheme":"principal","topicsLastReferenceTime":"1767217556739"}
