@@ -729,4 +729,4 @@ export default function PagoFastCashForm() {
       </div>
     </div>
   );
-}
+} 

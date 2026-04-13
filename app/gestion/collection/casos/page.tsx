@@ -18,7 +18,7 @@ export default function CasosPage() {
         "
         style={{
           marginLeft: "calc(var(--sidebar-w) + 12px)",   // 👈 MÁS ESPACIO
-          width: "calc(100% - var(--sidebar-w) - 12px)", // 👈 AJUSTE PROPORCIONAL
+          width: "calc(100% - var(--sidebar-w) -  )", // 👈 AJUSTE PROPORCIONAL
         }}
       >
         <div className="w-full">
