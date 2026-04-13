@@ -22,6 +22,7 @@ export async function GET(req: NextRequest) {
         dias_vencidos,
         nombre_cliente,
         telefono_cliente,
+        cuenta_bancaria,
         token,
         tipo_plantilla,
         pagado,
