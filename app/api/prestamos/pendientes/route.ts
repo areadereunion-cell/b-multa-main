@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { pool } from "@/lib/db";
+import { query } from "@/lib/db";
 
 export const runtime = "nodejs";
 
@@ -11,7 +11,7 @@ export async function GET(req: NextRequest) {
     const telefono = searchParams.get("telefono");
     const limite = Number(searchParams.get("limite") ?? 50);
 
-    let query = `
+    let sql = `
       SELECT
         id,
         usuario_id,
@@ -30,25 +30,25 @@ export async function GET(req: NextRequest) {
       WHERE (pagado = false OR pagado IS NULL OR pagado = 'false')
     `;
 
-    const values: unknown[] = [];
+    const values: any[] = [];
 
     if (usuario_id) {
       values.push(usuario_id);
-      query += ` AND usuario_id = $${values.length}`;
+      sql += ` AND usuario_id = $${values.length}`;
     }
 
     if (telefono) {
       values.push(telefono);
-      query += ` AND telefono_cliente = $${values.length}`;
+      sql += ` AND telefono_cliente = $${values.length}`;
     }
 
     values.push(limite);
-    query += `
+    sql += `
       ORDER BY created_at DESC NULLS LAST
       LIMIT $${values.length}
     `;
 
-    const result = await pool.query(query, values);
+    const result = await query(sql, values);
 
     return NextResponse.json({
       ok: true,

@@ -77,6 +77,14 @@
       "namedRegex": "^/api/collection/casos/(?<nxtPnumero_prestamo>[^/]+?)/generar\\-liga(?:/)?$"
     },
     {
+      "page": "/api/collection/casos/[numero_prestamo]/generar-prorroga",
+      "regex": "^/api/collection/casos/([^/]+?)/generar\\-prorroga(?:/)?$",
+      "routeKeys": {
+        "nxtPnumero_prestamo": "nxtPnumero_prestamo"
+      },
+      "namedRegex": "^/api/collection/casos/(?<nxtPnumero_prestamo>[^/]+?)/generar\\-prorroga(?:/)?$"
+    },
+    {
       "page": "/api/ligas/[id]",
       "regex": "^/api/ligas/([^/]+?)(?:/)?$",
       "routeKeys": {
@@ -273,6 +281,14 @@
       "namedRegex": "^/gestion/multas/plantillas/personalizada/(?<nxtPid>[^/]+?)(?:/)?$"
     },
     {
+      "page": "/gestion/multas/plantillas/prorroga/[id]",
+      "regex": "^/gestion/multas/plantillas/prorroga/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/gestion/multas/plantillas/prorroga/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
       "page": "/gestion/multas/plantillas/[id]",
       "regex": "^/gestion/multas/plantillas/([^/]+?)(?:/)?$",
       "routeKeys": {
@@ -375,6 +391,12 @@
       "regex": "^/api/collection/casos/auto\\-assign(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/collection/casos/auto\\-assign(?:/)?$"
+    },
+    {
+      "page": "/api/collection/casos/crear",
+      "regex": "^/api/collection/casos/crear(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/collection/casos/crear(?:/)?$"
     },
     {
       "page": "/api/collection/casos/import",
@@ -531,6 +553,12 @@
       "regex": "^/api/plantillas\\-temporales\\-3/config(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/plantillas\\-temporales\\-3/config(?:/)?$"
+    },
+    {
+      "page": "/api/prestamos/pendientes",
+      "regex": "^/api/prestamos/pendientes(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/prestamos/pendientes(?:/)?$"
     },
     {
       "page": "/api/reportes/cron",
