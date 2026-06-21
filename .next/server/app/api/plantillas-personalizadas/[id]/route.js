@@ -1,6 +1,6 @@
 var R=require("../../../../chunks/[turbopack]_runtime.js")("server/app/api/plantillas-personalizadas/[id]/route.js")
-R.c("server/chunks/[root-of-the-server]__bee43503._.js")
-R.c("server/chunks/[root-of-the-server]__fc102a65._.js")
-R.c("server/chunks/7acc1_server_app_api_plantillas-personalizadas_[id]_route_actions_dc27f0e5.js")
-R.m(63363)
-module.exports=R.m(63363).exports
+R.c("server/chunks/[root-of-the-server]__9e47727c._.js")
+R.c("server/chunks/[root-of-the-server]__db2b3a24._.js")
+R.c("server/chunks/ce889_server_app_api_plantillas-personalizadas_[id]_route_actions_26c21844.js")
+R.m(13989)
+module.exports=R.m(13989).exports

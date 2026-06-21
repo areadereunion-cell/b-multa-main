@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { Trash2 } from "lucide-react";
 import type { CasosFilters } from "./CasosToolbar";
 
 type Caso = {
@@ -40,6 +41,7 @@ export default function CasosTable({
   const [resegLoading, setResegLoading] = useState(false);
   const [changingPago, setChangingPago] = useState<Record<string, boolean>>({});
   const [openingLiga, setOpeningLiga] = useState<Record<string, boolean>>({});
+  const [cleaning, setCleaning] = useState<Record<string, boolean>>({});
 
   async function load() {
     setLoading(true);
@@ -297,6 +299,40 @@ window.open(`https://wa.me/52${cleanPhone}`, "_blank", "noopener,noreferrer");
 
     window.open(`https://t.me/+52${phone}`, "_blank", "noopener,noreferrer");
   }
+  async function cleanCaso(row: Caso) {
+  const key = row.numero_prestamo;
+
+  if (
+    !confirm(
+      `¿Seguro que deseas limpiar/eliminar el caso ${row.numero_prestamo}?`
+    )
+  ) {
+    return;
+  }
+
+  try {
+    setCleaning((p) => ({ ...p, [key]: true }));
+
+    const res = await fetch(
+      `/api/collection/casos/${encodeURIComponent(key)}/clean`,
+      {
+        method: "POST",
+      }
+    );
+
+    const j = await res.json();
+
+    if (!res.ok || !j?.ok) {
+      throw new Error(j?.error || "Error limpiando caso");
+    }
+
+    await load();
+  } catch (e: any) {
+    alert(e?.message || "Error");
+  } finally {
+    setCleaning((p) => ({ ...p, [key]: false }));
+  }
+}
 
   const filtered = useMemo(() => {
     const s = (v: any) => String(v ?? "").toLowerCase().trim();
@@ -565,6 +601,28 @@ window.open(`https://wa.me/52${cleanPhone}`, "_blank", "noopener,noreferrer");
                         {openingLiga[row.numero_prestamo]
                           ? "Abriendo..."
                           : "Entrar"}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => cleanCaso(row)}
+                        disabled={cleaning[row.numero_prestamo]}
+                        className="
+                          inline-flex items-center justify-center
+                          rounded-full
+                          bg-red-100
+                          p-2
+                          text-red-700
+                          hover:bg-red-200
+                          disabled:opacity-50
+                          transition
+                        "
+                        title="Limpiar caso"
+                      >
+                        {cleaning[row.numero_prestamo] ? (
+                          <span className="text-xs">...</span>
+                        ) : (
+                          <Trash2 className="h-4 w-4" />
+                        )}
                       </button>
                     </div>
                   </td>

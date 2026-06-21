@@ -99,7 +99,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "C:\\Users\\adlan",
+    "outputFileTracingRoot": "C:\\Users\\adlan\\Downloads\\b-multa-main\\multa-main",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -289,12 +289,12 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "C:\\Users\\adlan"
+      "root": "C:\\Users\\adlan\\Downloads\\b-multa-main\\multa-main"
     },
     "distDirRoot": ".next"
   },
   "appDir": "C:\\Users\\adlan\\Downloads\\b-multa-main\\multa-main",
-  "relativeAppDir": "Downloads\\b-multa-main\\multa-main",
+  "relativeAppDir": "",
   "files": [
     ".next\\routes-manifest.json",
     ".next\\server\\pages-manifest.json",

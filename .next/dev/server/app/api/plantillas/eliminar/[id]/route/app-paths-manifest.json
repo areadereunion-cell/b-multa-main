@@ -1,0 +1,3 @@
+{
+  "/api/plantillas/eliminar/[id]/route": "app/api/plantillas/eliminar/[id]/route.js"
+}

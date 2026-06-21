@@ -1714,10 +1714,6 @@
     border-radius: 22px;
   }
 
-  .rounded-\[26px\] {
-    border-radius: 26px;
-  }
-
   .rounded-\[28px\] {
     border-radius: 28px;
   }
@@ -2364,16 +2360,6 @@
 
   .bg-black {
     background-color: var(--color-black);
-  }
-
-  .bg-black\/5 {
-    background-color: #0000000d;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .bg-black\/5 {
-      background-color: color-mix(in oklab, var(--color-black) 5%, transparent);
-    }
   }
 
   .bg-black\/15 {
@@ -3528,10 +3514,6 @@
     font-size: 12px;
   }
 
-  .text-\[13px\] {
-    font-size: 13px;
-  }
-
   .text-\[14px\] {
     font-size: 14px;
   }
@@ -3606,10 +3588,6 @@
 
   .text-\[56px\] {
     font-size: 56px;
-  }
-
-  .text-\[80px\] {
-    font-size: 80px;
   }
 
   .text-\[86px\] {

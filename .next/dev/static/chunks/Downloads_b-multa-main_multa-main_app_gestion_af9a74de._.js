@@ -1259,7 +1259,7 @@ function BaseClient() {
                                     children: title
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                    lineNumber: 134,
+                                    lineNumber: 259,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1267,13 +1267,13 @@ function BaseClient() {
                                     children: "Listado de ligas de pago guardadas."
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                    lineNumber: 135,
+                                    lineNumber: 263,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                            lineNumber: 133,
+                            lineNumber: 258,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1286,7 +1286,7 @@ function BaseClient() {
                                     children: "Refrescar"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                    lineNumber: 140,
+                                    lineNumber: 270,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1296,19 +1296,19 @@ function BaseClient() {
                                     children: "Borrar todo"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                    lineNumber: 156,
+                                    lineNumber: 286,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                            lineNumber: 138,
+                            lineNumber: 269,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                    lineNumber: 132,
+                    lineNumber: 257,
                     columnNumber: 9
                 }, this),
                 toast && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1316,7 +1316,7 @@ function BaseClient() {
                     children: toast
                 }, void 0, false, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                    lineNumber: 174,
+                    lineNumber: 303,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1330,7 +1330,7 @@ function BaseClient() {
                                     children: "Plantillas"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                    lineNumber: 201,
+                                    lineNumber: 329,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1341,13 +1341,13 @@ function BaseClient() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                    lineNumber: 202,
+                                    lineNumber: 333,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                            lineNumber: 200,
+                            lineNumber: 328,
                             columnNumber: 11
                         }, this),
                         loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1355,14 +1355,14 @@ function BaseClient() {
                             children: "Cargando…"
                         }, void 0, false, {
                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                            lineNumber: 206,
+                            lineNumber: 339,
                             columnNumber: 13
                         }, this) : rows.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "p-6 text-slate-500",
                             children: "No hay registros."
                         }, void 0, false, {
                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                            lineNumber: 208,
+                            lineNumber: 343,
                             columnNumber: 13
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "divide-y divide-slate-200/60",
@@ -1383,19 +1383,19 @@ function BaseClient() {
                                                         className: "w-full h-full object-cover"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                        lineNumber: 236,
+                                                        lineNumber: 382,
                                                         columnNumber: 27
                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "text-xs text-slate-500",
                                                         children: "IMG"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                        lineNumber: 238,
+                                                        lineNumber: 388,
                                                         columnNumber: 27
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                    lineNumber: 225,
+                                                    lineNumber: 371,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1406,41 +1406,43 @@ function BaseClient() {
                                                             children: r.subproducto || "—"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                            lineNumber: 243,
+                                                            lineNumber: 395,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "text-sm text-slate-600 truncate",
                                                             children: [
-                                                                "Cuenta: ",
+                                                                "Cuenta:",
+                                                                " ",
                                                                 r.cuenta_bancaria || "—"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                            lineNumber: 246,
+                                                            lineNumber: 400,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "text-xs text-slate-500 truncate",
                                                             children: [
-                                                                "Asesor: ",
+                                                                "Asesor:",
+                                                                " ",
                                                                 r.asesor_nombre || "—"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                            lineNumber: 249,
+                                                            lineNumber: 406,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                    lineNumber: 242,
+                                                    lineNumber: 394,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                            lineNumber: 224,
+                                            lineNumber: 370,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1453,7 +1455,7 @@ function BaseClient() {
                                                     children: "Link"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                    lineNumber: 256,
+                                                    lineNumber: 415,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1463,7 +1465,7 @@ function BaseClient() {
                                                     children: "Ver"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                    lineNumber: 270,
+                                                    lineNumber: 431,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1487,330 +1489,91 @@ function BaseClient() {
                                                             if (!res.ok) throw new Error();
                                                             setToast("Pagado ✔");
                                                             setTimeout(()=>setToast(""), 1500);
-                                                            fetchList(); // 🔄 refresca
+                                                            fetchList();
                                                         } catch (e) {
                                                             console.error(e);
                                                             setToast("Error ❌");
                                                             setTimeout(()=>setToast(""), 1500);
                                                         }
                                                     },
-                                                    className: "px-3 py-2 rounded-xl bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700",
+                                                    className: " px-3 py-2 rounded-xl bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700 transition ",
+                                                    type: "button",
                                                     children: "Pagado"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                    lineNumber: 284,
-                                                    columnNumber: 3
+                                                    lineNumber: 447,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: async ()=>{
+                                                        try {
+                                                            const ok = confirm("¿Seguro que deseas borrar este link?");
+                                                            if (!ok) return;
+                                                            const token = r.token || r.uuid || r.public_id;
+                                                            if (!token) {
+                                                                setToast("No hay token ❌");
+                                                                setTimeout(()=>setToast(""), 1500);
+                                                                return;
+                                                            }
+                                                            const res = await fetch(`/api/plantillas/eliminar/${encodeURIComponent(String(r.id))}`, {
+                                                                method: "DELETE"
+                                                            });
+                                                            const json = await res.json().catch(()=>({}));
+                                                            if (!res.ok) {
+                                                                setToast(json?.error || "Error ❌");
+                                                                setTimeout(()=>setToast(""), 2000);
+                                                                return;
+                                                            }
+                                                            setToast("Link borrado ✔");
+                                                            setTimeout(()=>setToast(""), 1500);
+                                                            fetchList();
+                                                        } catch (e) {
+                                                            console.error(e);
+                                                            setToast("Error ❌");
+                                                            setTimeout(()=>setToast(""), 1500);
+                                                        }
+                                                    },
+                                                    className: " px-3 py-2 rounded-xl bg-red-600 text-white text-sm font-semibold hover:bg-red-700 transition ",
+                                                    type: "button",
+                                                    children: "Borrar"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
+                                                    lineNumber: 540,
+                                                    columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                            lineNumber: 255,
+                                            lineNumber: 414,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, r.id, true, {
                                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                    lineNumber: 216,
+                                    lineNumber: 362,
                                     columnNumber: 19
                                 }, this);
                             })
                         }, void 0, false, {
                             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                            lineNumber: 210,
+                            lineNumber: 347,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                    lineNumber: 190,
+                    lineNumber: 318,
                     columnNumber: 9
-                }, this),
-                open && selected && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "fixed inset-0 z-[10000] bg-black/40 backdrop-blur-sm flex items-center justify-center p-4",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: " w-full max-w-2xl rounded-3xl bg-white/70 backdrop-blur-xl border border-slate-200/70 shadow-[0_20px_60px_rgba(15,23,42,0.18)] overflow-hidden ",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "p-4 sm:p-5 border-b border-slate-200/70 flex items-center justify-between",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "font-semibold text-slate-900",
-                                        children: "Vista"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                        lineNumber: 341,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        onClick: ()=>{
-                                            setOpen(false);
-                                            setSelected(null);
-                                        },
-                                        className: " px-4 py-2 rounded-2xl bg-white/60 border border-slate-200/70 text-slate-700 font-medium hover:bg-white transition ",
-                                        type: "button",
-                                        children: "Cerrar"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                        lineNumber: 342,
-                                        columnNumber: 17
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                lineNumber: 340,
-                                columnNumber: 15
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "p-4 sm:p-6 space-y-4",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "text-xs text-slate-500",
-                                        children: [
-                                            "ID: ",
-                                            selected.id
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                        lineNumber: 362,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "text-2xl sm:text-3xl font-semibold text-slate-900",
-                                        children: selected.subproducto || "—"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                        lineNumber: 364,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "text-slate-700",
-                                        children: [
-                                            "Cuenta: ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
-                                                children: selected.cuenta_bancaria || "—"
-                                            }, void 0, false, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                lineNumber: 369,
-                                                columnNumber: 27
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                        lineNumber: 368,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "grid grid-cols-1 sm:grid-cols-2 gap-3",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "rounded-2xl bg-white/60 border border-slate-200/70 p-4",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "text-xs text-slate-500",
-                                                        children: "Monto"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                        lineNumber: 374,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "font-semibold text-slate-900",
-                                                        children: selected.monto ?? "—"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                        lineNumber: 375,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                lineNumber: 373,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "rounded-2xl bg-white/60 border border-slate-200/70 p-4",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "text-xs text-slate-500",
-                                                        children: "Importe"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                        lineNumber: 379,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "font-semibold text-slate-900",
-                                                        children: selected.importe_pagar ?? "—"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                        lineNumber: 380,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                lineNumber: 378,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "rounded-2xl bg-white/60 border border-slate-200/70 p-4 sm:col-span-2",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "text-xs text-slate-500",
-                                                        children: "Vencimiento"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                        lineNumber: 384,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "font-semibold text-slate-900",
-                                                        children: selected.fecha_vencimiento || "—"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                        lineNumber: 385,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                lineNumber: 383,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                        lineNumber: 372,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "rounded-2xl bg-white/60 border border-slate-200/70 p-4",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "text-xs text-slate-500 mb-2",
-                                                children: "Liga"
-                                            }, void 0, false, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                lineNumber: 391,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex flex-col sm:flex-row gap-2",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                        readOnly: true,
-                                                        className: " flex-1 rounded-2xl bg-white/70 border border-slate-200/70 px-4 py-3 text-sm text-slate-700 outline-none ",
-                                                        value: buildPublicLink(selected)
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                        lineNumber: 394,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                        onClick: ()=>copiarLink(selected),
-                                                        className: " px-4 py-3 rounded-2xl bg-emerald-600/90 text-white font-semibold shadow-sm hover:bg-emerald-700 transition ",
-                                                        type: "button",
-                                                        children: "Copiar"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                        lineNumber: 407,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                lineNumber: 393,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                        lineNumber: 390,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "rounded-2xl bg-white/60 border border-slate-200/70 p-4",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "text-xs text-slate-500 mb-2",
-                                                children: "Logo"
-                                            }, void 0, false, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                lineNumber: 425,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "w-24 h-24 rounded-3xl bg-white/70 border border-slate-200/70 shadow-sm overflow-hidden flex items-center justify-center",
-                                                children: normalizeUrl(selected.logo_url || selected.url) ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                    src: normalizeUrl(selected.logo_url || selected.url),
-                                                    alt: "logo",
-                                                    className: "w-full h-full object-cover"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                    lineNumber: 428,
-                                                    columnNumber: 23
-                                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "text-xs text-slate-500",
-                                                    children: "IMG"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                    lineNumber: 434,
-                                                    columnNumber: 23
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                                lineNumber: 426,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                        lineNumber: 424,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex justify-end pt-1",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$b$2d$multa$2d$main$2f$multa$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            onClick: ()=>copiarLink(selected),
-                                            className: " px-4 py-3 rounded-2xl bg-gradient-to-r from-emerald-600/95 to-sky-700/95 text-white font-semibold shadow-sm hover:from-emerald-700 hover:to-sky-800 transition ",
-                                            type: "button",
-                                            children: "Copiar link"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                            lineNumber: 440,
-                                            columnNumber: 19
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                        lineNumber: 439,
-                                        columnNumber: 17
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                                lineNumber: 361,
-                                columnNumber: 15
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                        lineNumber: 330,
-                        columnNumber: 13
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-                    lineNumber: 329,
-                    columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-            lineNumber: 130,
+            lineNumber: 256,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Downloads/b-multa-main/multa-main/app/gestion/base/BaseClient.tsx",
-        lineNumber: 129,
+        lineNumber: 255,
         columnNumber: 5
     }, this);
 }

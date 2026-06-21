@@ -1,0 +1,3 @@
+{
+  "/api/collection/casos/[numero_prestamo]/clean/route": "app/api/collection/casos/[numero_prestamo]/clean/route.js"
+}

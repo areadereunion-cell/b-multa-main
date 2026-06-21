@@ -1,6 +1,6 @@
 var R=require("../../../../../../chunks/[turbopack]_runtime.js")("server/app/api/asesor/casos/[numero_prestamo]/generar-liga/route.js")
-R.c("server/chunks/[root-of-the-server]__f8ae9a1d._.js")
-R.c("server/chunks/[root-of-the-server]__fc102a65._.js")
-R.c("server/chunks/36040_app_api_asesor_casos_[numero_prestamo]_generar-liga_route_actions_3b89d97a.js")
-R.m(30740)
-module.exports=R.m(30740).exports
+R.c("server/chunks/[root-of-the-server]__a85bd96e._.js")
+R.c("server/chunks/[root-of-the-server]__db2b3a24._.js")
+R.c("server/chunks/bec2d_app_api_asesor_casos_[numero_prestamo]_generar-liga_route_actions_0bd7aac6.js")
+R.m(48042)
+module.exports=R.m(48042).exports

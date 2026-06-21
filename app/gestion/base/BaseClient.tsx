@@ -20,63 +20,129 @@ type Row = {
   public_id?: string | null;
 
   link?: string | null;
-   pagado?: boolean; // 🔥 IMPORTANTE
+  pagado?: boolean;
 };
 
 const normalizeUrl = (u: any) => {
   if (!u) return null;
-  let s = String(u).trim().replaceAll("\\", "/");
 
-  if (/^https?:\/\//i.test(s)) return s;
+  let s = String(u)
+    .trim()
+    .replaceAll("\\", "/");
 
-  if (s.startsWith("public/uploads/")) s = s.replace("public/", "");
-  if (s.startsWith("uploads/")) s = `/${s}`;
+  if (/^https?:\/\//i.test(s))
+    return s;
 
-  if (s.startsWith("/")) return s;
+  if (
+    s.startsWith(
+      "public/uploads/"
+    )
+  )
+    s = s.replace(
+      "public/",
+      ""
+    );
+
+  if (s.startsWith("uploads/"))
+    s = `/${s}`;
+
+  if (s.startsWith("/"))
+    return s;
 
   return `/${s}`;
 };
 
 const PUBLIC_BASE_PATH = "/pay";
 
-function buildPublicLink(row: Row) {
-  const origin = typeof window !== "undefined" ? window.location.origin : "";
+function buildPublicLink(
+  row: Row
+) {
+  const origin =
+    typeof window !== "undefined"
+      ? window.location.origin
+      : "";
 
   if (row.link) {
     try {
-      if (/^https?:\/\//i.test(row.link)) {
-        const u = new URL(row.link);
+      if (
+        /^https?:\/\//i.test(
+          row.link
+        )
+      ) {
+        const u = new URL(
+          row.link
+        );
+
         return `${origin}${u.pathname}${u.search}${u.hash}`;
       }
-      const rel = row.link.startsWith("/") ? row.link : `/${row.link}`;
+
+      const rel =
+        row.link.startsWith("/")
+          ? row.link
+          : `/${row.link}`;
+
       return `${origin}${rel}`;
     } catch {
-      const rel = row.link.startsWith("/") ? row.link : `/${row.link}`;
+      const rel =
+        row.link.startsWith("/")
+          ? row.link
+          : `/${row.link}`;
+
       return `${origin}${rel}`;
     }
   }
 
-  const code = row.uuid?.trim() || row.token?.trim() || row.public_id?.trim() || null;
-  if (code) return `${origin}${PUBLIC_BASE_PATH}/${encodeURIComponent(code)}`;
+  const code =
+    row.uuid?.trim() ||
+    row.token?.trim() ||
+    row.public_id?.trim() ||
+    null;
 
-  return `${origin}${PUBLIC_BASE_PATH}/${encodeURIComponent(String(row.id))}`;
+  if (code)
+    return `${origin}${PUBLIC_BASE_PATH}/${encodeURIComponent(
+      code
+    )}`;
+
+  return `${origin}${PUBLIC_BASE_PATH}/${encodeURIComponent(
+    String(row.id)
+  )}`;
 }
 
 export default function BaseClient() {
-  const [rows, setRows] = useState<Row[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [rows, setRows] =
+    useState<Row[]>([]);
 
-  const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState<Row | null>(null);
+  const [loading, setLoading] =
+    useState(true);
 
-  const [toast, setToast] = useState<string>("");
+  const [open, setOpen] =
+    useState(false);
+
+  const [selected, setSelected] =
+    useState<Row | null>(null);
+
+  const [toast, setToast] =
+    useState<string>("");
 
   async function fetchList() {
     setLoading(true);
+
     try {
-      const res = await fetch("/api/bases-pago/listar", { cache: "no-store" });
-      const json = await res.json();
-      setRows(Array.isArray(json) ? json : []);
+      const res = await fetch(
+        "/api/bases-pago/listar",
+        {
+          cache: "no-store",
+        }
+      );
+
+      const json =
+        await res.json();
+
+      setRows(
+        Array.isArray(json)
+          ? json
+          : []
+      );
     } finally {
       setLoading(false);
     }
@@ -87,56 +153,120 @@ export default function BaseClient() {
   }, []);
 
   async function ver(id: number) {
-    const res = await fetch(`/api/bases-pago/ver/${id}`, { cache: "no-store" });
-    const json = await res.json();
+    const res = await fetch(
+      `/api/bases-pago/ver/${id}`,
+      {
+        cache: "no-store",
+      }
+    );
+
+    const json =
+      await res.json();
+
     if (!res.ok) {
-      setToast(json?.error || "Error al ver");
-      setTimeout(() => setToast(""), 2000);
+      setToast(
+        json?.error ||
+          "Error al ver"
+      );
+
+      setTimeout(
+        () => setToast(""),
+        2000
+      );
+
       return;
     }
+
     setSelected(json);
     setOpen(true);
   }
 
   async function borrarTodo() {
-    const ok = confirm("¿Borrar TODAS las plantillas temporales?");
+    const ok = confirm(
+      "¿Borrar TODAS las plantillas temporales?"
+    );
+
     if (!ok) return;
 
-    const res = await fetch("/api/bases-pago/borrar-todo", { method: "DELETE" });
-    const json = await res.json().catch(() => ({}));
+    const res = await fetch(
+      "/api/bases-pago/borrar-todo",
+      {
+        method: "DELETE",
+      }
+    );
+
+    const json =
+      await res
+        .json()
+        .catch(() => ({}));
+
     if (!res.ok) {
-      setToast((json as any)?.error || "No se pudo borrar todo");
-      setTimeout(() => setToast(""), 2000);
+      setToast(
+        (json as any)?.error ||
+          "No se pudo borrar todo"
+      );
+
+      setTimeout(
+        () => setToast(""),
+        2000
+      );
+
       return;
     }
+
     setToast("Borradas ✔");
-    setTimeout(() => setToast(""), 2000);
+
+    setTimeout(
+      () => setToast(""),
+      2000
+    );
+
     setOpen(false);
     setSelected(null);
+
     await fetchList();
   }
 
-  async function copiarLink(row: Row) {
-    const link = buildPublicLink(row);
-    await navigator.clipboard.writeText(link);
+  async function copiarLink(
+    row: Row
+  ) {
+    const link =
+      buildPublicLink(row);
+
+    await navigator.clipboard.writeText(
+      link
+    );
+
     setToast("Link copiado ✔");
-    setTimeout(() => setToast(""), 1500);
+
+    setTimeout(
+      () => setToast(""),
+      1500
+    );
   }
 
-  const title = useMemo(() => "Bases (plantillas_temporales)", []);
+  const title = useMemo(
+    () =>
+      "Bases (plantillas_temporales)",
+    []
+  );
 
   return (
     <div className="min-h-screen text-slate-900 bg-gradient-to-b from-slate-50 via-sky-50/60 to-slate-100 px-6 sm:px-10 py-8 sm:py-10">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">{title}</h1>
-            <p className="text-slate-500 mt-2">Listado de ligas de pago guardadas.</p>
+            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
+              {title}
+            </h1>
+
+            <p className="text-slate-500 mt-2">
+              Listado de ligas de pago
+              guardadas.
+            </p>
           </div>
 
           <div className="flex items-center gap-2">
-            
             <button
               onClick={fetchList}
               className="
@@ -169,7 +299,6 @@ export default function BaseClient() {
           </div>
         </div>
 
-        {/* Toast */}
         {toast && (
           <div
             className="
@@ -186,7 +315,6 @@ export default function BaseClient() {
           </div>
         )}
 
-        {/* Card principal */}
         <section
           className="
             mt-8
@@ -198,19 +326,37 @@ export default function BaseClient() {
           "
         >
           <div className="p-4 sm:p-5 border-b border-slate-200/60 flex items-center justify-between">
-            <div className="font-semibold text-slate-900">Plantillas</div>
-            <span className="text-sm text-slate-500">{rows.length} registros</span>
+            <div className="font-semibold text-slate-900">
+              Plantillas
+            </div>
+
+            <span className="text-sm text-slate-500">
+              {rows.length} registros
+            </span>
           </div>
 
           {loading ? (
-            <div className="p-6 text-slate-500">Cargando…</div>
+            <div className="p-6 text-slate-500">
+              Cargando…
+            </div>
           ) : rows.length === 0 ? (
-            <div className="p-6 text-slate-500">No hay registros.</div>
+            <div className="p-6 text-slate-500">
+              No hay registros.
+            </div>
           ) : (
             <div className="divide-y divide-slate-200/60">
               {rows.map((r) => {
-                const logo = r.logo_url || r.url || null;
-                const logoSrc = logo ? normalizeUrl(logo) : null;
+                const logo =
+                  r.logo_url ||
+                  r.url ||
+                  null;
+
+                const logoSrc =
+                  logo
+                    ? normalizeUrl(
+                        logo
+                      )
+                    : null;
 
                 return (
                   <div
@@ -233,28 +379,43 @@ export default function BaseClient() {
                         "
                       >
                         {logoSrc ? (
-                          <img src={logoSrc} alt="logo" className="w-full h-full object-cover" />
+                          <img
+                            src={logoSrc}
+                            alt="logo"
+                            className="w-full h-full object-cover"
+                          />
                         ) : (
-                          <div className="text-xs text-slate-500">IMG</div>
+                          <div className="text-xs text-slate-500">
+                            IMG
+                          </div>
                         )}
                       </div>
 
                       <div className="min-w-0">
                         <div className="font-semibold text-slate-900 truncate">
-                          {r.subproducto || "—"}
+                          {r.subproducto ||
+                            "—"}
                         </div>
+
                         <div className="text-sm text-slate-600 truncate">
-                          Cuenta: {r.cuenta_bancaria || "—"}
+                          Cuenta:{" "}
+                          {r.cuenta_bancaria ||
+                            "—"}
                         </div>
+
                         <div className="text-xs text-slate-500 truncate">
-                          Asesor: {r.asesor_nombre || "—"}
+                          Asesor:{" "}
+                          {r.asesor_nombre ||
+                            "—"}
                         </div>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-2">
                       <button
-                        onClick={() => copiarLink(r)}
+                        onClick={() =>
+                          copiarLink(r)
+                        }
                         className="
                           px-3 py-2 rounded-xl
                           bg-emerald-600/90 text-white text-sm font-semibold
@@ -268,7 +429,9 @@ export default function BaseClient() {
                       </button>
 
                       <button
-                        onClick={() => ver(r.id)}
+                        onClick={() =>
+                          ver(r.id)
+                        }
                         className="
                           px-3 py-2 rounded-xl
                           bg-sky-600/90 text-white text-sm font-semibold
@@ -280,42 +443,216 @@ export default function BaseClient() {
                       >
                         Ver
                       </button>
-                        {/* 🔥 BOTÓN NUEVO */}
-  <button
-    onClick={async () => {
-      try {
-        const token = r.token || r.uuid || r.public_id;
 
-        if (!token) {
-          setToast("No hay token ❌");
-          setTimeout(() => setToast(""), 1500);
-          return;
-        }
+                      <button
+                        onClick={async () => {
+                          try {
+                            const token =
+                              r.token ||
+                              r.uuid ||
+                              r.public_id;
 
-        const res = await fetch("/api/plantillas/marcar-pagado", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ token }),
-        });
+                            if (
+                              !token
+                            ) {
+                              setToast(
+                                "No hay token ❌"
+                              );
 
-        if (!res.ok) throw new Error();
+                              setTimeout(
+                                () =>
+                                  setToast(
+                                    ""
+                                  ),
+                                1500
+                              );
 
-        setToast("Pagado ✔");
-        setTimeout(() => setToast(""), 1500);
+                              return;
+                            }
 
-        fetchList(); // 🔄 refresca
-      } catch (e) {
-        console.error(e);
-        setToast("Error ❌");
-        setTimeout(() => setToast(""), 1500);
-      }
-    }}
-    className="px-3 py-2 rounded-xl bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700"
-  >
-    Pagado
-  </button>     
+                            const res =
+                              await fetch(
+                                "/api/plantillas/marcar-pagado",
+                                {
+                                  method:
+                                    "POST",
+                                  headers:
+                                    {
+                                      "Content-Type":
+                                        "application/json",
+                                    },
+                                  body: JSON.stringify(
+                                    {
+                                      token,
+                                    }
+                                  ),
+                                }
+                              );
+
+                            if (
+                              !res.ok
+                            )
+                              throw new Error();
+
+                            setToast(
+                              "Pagado ✔"
+                            );
+
+                            setTimeout(
+                              () =>
+                                setToast(
+                                  ""
+                                ),
+                              1500
+                            );
+
+                            fetchList();
+                          } catch (e) {
+                            console.error(
+                              e
+                            );
+
+                            setToast(
+                              "Error ❌"
+                            );
+
+                            setTimeout(
+                              () =>
+                                setToast(
+                                  ""
+                                ),
+                              1500
+                            );
+                          }
+                        }}
+                        className="
+                          px-3 py-2 rounded-xl
+                          bg-purple-600 text-white
+                          text-sm font-semibold
+                          hover:bg-purple-700
+                          transition
+                        "
+                        type="button"
+                      >
+                        Pagado
+                      </button>
+
+                      <button
+                        onClick={async () => {
+                          try {
+                            const ok =
+                              confirm(
+                                "¿Seguro que deseas borrar este link?"
+                              );
+
+                            if (
+                              !ok
+                            )
+                              return;
+
+                            const token =
+                              r.token ||
+                              r.uuid ||
+                              r.public_id;
+
+                            if (
+                              !token
+                            ) {
+                              setToast(
+                                "No hay token ❌"
+                              );
+
+                              setTimeout(
+                                () =>
+                                  setToast(
+                                    ""
+                                  ),
+                                1500
+                              );
+
+                              return;
+                            }
+
+
+                            const res =
+                              await fetch(
+                                `/api/plantillas/eliminar/${encodeURIComponent(
+                                  String(r.id)
+                                )}`,
+                                {
+                                  method: "DELETE",
+                                }
+                              );
+
+                            const json =
+                              await res
+                                .json()
+                                .catch(
+                                  () =>
+                                    ({})
+                                );
+
+                            if (
+                              !res.ok
+                            ) {
+                              setToast(
+                                json?.error ||
+                                  "Error ❌"
+                              );
+
+                              setTimeout(
+                                () =>
+                                  setToast(
+                                    ""
+                                  ),
+                                2000
+                              );
+
+                              return;
+                            }
+
+                            setToast(
+                              "Link borrado ✔"
+                            );
+
+                            setTimeout(
+                              () =>
+                                setToast(
+                                  ""
+                                ),
+                              1500
+                            );
+
+                            fetchList();
+                          } catch (e) {
+                            console.error(
+                              e
+                            );
+
+                            setToast(
+                              "Error ❌"
+                            );
+
+                            setTimeout(
+                              () =>
+                                setToast(
+                                  ""
+                                ),
+                              1500
+                            );
+                          }
+                        }}
+                        className="
+                          px-3 py-2 rounded-xl
+                          bg-red-600 text-white
+                          text-sm font-semibold
+                          hover:bg-red-700
+                          transition
+                        "
+                        type="button"
+                      >
+                        Borrar
+                      </button>
                     </div>
                   </div>
                 );
@@ -323,139 +660,6 @@ export default function BaseClient() {
             </div>
           )}
         </section>
-
-        {/* MODAL VER */}
-        {open && selected && (
-          <div className="fixed inset-0 z-[10000] bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
-            <div
-              className="
-                w-full max-w-2xl
-                rounded-3xl
-                bg-white/70 backdrop-blur-xl
-                border border-slate-200/70
-                shadow-[0_20px_60px_rgba(15,23,42,0.18)]
-                overflow-hidden
-              "
-            >
-              <div className="p-4 sm:p-5 border-b border-slate-200/70 flex items-center justify-between">
-                <div className="font-semibold text-slate-900">Vista</div>
-                <button
-                  onClick={() => {
-                    setOpen(false);
-                    setSelected(null);
-                  }}
-                  className="
-                    px-4 py-2 rounded-2xl
-                    bg-white/60
-                    border border-slate-200/70
-                    text-slate-700 font-medium
-                    hover:bg-white
-                    transition
-                  "
-                  type="button"
-                >
-                  Cerrar
-                </button>
-              </div>
-
-              <div className="p-4 sm:p-6 space-y-4">
-                <div className="text-xs text-slate-500">ID: {selected.id}</div>
-
-                <div className="text-2xl sm:text-3xl font-semibold text-slate-900">
-                  {selected.subproducto || "—"}
-                </div>
-
-                <div className="text-slate-700">
-                  Cuenta: <b>{selected.cuenta_bancaria || "—"}</b>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div className="rounded-2xl bg-white/60 border border-slate-200/70 p-4">
-                    <div className="text-xs text-slate-500">Monto</div>
-                    <div className="font-semibold text-slate-900">{selected.monto ?? "—"}</div>
-                  </div>
-
-                  <div className="rounded-2xl bg-white/60 border border-slate-200/70 p-4">
-                    <div className="text-xs text-slate-500">Importe</div>
-                    <div className="font-semibold text-slate-900">{selected.importe_pagar ?? "—"}</div>
-                  </div>
-
-                  <div className="rounded-2xl bg-white/60 border border-slate-200/70 p-4 sm:col-span-2">
-                    <div className="text-xs text-slate-500">Vencimiento</div>
-                    <div className="font-semibold text-slate-900">{selected.fecha_vencimiento || "—"}</div>
-                  </div>
-                </div>
-
-                {/* Liga */}
-                <div className="rounded-2xl bg-white/60 border border-slate-200/70 p-4">
-                  <div className="text-xs text-slate-500 mb-2">Liga</div>
-
-                  <div className="flex flex-col sm:flex-row gap-2">
-                    <input
-                      readOnly
-                      className="
-                        flex-1
-                        rounded-2xl
-                        bg-white/70
-                        border border-slate-200/70
-                        px-4 py-3
-                        text-sm text-slate-700
-                        outline-none
-                      "
-                      value={buildPublicLink(selected)}
-                    />
-                    <button
-                      onClick={() => copiarLink(selected)}
-                      className="
-                        px-4 py-3 rounded-2xl
-                        bg-emerald-600/90 text-white font-semibold
-                        shadow-sm
-                        hover:bg-emerald-700
-                        transition
-                      "
-                      type="button"
-                    >
-                      Copiar
-                    </button>
-                  </div>
-                </div>
-
-                {/* Logo */}
-                <div className="rounded-2xl bg-white/60 border border-slate-200/70 p-4">
-                  <div className="text-xs text-slate-500 mb-2">Logo</div>
-                  <div className="w-24 h-24 rounded-3xl bg-white/70 border border-slate-200/70 shadow-sm overflow-hidden flex items-center justify-center">
-                    {normalizeUrl(selected.logo_url || selected.url) ? (
-                      <img
-                        src={normalizeUrl(selected.logo_url || selected.url) as string}
-                        alt="logo"
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="text-xs text-slate-500">IMG</div>
-                    )}
-                  </div>
-                </div>
-
-                <div className="flex justify-end pt-1">
-                  <button
-                    onClick={() => copiarLink(selected)}
-                    className="
-                      px-4 py-3 rounded-2xl
-                      bg-gradient-to-r from-emerald-600/95 to-sky-700/95
-                      text-white font-semibold
-                      shadow-sm
-                      hover:from-emerald-700 hover:to-sky-800
-                      transition
-                    "
-                    type="button"
-                  >
-                    Copiar link
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

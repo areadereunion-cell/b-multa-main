@@ -69,6 +69,14 @@
       "namedRegex": "^/api/collection/casos/(?<nxtPnumero_prestamo>[^/]+?)(?:/)?$"
     },
     {
+      "page": "/api/collection/casos/[numero_prestamo]/clean",
+      "regex": "^/api/collection/casos/([^/]+?)/clean(?:/)?$",
+      "routeKeys": {
+        "nxtPnumero_prestamo": "nxtPnumero_prestamo"
+      },
+      "namedRegex": "^/api/collection/casos/(?<nxtPnumero_prestamo>[^/]+?)/clean(?:/)?$"
+    },
+    {
       "page": "/api/collection/casos/[numero_prestamo]/generar-liga",
       "regex": "^/api/collection/casos/([^/]+?)/generar\\-liga(?:/)?$",
       "routeKeys": {
@@ -158,6 +166,14 @@
         "nxtPitemId": "nxtPitemId"
       },
       "namedRegex": "^/api/listas/(?<nxtPid>[^/]+?)/items/(?<nxtPitemId>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/plantillas/eliminar/[id]",
+      "regex": "^/api/plantillas/eliminar/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/plantillas/eliminar/(?<nxtPid>[^/]+?)(?:/)?$"
     },
     {
       "page": "/api/plantillas/[id]",
