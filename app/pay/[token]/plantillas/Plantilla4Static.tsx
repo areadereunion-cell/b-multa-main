@@ -20,12 +20,28 @@ type Data = {
 
   liga_pago_label?: string | null;
   cuenta_bancaria?: string | null;
+
+  segmento?: string | null;
 };
 
-function CopyIcon({ className = "" }: { className?: string }) {
+function CopyIcon({
+  className = "",
+}: {
+  className?: string;
+}) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M9 9h10v10H9V9Z" stroke="currentColor" strokeWidth="1.8" />
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M9 9h10v10H9V9Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+
       <path
         d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
         stroke="currentColor"
@@ -35,31 +51,79 @@ function CopyIcon({ className = "" }: { className?: string }) {
   );
 }
 
-function CheckIcon({ className = "" }: { className?: string }) {
+function CheckIcon({
+  className = "",
+}: {
+  className?: string;
+}) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="1.9" />
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M20 6 9 17l-5-5"
+        stroke="currentColor"
+        strokeWidth="1.9"
+      />
     </svg>
   );
 }
 
-function formatMoney(v?: string | null) {
-  if (!v) return "0.0";
-  const n = Number(String(v).replace(/[^\d.-]/g, ""));
-  if (Number.isNaN(n)) return String(v);
-  return n.toLocaleString("en-US", {
-    minimumFractionDigits: 1,
-    maximumFractionDigits: 1,
-  });
+function norm(s: unknown) {
+  return String(s ?? "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 }
 
-function formatDate(v?: string | null) {
-  if (!v) return "dd-mm-aaaa";
-  const clean = String(v).slice(0, 10);
-  if (!clean.includes("-")) return clean;
+function formatMoney(
+  v?: string | null,
+  currency = "MXN"
+) {
+  if (!v) {
+    return `${currency} 0.0`;
+  }
 
-  const [y, m, d] = clean.split("-");
-  if (!y || !m || !d) return clean;
+  const n = Number(
+    String(v).replace(/[^\d.-]/g, "")
+  );
+
+  if (Number.isNaN(n)) {
+    return `${currency} ${v}`;
+  }
+
+  return `${currency} ${n.toLocaleString(
+    "en-US",
+    {
+      minimumFractionDigits: 1,
+      maximumFractionDigits: 1,
+    }
+  )}`;
+}
+
+function formatDate(
+  v?: string | null
+) {
+  if (!v) return "dd-mm-aaaa";
+
+  const clean = String(v).slice(0, 10);
+
+  if (!clean.includes("-")) {
+    return clean;
+  }
+
+  const [y, m, d] =
+    clean.split("-");
+
+  if (!y || !m || !d) {
+    return clean;
+  }
+
   return `${d}-${m}-${y}`;
 }
 
@@ -68,11 +132,20 @@ export default function Plantilla4Static({
 }: {
   token?: string;
 }) {
-  const params = useParams<{ token?: string }>();
-  const token = String(tokenProp || params?.token || "").trim();
+  const params =
+    useParams<{ token?: string }>();
 
-  const [data, setData] = useState<Data | null>(null);
-  const [copied, setCopied] = useState(false);
+  const token = String(
+    tokenProp ||
+      params?.token ||
+      ""
+  ).trim();
+
+  const [data, setData] =
+    useState<Data | null>(null);
+
+  const [copied, setCopied] =
+    useState(false);
 
   useEffect(() => {
     if (!token) return;
@@ -82,16 +155,29 @@ export default function Plantilla4Static({
     (async () => {
       try {
         const res = await fetch(
-          `/api/plantillas-temporales-3/${encodeURIComponent(token)}`,
-          { cache: "no-store" }
+          `/api/plantillas-temporales-3/${encodeURIComponent(
+            token
+          )}`,
+          {
+            cache: "no-store",
+          }
         );
 
-        const json = await res.json().catch(() => ({}));
-        const payload = json?.data ?? json;
+        const json =
+          await res
+            .json()
+            .catch(() => ({}));
 
-        if (!cancel) setData(payload);
+        const payload =
+          json?.data ?? json;
+
+        if (!cancel) {
+          setData(payload);
+        }
       } catch {
-        if (!cancel) setData(null);
+        if (!cancel) {
+          setData(null);
+        }
       }
     })();
 
@@ -100,36 +186,140 @@ export default function Plantilla4Static({
     };
   }, [token]);
 
-  async function handleCopy(text: string) {
+  async function handleCopy(
+    text: string
+  ) {
     if (!text) return;
 
     try {
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(
+        text
+      );
+
       setCopied(true);
-      setTimeout(() => setCopied(false), 1200);
+
+      setTimeout(
+        () => setCopied(false),
+        1200
+      );
     } catch {
-      const textarea = document.createElement("textarea");
+      const textarea =
+        document.createElement(
+          "textarea"
+        );
+
       textarea.value = text;
-      document.body.appendChild(textarea);
+
+      document.body.appendChild(
+        textarea
+      );
+
       textarea.select();
+
       document.execCommand("copy");
-      document.body.removeChild(textarea);
+
+      document.body.removeChild(
+        textarea
+      );
+
       setCopied(true);
-      setTimeout(() => setCopied(false), 1200);
+
+      setTimeout(
+        () => setCopied(false),
+        1200
+      );
     }
   }
 
   if (!data) {
-    return <div className="text-white p-6">Cargando...</div>;
+    return (
+      <div className="text-white p-6">
+        Cargando...
+      </div>
+    );
   }
 
-  const producto = data.producto_label || data.producto || "Producto";
-  const monto = data.importe_pagar || data.monto || "0";
-  const fecha = formatDate(data.fecha_vencimiento);
-  const nombre = data.nombre_cliente || "—";
-  const telefono = data.telefono_cliente || "—";
-  const metodo = data.metodo_pago_label || data.metodo_pago || "SPEI";
-  const cuenta = data.liga_pago_label || data.cuenta_bancaria || ".";
+  // ============================================================
+  // PAÍS
+  // ============================================================
+
+  const segmento = norm(
+    data.segmento
+  );
+
+  let pais:
+    | "mexico"
+    | "colombia"
+    | "peru" = "mexico";
+
+  if (
+    segmento === "colombia" ||
+    segmento.includes("colombia") ||
+    segmento === "co"
+  ) {
+    pais = "colombia";
+  } else if (
+    segmento === "peru" ||
+    segmento.includes("peru") ||
+    segmento === "pe"
+  ) {
+    pais = "peru";
+  }
+
+  // ============================================================
+  // MONEDA Y PAÍS
+  // ============================================================
+
+  const moneda =
+    pais === "colombia"
+      ? "COP"
+      : pais === "peru"
+        ? "PEN"
+        : "MXN";
+
+  const bandera =
+    pais === "colombia"
+      ? "🇨🇴"
+      : pais === "peru"
+        ? "🇵🇪"
+        : "🇲🇽";
+
+  // ============================================================
+  // DATOS
+  // ============================================================
+
+  const producto =
+    data.producto_label ||
+    data.producto ||
+    "Producto";
+
+  const monto =
+    data.importe_pagar ||
+    data.monto ||
+    "0";
+
+  const fecha =
+    formatDate(
+      data.fecha_vencimiento
+    );
+
+  const nombre =
+    data.nombre_cliente ||
+    "—";
+
+  const telefono =
+    data.telefono_cliente ||
+    "—";
+
+  const metodo =
+    data.metodo_pago_label ||
+    data.metodo_pago ||
+    "SPEI";
+
+  const cuenta =
+    data.liga_pago_label ||
+    data.cuenta_bancaria ||
+    ".";
 
   return (
     <div className="min-h-screen bg-[#e9e9e9] flex items-center justify-center px-3 py-6">
@@ -137,24 +327,39 @@ export default function Plantilla4Static({
         {/* HEADER */}
         <div className="flex items-center justify-between mb-4">
           <div className="text-[28px] font-semibold text-black">
-            {producto} <span className="text-green-500">Crédito</span>
+            {producto}{" "}
+            <span className="text-green-500">
+              Crédito
+            </span>
           </div>
-          <div className="text-[22px]">🇲🇽</div>
+
+          <div className="text-[22px]">
+            {bandera}
+          </div>
         </div>
 
         {/* CARD PRINCIPAL */}
         <div className="bg-[#5c5c5c] rounded-2xl p-5 text-white shadow-lg">
-          <div className="text-[22px] opacity-80 mb-2">Monto a pagar:</div>
+          <div className="text-[22px] opacity-80 mb-2">
+            Monto a pagar:
+          </div>
 
           <div className="flex items-center justify-between gap-2">
             <div className="bg-transparent text-[36px] font-semibold w-full">
-              {formatMoney(monto)}
+              {formatMoney(
+                monto,
+                moneda
+              )}
             </div>
-            <span className="text-[18px] shrink-0">MXN</span>
+
+            <span className="text-[18px] shrink-0">
+              {moneda}
+            </span>
           </div>
 
           <div className="mt-4 text-[16px] opacity-80">
-            fecha de rembolso: {fecha}
+            fecha de rembolso:{" "}
+            {fecha}
           </div>
 
           {/* ALERTA */}
@@ -162,6 +367,7 @@ export default function Plantilla4Static({
             <div className="bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">
               !
             </div>
+
             <div className="text-[16px] leading-tight">
               El rembolso a tiempo y forma aumenta su cupo de crédito
             </div>
@@ -171,13 +377,23 @@ export default function Plantilla4Static({
         {/* CLIENTE */}
         <div className="mt-4 bg-white rounded-xl p-4 shadow">
           <div className="flex justify-between gap-4 text-[16px]">
-            <span className="font-semibold text-gray-600 shrink-0">Cliente:</span>
-            <span className="text-black text-right break-words">{nombre}</span>
+            <span className="font-semibold text-gray-600 shrink-0">
+              Cliente:
+            </span>
+
+            <span className="text-black text-right break-words">
+              {nombre}
+            </span>
           </div>
 
           <div className="flex justify-between gap-4 mt-2 text-[16px]">
-            <span className="font-semibold text-gray-600 shrink-0">Número:</span>
-            <span className="text-gray-800  text-right break-words">{telefono}</span>
+            <span className="font-semibold text-gray-600 shrink-0">
+              Número:
+            </span>
+
+            <span className="text-gray-800 text-right break-words">
+              {telefono}
+            </span>
           </div>
         </div>
 
@@ -206,9 +422,19 @@ export default function Plantilla4Static({
 
             <button
               type="button"
-              onClick={() => handleCopy(cuenta)}
-              title={copied ? "Copiado" : "Copiar"}
-              aria-label={copied ? "Copiado" : "Copiar cuenta"}
+              onClick={() =>
+                handleCopy(cuenta)
+              }
+              title={
+                copied
+                  ? "Copiado"
+                  : "Copiar"
+              }
+              aria-label={
+                copied
+                  ? "Copiado"
+                  : "Copiar cuenta"
+              }
               className="inline-flex items-center justify-center w-9 h-9 rounded-lg text-[#2E3FA8] hover:bg-black/5 transition"
             >
               {copied ? (

@@ -23,8 +23,16 @@ export default function Plantilla7(props: PlantillaProps) {
     metodoPagoLabel,
     cuentaBancaria,
     loadingListas,
+    pais,
     onSubmit,
   } = props;
+
+  const moneda =
+    pais === "colombia"
+      ? "COP"
+      : pais === "peru"
+        ? "PEN"
+        : "MXN";
 
   return (
     <div className="min-h-screen bg-[#dcdcdc] flex items-center justify-center px-3 py-6">
@@ -63,20 +71,24 @@ export default function Plantilla7(props: PlantillaProps) {
 
                 <input
                   value={importePagar}
-                  onChange={(e) => setImportePagar(e.target.value)}
+                  onChange={(e) =>
+                    setImportePagar(e.target.value)
+                  }
                   disabled={disabled}
                   placeholder="0"
                   className="w-full max-w-[220px] bg-transparent outline-none text-[42px] sm:text-[54px] leading-none text-white text-center placeholder:text-white/70"
                 />
 
                 <span className="text-[42px] sm:text-[54px] leading-none text-white font-light shrink-0">
-                  MXN
+                  {moneda}
                 </span>
               </div>
 
               <div className="shrink-0">
                 <div className="w-[72px] h-[72px] rounded-[22px] border-2 border-white/40 flex items-center justify-center bg-white/10">
-                  <span className="text-white text-[34px] leading-none">▶</span>
+                  <span className="text-white text-[34px] leading-none">
+                    ▶
+                  </span>
                 </div>
               </div>
             </div>
@@ -89,7 +101,9 @@ export default function Plantilla7(props: PlantillaProps) {
               <input
                 type="date"
                 value={fechaVencimiento}
-                onChange={(e) => setFechaVencimiento(e.target.value)}
+                onChange={(e) =>
+                  setFechaVencimiento(e.target.value)
+                }
                 disabled={disabled}
                 className="bg-transparent outline-none text-right text-[22px] sm:text-[26px] font-semibold text-[#3d3838]"
               />
@@ -113,6 +127,7 @@ export default function Plantilla7(props: PlantillaProps) {
               <span className="text-[24px] sm:text-[28px] font-bold text-[#555] shrink-0">
                 Cliente:
               </span>
+
               <span className="text-[22px] sm:text-[24px] text-black text-right break-words">
                 {nombre || "—"}
               </span>
@@ -122,6 +137,7 @@ export default function Plantilla7(props: PlantillaProps) {
               <span className="text-[24px] sm:text-[28px] font-bold text-[#555] shrink-0">
                 Número:
               </span>
+
               <span className="text-[22px] sm:text-[24px] text-black text-right break-words">
                 {telefono || "—"}
               </span>
@@ -143,15 +159,26 @@ export default function Plantilla7(props: PlantillaProps) {
 
               <select
                 value={metodoPagoId}
-                onChange={(e) => setMetodoPagoId(e.target.value)}
-                disabled={disabled || loadingListas}
+                onChange={(e) =>
+                  setMetodoPagoId(e.target.value)
+                }
+                disabled={
+                  disabled ||
+                  loadingListas
+                }
                 className="max-w-full bg-transparent outline-none text-center text-[44px] sm:text-[56px] font-black text-[#3441b2] appearance-none"
               >
                 <option value="">
-                  {loadingListas ? "Cargando..." : "Selecciona método"}
+                  {loadingListas
+                    ? "Cargando..."
+                    : "Selecciona método"}
                 </option>
+
                 {optionsMetodo.map((o) => (
-                  <option key={o.id} value={o.id}>
+                  <option
+                    key={o.id}
+                    value={o.id}
+                  >
                     {o.label}
                   </option>
                 ))}
@@ -176,15 +203,26 @@ export default function Plantilla7(props: PlantillaProps) {
               <div className="flex items-center justify-center gap-3 flex-wrap">
                 <select
                   value={cuentaId}
-                  onChange={(e) => setCuentaId(e.target.value)}
-                  disabled={disabled || loadingListas}
+                  onChange={(e) =>
+                    setCuentaId(e.target.value)
+                  }
+                  disabled={
+                    disabled ||
+                    loadingListas
+                  }
                   className="max-w-full bg-transparent outline-none text-center text-[18px] sm:text-[20px] font-semibold text-[#1f3f86] appearance-none"
                 >
                   <option value="">
-                    {loadingListas ? "Cargando..." : "Selecciona cuenta"}
+                    {loadingListas
+                      ? "Cargando..."
+                      : "Selecciona cuenta"}
                   </option>
+
                   {optionsCuenta.map((o) => (
-                    <option key={o.id} value={o.id}>
+                    <option
+                      key={o.id}
+                      value={o.id}
+                    >
                       {o.label}
                     </option>
                   ))}
@@ -206,7 +244,9 @@ export default function Plantilla7(props: PlantillaProps) {
             type="button"
             className="mt-6 w-full rounded-xl bg-[#ff1a23] py-3 text-base font-semibold text-white shadow-md disabled:opacity-60"
           >
-            {saving ? "Generando link..." : "Confirmar y Generar Link"}
+            {saving
+              ? "Generando link..."
+              : "Confirmar y Generar Link"}
           </button>
         </div>
       </div>

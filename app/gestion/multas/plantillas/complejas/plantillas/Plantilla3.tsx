@@ -12,6 +12,7 @@ export default function Plantilla3(props: PlantillaProps) {
     fechaVencimiento,
     setFechaVencimiento,
     diasVencidos,
+    pais,
     metodoPagoId,
     setMetodoPagoId,
     cuentaId,
@@ -29,6 +30,20 @@ export default function Plantilla3(props: PlantillaProps) {
     onSubmit,
   } = props;
 
+  const moneda =
+    pais === "colombia"
+      ? "COP"
+      : pais === "peru"
+        ? "PEN"
+        : "MXN";
+
+  const paisCodigo =
+    pais === "colombia"
+      ? "CO"
+      : pais === "peru"
+        ? "PE"
+        : "MX";
+
   return (
     <div className="min-h-screen w-full bg-[#F3A316] flex items-center justify-center px-3 py-6">
       <div className="w-full max-w-[420px]">
@@ -41,7 +56,7 @@ export default function Plantilla3(props: PlantillaProps) {
           <div className="relative px-5 pt-7 pb-5">
             <div className="absolute inset-x-0 top-3 flex justify-center pointer-events-none select-none">
               <div className="text-[86px] font-black leading-none text-[#ECECEC]">
-                MX
+                {paisCodigo}
               </div>
             </div>
 
@@ -65,7 +80,7 @@ export default function Plantilla3(props: PlantillaProps) {
               />
 
               <div className="mt-2 text-[16px] sm:text-[18px] text-[#B7B7B7]">
-                Monto de rembolso&nbsp; (MXN)
+                Monto de rembolso&nbsp; ({moneda})
               </div>
             </div>
           </div>
@@ -76,6 +91,7 @@ export default function Plantilla3(props: PlantillaProps) {
               <span className="text-[18px] sm:text-[20px] text-[#B7B7B7]">
                 Valor abonado
               </span>
+
               <span className="text-right text-[18px] sm:text-[20px] font-semibold text-[#B7B7B7]">
                 $ 0
               </span>
@@ -85,6 +101,7 @@ export default function Plantilla3(props: PlantillaProps) {
               <span className="text-[18px] sm:text-[20px] text-[#B7B7B7]">
                 Fecha de rembolso
               </span>
+
               <input
                 type="date"
                 value={fechaVencimiento}
@@ -98,6 +115,7 @@ export default function Plantilla3(props: PlantillaProps) {
               <span className="text-[18px] sm:text-[20px] text-[#B7B7B7]">
                 Días vencidos
               </span>
+
               <span className="text-right text-[18px] sm:text-[20px] font-semibold text-[#B7B7B7]">
                 {diasVencidos || 0}
               </span>
@@ -130,14 +148,14 @@ export default function Plantilla3(props: PlantillaProps) {
                   Nombre
                 </div>
 
-              <div className="mt-2 text-[24px] sm:text-[26px] leading-tight text-black text-center break-words">
-                {nombre || "—"}
-              </div>
-
+                <div className="mt-2 text-[24px] sm:text-[26px] leading-tight text-black text-center break-words">
+                  {nombre || "—"}
+                </div>
 
                 <div className="mt-4 text-[26px] sm:text-[30px] text-[#6C6C6C]">
                   Telefono
                 </div>
+
                 <div className="mt-2 text-[24px] sm:text-[26px] text-black text-center break-words">
                   {telefono || "—"}
                 </div>
@@ -158,6 +176,7 @@ export default function Plantilla3(props: PlantillaProps) {
                 <option value="">
                   {loadingListas ? "Cargando…" : "Selecciona método"}
                 </option>
+
                 {optionsMetodo.map((o) => (
                   <option key={o.id} value={o.id}>
                     {o.label}
@@ -181,6 +200,7 @@ export default function Plantilla3(props: PlantillaProps) {
                   <option value="">
                     {loadingListas ? "Cargando…" : "Selecciona cuenta"}
                   </option>
+
                   {optionsCuenta.map((o) => (
                     <option key={o.id} value={o.id}>
                       {o.label}
@@ -210,7 +230,9 @@ export default function Plantilla3(props: PlantillaProps) {
               type="button"
               className="w-full rounded-xl bg-[#F3A316] py-3 text-lg font-semibold text-white shadow-md disabled:opacity-60"
             >
-              {saving ? "Generando link..." : "Confirmar y Generar Link"}
+              {saving
+                ? "Generando link..."
+                : "Confirmar y Generar Link"}
             </button>
           </div>
         </div>

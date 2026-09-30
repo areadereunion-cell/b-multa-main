@@ -18,7 +18,13 @@ export type PlantillaProps = {
   fechaVencimiento: string;
   setFechaVencimiento: (value: string) => void;
   diasVencidos: number;
+
+  // País del caso
+  pais: "mexico" | "colombia" | "peru";
+
+  // Se mantiene por compatibilidad con el código actual
   isCo: boolean;
+
   metodoPagoId: string;
   setMetodoPagoId: (value: string) => void;
   cuentaId: string;

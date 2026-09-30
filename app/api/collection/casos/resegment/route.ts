@@ -13,50 +13,111 @@ function norm(s: any): string {
 
 async function getCatalogSets(
   client: any
-): Promise<{ setMx: Set<string>; setCo: Set<string> }> {
+): Promise<{
+  setMx: Set<string>;
+  setCo: Set<string>;
+  setPe: Set<string>;
+}> {
   const mx = await client.query(
-    `SELECT value FROM collection_aplicaciones_items
-     WHERE list_key='producto_mexico' AND active=true`
+    `SELECT value
+     FROM collection_aplicaciones_items
+     WHERE list_key = 'producto_mexico'
+       AND active = true`
   );
+
   const co = await client.query(
-    `SELECT value FROM collection_aplicaciones_items
-     WHERE list_key='producto_colombia' AND active=true`
+    `SELECT value
+     FROM collection_aplicaciones_items
+     WHERE list_key = 'producto_colombia'
+       AND active = true`
   );
 
-  const setMx = new Set<string>(mx.rows.map((r: any) => norm(r.value)));
-  const setCo = new Set<string>(co.rows.map((r: any) => norm(r.value)));
+  const pe = await client.query(
+    `SELECT value
+     FROM collection_aplicaciones_items
+     WHERE list_key = 'producto_peru'
+       AND active = true`
+  );
 
-  return { setMx, setCo };
+  const setMx = new Set<string>(
+    mx.rows.map((r: any) => norm(r.value))
+  );
+
+  const setCo = new Set<string>(
+    co.rows.map((r: any) => norm(r.value))
+  );
+
+  const setPe = new Set<string>(
+    pe.rows.map((r: any) => norm(r.value))
+  );
+
+  return {
+    setMx,
+    setCo,
+    setPe,
+  };
 }
 
-function resolveSegmento(producto: string, setMx: Set<string>, setCo: Set<string>) {
+function resolveSegmento(
+  producto: string,
+  setMx: Set<string>,
+  setCo: Set<string>,
+  setPe: Set<string>
+) {
   const p = norm(producto);
+
   if (!p) return "-";
 
   const inMx = setMx.has(p);
   const inCo = setCo.has(p);
+  const inPe = setPe.has(p);
 
-  if (inMx && inCo) return "-";
+  const matches = [inMx, inCo, inPe].filter(Boolean).length;
+
+  // Si el mismo producto existe en más de un país,
+  // no se puede determinar el segmento automáticamente.
+  if (matches !== 1) return "-";
+
   if (inMx) return "mexico";
   if (inCo) return "colombia";
+  if (inPe) return "peru";
+
   return "-";
 }
 
 export async function POST() {
   const client = await pool.connect();
+
   try {
-    const { setMx, setCo } = await getCatalogSets(client);
+    const {
+      setMx,
+      setCo,
+      setPe,
+    } = await getCatalogSets(client);
 
     const casos = await client.query(
       `SELECT numero_prestamo, producto
        FROM public.cliente
-       WHERE segmento IS NULL OR segmento = '' OR segmento = '-' OR segmento = 'multas'`
+       WHERE segmento IS NULL
+          OR segmento = ''
+          OR segmento = '-'
+          OR segmento = 'multas'`
     );
 
     let updated = 0;
 
-    for (const c of casos.rows as Array<{ numero_prestamo: string; producto: string }>) {
-      const seg = resolveSegmento(c.producto, setMx, setCo);
+    for (
+      const c of casos.rows as Array<{
+        numero_prestamo: string;
+        producto: string;
+      }>
+    ) {
+      const seg = resolveSegmento(
+        c.producto,
+        setMx,
+        setCo,
+        setPe
+      );
 
       await client.query(
         `UPDATE public.cliente
@@ -74,8 +135,17 @@ export async function POST() {
       scanned: casos.rowCount,
     });
   } catch (e: any) {
-    return NextResponse.json({ ok: false, error: e.message }, { status: 500 });
+    return NextResponse.json(
+      {
+        ok: false,
+        error: e.message,
+      },
+      {
+        status: 500,
+      }
+    );
   } finally {
     client.release();
   }
 }
+

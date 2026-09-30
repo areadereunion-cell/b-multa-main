@@ -1,8 +1,9 @@
-[00:00:01.517] Server  ERROR   (node:6796) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+[00:00:21.097] Server  ERROR   (node:22020) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:00:01.528] Server  LOG      ✓ Ready in 1078ms
-[00:00:03.882] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:04.223] Server  ERROR   (node:6796) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+[00:00:21.258] Server  LOG      ✓ Ready in 17.9s
+[00:00:24.350] Server  LOG      ○ Compiling / ...
+[00:00:37.990] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:51.521] Server  ERROR   (node:22020) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -10,13 +11,311 @@ To prepare for this change:
 - If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
-[00:00:18.324] Server  ERROR   C:\Users\adlan\Downloads\b-multa-main\multa-main\.next\dev\server\chunks\[root-of-the-server]__39f99f4b._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:18.339] Server  ERROR   C:\Users\adlan\Downloads\b-multa-main\multa-main\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:18.352] Server  ERROR   C:\Users\adlan\Downloads\b-multa-main\multa-main\.next\dev\server\chunks\node_modules_next_4607fb2d._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:18.357] Server  ERROR   C:\Users\adlan\Downloads\b-multa-main\multa-main\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:18.359] Server  ERROR   C:\Users\adlan\Downloads\b-multa-main\multa-main\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:18.360] Server  ERROR   C:\Users\adlan\Downloads\b-multa-main\multa-main\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:18.360] Server  ERROR   C:\Users\adlan\Downloads\b-multa-main\multa-main\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:18.361] Server  ERROR   C:\Users\adlan\Downloads\b-multa-main\multa-main\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:18.362] Server  ERROR   C:\Users\adlan\Downloads\b-multa-main\multa-main\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:18.363] Server  ERROR   ERROR CLEAN: error: relation "collection_casos" does not exist
+[00:00:53.907] Server  LOG     OTP INSERTADO: {}
+[00:00:54.032] Server  LOG     OTP DEL USUARIO: [{...},{...},{...},{...},{...}]
+[00:00:55.060] Server  ERROR   C:\Users\adlan\Downloads\b-multa-main\multa-main\.next\dev\server\chunks\node_modules_nodemailer_f0e2e4c8._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:55.064] Server  ERROR   OTP SEND ERROR: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a1e0cc1a2514c-98a873194e7sm915705241.13 - gsmtp
+[00:07:04.672] Server  LOG        Reload env: .env
+[00:07:12.049] Server  LOG     OTP INSERTADO: {}
+[00:07:12.166] Server  LOG     OTP DEL USUARIO: [{...},{...},{...},{...},{...}]
+[00:07:42.480] Server  LOG     OTP VERIFY USERNAME BODY: "admin"
+[00:07:42.482] Server  LOG     OTP VERIFY USERNAME TOKEN: "admin"
+[00:07:43.461] Server  LOG     OTP VERIFY DEBUG: [{...},{...},{...},{...},{...}]
+[00:09:42.291] Server  LOG      ✓ Compiled in 156ms
+[00:09:50.786] Browser LOG     API error: Lista no permitida
+[00:09:51.686] Browser LOG     API error: Lista no permitida
+[00:09:52.524] Browser LOG     API error: Lista no permitida
+[00:10:20.701] Server  LOG      ✓ Compiled in 165ms
+[00:10:27.317] Browser LOG     API error: Lista no permitida
+[00:10:27.317] Browser LOG     API error: Lista no permitida
+[00:10:27.675] Browser LOG     API error: Lista no permitida
+[00:11:51.740] Server  LOG      ✓ Compiled in 147ms
+[00:12:11.441] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:25.072] Server  LOG      ✓ Compiled in 123ms
+[00:13:27.827] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:33.713] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:00.085] Server  LOG      ✓ Compiled in 97ms
+[00:14:17.662] Browser LOG     API error: Lista no permitida
+[00:14:18.635] Browser LOG     API error: Lista no permitida
+[00:14:19.443] Browser LOG     API error: Lista no permitida
+[00:14:38.178] Browser LOG     API error: Lista no permitida
+[00:14:40.392] Browser LOG     API error: Lista no permitida
+[00:14:41.014] Browser LOG     API error: Lista no permitida
+[00:18:27.554] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:19.950] Server  LOG      ✓ Compiled in 107ms
+[00:20:48.916] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:03.521] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:15.236] Browser LOG     PLANTILLA ACTIVA: 2
+[00:21:15.236] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"971112928","metodo_pago_lista_id":"72","monto":"1.00","mostrar_extras":true,"nombre_cliente":"juan","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"a","telefono_cliente":"1","template_id":2,"tipo_plantilla":2,"url":null}
+[00:21:16.061] Server  LOG     📦 BODY RECIBIDO: {}
+[00:21:16.289] Server  LOG     ✅ ROW GUARDADA: {}
+[00:21:19.183] Server  LOG     VALOR DB: null
+[00:21:19.313] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:21.125] Server  LOG     ✅ GET ROW: {}
+[00:21:21.236] Browser LOG     tipoPlantilla prop: undefined
+[00:21:21.236] Browser LOG     data.tipo_plantilla: 2
+[00:21:21.237] Browser LOG     plantillaFinal: 2
+[00:21:21.237] Browser LOG     tipoPlantilla prop: undefined
+[00:21:21.237] Browser LOG     data.tipo_plantilla: 2
+[00:21:21.237] Browser LOG     plantillaFinal: 2
+[00:21:21.276] Server  LOG     ✅ GET ROW: {}
+[00:21:22.091] Server  LOG     ✅ GET ROW: {}
+[00:21:26.502] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:39.596] Server  LOG      ✓ Compiled in 105ms
+[00:29:05.640] Server  LOG      ✓ Compiled in 111ms
+[00:29:44.581] Server  LOG      ✓ Compiled in 91ms
+[00:30:13.852] Server  LOG      ✓ Compiled in 102ms
+[00:30:17.569] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:28.433] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:38.419] Browser LOG     PLANTILLA ACTIVA: 4
+[00:30:38.419] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"285.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"971112928","metodo_pago_lista_id":"72","monto":"285.00","mostrar_extras":true,"nombre_cliente":"LAURA CHOSEC ALGONER","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"PRÉSTAMO GOLD","telefono_cliente":"934733784","template_id":4,"tipo_plantilla":4,"url":"https://i.ibb.co/8gtTrPYY/logo-prestamo-gold.png"}
+[00:30:39.155] Server  LOG     📦 BODY RECIBIDO: {}
+[00:30:39.383] Server  LOG     ✅ ROW GUARDADA: {}
+[00:30:41.329] Server  LOG     VALOR DB: null
+[00:30:41.443] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:42.402] Server  LOG     ✅ GET ROW: {}
+[00:30:42.519] Browser LOG     tipoPlantilla prop: undefined
+[00:30:42.519] Browser LOG     data.tipo_plantilla: 4
+[00:30:42.519] Browser LOG     plantillaFinal: 4
+[00:30:42.519] Browser LOG     tipoPlantilla prop: undefined
+[00:30:42.519] Browser LOG     data.tipo_plantilla: 4
+[00:30:42.519] Browser LOG     plantillaFinal: 4
+[00:30:42.558] Server  LOG     ✅ GET ROW: {}
+[00:30:43.354] Server  LOG     ✅ GET ROW: {}
+[00:30:46.971] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:07.679] Browser LOG     PLANTILLA ACTIVA: 3
+[00:31:07.679] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"1","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1.00","liga_pago_lista_id":"74","locked":true,"metodo_pago":"a","metodo_pago_lista_id":"75","monto":"1.00","mostrar_extras":true,"nombre_cliente":"juan","plantilla_pago_id":1,"primary_color":"#0F56F7","subproducto":"a","telefono_cliente":"1","template_id":3,"tipo_plantilla":3,"url":"http://localhost:3000/a"}
+[00:31:08.398] Server  LOG     📦 BODY RECIBIDO: {}
+[00:31:08.626] Server  LOG     ✅ ROW GUARDADA: {}
+[00:31:10.670] Server  LOG     VALOR DB: null
+[00:31:10.794] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:11.797] Server  LOG     ✅ GET ROW: {}
+[00:31:11.906] Browser LOG     tipoPlantilla prop: undefined
+[00:31:11.906] Browser LOG     data.tipo_plantilla: 3
+[00:31:11.906] Browser LOG     plantillaFinal: 3
+[00:31:11.906] Browser LOG     tipoPlantilla prop: undefined
+[00:31:11.906] Browser LOG     data.tipo_plantilla: 3
+[00:31:11.906] Browser LOG     plantillaFinal: 3
+[00:31:11.956] Server  LOG     ✅ GET ROW: {}
+[00:31:12.735] Server  LOG     ✅ GET ROW: {}
+[00:32:11.447] Server  LOG      ✓ Compiled in 98ms
+[00:36:21.014] Server  LOG      ✓ Compiled in 104ms
+[00:38:06.647] Server  LOG      ✓ Compiled in 102ms
+[00:38:13.799] Browser LOG     PLANTILLA ACTIVA: 4
+[00:38:13.799] Browser LOG     SEGMENTO DEL CASO: mexico
+[00:38:13.799] Browser LOG     PAIS CALCULADO: mexico
+[00:38:13.799] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"285.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"971112928","metodo_pago_lista_id":"72","monto":"285.00","mostrar_extras":true,"nombre_cliente":"LAURA CHOSEC ALGONER","plantilla_pago_id":1,"primary_color":"#0F56F7","segmento":"mexico","subproducto":"PRÉSTAMO GOLD","telefono_cliente":"934733784","template_id":4,"tipo_plantilla":4,"url":"https://i.ibb.co/8gtTrPYY/logo-prestamo-gold.png"}
+[00:38:14.583] Server  LOG     📦 BODY RECIBIDO: {}
+[00:38:14.584] Server  LOG     🌎 SEGMENTO RECIBIDO: "mexico"
+[00:38:14.813] Server  LOG     ✅ ROW GUARDADA: {}
+[00:38:16.988] Server  LOG     VALOR DB: null
+[00:38:17.156] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:38:18.158] Server  LOG     ✅ GET ROW: {}
+[00:38:18.264] Browser LOG     tipoPlantilla prop: undefined
+[00:38:18.264] Browser LOG     data.tipo_plantilla: 4
+[00:38:18.264] Browser LOG     plantillaFinal: 4
+[00:38:18.264] Browser LOG     tipoPlantilla prop: undefined
+[00:38:18.264] Browser LOG     data.tipo_plantilla: 4
+[00:38:18.264] Browser LOG     plantillaFinal: 4
+[00:38:18.296] Server  LOG     ✅ GET ROW: {}
+[00:38:19.149] Server  LOG     ✅ GET ROW: {}
+[00:38:20.562] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:38:26.964] Server  LOG     VALOR DB: null
+[00:38:27.146] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:38:27.308] Server  LOG     ✅ GET ROW: {}
+[00:38:27.424] Browser LOG     tipoPlantilla prop: undefined
+[00:38:27.425] Browser LOG     data.tipo_plantilla: 3
+[00:38:27.425] Browser LOG     plantillaFinal: 3
+[00:38:27.425] Browser LOG     tipoPlantilla prop: undefined
+[00:38:27.425] Browser LOG     data.tipo_plantilla: 3
+[00:38:27.425] Browser LOG     plantillaFinal: 3
+[00:38:27.453] Server  LOG     ✅ GET ROW: {}
+[00:38:27.462] Server  LOG     ✅ GET ROW: {}
+[00:38:28.496] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:38:32.014] Browser LOG     PLANTILLA ACTIVA: 3
+[00:38:32.014] Browser LOG     SEGMENTO DEL CASO: peru
+[00:38:32.014] Browser LOG     PAIS CALCULADO: peru
+[00:38:32.014] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"1","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1.00","liga_pago_lista_id":"74","locked":true,"metodo_pago":"a","metodo_pago_lista_id":"75","monto":"1.00","mostrar_extras":true,"nombre_cliente":"juan","plantilla_pago_id":1,"primary_color":"#0F56F7","segmento":"peru","subproducto":"a","telefono_cliente":"1","template_id":3,"tipo_plantilla":3,"url":"http://localhost:3000/a"}
+[00:38:32.744] Server  LOG     📦 BODY RECIBIDO: {}
+[00:38:32.745] Server  LOG     🌎 SEGMENTO RECIBIDO: "peru"
+[00:38:32.972] Server  LOG     ✅ ROW GUARDADA: {}
+[00:38:33.300] Server  LOG     VALOR DB: null
+[00:38:33.414] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:38:33.561] Server  LOG     ✅ GET ROW: {}
+[00:38:33.667] Browser LOG     tipoPlantilla prop: undefined
+[00:38:33.667] Browser LOG     data.tipo_plantilla: 3
+[00:38:33.667] Browser LOG     plantillaFinal: 3
+[00:38:33.667] Browser LOG     tipoPlantilla prop: undefined
+[00:38:33.667] Browser LOG     data.tipo_plantilla: 3
+[00:38:33.667] Browser LOG     plantillaFinal: 3
+[00:38:33.701] Server  LOG     ✅ GET ROW: {}
+[00:38:33.717] Server  LOG     ✅ GET ROW: {}
+[00:38:38.181] Server  LOG     📦 BODY RECIBIDO: {}
+[00:38:38.181] Server  LOG     🌎 SEGMENTO RECIBIDO: "mexico"
+[00:38:38.269] Browser LOG     PLANTILLA ACTIVA: 3
+[00:38:38.269] Browser LOG     SEGMENTO DEL CASO: mexico
+[00:38:38.269] Browser LOG     PAIS CALCULADO: mexico
+[00:38:38.269] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":".","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"285.00","liga_pago_lista_id":"8","locked":true,"metodo_pago":"971112928","metodo_pago_lista_id":"72","monto":"285.00","mostrar_extras":true,"nombre_cliente":"LAURA CHOSEC ALGONER","plantilla_pago_id":1,"primary_color":"#0F56F7","segmento":"mexico","subproducto":"PRÉSTAMO GOLD","telefono_cliente":"934733784","template_id":3,"tipo_plantilla":3,"url":"https://i.ibb.co/8gtTrPYY/logo-prestamo-gold.png"}
+[00:38:38.409] Server  LOG     ✅ ROW GUARDADA: {}
+[00:38:38.730] Server  LOG     VALOR DB: null
+[00:38:38.848] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:38:38.997] Server  LOG     ✅ GET ROW: {}
+[00:38:39.110] Browser LOG     tipoPlantilla prop: undefined
+[00:38:39.110] Browser LOG     data.tipo_plantilla: 3
+[00:38:39.110] Browser LOG     plantillaFinal: 3
+[00:38:39.110] Browser LOG     tipoPlantilla prop: undefined
+[00:38:39.110] Browser LOG     data.tipo_plantilla: 3
+[00:38:39.110] Browser LOG     plantillaFinal: 3
+[00:38:39.149] Server  LOG     ✅ GET ROW: {}
+[00:38:39.153] Server  LOG     ✅ GET ROW: {}
+[00:38:53.051] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:38:57.168] Browser LOG     PLANTILLA ACTIVA: 4
+[00:38:57.168] Browser LOG     SEGMENTO DEL CASO: peru
+[00:38:57.168] Browser LOG     PAIS CALCULADO: peru
+[00:38:57.168] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"1","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1.00","liga_pago_lista_id":"74","locked":true,"metodo_pago":"a","metodo_pago_lista_id":"75","monto":"1.00","mostrar_extras":true,"nombre_cliente":"juan","plantilla_pago_id":1,"primary_color":"#0F56F7","segmento":"peru","subproducto":"a","telefono_cliente":"1","template_id":4,"tipo_plantilla":4,"url":"http://localhost:3000/a"}
+[00:38:57.920] Server  LOG     📦 BODY RECIBIDO: {}
+[00:38:57.921] Server  LOG     🌎 SEGMENTO RECIBIDO: "peru"
+[00:38:58.156] Server  LOG     ✅ ROW GUARDADA: {}
+[00:38:59.278] Server  LOG     VALOR DB: null
+[00:38:59.393] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:39:00.327] Server  LOG     ✅ GET ROW: {}
+[00:39:00.446] Browser LOG     tipoPlantilla prop: undefined
+[00:39:00.446] Browser LOG     data.tipo_plantilla: 4
+[00:39:00.446] Browser LOG     plantillaFinal: 4
+[00:39:00.446] Browser LOG     tipoPlantilla prop: undefined
+[00:39:00.446] Browser LOG     data.tipo_plantilla: 4
+[00:39:00.446] Browser LOG     plantillaFinal: 4
+[00:39:00.469] Server  LOG     ✅ GET ROW: {}
+[00:39:01.250] Server  LOG     ✅ GET ROW: {}
+[00:39:50.625] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:08.970] Browser LOG     PLANTILLA ACTIVA: 4
+[00:40:08.970] Browser LOG     SEGMENTO DEL CASO: peru
+[00:40:08.970] Browser LOG     PAIS CALCULADO: peru
+[00:40:08.970] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"1","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1.00","liga_pago_lista_id":"74","locked":true,"metodo_pago":"a","metodo_pago_lista_id":"75","monto":"1.00","mostrar_extras":true,"nombre_cliente":"juan","plantilla_pago_id":1,"primary_color":"#0F56F7","segmento":"peru","subproducto":"a","telefono_cliente":"1","template_id":4,"tipo_plantilla":4,"url":"http://localhost:3000/a"}
+[00:40:09.740] Server  LOG     📦 BODY RECIBIDO: {}
+[00:40:09.740] Server  LOG     🌎 SEGMENTO RECIBIDO: "peru"
+[00:40:09.980] Server  LOG     ✅ ROW GUARDADA: {}
+[00:40:11.936] Server  LOG     VALOR DB: null
+[00:40:12.049] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:13.055] Server  LOG     ✅ GET ROW: {}
+[00:40:13.165] Browser LOG     tipoPlantilla prop: undefined
+[00:40:13.165] Browser LOG     data.tipo_plantilla: 4
+[00:40:13.165] Browser LOG     plantillaFinal: 4
+[00:40:13.165] Browser LOG     tipoPlantilla prop: undefined
+[00:40:13.165] Browser LOG     data.tipo_plantilla: 4
+[00:40:13.165] Browser LOG     plantillaFinal: 4
+[00:40:13.204] Server  LOG     ✅ GET ROW: {}
+[00:40:14.037] Server  LOG     ✅ GET ROW: {}
+[00:40:16.223] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:43.980] Server  LOG      ✓ Compiled in 103ms
+[00:40:50.787] Browser LOG     PLANTILLA ACTIVA: 6
+[00:40:50.787] Browser LOG     SEGMENTO DEL CASO: peru
+[00:40:50.787] Browser LOG     PAIS CALCULADO: peru
+[00:40:50.787] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"1","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1.00","liga_pago_lista_id":"74","locked":true,"metodo_pago":"a","metodo_pago_lista_id":"75","monto":"1.00","mostrar_extras":true,"nombre_cliente":"juan","plantilla_pago_id":1,"primary_color":"#0F56F7","segmento":"peru","subproducto":"a","telefono_cliente":"1","template_id":6,"tipo_plantilla":6,"url":"http://localhost:3000/a"}
+[00:40:51.526] Server  LOG     📦 BODY RECIBIDO: {}
+[00:40:51.526] Server  LOG     🌎 SEGMENTO RECIBIDO: "peru"
+[00:40:51.762] Server  LOG     ✅ ROW GUARDADA: {}
+[00:40:53.765] Server  LOG     VALOR DB: null
+[00:40:53.888] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:54.848] Server  LOG     ✅ GET ROW: {}
+[00:40:54.955] Browser LOG     tipoPlantilla prop: undefined
+[00:40:54.955] Browser LOG     data.tipo_plantilla: 6
+[00:40:54.955] Browser LOG     plantillaFinal: 6
+[00:40:54.955] Browser LOG     tipoPlantilla prop: undefined
+[00:40:54.955] Browser LOG     data.tipo_plantilla: 6
+[00:40:54.955] Browser LOG     plantillaFinal: 6
+[00:41:04.018] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:10.344] Browser LOG     PLANTILLA ACTIVA: 4
+[00:41:10.344] Browser LOG     SEGMENTO DEL CASO: peru
+[00:41:10.344] Browser LOG     PAIS CALCULADO: peru
+[00:41:10.344] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"1","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1.00","liga_pago_lista_id":"74","locked":true,"metodo_pago":"a","metodo_pago_lista_id":"75","monto":"1.00","mostrar_extras":true,"nombre_cliente":"juan","plantilla_pago_id":1,"primary_color":"#0F56F7","segmento":"peru","subproducto":"a","telefono_cliente":"1","template_id":4,"tipo_plantilla":4,"url":"http://localhost:3000/a"}
+[00:41:11.092] Server  LOG     📦 BODY RECIBIDO: {}
+[00:41:11.092] Server  LOG     🌎 SEGMENTO RECIBIDO: "peru"
+[00:41:11.326] Server  LOG     ✅ ROW GUARDADA: {}
+[00:41:12.477] Server  LOG     VALOR DB: null
+[00:41:12.593] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:13.529] Server  LOG     ✅ GET ROW: {}
+[00:41:13.638] Browser LOG     tipoPlantilla prop: undefined
+[00:41:13.638] Browser LOG     data.tipo_plantilla: 4
+[00:41:13.638] Browser LOG     plantillaFinal: 4
+[00:41:13.638] Browser LOG     tipoPlantilla prop: undefined
+[00:41:13.638] Browser LOG     data.tipo_plantilla: 4
+[00:41:13.638] Browser LOG     plantillaFinal: 4
+[00:41:13.675] Server  LOG     ✅ GET ROW: {}
+[00:41:14.501] Server  LOG     ✅ GET ROW: {}
+[00:41:51.169] Server  LOG      ✓ Compiled in 107ms
+[00:41:54.494] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:59.221] Browser LOG     PLANTILLA ACTIVA: 2
+[00:41:59.221] Browser LOG     SEGMENTO DEL CASO: peru
+[00:41:59.221] Browser LOG     PAIS CALCULADO: peru
+[00:41:59.221] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"1","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1.00","liga_pago_lista_id":"74","locked":true,"metodo_pago":"a","metodo_pago_lista_id":"75","monto":"1.00","mostrar_extras":true,"nombre_cliente":"juan","plantilla_pago_id":1,"primary_color":"#0F56F7","segmento":"peru","subproducto":"a","telefono_cliente":"1","template_id":2,"tipo_plantilla":2,"url":"http://localhost:3000/a"}
+[00:41:59.958] Server  LOG     📦 BODY RECIBIDO: {}
+[00:41:59.959] Server  LOG     🌎 SEGMENTO RECIBIDO: "peru"
+[00:42:00.193] Server  LOG     ✅ ROW GUARDADA: {}
+[00:42:01.509] Server  LOG     VALOR DB: null
+[00:42:01.709] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:42:02.685] Server  LOG     ✅ GET ROW: {}
+[00:42:02.790] Browser LOG     tipoPlantilla prop: undefined
+[00:42:02.790] Browser LOG     data.tipo_plantilla: 2
+[00:42:02.790] Browser LOG     plantillaFinal: 2
+[00:42:02.790] Browser LOG     tipoPlantilla prop: undefined
+[00:42:02.790] Browser LOG     data.tipo_plantilla: 2
+[00:42:02.790] Browser LOG     plantillaFinal: 2
+[00:42:02.840] Server  LOG     ✅ GET ROW: {}
+[00:42:03.670] Server  LOG     ✅ GET ROW: {}
+[00:42:11.962] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:43:03.092] Server  LOG      ✓ Compiled in 104ms
+[00:43:25.403] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:43:40.717] Browser LOG     PLANTILLA ACTIVA: 5
+[00:43:40.717] Browser LOG     SEGMENTO DEL CASO: peru
+[00:43:40.717] Browser LOG     PAIS CALCULADO: peru
+[00:43:40.717] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"1","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1.00","liga_pago_lista_id":"74","locked":true,"metodo_pago":"a","metodo_pago_lista_id":"75","monto":"1.00","mostrar_extras":true,"nombre_cliente":"juan","plantilla_pago_id":1,"primary_color":"#0F56F7","segmento":"peru","subproducto":"a","telefono_cliente":"1","template_id":5,"tipo_plantilla":5,"url":"http://localhost:3000/a"}
+[00:43:41.430] Server  LOG     📦 BODY RECIBIDO: {}
+[00:43:41.431] Server  LOG     🌎 SEGMENTO RECIBIDO: "peru"
+[00:43:41.657] Server  LOG     ✅ ROW GUARDADA: {}
+[00:43:43.601] Server  LOG     VALOR DB: null
+[00:43:43.718] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:43:44.670] Server  LOG     ✅ GET ROW: {}
+[00:43:44.787] Browser LOG     tipoPlantilla prop: undefined
+[00:43:44.787] Browser LOG     data.tipo_plantilla: 5
+[00:43:44.787] Browser LOG     plantillaFinal: 5
+[00:43:44.787] Browser LOG     tipoPlantilla prop: undefined
+[00:43:44.787] Browser LOG     data.tipo_plantilla: 5
+[00:43:44.787] Browser LOG     plantillaFinal: 5
+[00:43:47.983] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:44:27.626] Browser LOG     PLANTILLA ACTIVA: 5
+[00:44:27.626] Browser LOG     SEGMENTO DEL CASO: peru
+[00:44:27.626] Browser LOG     PAIS CALCULADO: peru
+[00:44:27.626] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"1","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1.00","liga_pago_lista_id":"74","locked":true,"metodo_pago":"a","metodo_pago_lista_id":"75","monto":"1.00","mostrar_extras":true,"nombre_cliente":"juan","plantilla_pago_id":1,"primary_color":"#0F56F7","segmento":"peru","subproducto":"a","telefono_cliente":"1","template_id":5,"tipo_plantilla":5,"url":"http://localhost:3000/a"}
+[00:44:28.371] Server  LOG     📦 BODY RECIBIDO: {}
+[00:44:28.371] Server  LOG     🌎 SEGMENTO RECIBIDO: "peru"
+[00:44:28.600] Server  LOG     ✅ ROW GUARDADA: {}
+[00:44:30.737] Server  LOG     VALOR DB: null
+[00:44:30.946] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:44:31.919] Server  LOG     ✅ GET ROW: {}
+[00:44:32.025] Browser LOG     tipoPlantilla prop: undefined
+[00:44:32.025] Browser LOG     data.tipo_plantilla: 5
+[00:44:32.025] Browser LOG     plantillaFinal: 5
+[00:44:32.025] Browser LOG     tipoPlantilla prop: undefined
+[00:44:32.025] Browser LOG     data.tipo_plantilla: 5
+[00:44:32.025] Browser LOG     plantillaFinal: 5
+[00:44:34.050] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:11.087] Server  LOG      ✓ Compiled in 143ms
+[00:45:14.979] Browser LOG     PLANTILLA ACTIVA: 7
+[00:45:14.979] Browser LOG     SEGMENTO DEL CASO: peru
+[00:45:14.979] Browser LOG     PAIS CALCULADO: peru
+[00:45:14.979] Browser LOG     PAYLOAD ENVIADO: {"card_bg_color":"#FFFFFF","cuenta_bancaria":"1","dias_vencidos":0,"fecha_vencimiento":null,"foto_habilitada":true,"importe_pagar":"1.00","liga_pago_lista_id":"74","locked":true,"metodo_pago":"a","metodo_pago_lista_id":"75","monto":"1.00","mostrar_extras":true,"nombre_cliente":"juan","plantilla_pago_id":1,"primary_color":"#0F56F7","segmento":"peru","subproducto":"a","telefono_cliente":"1","template_id":7,"tipo_plantilla":7,"url":"http://localhost:3000/a"}
+[00:45:15.735] Server  LOG     📦 BODY RECIBIDO: {}
+[00:45:15.735] Server  LOG     🌎 SEGMENTO RECIBIDO: "peru"
+[00:45:15.965] Server  LOG     ✅ ROW GUARDADA: {}
+[00:45:17.930] Server  LOG     VALOR DB: null
+[00:45:18.064] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:19.012] Server  LOG     ✅ GET ROW: {}
+[00:45:19.120] Browser LOG     tipoPlantilla prop: undefined
+[00:45:19.120] Browser LOG     data.tipo_plantilla: 7
+[00:45:19.120] Browser LOG     plantillaFinal: 7
+[00:45:19.120] Browser LOG     tipoPlantilla prop: undefined
+[00:45:19.120] Browser LOG     data.tipo_plantilla: 7
+[00:45:19.120] Browser LOG     plantillaFinal: 7
+[00:45:50.014] Server  LOG      ✓ Compiled in 140ms

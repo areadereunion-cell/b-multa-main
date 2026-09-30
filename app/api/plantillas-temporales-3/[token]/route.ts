@@ -20,7 +20,10 @@ export async function GET(
     const clean = String(token || "").trim();
 
     if (!clean) {
-      return NextResponse.json({ error: "Token inválido" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Token inválido" },
+        { status: 400 }
+      );
     }
 
     const query = `
@@ -44,6 +47,8 @@ export async function GET(
         pt.primary_color,
         pt.foto_habilitada,
 
+        pt.segmento,
+
         pt.producto AS producto_label,
         pt.producto AS subproducto_label,
 
@@ -52,28 +57,51 @@ export async function GET(
         l.value AS liga_value
 
       FROM plantillas_temporales pt
+
       LEFT JOIN collection_aplicaciones_items m
         ON m.id = pt.metodo_pago_lista_id
+
       LEFT JOIN collection_aplicaciones_items l
         ON l.id = pt.liga_pago_lista_id
+
       WHERE pt.token = $1
+
       LIMIT 1
     `;
 
     const r = await pool.query(query, [clean]);
 
     if (r.rows.length === 0) {
-      return NextResponse.json({ error: "No existe" }, { status: 404 });
+      return NextResponse.json(
+        { error: "No existe" },
+        { status: 404 }
+      );
     }
 
-    console.log("✅ GET ROW:", r.rows[0]);
+    console.log(
+      "✅ GET ROW:",
+      r.rows[0]
+    );
 
-    return NextResponse.json({ ok: true, data: r.rows[0] });
+    return NextResponse.json({
+      ok: true,
+      data: r.rows[0],
+    });
   } catch (e: any) {
-    console.error("GET plantillas-temporales-3 error:", e);
+    console.error(
+      "GET plantillas-temporales-3 error:",
+      e
+    );
+
     return NextResponse.json(
-      { error: e?.message || "Error interno" },
-      { status: 500 }
+      {
+        error:
+          e?.message ||
+          "Error interno",
+      },
+      {
+        status: 500,
+      }
     );
   }
 }

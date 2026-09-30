@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 type StaticTemplateProps = {
   data: any;
@@ -9,35 +9,81 @@ type StaticTemplateProps = {
   onCopy: (text: string) => Promise<void>;
 };
 
-function formatMoney(value: any) {
-  const raw = String(value ?? "").replace(/,/g, "").trim();
-  const num = Number(raw);
-
-  if (!Number.isFinite(num)) return String(value ?? "0.00");
-
-  return num.toLocaleString("en-US", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  });
+function norm(s: unknown) {
+  return String(s ?? "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 }
 
-/* 🔥 CORREGIDO: elimina hora y deja día-mes-texto-año */
+function formatMoney(
+  value: any,
+  currency = "MXN"
+) {
+  const raw = String(
+    value ?? ""
+  )
+    .replace(/,/g, "")
+    .trim();
+
+  const num = Number(raw);
+
+  if (!Number.isFinite(num)) {
+    return `${currency} ${String(
+      value ?? "0.00"
+    )}`;
+  }
+
+  return `${currency} ${num.toLocaleString(
+    "en-US",
+    {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }
+  )}`;
+}
+
+/* elimina hora y deja día-mes-texto-año */
 function formatDateDisplay(value: any) {
-  const s = String(value ?? "").trim();
-  if (!s) return "dd-mes-aaaa";
+  const s = String(
+    value ?? ""
+  ).trim();
 
-  // 🔥 elimina la hora tipo T05:00:00.000Z
-  const soloFecha = s.split("T")[0];
+  if (!s) {
+    return "dd-mes-aaaa";
+  }
 
-  if (/^\d{4}-\d{2}-\d{2}$/.test(soloFecha)) {
-    const [y, m, d] = soloFecha.split("-");
+  const soloFecha =
+    s.split("T")[0];
+
+  if (
+    /^\d{4}-\d{2}-\d{2}$/.test(
+      soloFecha
+    )
+  ) {
+    const [y, m, d] =
+      soloFecha.split("-");
 
     const meses = [
-      "enero","febrero","marzo","abril","mayo","junio",
-      "julio","agosto","septiembre","octubre","noviembre","diciembre"
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre",
     ];
 
-    const mesTexto = meses[Number(m) - 1] || m;
+    const mesTexto =
+      meses[Number(m) - 1] ||
+      m;
 
     return `${d}-${mesTexto}-${y}`;
   }
@@ -58,21 +104,72 @@ export default function Plantilla5Static({
       "Big pesitos"
   );
 
-  const importePagar = formatMoney(
-    data?.importe_pagar ?? data?.monto ?? "0.00"
+  // ============================================================
+  // PAÍS
+  // ============================================================
+
+  const segmento = norm(
+    data?.segmento
   );
 
-  const fechaVencimiento = formatDateDisplay(data?.fecha_vencimiento);
+  let pais:
+    | "mexico"
+    | "colombia"
+    | "peru" = "mexico";
+
+  if (
+    segmento === "colombia" ||
+    segmento.includes("colombia") ||
+    segmento === "co"
+  ) {
+    pais = "colombia";
+  } else if (
+    segmento === "peru" ||
+    segmento.includes("peru") ||
+    segmento === "pe"
+  ) {
+    pais = "peru";
+  }
+
+  // ============================================================
+  // MONEDA
+  // ============================================================
+
+  const moneda =
+    pais === "colombia"
+      ? "COP"
+      : pais === "peru"
+        ? "PEN"
+        : "MXN";
+
+  const importePagar =
+    formatMoney(
+      data?.importe_pagar ??
+        data?.monto ??
+        "0.00",
+      moneda
+    );
+
+  const fechaVencimiento =
+    formatDateDisplay(
+      data?.fecha_vencimiento
+    );
 
   const nombre =
     data?.mostrar_extras === false
       ? ""
-      : String(data?.nombre_cliente ?? "—");
+      : String(
+          data?.nombre_cliente ??
+            "—"
+        );
 
   const telefono =
     data?.mostrar_extras === false
       ? ""
-      : String(data?.telefono_cliente ?? "—");
+      : String(
+          data?.telefono_cliente ??
+            "—"
+        );
 
   const metodoPago = String(
     data?.metodo_pago_label ??
@@ -80,23 +177,35 @@ export default function Plantilla5Static({
       "Método de pago"
   ).trim();
 
-  const cuentaBancaria = String(
-    data?.cuenta_bancaria ??
-      data?.liga_pago_label ??
-      data?.liga_value ??
-      ""
+  const cuentaBancaria =
+    String(
+      data?.cuenta_bancaria ??
+        data?.liga_pago_label ??
+        data?.liga_value ??
+        ""
+    ).trim();
+
+  const ligaPago = String(
+    data?.liga_pago ?? ""
   ).trim();
 
-  const ligaPago = String(data?.liga_pago ?? "").trim();
+  const textoParaCopiar =
+    ligaPago ||
+    cuentaBancaria;
 
-  const textoParaCopiar = ligaPago || cuentaBancaria;
-
-  const [copiedLocal, setCopiedLocal] = useState(false);
+  const [copiedLocal, setCopiedLocal] =
+    useState(false);
 
   useEffect(() => {
     if (!copiedLocal) return;
-    const t = setTimeout(() => setCopiedLocal(false), 1800);
-    return () => clearTimeout(t);
+
+    const t = setTimeout(
+      () => setCopiedLocal(false),
+      1800
+    );
+
+    return () =>
+      clearTimeout(t);
   }, [copiedLocal]);
 
   const handleCopy = async () => {
@@ -104,17 +213,25 @@ export default function Plantilla5Static({
 
     try {
       if (onCopy) {
-        await onCopy(textoParaCopiar);
-      } else if (navigator?.clipboard) {
-        await navigator.clipboard.writeText(textoParaCopiar);
+        await onCopy(
+          textoParaCopiar
+        );
+      } else if (
+        navigator?.clipboard
+      ) {
+        await navigator.clipboard.writeText(
+          textoParaCopiar
+        );
       }
+
       setCopiedLocal(true);
     } catch {
       setCopiedLocal(false);
     }
   };
 
-  const avisoCopiado = copied || copiedLocal;
+  const avisoCopiado =
+    copied || copiedLocal;
 
   return (
     <div className="min-h-screen bg-[#dddddd] flex items-center justify-center px-3 py-6">
@@ -145,7 +262,7 @@ export default function Plantilla5Static({
               </div>
 
               <div className="text-[34px] sm:text-[40px] text-white shrink-0">
-                MXN
+                {moneda}
               </div>
             </div>
 
@@ -178,6 +295,7 @@ export default function Plantilla5Static({
               <span className="text-[22px] sm:text-[24px] font-bold text-[#555] shrink-0">
                 Cliente:
               </span>
+
               <span className="text-[18px] sm:text-[20px] text-[#222] text-right break-words">
                 {nombre || "—"}
               </span>
@@ -187,6 +305,7 @@ export default function Plantilla5Static({
               <span className="text-[22px] sm:text-[24px] font-bold text-[#555] shrink-0">
                 Número:
               </span>
+
               <span className="text-[18px] sm:text-[20px] text-[#222] text-right break-words">
                 {telefono || "—"}
               </span>
@@ -203,7 +322,8 @@ export default function Plantilla5Static({
 
             <div className="mt-6 text-center">
               <div className="mx-auto max-w-full text-center text-[28px] sm:text-[34px] font-extrabold leading-tight text-[#3341b2] break-words">
-                {metodoPago || "Método de pago"}
+                {metodoPago ||
+                  "Método de pago"}
               </div>
 
               <div className="mt-2 text-[15px] sm:text-[16px] italic font-semibold text-[#3341b2]">
@@ -214,7 +334,8 @@ export default function Plantilla5Static({
             <div className="mt-6 border-t-2 border-[#d7d7d7] pt-6">
               <div className="flex flex-col items-center justify-center gap-3">
                 <div className="max-w-full text-center text-[22px] sm:text-[26px] font-bold text-[#5f6470] break-all">
-                  {cuentaBancaria || "Sin número disponible"}
+                  {cuentaBancaria ||
+                    "Sin número disponible"}
                 </div>
 
                 {textoParaCopiar ? (
@@ -223,7 +344,9 @@ export default function Plantilla5Static({
                     onClick={handleCopy}
                     className="inline-flex items-center justify-center rounded-lg border border-[#cfd4dc] bg-white px-4 py-2 text-[14px] font-semibold text-[#3341b2] shadow-sm transition hover:bg-[#f7f8fb]"
                   >
-                    {avisoCopiado ? "Copiado" : "Copiar liga de pago"}
+                    {avisoCopiado
+                      ? "Copiado"
+                      : "Copiar liga de pago"}
                   </button>
                 ) : null}
 

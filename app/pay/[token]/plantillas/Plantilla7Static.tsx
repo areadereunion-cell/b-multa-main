@@ -9,44 +9,107 @@ type StaticTemplateProps = {
   onCopy: (text: string) => Promise<void>;
 };
 
-function formatMoney(value: any) {
-  const raw = String(value ?? "").replace(/,/g, "").trim();
-  const num = Number(raw);
-
-  if (!Number.isFinite(num)) return String(value ?? "0");
-
-  return num.toLocaleString("en-US", {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  });
+function norm(s: unknown) {
+  return String(s ?? "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 }
 
-/* 🔥 dd/mm/yyyy sin hora */
+function formatMoney(
+  value: any,
+  currency = "MXN"
+) {
+  const raw = String(
+    value ?? ""
+  )
+    .replace(/,/g, "")
+    .trim();
+
+  const num = Number(raw);
+
+  if (!Number.isFinite(num)) {
+    return `${currency} ${String(
+      value ?? "0"
+    )}`;
+  }
+
+  return `${currency} ${num.toLocaleString(
+    "en-US",
+    {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }
+  )}`;
+}
+
+/* dd/mm/yyyy sin hora */
 function formatDate(value: any) {
-  const s = String(value ?? "").trim();
-  if (!s) return "dd/mm/aaaa";
+  const s = String(
+    value ?? ""
+  ).trim();
 
-  const soloFecha = s.split("T")[0];
+  if (!s) {
+    return "dd/mm/aaaa";
+  }
 
-  if (/^\d{4}-\d{2}-\d{2}$/.test(soloFecha)) {
-    const [y, m, d] = soloFecha.split("-");
+  const soloFecha =
+    s.split("T")[0];
+
+  if (
+    /^\d{4}-\d{2}-\d{2}$/.test(
+      soloFecha
+    )
+  ) {
+    const [y, m, d] =
+      soloFecha.split("-");
+
     return `${d}/${m}/${y}`;
   }
 
   return soloFecha;
 }
 
-function normalizeUrl(u: any, origin: string) {
+function normalizeUrl(
+  u: any,
+  origin: string
+) {
   if (!u) return null;
 
-  let s = String(u).trim().replaceAll("\\", "/");
+  let s = String(u)
+    .trim()
+    .replaceAll("\\", "/");
 
-  if (/^https?:\/\//i.test(s)) return s;
-  if (s.startsWith("public/uploads/")) s = s.replace("public/", "");
-  if (s.startsWith("uploads/")) s = `/${s}`;
-  if (s.startsWith("/")) return origin ? `${origin}${s}` : s;
+  if (/^https?:\/\//i.test(s)) {
+    return s;
+  }
 
-  return origin ? `${origin}/${s}` : s;
+  if (
+    s.startsWith(
+      "public/uploads/"
+    )
+  ) {
+    s = s.replace(
+      "public/",
+      ""
+    );
+  }
+
+  if (s.startsWith("uploads/")) {
+    s = `/${s}`;
+  }
+
+  if (s.startsWith("/")) {
+    return origin
+      ? `${origin}${s}`
+      : s;
+  }
+
+  return origin
+    ? `${origin}/${s}`
+    : s;
 }
 
 export default function Plantilla7Static({
@@ -62,48 +125,132 @@ export default function Plantilla7Static({
       "Red Crédito"
   );
 
-  const importePagar = formatMoney(data?.importe_pagar ?? data?.monto ?? "0");
-  const fechaVencimiento = formatDate(data?.fecha_vencimiento);
-  const nombre = String(data?.nombre_cliente ?? "—");
-  const telefono = String(data?.telefono_cliente ?? "—");
+  // ============================================================
+  // PAÍS
+  // ============================================================
+
+  const segmento = norm(
+    data?.segmento
+  );
+
+  let pais:
+    | "mexico"
+    | "colombia"
+    | "peru" = "mexico";
+
+  if (
+    segmento === "colombia" ||
+    segmento.includes("colombia") ||
+    segmento === "co"
+  ) {
+    pais = "colombia";
+  } else if (
+    segmento === "peru" ||
+    segmento.includes("peru") ||
+    segmento === "pe"
+  ) {
+    pais = "peru";
+  }
+
+  // ============================================================
+  // MONEDA
+  // ============================================================
+
+  const moneda =
+    pais === "colombia"
+      ? "COP"
+      : pais === "peru"
+        ? "PEN"
+        : "MXN";
+
+  const importePagar =
+    formatMoney(
+      data?.importe_pagar ??
+        data?.monto ??
+        "0",
+      moneda
+    );
+
+  const fechaVencimiento =
+    formatDate(
+      data?.fecha_vencimiento
+    );
+
+  const nombre = String(
+    data?.nombre_cliente ??
+      "—"
+  );
+
+  const telefono = String(
+    data?.telefono_cliente ??
+      "—"
+  );
 
   const metodoPago = String(
-    data?.metodo_pago_label ?? data?.metodo_pago ?? "Método"
+    data?.metodo_pago_label ??
+      data?.metodo_pago ??
+      "Método"
   );
 
-  const cuentaBancaria = String(
-    data?.cuenta_bancaria ?? data?.liga_pago_label ?? data?.liga_value ?? ""
-  );
+  const cuentaBancaria =
+    String(
+      data?.cuenta_bancaria ??
+        data?.liga_pago_label ??
+        data?.liga_value ??
+        ""
+    );
 
-  const ligaPago = String(data?.liga_pago ?? "").trim();
+  const ligaPago = String(
+    data?.liga_pago ?? ""
+  ).trim();
 
-  const resolvedLogoUrl = normalizeUrl(
-    data?.resolvedLogoUrl ?? data?.logo_url ?? data?.url,
-    origin
-  );
+  const resolvedLogoUrl =
+    normalizeUrl(
+      data?.resolvedLogoUrl ??
+        data?.logo_url ??
+        data?.url,
+      origin
+    );
 
-  const textoParaCopiar = ligaPago || cuentaBancaria;
+  const textoParaCopiar =
+    ligaPago ||
+    cuentaBancaria;
 
-  const [copiedLocal, setCopiedLocal] = useState(false);
+  const [
+    copiedLocal,
+    setCopiedLocal,
+  ] = useState(false);
 
   useEffect(() => {
     if (!copiedLocal) return;
-    const t = setTimeout(() => setCopiedLocal(false), 1800);
-    return () => clearTimeout(t);
+
+    const t = setTimeout(
+      () => setCopiedLocal(false),
+      1800
+    );
+
+    return () =>
+      clearTimeout(t);
   }, [copiedLocal]);
 
   async function handleCopy() {
-    if (!textoParaCopiar) return;
+    if (!textoParaCopiar) {
+      return;
+    }
 
     try {
-      await onCopy(textoParaCopiar);
+      await onCopy(
+        textoParaCopiar
+      );
+
       setCopiedLocal(true);
     } catch {
       setCopiedLocal(false);
     }
   }
 
-  const copiedFinal = copied || copiedLocal;
+  const copiedFinal =
+    copied || copiedLocal;
 
   return (
     <div className="min-h-screen bg-[#dcdcdc] flex items-center justify-center px-3 py-4">
@@ -136,11 +283,17 @@ export default function Plantilla7Static({
 
             <div className="mt-3 flex items-center justify-between">
               <div className="flex items-center justify-center gap-2 w-full">
-                <span className="text-[46px] text-white">$</span>
+                <span className="text-[46px] text-white">
+                  $
+                </span>
+
                 <span className="text-[46px] text-white">
                   {importePagar}
                 </span>
-                <span className="text-[46px] text-white">MXN</span>
+
+                <span className="text-[46px] text-white">
+                  {moneda}
+                </span>
               </div>
 
               <div className="w-[70px] h-[70px] rounded-[22px] border border-white/40 flex items-center justify-center">
@@ -171,8 +324,15 @@ export default function Plantilla7Static({
 
           {/* CLIENTE */}
           <div className="mt-4 rounded-[18px] bg-[#f5f5f5] px-5 py-4 shadow">
-            <Row label="Cliente:" value={nombre} />
-            <Row label="Número:" value={telefono} />
+            <Row
+              label="Cliente:"
+              value={nombre}
+            />
+
+            <Row
+              label="Número:"
+              value={telefono}
+            />
           </div>
 
           {/* MÉTODO */}
@@ -195,7 +355,8 @@ export default function Plantilla7Static({
 
             <div className="mt-4 border-t pt-4 text-center">
               <div className="text-[30px] font-bold text-[#1f3f86] break-all">
-                {cuentaBancaria || "No disponible"}
+                {cuentaBancaria ||
+                  "No disponible"}
               </div>
 
               {textoParaCopiar && (
@@ -203,7 +364,9 @@ export default function Plantilla7Static({
                   onClick={handleCopy}
                   className="mt-3 px-4 py-2 bg-white rounded-lg shadow text-sm font-semibold text-[#1f3f86]"
                 >
-                  {copiedFinal ? "Copiado" : "Copiar"}
+                  {copiedFinal
+                    ? "Copiado"
+                    : "Copiar"}
                 </button>
               )}
             </div>
@@ -214,11 +377,20 @@ export default function Plantilla7Static({
   );
 }
 
-/* 🔥 FIX: valores alineados a la derecha */
-function Row({ label, value }: { label: string; value: string }) {
+/* valores alineados a la derecha */
+function Row({
+  label,
+  value,
+}: {
+  label: string;
+  value: string;
+}) {
   return (
     <div className="flex justify-between py-2">
-      <span className="text-[22px] text-[#555] font-bold">{label}</span>
+      <span className="text-[22px] text-[#555] font-bold">
+        {label}
+      </span>
+
       <span className="text-[22px] text-black text-right break-words">
         {value}
       </span>
